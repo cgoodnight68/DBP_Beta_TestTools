@@ -1,0 +1,46 @@
+2021-04-29 08:05:54 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults4_29_2021_8_5.txt opened
+2021-04-29 08:05:54 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-29 08:07:09 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-29 08:07:15 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-29 08:07:19 -0600	You selected FROMTHEFARMER.CLIENT-STAGING.DELIVERYBIZPRO.COM with browser=Google Chrome
+2021-04-29 08:07:19 -0600	
+
+Started test CreateDefaultCustomerForDay.rb at 4_29_2021_8_5
+2021-04-29 08:07:19 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+2021-04-29 08:07:19 -0600	OS = x86_64-darwin18
+2021-04-29 08:07:21 -0600	Current URL = https://fromthefarmer.client-staging.deliverybizpro.com/admin/login
+2021-04-29 08:07:21 -0600	-->Entering 'master' into Sign Username
+2021-04-29 08:07:24 -0600	-->Entering '6a4GhvF3k@XwYMLCXFbad@v3' into Password
+2021-04-29 08:07:26 -0600	-->Clicking Agree to terms 
+2021-04-29 08:07:27 -0600	-->Clicking Sign in Button 
+2021-04-29 08:07:30 -0600	-->Clicking Customers 
+2021-04-29 08:07:31 -0600	-->Clicking Create Customer Profile 
+2021-04-29 08:07:38 -0600	-->Entering '4_29_2021_Default' into First Name
+2021-04-29 08:07:40 -0600	-->Entering 'Cust' into Last Name
+2021-04-29 08:07:42 -0600	-->Entering '4_29_2021_Default_Cust@mailinator.com' into Email
+2021-04-29 08:07:45 -0600	-->Entering '4_29_2021_Default_Cust@mailinator.com' into Confirm Email
+2021-04-29 08:07:52 -0600	//label[contains(text(),'Phone Provider')]/../span/span/span/span[@class='select2-selection__arrow'] of type xpath is not displayed - 
+2021-04-29 08:07:52 -0600	-->Entering '11619 Holly Briar Ln.' into Delivery Address
+2021-04-29 08:07:54 -0600	-->Entering 'Great Falls' into Delivery City
+2021-04-29 08:07:56 -0600	-->Entering '22066' into Delivery Zipcode
+2021-04-29 08:07:59 -0600	-->Clicking Billing Address is the same checkbox 
+2021-04-29 08:08:00 -0600	-->Entering '6122326519' into Phone
+2021-04-29 08:08:02 -0600	--> Element Credit Card Detail Modal Button //input[@id='btn-enter-cc-details'] of type xpath exists
+2021-04-29 08:08:36 -0600	-->Clicking Credit Card Detail Modal Button 
+2021-04-29 09:11:33 -0600	switching to frame class:stripe_checkout_app name:stripe_checkout_app
+2021-04-29 09:12:45 -0600	-->Entering '4_29_2021_Default_Cust@mailinator.com' into Stripe email input
+2021-04-29 09:12:48 -0600	-->Entering '4111111111111111' into Stripe card number
+2021-04-29 09:12:50 -0600	-->Entering '0826' into Stripe card exipration
+2021-04-29 09:12:52 -0600	-->Entering '123' into Stripe card CVC
+2021-04-29 09:12:54 -0600	-->Clicking Submit on Modal 
+2021-04-29 09:14:28 -0600	-->Clicking Submit on Modal 
+2021-04-29 09:25:15 -0600	V______Teardown section_________V
+2021-04-29 09:25:15 -0600	Current URL = https://fromthefarmer.client-staging.deliverybizpro.com/admin/user_add.php?usertype=C
+2021-04-29 09:25:15 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_29_2021\\Final__CreateDefaultCustomerForDayresults4_29_2021_8_5.txt_0.png 
+2021-04-29 09:25:20 -0600	___________________________________________________________
+2021-04-29 09:25:20 -0600	<font color ="red">Test case failed with the following errors.</font>
+2021-04-29 09:25:20 -0600	<font color ="red">failure 0 </font> -> --> Element  //label[contains(text(),'Phone Provider')]/../span/span/span/span[@class='select2-selection__arrow'] of type xpath was not displayed -> Failed snapshot at /Users/cgoodnight/Documents/Automation/logs/4_29_2021\\CreateDefaultCustomerForDayresults4_29_2021_8_5.txt_0.png  </font>
+2021-04-29 09:25:20 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-29 09:25:20 -0600	<font color ="red">CreateDefaultCustomerForDay.rb failed </font>

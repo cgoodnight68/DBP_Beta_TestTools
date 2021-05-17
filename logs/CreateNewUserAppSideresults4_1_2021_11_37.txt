@@ -1,0 +1,36 @@
+2021-04-01 11:37:35 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateNewUserAppSideresults4_1_2021_11_37.txt opened
+2021-04-01 11:37:35 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-01 11:37:36 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-01 11:37:37 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-01 11:37:41 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-01 11:37:41 -0600	
+
+Started test CreateNewUserAppSide.rb at 4_1_2021_11_37
+2021-04-01 11:37:41 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-04-01 11:37:41 -0600	OS = x86_64-darwin18
+2021-04-01 11:37:41 -0600	Branch = 
+2021-04-01 11:37:41 -0600	Branch InstallDate = 
+2021-04-01 11:37:45 -0600	Current URL = https://integration.deliverybizpro.com/register.php?step=first&viewing_step=first
+2021-04-01 11:37:50 -0600	-->Entering '15 Warwick Place Asheville #8595
+' into Address
+2021-04-01 11:37:53 -0600	-->Clicking  //button[@id='continue-button'] of type xpath
+2021-04-01 11:38:05 -0600	-->Clicking  //input[@value='Continue'] of type xpath
+2021-04-01 11:38:06 -0600	-->Entering '4_1_2021_Default_Cust' into First Name
+2021-04-01 11:38:08 -0600	-->Entering '74' into Last Name
+2021-04-01 11:38:10 -0600	-->Entering '4_1_2021_Default_Cust_74@mailinator.com' into Email
+2021-04-01 11:38:12 -0600	-->Entering '6122326519' into Phone
+2021-04-01 11:38:14 -0600	-->Entering 'getswift' into Password
+2021-04-01 11:38:17 -0600	-->Clicking Continue 
+2021-04-01 11:38:19 -0600	-->Entering '4111111111111111' into Card Number
+2021-04-01 11:38:21 -0600	-->Entering '4_1_2021_Default_Cust' into Name On Card
+2021-04-01 11:38:23 -0600	-->Entering '0826' into Card expire month
+2021-04-01 11:38:25 -0600	-->Entering '123' into Card CCV
+2021-04-01 11:38:27 -0600	--> Element  //span[@class='select2-selection__arrow'] of type xpath exists
+2021-04-01 11:38:45 -0600	-->Clicking Phone Provider selector 
+2021-04-01 11:38:46 -0600	V______Teardown section_________V
+2021-04-01 11:38:46 -0600	Current URL = https://integration.deliverybizpro.com/register.php?step=third&viewing_step=third
+2021-04-01 11:38:47 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_1_2021\\Final__CreateNewUserAppSideresults4_1_2021_11_37.txt_0.png 
+2021-04-01 11:38:52 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-01 11:38:52 -0600	<font color ="red">CreateNewUserAppSide.rb failed </font>

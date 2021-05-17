@@ -1,0 +1,36 @@
+2021-03-31 14:27:14 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults3_31_2021_14_27.txt opened
+2021-03-31 14:27:14 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-03-31 14:27:17 -0600	What browser do you want to test in (chrome, firefox)
+2021-03-31 14:27:20 -0600	You selected outofbox.client-staging.deliverybizpro.com with browser=Google Chrome
+2021-03-31 14:27:20 -0600	
+
+Started test CreateDefaultCustomerForDay.rb at 3_31_2021_14_27
+2021-03-31 14:27:20 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-03-31 14:27:20 -0600	OS = x86_64-darwin18
+2021-03-31 14:27:20 -0600	Branch = 
+2021-03-31 14:27:20 -0600	Branch InstallDate = 
+2021-03-31 14:27:24 -0600	Current URL = https://outofbox.client-staging.deliverybizpro.com/admin/login
+2021-03-31 14:27:24 -0600	-->Entering 'master' into Sign Username
+2021-03-31 14:27:26 -0600	-->Entering 'BNFhdT7YtHMCODRjGYc3' into Password
+2021-03-31 14:27:29 -0600	-->Clicking Agree to terms 
+2021-03-31 14:27:30 -0600	-->Clicking Sign in Button 
+2021-03-31 14:27:32 -0600	-->Clicking Customers 
+2021-03-31 14:27:34 -0600	-->Clicking Create Customer Profile 
+2021-03-31 14:27:37 -0600	-->Entering '3_31_2021_Default_Cust' into First Name
+2021-03-31 14:27:39 -0600	-->Entering '2' into Last Name
+2021-03-31 14:27:41 -0600	-->Entering '3_31_2021_Default_Cust_2@mailinator.com' into Email
+2021-03-31 14:27:43 -0600	-->Entering '3_31_2021_Default_Cust_2@mailinator.com' into Confirm Email
+2021-03-31 14:27:50 -0600	//input[@class='select2-search__field'] of type xpath is not displayed-  
+2021-03-31 14:27:54 -0600	-->Entering '13700 marina pointe drive
+apt 916' into Delivery Address
+2021-03-31 14:27:56 -0600	-->Entering 'marina del rey' into Delivery City
+2021-03-31 14:27:58 -0600	-->Entering '90292' into Delivery Zipcode
+2021-03-31 14:28:00 -0600	-->Entering '4111111111111111' into Credit Card
+2021-03-31 14:28:02 -0600	-->Entering '3_31_2021_Default_Cust' into Name On card
+2021-03-31 14:28:04 -0600	-->Entering '0826' into Expire Month
+2021-03-31 14:28:06 -0600	-->Entering '123' into Card CCV
+2021-03-31 14:28:09 -0600	-->Entering 'getswift' into Password
+2021-03-31 14:28:11 -0600	-->Entering 'getswift' into Confirm Password
+2021-03-31 14:28:13 -0600	-->Clicking  //input[@value=' Save '] of type xpath
+2021-03-31 14:28:14 -0600	V______Teardown section_________V

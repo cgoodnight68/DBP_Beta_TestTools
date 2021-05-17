@@ -1,0 +1,13 @@
+2021-05-16 09:35:12 -0600	/Users/cgoodnight/Documents/Automation/logs/NewuserPlaceOrderresults5_16_2021_9_35.txt opened
+2021-05-16 09:35:12 -0600	Using the environment_variables.txt values
+2021-05-16 09:35:14 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-16 09:35:14 -0600	
+
+Started test NewuserPlaceOrder.rb at 5_16_2021_9_35
+2021-05-16 09:35:14 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+2021-05-16 09:35:14 -0600	OS = x86_64-darwin18
+2021-05-16 09:35:15 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-05-16 09:35:15 -0600	-->Entering '5_16_2021_Default_Cust@mailinator.com' into Username
+2021-05-16 09:35:17 -0600	-->Entering 'getswift' into Password
+2021-05-16 09:35:19 -0600	-->Clicking Login Button 
+2021-05-16 09:36:21 -0600	V______Teardown section_________V

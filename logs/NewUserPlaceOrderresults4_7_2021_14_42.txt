@@ -1,0 +1,4 @@
+2021-04-07 14:42:20 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserPlaceOrderresults4_7_2021_14_42.txt opened
+2021-04-07 14:42:20 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-07 14:42:22 -0600	V______Teardown section_________V

@@ -1,0 +1,14 @@
+2021-05-08 11:19:37 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateNewUserAppSideresults5_8_2021_11_19.txt opened
+2021-05-08 11:19:37 -0600	Using the environment_variables.txt values
+2021-05-08 11:19:38 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-08 11:19:38 -0600	
+
+Started test CreateNewUserAppSide.rb at 5_8_2021_11_19
+2021-05-08 11:19:38 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+2021-05-08 11:19:38 -0600	OS = x86_64-darwin18
+2021-05-08 11:19:41 -0600	Current URL = https://integration.deliverybizpro.com/register.php?step=first&viewing_step=first
+2021-05-08 11:19:45 -0600	-->Entering 'Van Winkle Law Firm
+11 N. Market St Asheville 
+
+' into Address
+2021-05-08 11:20:47 -0600	V______Teardown section_________V

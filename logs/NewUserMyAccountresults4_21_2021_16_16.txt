@@ -1,0 +1,39 @@
+2021-04-21 16:16:57 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserMyAccountresults4_21_2021_16_16.txt opened
+2021-04-21 16:16:57 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-21 16:16:58 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-21 16:16:58 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-21 16:17:02 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-21 16:17:02 -0600	
+
+Started test NewUserMyAccount.rb at 4_21_2021_16_16
+2021-04-21 16:17:02 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36
+2021-04-21 16:17:02 -0600	OS = x86_64-darwin18
+2021-04-21 16:17:03 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-04-21 16:17:03 -0600	-->Entering '4_21_2021_Default_Cust@mailinator.com' into Username
+2021-04-21 16:17:06 -0600	-->Entering 'getswift' into Password
+2021-04-21 16:17:08 -0600	-->Clicking Login Button 
+2021-04-21 16:17:09 -0600	-->Clicking My Account in Header 
+2021-04-21 16:18:09 -0600	2 Failed find element for xpath and /a[@href='/account']
+2021-04-21 16:19:20 -0600	/a[contains(text(),'Account Info')] of type xpath is not displayed - Account Info 
+2021-04-21 16:19:30 -0600	/a[contains(text(),'Upcoming Deliveries')] of type xpath is not displayed - Upcoming Deliveries 
+2021-04-21 16:19:41 -0600	/a[contains(text(),'Delivery Hold')] of type xpath is not displayed - Delivery Hold 
+2021-04-21 16:19:52 -0600	/a[contains(text(),'Recurring Items')] of type xpath is not displayed - Recurring Items 
+2021-04-21 16:20:03 -0600	/a[contains(text(),'Delivery History')] of type xpath is not displayed - Delivery History 
+2021-04-21 16:20:13 -0600	/a[contains(text(),'Preferences')] of type xpath is not displayed - Preferences 
+2021-04-21 16:20:24 -0600	/a[contains(text(),'Referrals')] of type xpath is not displayed - Referalls 
+2021-04-21 16:20:25 -0600	V______Teardown section_________V
+2021-04-21 16:20:25 -0600	Current URL = https://integration.deliverybizpro.com/account/info
+2021-04-21 16:20:25 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_21_2021\\Final__NewUserMyAccountresults4_21_2021_16_16.txt_0.png 
+2021-04-21 16:20:30 -0600	___________________________________________________________
+2021-04-21 16:20:30 -0600	<font color ="red">Test case failed with the following errors.</font>
+2021-04-21 16:20:30 -0600	<font color ="red">failure 0 </font> -> --> Element Account Info 
+2021-04-21 16:20:30 -0600	<font color ="red">failure 1 </font> -> --> Element Upcoming Deliveries 
+2021-04-21 16:20:30 -0600	<font color ="red">failure 2 </font> -> --> Element Delivery Hold 
+2021-04-21 16:20:30 -0600	<font color ="red">failure 3 </font> -> --> Element Recurring Items 
+2021-04-21 16:20:30 -0600	<font color ="red">failure 4 </font> -> --> Element Delivery History 
+2021-04-21 16:20:30 -0600	<font color ="red">failure 5 </font> -> --> Element Preferences 
+2021-04-21 16:20:30 -0600	<font color ="red">failure 6 </font> -> --> Element Referalls 
+2021-04-21 16:20:30 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-21 16:20:30 -0600	<font color ="red">NewUserMyAccount.rb failed </font>

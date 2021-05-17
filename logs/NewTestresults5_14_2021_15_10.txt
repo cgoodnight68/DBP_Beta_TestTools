@@ -1,0 +1,19 @@
+2021-05-14 15:10:45 -0600	/Users/cgoodnight/Documents/Automation/logs/NewTestresults5_14_2021_15_10.txt opened
+2021-05-14 15:10:45 -0600	Using the environment_variables.txt values
+2021-05-14 15:10:46 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-14 15:10:46 -0600	
+
+Started test NewTest.rb at 5_14_2021_15_10
+2021-05-14 15:10:47 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+2021-05-14 15:10:47 -0600	OS = x86_64-darwin18
+2021-05-14 15:10:49 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-05-14 15:11:45 -0600	-->Entering 'Username' into  chris of type [":xpath", "//input[@name='username']"]
+2021-05-14 15:32:22 -0600	-->Entering 'Username' into  chris of type [[":xpath"], ["//input[@name='username']"]]
+2021-05-14 15:33:00 -0600	-->Entering 'Username' into  chris of type [[":xpath"], ["//input[@name='username']"]]
+2021-05-14 15:44:35 -0600	-->Entering 'chris' into Username
+2021-05-14 15:48:01 -0600	-->Entering 'chris' into Username
+2021-05-14 15:51:13 -0600	V______Teardown section_________V
+2021-05-14 15:51:13 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-05-14 15:51:14 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_14_2021\\Final__NewTestresults5_14_2021_15_10.txt_0.png 
+2021-05-14 15:51:19 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-14 15:51:19 -0600	<font color ="green">NewTest.rb test passed</font>

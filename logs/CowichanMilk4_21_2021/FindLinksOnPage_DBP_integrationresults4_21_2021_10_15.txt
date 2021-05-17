@@ -1,0 +1,117 @@
+2021-04-21 10:15:49 -0600	/Users/cgoodnight/Documents/Automation/logs/FindLinksOnPage_DBP_integrationresults4_21_2021_10_15.txt opened
+2021-04-21 10:15:49 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-21 10:15:51 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-21 10:15:56 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-21 10:16:02 -0600	You selected www.cowichanmilk.ca with browser=Google Chrome
+2021-04-21 10:16:02 -0600	
+
+Started test FindLinksOnPage_DBP_integration.rb at 4_21_2021_10_15
+2021-04-21 10:16:02 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36
+2021-04-21 10:16:02 -0600	OS = x86_64-darwin18
+2021-04-21 10:16:09 -0600	Current URL = https://www.cowichanmilk.ca/admin/login
+2021-04-21 10:16:09 -0600	-->Entering 'master' into Sign Username
+2021-04-21 10:16:11 -0600	-->Entering '6a4GhvF3k@XwYMLCXFbad@v3' into Password
+2021-04-21 10:16:14 -0600	-->Clicking Agree to terms 
+2021-04-21 10:16:15 -0600	-->Clicking Sign in Button 
+2021-04-21 10:16:19 -0600	-->Clicking Dashboard 
+2021-04-21 10:16:23 -0600	3.4763078689575195  seconds to load page
+2021-04-21 10:16:26 -0600	-->Clicking Full Price Store 
+2021-04-21 10:16:28 -0600	Net Read failure to find xpath and //span[text()="Full Price Store"] count 0
+2021-04-21 10:16:30 -0600	-->Clicking Full Price Store 
+2021-04-21 10:16:32 -0600	Net Read failure to find xpath and //a[text()="Full Price Store"] count 0
+2021-04-21 10:16:34 -0600	-->Clicking Low Cost Store 
+2021-04-21 10:16:36 -0600	Net Read failure to find xpath and //a[text()="Low Cost Store"] count 0
+2021-04-21 10:16:38 -0600	-->Clicking Customers 
+2021-04-21 10:16:39 -0600	1.066957712173462  seconds to load page
+2021-04-21 10:16:42 -0600	-->Clicking Search for Customers 
+2021-04-21 10:16:45 -0600	2.77474308013916  seconds to load page
+2021-04-21 10:16:48 -0600	-->Clicking Create Customer Profile 
+2021-04-21 10:16:52 -0600	4.085330009460449  seconds to load page
+2021-04-21 10:16:55 -0600	-->Clicking Import Customers 
+2021-04-21 10:16:58 -0600	2.852343797683716  seconds to load page
+2021-04-21 10:17:01 -0600	-->Clicking Export Customers 
+2021-04-21 10:17:04 -0600	3.054349184036255  seconds to load page
+2021-04-21 10:17:07 -0600	-->Clicking Export Customer Emails 
+2021-04-21 10:17:08 -0600	1.6455800533294678  seconds to load page
+2021-04-21 10:17:11 -0600	-->Clicking Edit/Create Membership Levels 
+2021-04-21 10:17:14 -0600	2.154426097869873  seconds to load page
+2021-04-21 10:17:17 -0600	-->Clicking Customer Notes 
+2021-04-21 10:17:19 -0600	1.907515287399292  seconds to load page
+2021-04-21 10:17:22 -0600	-->Clicking Administrators 
+2021-04-21 10:17:23 -0600	1.075972080230713  seconds to load page
+2021-04-21 10:17:26 -0600	-->Clicking Search for Admins 
+2021-04-21 10:17:28 -0600	2.213832139968872  seconds to load page
+2021-04-21 10:17:31 -0600	-->Clicking Create Admin Profile 
+2021-04-21 10:17:33 -0600	2.213589906692505  seconds to load page
+2021-04-21 10:17:36 -0600	-->Clicking Access Control 
+2021-04-21 10:17:38 -0600	2.106740951538086  seconds to load page
+2021-04-21 10:17:41 -0600	-->Clicking Edit/Create Membership Levels 
+2021-04-21 10:17:43 -0600	1.685452938079834  seconds to load page
+2021-04-21 10:17:46 -0600	-->Clicking Sales 
+2021-04-21 10:17:48 -0600	Net Read failure to find xpath and //span[text()="Sales"] count 0
+2021-04-21 10:17:50 -0600	-->Clicking Search for Sales 
+2021-04-21 10:17:52 -0600	Net Read failure to find xpath and //a[text()="Search for Sales"] count 0
+2021-04-21 10:17:54 -0600	-->Clicking Create Sales Profile 
+2021-04-21 10:17:56 -0600	Net Read failure to find xpath and //a[text()="Create Sales Profile"] count 0
+2021-04-21 10:17:58 -0600	-->Clicking Overview 
+2021-04-21 10:18:00 -0600	Net Read failure to find xpath and //a[text()="Overview"] count 0
+2021-04-21 10:18:02 -0600	-->Clicking Report 
+2021-04-21 10:18:04 -0600	Net Read failure to find xpath and //a[text()="Report"] count 0
+2021-04-21 10:18:06 -0600	-->Clicking Drivers 
+2021-04-21 10:18:07 -0600	1.0896458625793457  seconds to load page
+2021-04-21 10:18:10 -0600	-->Clicking Search for Drivers 
+2021-04-21 10:18:12 -0600	1.7325530052185059  seconds to load page
+2021-04-21 10:18:15 -0600	-->Clicking Create Driver Profile 
+2021-04-21 10:18:17 -0600	1.690443992614746  seconds to load page
+2021-04-21 10:18:20 -0600	-->Clicking Edit/Create Membership Levels 
+2021-04-21 10:18:21 -0600	1.572402000427246  seconds to load page
+2021-04-21 10:18:25 -0600	-->Clicking Suppliers 
+2021-04-21 10:18:26 -0600	1.074639081954956  seconds to load page
+2021-04-21 10:18:29 -0600	-->Clicking Search for Suppliers 
+2021-04-21 10:18:31 -0600	2.0252668857574463  seconds to load page
+2021-04-21 10:18:34 -0600	-->Clicking Create Supplier Profile 
+2021-04-21 10:18:36 -0600	2.031341791152954  seconds to load page
+2021-04-21 10:18:39 -0600	-->Clicking Edit/Search Products 
+2021-04-21 10:18:44 -0600	5.088266134262085  seconds to load page
+2021-04-21 10:18:47 -0600	-->Clicking Add New Product 
+2021-04-21 10:18:59 -0600	11.948321104049683  seconds to load page
+2021-04-21 10:19:02 -0600	-->Clicking Import products 
+2021-04-21 10:19:06 -0600	3.7557451725006104  seconds to load page
+2021-04-21 10:19:09 -0600	-->Clicking Export products 
+2021-04-21 10:19:10 -0600	1.7443828582763672  seconds to load page
+2021-04-21 10:19:13 -0600	-->Clicking Product Categories 
+2021-04-21 10:19:16 -0600	2.1634891033172607  seconds to load page
+2021-04-21 10:19:19 -0600	-->Clicking Extra fields 
+2021-04-21 10:19:20 -0600	1.7652480602264404  seconds to load page
+2021-04-21 10:19:24 -0600	-->Clicking Product Dislikes 
+2021-04-21 10:19:26 -0600	Net Read failure to find xpath and //span[text()="Product Dislikes"] count 0
+2021-04-21 10:19:28 -0600	-->Clicking Warehouse Locations 
+2021-04-21 10:19:29 -0600	1.7801399230957031  seconds to load page
+2021-04-21 10:19:32 -0600	-->Clicking Product Flags 
+2021-04-21 10:19:34 -0600	Net Read failure to find xpath and //span[text()="Product Flags"] count 0
+2021-04-21 10:19:36 -0600	-->Clicking Change/Assign Routes 
+2021-04-21 10:19:38 -0600	1.8940389156341553  seconds to load page
+2021-04-21 10:19:41 -0600	-->Clicking Create/Edit Routes 
+2021-04-21 10:19:44 -0600	2.6096346378326416  seconds to load page
+2021-04-21 10:19:47 -0600	-->Clicking GPS Import/Export 
+2021-04-21 10:19:49 -0600	1.7212460041046143  seconds to load page
+2021-04-21 10:19:52 -0600	-->Clicking Organize Route Stops 
+2021-04-21 10:19:53 -0600	1.7331559658050537  seconds to load page
+2021-04-21 10:19:56 -0600	-->Clicking Pickup Locations 
+2021-04-21 10:19:59 -0600	Net Read failure to find xpath and //span[text()="Pickup Locations"] count 0
+2021-04-21 10:20:01 -0600	-->Clicking Organize Pickup Locations 
+2021-04-21 10:20:03 -0600	Net Read failure to find xpath and //span[text()="Organize Pickup Locations"] count 0
+2021-04-21 10:20:05 -0600	-->Clicking Manage KML File 
+2021-04-21 10:20:06 -0600	1.6558101177215576  seconds to load page
+2021-04-21 10:20:09 -0600	-->Clicking Display Route/KML Issues 
+2021-04-21 10:20:10 -0600	1.0457789897918701  seconds to load page
+2021-04-21 10:20:13 -0600	-->Clicking Organize Load Sheet 
+2021-04-21 10:20:14 -0600	1.0481529235839844  seconds to load page
+2021-04-21 10:20:14 -0600	-->Clicking Ok in Modal button 
+2021-04-21 10:21:16 -0600	V______Teardown section_________V
+2021-04-21 10:21:16 -0600	Current URL = https://www.cowichanmilk.ca/admin/router.php?r=kml#/kml
+2021-04-21 10:21:17 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_21_2021\\Final__FindLinksOnPage_DBP_integrationresults4_21_2021_10_15.txt_0.png 
+2021-04-21 10:21:22 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-21 10:21:22 -0600	<font color ="red">FindLinksOnPage_DBP_integration.rb failed </font>

@@ -1,0 +1,143 @@
+2021-05-15 15:21:02 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserMyAccountresults5_15_2021_15_21.txt opened
+2021-05-15 15:21:02 -0600	Using the environment_variables.txt values
+2021-05-15 15:21:04 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-15 15:21:04 -0600	
+
+Started test NewUserMyAccount.rb at 5_15_2021_15_21
+2021-05-15 15:21:04 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+2021-05-15 15:21:04 -0600	OS = x86_64-darwin18
+2021-05-15 15:21:05 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-05-15 15:21:05 -0600	-->Entering '5_15_2021_Default_Cust@mailinator.com' into Username
+2021-05-15 15:21:08 -0600	-->Entering 'getswift' into Password
+2021-05-15 15:21:10 -0600	-->Clicking Login Button 
+2021-05-15 15:21:11 -0600	-->Clicking My Account in Header 
+2021-05-15 15:21:14 -0600	--> Element My Account //b[contains(text(),'My Account')] of type xpath exists
+2021-05-15 15:21:14 -0600	--> Element Account Info //nav/ul/li/a[contains(text(),'Account Info')] of type xpath exists
+2021-05-15 15:21:14 -0600	--> Element Upcoming Deliveries //nav/ul/li/a[contains(text(),'Upcoming Deliveries')] of type xpath exists
+2021-05-15 15:21:14 -0600	--> Element Delivery Hold //nav/ul/li/a[contains(text(),'Delivery Hold')] of type xpath exists
+2021-05-15 15:21:14 -0600	--> Element Recurring Items //nav/ul/li/a[contains(text(),'Recurring Items')] of type xpath exists
+2021-05-15 15:21:14 -0600	--> Element Delivery History //nav/ul/li/a[contains(text(),'Delivery History')] of type xpath exists
+2021-05-15 15:21:14 -0600	--> Element Preferences //nav/ul/li/a[contains(text(),'Preferences')] of type xpath exists
+2021-05-15 15:21:14 -0600	--> Element Referalls //nav/ul/li/a[contains(text(),'Referrals')] of type xpath exists
+2021-05-15 15:21:14 -0600	-->Clicking Account Info 
+2021-05-15 15:21:15 -0600	--> Element First Name //input[@name='firstname'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Last Name //input[@name='lastname'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Email //input[@name='email'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Additional Email //input[@name='additional_email'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Phone //input[@name='phone'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Birthday //input[@name='birthday'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Address //input[@name='s_address'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Address Line 2 //input[@name='s_address_2'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element City //input[@name='s_city'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element County //*[@id='basic_information_form']/div[2]/div[2]/div[4]/span/span[1]/span of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element State //span[@id='select2-s_state-container'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Zipcode //input[@name='s_zipcode'] of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Payment info Credit Card //*[@id='basic_information_form']/div[4]/div/div[1]/div/div[1]/label of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Payment info Check //*[@id='basic_information_form']/div[4]/div/div[1]/div/div[2]/label of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Payment info EBT //*[@id='basic_information_form']/div[4]/div/div[1]/div/div[4]/label of type xpath exists
+2021-05-15 15:21:15 -0600	--> Element Billing and Delivery Same Checkbox //*[@id='basic_information_form']/div[5]/div[1]/div/label of type xpath exists
+2021-05-15 15:21:15 -0600	-->Clicking Upcoming Deliveries 
+2021-05-15 15:21:16 -0600	--> Element Upcoming Deliveries Table //div[@id='table-breakdown'] of type xpath exists  with text 
+ Delivery Date Route Items
+Qty
+Order# Cut-off Totals More Options
+Monday May 10, 2021 Monday Home Delivery Friendly Name
+No Delivery Scheduled
+  Saturday May 8, 2021
+06:00:59 PM
+Subtotal $0.00
+Total for $0.00
+Monday May 17, 2021
+DELIVERY TIME:
+12:00
+Monday Home Delivery Friendly Name
+Dustin Test Box
+CUSTOMIZE BAG
+1
+1000017436 Saturday May 15, 2021
+06:00:59 PM
+Subtotal $1.00
+Delivery Charge Tax $1.76
+Delivery Charge $8.00
+Cans $0.10
+Milk Bottle Deposit $1.00
+Tip $0.00
+Donation: $0.00
+Total for $11.86
+Skip Delivery DONATE ORDER
+Monday May 24, 2021 Monday Home Delivery Friendly Name
+No Delivery Scheduled
+  Saturday May 22, 2021
+06:00:59 PM
+Subtotal $0.00
+Total for $0.00
+Add Products
+Monday May 31, 2021 Monday Home Delivery Friendly Name
+No Delivery Scheduled
+  Saturday May 29, 2021
+06:00:59 PM
+Subtotal $0.00
+Total for $0.00
+Add Products
+Monday June 7, 2021 Monday Home Delivery Friendly Name
+No Delivery Scheduled
+  Saturday June 5, 2021
+06:00:59 PM
+Subtotal $0.00
+Total for $0.00
+Add Products
+2021-05-15 15:21:16 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-05-15 15:21:16 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ Delivery Address: 126 Maney Avenue, Asheville, Other 28804 [change]
+2021-05-15 15:21:16 -0600	-->Clicking Delivery Hold 
+2021-05-15 15:21:17 -0600	--> Element Leaving //input[@id='vacation_start']/.. of type xpath exists
+2021-05-15 15:21:17 -0600	--> Element Returning //input[@id='vacation_end']/.. of type xpath exists
+2021-05-15 15:21:17 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-05-15 15:21:17 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ Delivery Address: 126 Maney Avenue, Asheville, Other 28804 [change]
+2021-05-15 15:21:17 -0600	--> Element Add Vacation //button[@id='customer_add_vacation']/.. of type xpath exists  with text 
+ ADD VACATION
+2021-05-15 15:21:17 -0600	-->Clicking Recurring Items 
+2021-05-15 15:21:18 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-05-15 15:21:18 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ Delivery Address: 126 Maney Avenue, Asheville, Other 28804 [change]
+2021-05-15 15:21:18 -0600	--> Element Recurring Items Table //table[@class='table-striped recurring-table']/.. of type xpath exists  with text 
+ Items Frequency Delivery Price QTY  
+No Recurring Items
+APPLY
+UPDATE ORDER
+REMOVE ALL
+SHOP PRODUCTS
+2021-05-15 15:21:18 -0600	--> Element Remove All //a[@id='delete_recurring_orders']/.. of type xpath exists
+2021-05-15 15:21:18 -0600	--> Element Update Order //a[@id='update_recurring_orders']/.. of type xpath exists
+2021-05-15 15:21:18 -0600	--> Element Apply //button[@id='add_coupon_recurring']/.. of type xpath exists
+2021-05-15 15:21:18 -0600	--> Element Coupon Code //input[@id='coupon_code']/.. of type xpath exists
+2021-05-15 15:21:18 -0600	-->Clicking Delivery History 
+2021-05-15 15:21:20 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-05-15 15:21:20 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ Delivery Address: 126 Maney Avenue, Asheville, Other 28804 [change]
+2021-05-15 15:21:20 -0600	--> Element Current Balance //div[@class='balance_title_inside']/.. of type xpath exists  with text 
+ DELIVERY HISTORY
+Delivery Address: 126 Maney Avenue, Asheville, Other 28804 [change]
+Current Balance as of This Week: $0.00
+There are no records in your payment/invoice history...
+2021-05-15 15:21:20 -0600	-->Clicking Preferences 
+2021-05-15 15:21:21 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-05-15 15:21:21 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ Delivery Address: 126 Maney Avenue, Asheville, Other 28804 [change]
+2021-05-15 15:21:21 -0600	--> Element Preferences Form //form[@id='my_preferences_info_form']/.. of type xpath exists
+2021-05-15 15:21:21 -0600	--> Element Newsletter Subscriptions //select[@name='subscription[]']/.. of type xpath exists
+2021-05-15 15:21:21 -0600	--> Element Notification Preferences //select[@name='alert_delivery[]']/.. of type xpath exists
+2021-05-15 15:21:21 -0600	--> Element Cooler Location //textarea[@id='cooler_location']/.. of type xpath exists
+2021-05-15 15:21:21 -0600	--> Element Liked Products //span[@id='select2-products_likes_select-container'] of type xpath exists
+2021-05-15 15:21:21 -0600	--> Element Add Liked Products //input[@id='add_product_likes'] of type xpath exists
+2021-05-15 15:21:21 -0600	--> Element Disliked Products //span[@id='select2-products_dislikes_select-container'] of type xpath exists
+2021-05-15 15:21:21 -0600	--> Element Add Disliked Products //input[@id='add_product_dislikes'] of type xpath exists
+2021-05-15 15:21:21 -0600	--> Element Phone Provider //span[@id='select2-additional_values_1000000034-container'] of type xpath exists
+2021-05-15 15:21:21 -0600	-->Clicking Referals 
+2021-05-15 15:21:22 -0600	--> Element Referral URL //input[@class='form-control url'] of type xpath exists
+2021-05-15 15:21:22 -0600	V______Teardown section_________V
+2021-05-15 15:21:22 -0600	Current URL = https://integration.deliverybizpro.com/account/referrals
+2021-05-15 15:21:22 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_15_2021\\Final__NewUserMyAccountresults5_15_2021_15_21.txt_0.png 
+2021-05-15 15:21:27 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-15 15:21:27 -0600	<font color ="green">NewUserMyAccount.rb test passed</font>

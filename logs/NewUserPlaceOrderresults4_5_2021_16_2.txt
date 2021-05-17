@@ -1,0 +1,21 @@
+2021-04-05 16:02:42 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserPlaceOrderresults4_5_2021_16_2.txt opened
+2021-04-05 16:02:42 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-05 16:02:44 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-05 16:02:45 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-05 16:02:48 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-05 16:02:48 -0600	
+
+Started test NewUserPlaceOrder.rb at 4_5_2021_16_2
+2021-04-05 16:02:48 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-04-05 16:02:48 -0600	OS = x86_64-darwin18
+2021-04-05 16:02:48 -0600	Branch = 
+2021-04-05 16:02:48 -0600	Branch InstallDate = 
+2021-04-05 16:02:50 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-04-05 16:02:50 -0600	-->Entering '4_5_2021_Default_Cust@mailinator.com' into Username
+2021-04-05 16:02:52 -0600	-->Entering 'getswift' into Password
+2021-04-05 16:02:54 -0600	-->Clicking Login Button 
+2021-04-05 16:02:56 -0600	Choosing product Compostable Service Weekly
+$45.00
+2021-04-05 16:03:47 -0600	V______Teardown section_________V

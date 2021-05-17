@@ -1,0 +1,11 @@
+2021-04-13 14:02:49 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateMultipleDriversresults4_13_2021_14_2.txt opened
+2021-04-13 14:02:49 -0600	Using the environment_variables.txt values
+2021-04-13 14:02:51 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-13 14:02:51 -0600	
+
+Started test CreateMultipleDrivers.rb at 4_13_2021_14_2
+2021-04-13 14:02:51 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-04-13 14:02:51 -0600	OS = x86_64-darwin18
+2021-04-13 14:02:52 -0600	Current URL = https://integration.deliverybizpro.com/
+2021-04-13 14:02:52 -0600	-->Entering 'OnDemand@mailinator.com' into Sign in Email
+2021-04-13 14:02:53 -0600	V______Teardown section_________V

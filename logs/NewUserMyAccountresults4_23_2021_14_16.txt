@@ -1,0 +1,102 @@
+2021-04-23 14:16:00 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserMyAccountresults4_23_2021_14_16.txt opened
+2021-04-23 14:16:00 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-23 14:16:04 -0600	V______Teardown section_________V
+2021-04-23 14:16:15 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserMyAccountresults4_23_2021_14_16.txt opened
+2021-04-23 14:16:15 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-23 14:16:17 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-23 14:16:17 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-23 14:16:20 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-23 14:16:20 -0600	
+
+Started test NewUserMyAccount.rb at 4_23_2021_14_16
+2021-04-23 14:16:20 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36
+2021-04-23 14:16:20 -0600	OS = x86_64-darwin18
+2021-04-23 14:16:22 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-04-23 14:16:22 -0600	-->Entering '4_23_2021_Default_Cust@mailinator.com' into Username
+2021-04-23 14:16:24 -0600	-->Entering 'getswift' into Password
+2021-04-23 14:16:26 -0600	-->Clicking Login Button 
+2021-04-23 14:16:28 -0600	-->Clicking My Account in Header 
+2021-04-23 14:16:30 -0600	--> Element My Account //b[contains(text(),'My Account')] of type xpath exists
+2021-04-23 14:16:30 -0600	--> Element Account Info //nav/ul/li/a[contains(text(),'Account Info')] of type xpath exists
+2021-04-23 14:16:30 -0600	--> Element Upcoming Deliveries //nav/ul/li/a[contains(text(),'Upcoming Deliveries')] of type xpath exists
+2021-04-23 14:16:30 -0600	--> Element Delivery Hold //nav/ul/li/a[contains(text(),'Delivery Hold')] of type xpath exists
+2021-04-23 14:16:30 -0600	--> Element Recurring Items //nav/ul/li/a[contains(text(),'Recurring Items')] of type xpath exists
+2021-04-23 14:16:30 -0600	--> Element Delivery History //nav/ul/li/a[contains(text(),'Delivery History')] of type xpath exists
+2021-04-23 14:16:30 -0600	--> Element Preferences //nav/ul/li/a[contains(text(),'Preferences')] of type xpath exists
+2021-04-23 14:16:30 -0600	--> Element Referalls //nav/ul/li/a[contains(text(),'Referrals')] of type xpath exists
+2021-04-23 14:16:30 -0600	-->Clicking Account Info 
+2021-04-23 14:16:32 -0600	--> Element First Name //input[@name='firstname'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Last Name //input[@name='lastname'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Email //input[@name='email'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Additional Email //input[@name='additional_email'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Phone //input[@name='phone'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Birthday //input[@name='birthday'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Address //input[@name='s_address'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Address Line 2 //input[@name='s_address_2'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element City //input[@name='s_city'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element County //*[@id='basic_information_form']/div[2]/div[2]/div[4]/span/span[1]/span of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element State //span[@id='select2-s_state-container'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Zipcode //input[@name='s_zipcode'] of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Payment info Credit Card //*[@id='basic_information_form']/div[4]/div/div[1]/div/div[1]/label of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Payment info Check //*[@id='basic_information_form']/div[4]/div/div[1]/div/div[2]/label of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Payment info EBT //*[@id='basic_information_form']/div[4]/div/div[1]/div/div[4]/label of type xpath exists
+2021-04-23 14:16:32 -0600	--> Element Billing and Delivery Same Checkbox //*[@id='basic_information_form']/div[5]/div[1]/div/label of type xpath exists
+2021-04-23 14:16:32 -0600	-->Clicking Upcoming Deliveries 
+2021-04-23 14:16:33 -0600	--> Element Upcoming Deliveries Table //div[@id='table-breakdown'] of type xpath exists  with text 
+ cb.text
+2021-04-23 14:16:33 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-04-23 14:16:33 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ cb.text
+2021-04-23 14:16:33 -0600	-->Clicking Delivery Hold 
+2021-04-23 14:16:34 -0600	--> Element Leaving //input[@id='vacation_start']/.. of type xpath exists  with text 
+ cb.text
+2021-04-23 14:16:34 -0600	--> Element Returning //input[@id='vacation_end']/.. of type xpath exists  with text 
+ cb.text
+2021-04-23 14:16:34 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-04-23 14:16:34 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ cb.text
+2021-04-23 14:16:34 -0600	--> Element Add Vacation //button[@id='customer_add_vacation']/.. of type xpath exists  with text 
+ cb.text
+2021-04-23 14:16:34 -0600	-->Clicking Recurring Items 
+2021-04-23 14:16:35 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-04-23 14:16:35 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ cb.text
+2021-04-23 14:16:35 -0600	--> Element Recurring Items Table //table[@class='table-striped recurring-table']/.. of type xpath exists  with text 
+ cb.text
+2021-04-23 14:16:46 -0600	//button[@id='delete_recurring_orders']/.. of type xpath is not displayed - Remove All
+2021-04-23 14:16:56 -0600	//button[@id='update_recurring_orders']/.. of type xpath is not displayed - Update Order
+2021-04-23 14:16:57 -0600	--> Element Apply //button[@id='add_coupon_recurring']/.. of type xpath exists
+2021-04-23 14:16:57 -0600	--> Element Coupon Code //input[@id='coupon_code']/.. of type xpath exists
+2021-04-23 14:16:57 -0600	-->Clicking Delivery History 
+2021-04-23 14:16:58 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-04-23 14:16:58 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ cb.text
+2021-04-23 14:17:08 -0600	//div[@class='change_delivery_address']/.. of type xpath is not displayed - Current Balance
+2021-04-23 14:17:09 -0600	-->Clicking Preferences 
+2021-04-23 14:17:10 -0600	--> Element Change Delivery Address //a[@id='change_delivery_address'] of type xpath exists
+2021-04-23 14:17:10 -0600	--> Element Delivery Address //a[@id='change_delivery_address']/.. of type xpath exists  with text 
+ cb.text
+2021-04-23 14:17:10 -0600	--> Element Preferences Form //form[@id='my_preferences_info_form']/.. of type xpath exists
+2021-04-23 14:17:10 -0600	--> Element Newsletter Subscriptions //select[@name='subscription[]']/.. of type xpath exists
+2021-04-23 14:17:10 -0600	--> Element Notification Preferences //select[@name='alert_delivery[]']/.. of type xpath exists
+2021-04-23 14:17:10 -0600	--> Element Cooler Location //textarea[@id='cooler_location']/.. of type xpath exists
+2021-04-23 14:17:10 -0600	--> Element Liked Products //span[@id='select2-products_likes_select-container'] of type xpath exists
+2021-04-23 14:17:10 -0600	--> Element Add Liked Products //input[@id='add_product_likes'] of type xpath exists
+2021-04-23 14:17:10 -0600	--> Element Disliked Products //span[@id='select2-products_dislikes_select-container'] of type xpath exists
+2021-04-23 14:17:10 -0600	--> Element Add Disliked Products //input[@id='add_product_dislikes'] of type xpath exists
+2021-04-23 14:17:10 -0600	--> Element Phone Provider //span[@id='select2-additional_values_1000000034-container'] of type xpath exists
+2021-04-23 14:17:10 -0600	-->Clicking Referals 
+2021-04-23 14:17:11 -0600	--> Element Referral URL //input[@class='form-control url'] of type xpath exists
+2021-04-23 14:17:11 -0600	V______Teardown section_________V
+2021-04-23 14:17:11 -0600	Current URL = https://integration.deliverybizpro.com/account/referrals
+2021-04-23 14:17:12 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_23_2021\\Final__NewUserMyAccountresults4_23_2021_14_16.txt_0.png 
+2021-04-23 14:17:17 -0600	___________________________________________________________
+2021-04-23 14:17:17 -0600	<font color ="red">Test case failed with the following errors.</font>
+2021-04-23 14:17:17 -0600	<font color ="red">failure 0 </font> -> --> Element Remove All //button[@id='delete_recurring_orders']/.. of type xpath was not displayed -> Failed snapshot at /Users/cgoodnight/Documents/Automation/logs/4_23_2021\\NewUserMyAccountresults4_23_2021_14_16.txt_0.png  </font>
+2021-04-23 14:17:17 -0600	<font color ="red">failure 1 </font> -> --> Element Update Order //button[@id='update_recurring_orders']/.. of type xpath was not displayed -> Failed snapshot at /Users/cgoodnight/Documents/Automation/logs/4_23_2021\\NewUserMyAccountresults4_23_2021_14_16.txt_0.png  </font>
+2021-04-23 14:17:17 -0600	<font color ="red">failure 2 </font> -> --> Element Current Balance //div[@class='change_delivery_address']/.. of type xpath was not displayed -> Failed snapshot at /Users/cgoodnight/Documents/Automation/logs/4_23_2021\\NewUserMyAccountresults4_23_2021_14_16.txt_0.png  </font>
+2021-04-23 14:17:17 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-23 14:17:17 -0600	<font color ="red">NewUserMyAccount.rb failed </font>

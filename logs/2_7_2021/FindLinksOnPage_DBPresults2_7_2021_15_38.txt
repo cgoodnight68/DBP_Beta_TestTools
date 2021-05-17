@@ -1,0 +1,338 @@
+2021-02-07 15:38:49 -0700	/Users/cgoodnight/Documents/Automation/logs/FindLinksOnPage_DBPresults2_7_2021_15_38.txt opened
+2021-02-07 15:38:49 -0700	
+What environment do you want to test? (DEV,QA,STAGING,DEVINT,QA2,STAGING2)
+2021-02-07 15:38:49 -0700	What browser do you want to test in (chrome, firefox)
+2021-02-07 15:38:52 -0700	You selected dev with browser=Google Chrome
+2021-02-07 15:38:52 -0700	
+
+Started test FindLinksOnPage_DBP.rb at 2_7_2021_15_38
+2021-02-07 15:38:52 -0700	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36
+2021-02-07 15:38:52 -0700	OS = x86_64-darwin18
+2021-02-07 15:38:52 -0700	Branch = 
+2021-02-07 15:38:52 -0700	Branch InstallDate = 
+2021-02-07 15:38:53 -0700	Current URL = https://shop.4pfoods.com/admin/login
+2021-02-07 15:38:53 -0700	-->Entering 'master' into Sign Username
+2021-02-07 15:38:56 -0700	-->Entering '5vRefGEXMcu9uqpqmkKq' into Password
+2021-02-07 15:38:58 -0700	-->Clicking Agree to terms 
+2021-02-07 15:38:59 -0700	-->Clicking Sign in Button 
+2021-02-07 15:39:01 -0700	-->Clicking Dashboard 
+2021-02-07 15:39:03 -0700	1.9892408847808838  seconds to load page
+2021-02-07 15:39:04 -0700	-->Clicking Customers 
+2021-02-07 15:39:05 -0700	1.067141056060791  seconds to load page
+2021-02-07 15:39:08 -0700	-->Clicking Search for Customers 
+2021-02-07 15:39:10 -0700	2.167699098587036  seconds to load page
+2021-02-07 15:39:13 -0700	-->Clicking Create Customer Profile 
+2021-02-07 15:39:16 -0700	2.220842123031616  seconds to load page
+2021-02-07 15:39:19 -0700	-->Clicking Import Customers 
+2021-02-07 15:39:21 -0700	1.774406909942627  seconds to load page
+2021-02-07 15:39:24 -0700	-->Clicking Export Customers 
+2021-02-07 15:39:25 -0700	1.809645175933838  seconds to load page
+2021-02-07 15:39:28 -0700	-->Clicking Export Customer Emails 
+2021-02-07 15:39:30 -0700	1.366307020187378  seconds to load page
+2021-02-07 15:39:33 -0700	-->Clicking on Edit/Create Membership Levels - 0
+
+2021-02-07 15:39:33 -0700	0.5612893104553223  seconds to load page
+2021-02-07 15:39:37 -0700	-->Clicking Customer Notes 
+2021-02-07 15:39:38 -0700	1.7499980926513672  seconds to load page
+2021-02-07 15:39:39 -0700	-->Clicking Administrators 
+2021-02-07 15:39:40 -0700	1.0766551494598389  seconds to load page
+2021-02-07 15:39:43 -0700	-->Clicking Search for Admins 
+2021-02-07 15:39:45 -0700	1.592878818511963  seconds to load page
+2021-02-07 15:39:48 -0700	-->Clicking Create Admin Profile 
+2021-02-07 15:39:50 -0700	1.6722722053527832  seconds to load page
+2021-02-07 15:39:53 -0700	-->Clicking Access Control 
+2021-02-07 15:39:54 -0700	1.3847641944885254  seconds to load page
+2021-02-07 15:39:57 -0700	-->Clicking on Edit/Create Membership Levels - 1
+
+2021-02-07 15:39:58 -0700	0.3718531131744385  seconds to load page
+2021-02-07 15:39:59 -0700	-->Clicking Drivers 
+2021-02-07 15:40:00 -0700	1.0576350688934326  seconds to load page
+2021-02-07 15:40:03 -0700	-->Clicking Search for Drivers 
+2021-02-07 15:40:04 -0700	1.554856777191162  seconds to load page
+2021-02-07 15:40:07 -0700	-->Clicking Create Driver Profile 
+2021-02-07 15:40:09 -0700	1.4472029209136963  seconds to load page
+2021-02-07 15:40:12 -0700	-->Clicking on Edit/Create Membership Levels - 2
+
+2021-02-07 15:40:12 -0700	0.3700242042541504  seconds to load page
+2021-02-07 15:40:13 -0700	-->Clicking Suppliers 
+2021-02-07 15:40:14 -0700	1.0625412464141846  seconds to load page
+2021-02-07 15:40:17 -0700	-->Clicking Search for Suppliers 
+2021-02-07 15:40:19 -0700	2.0616579055786133  seconds to load page
+2021-02-07 15:40:22 -0700	-->Clicking Create Supplier Profile 
+2021-02-07 15:40:24 -0700	1.557600975036621  seconds to load page
+2021-02-07 15:40:25 -0700	-->Clicking Edit/Search Products 
+2021-02-07 15:40:28 -0700	2.586994171142578  seconds to load page
+2021-02-07 15:40:29 -0700	-->Clicking Add New Product 
+2021-02-07 15:40:31 -0700	2.085793972015381  seconds to load page
+2021-02-07 15:40:32 -0700	-->Clicking Import products 
+2021-02-07 15:40:34 -0700	2.0951731204986572  seconds to load page
+2021-02-07 15:40:35 -0700	-->Clicking Export products 
+2021-02-07 15:40:36 -0700	1.3488621711730957  seconds to load page
+2021-02-07 15:40:37 -0700	-->Clicking Product Categories 
+2021-02-07 15:40:39 -0700	1.493044137954712  seconds to load page
+2021-02-07 15:40:40 -0700	-->Clicking Extra fields 
+2021-02-07 15:40:41 -0700	1.4772191047668457  seconds to load page
+2021-02-07 15:40:42 -0700	-->Clicking Warehouse Locations 
+2021-02-07 15:40:43 -0700	1.3507099151611328  seconds to load page
+2021-02-07 15:40:45 -0700	-->Clicking Localness Icons 
+2021-02-07 15:40:46 -0700	1.4198338985443115  seconds to load page
+2021-02-07 15:40:47 -0700	-->Clicking Change/Assign Routes 
+2021-02-07 15:40:48 -0700	1.4867160320281982  seconds to load page
+2021-02-07 15:40:49 -0700	-->Clicking Create/Edit Routes 
+2021-02-07 15:40:53 -0700	3.913918972015381  seconds to load page
+2021-02-07 15:40:54 -0700	-->Clicking GPS Import/Export 
+2021-02-07 15:40:56 -0700	1.4145832061767578  seconds to load page
+2021-02-07 15:40:57 -0700	-->Clicking Organize Route Stops 
+2021-02-07 15:40:58 -0700	1.5067689418792725  seconds to load page
+2021-02-07 15:40:59 -0700	-->Clicking Pickup Locations 
+2021-02-07 15:41:03 -0700	3.2661750316619873  seconds to load page
+2021-02-07 15:41:04 -0700	-->Clicking Organize Pickup Locations 
+2021-02-07 15:41:05 -0700	1.3860831260681152  seconds to load page
+2021-02-07 15:41:06 -0700	-->Clicking Manage KML File 
+2021-02-07 15:41:08 -0700	1.5086910724639893  seconds to load page
+2021-02-07 15:41:09 -0700	-->Clicking Display Route/KML Issues 
+2021-02-07 15:41:10 -0700	1.3736839294433594  seconds to load page
+2021-02-07 15:41:11 -0700	-->Clicking Organize Load Sheet 
+2021-02-07 15:41:12 -0700	1.4489479064941406  seconds to load page
+2021-02-07 15:41:12 -0700	-->Clicking Ok button 
+2021-02-07 15:41:14 -0700	-->Clicking Print Route Sheets 
+2021-02-07 15:41:17 -0700	2.718050956726074  seconds to load page
+2021-02-07 15:41:18 -0700	-->Clicking Print Bag Labels 
+2021-02-07 15:41:20 -0700	1.548691987991333  seconds to load page
+2021-02-07 15:41:21 -0700	-->Clicking Show Invalid Addresses 
+2021-02-07 16:01:51 -0700	2 Failed find element for xpath and //span[text()="Show Invalid Addresses"]
+2021-02-07 16:01:51 -0700	1230.3512048721313  seconds to load page
+2021-02-07 16:01:52 -0700	-->Clicking Billing 
+2021-02-07 16:01:53 -0700	1.0829298496246338  seconds to load page
+2021-02-07 16:01:56 -0700	-->Clicking Paper/Email Billing 
+2021-02-07 16:01:58 -0700	1.681514024734497  seconds to load page
+2021-02-07 16:02:01 -0700	-->Clicking Electronic Billing 
+2021-02-07 16:02:03 -0700	1.5710959434509277  seconds to load page
+2021-02-07 16:02:04 -0700	-->Clicking Mass Update Payments 
+2021-02-07 16:02:05 -0700	1.4587502479553223  seconds to load page
+2021-02-07 16:02:06 -0700	-->Clicking Mass Deposit Returns/Charges 
+2021-02-07 16:02:07 -0700	1.3781788349151611  seconds to load page
+2021-02-07 16:02:08 -0700	-->Clicking Global Invoice Notes 
+2021-02-07 16:02:10 -0700	1.485410213470459  seconds to load page
+2021-02-07 16:02:11 -0700	-->Clicking View GC Purchase Log 
+2021-02-07 16:02:12 -0700	1.3783512115478516  seconds to load page
+2021-02-07 16:02:13 -0700	-->Clicking Sales Reporting 
+2021-02-07 16:02:14 -0700	1.0702238082885742  seconds to load page
+2021-02-07 16:02:19 -0700	-->Clicking on Top Customers - 1
+
+2021-02-07 16:02:21 -0700	1.4821281433105469  seconds to load page
+2021-02-07 16:02:24 -0700	-->Clicking Countdown Sales Report 
+2021-02-07 16:02:26 -0700	1.4765830039978027  seconds to load page
+2021-02-07 16:02:29 -0700	-->Clicking Cross-Selling Report 
+2021-02-07 16:02:30 -0700	1.4359478950500488  seconds to load page
+2021-02-07 16:02:33 -0700	-->Clicking Discount Coupon Report 
+2021-02-07 16:02:34 -0700	1.372450828552246  seconds to load page
+2021-02-07 16:02:35 -0700	-->Clicking Manage Cross-Selling 
+2021-02-07 16:02:37 -0700	1.3730881214141846  seconds to load page
+2021-02-07 16:02:40 -0700	-->Clicking Ordered Products Reports 
+2021-02-07 16:02:42 -0700	1.742542028427124  seconds to load page
+2021-02-07 16:02:45 -0700	-->Clicking Overall Sales 
+2021-02-07 16:02:46 -0700	1.8056879043579102  seconds to load page
+2021-02-07 16:02:49 -0700	-->Clicking Sales By Route 
+2021-02-07 16:02:51 -0700	1.6926860809326172  seconds to load page
+2021-02-07 16:02:52 -0700	-->Clicking Financials Reporting 
+2021-02-07 16:02:53 -0700	1.0676121711730957  seconds to load page
+2021-02-07 16:02:56 -0700	-->Clicking Average Order Report 
+2021-02-07 16:02:58 -0700	1.3911616802215576  seconds to load page
+2021-02-07 16:03:01 -0700	-->Clicking Credits Report 
+2021-02-07 16:03:02 -0700	1.3879907131195068  seconds to load page
+2021-02-07 16:03:05 -0700	-->Clicking Effective Margin Report 
+2021-02-07 16:03:07 -0700	1.3515939712524414  seconds to load page
+2021-02-07 16:03:10 -0700	-->Clicking Financials Export 
+2021-02-07 16:03:11 -0700	1.3653759956359863  seconds to load page
+2021-02-07 16:03:14 -0700	-->Clicking on No Payment Customers - 0
+
+2021-02-07 16:03:24 -0700	9.929033041000366  seconds to load page
+2021-02-07 16:03:27 -0700	-->Clicking Payments On Review 
+2021-02-07 16:03:28 -0700	1.4209861755371094  seconds to load page
+2021-02-07 16:03:31 -0700	-->Clicking Payments Posted Report 
+2021-02-07 16:03:33 -0700	1.4455769062042236  seconds to load page
+2021-02-07 16:03:36 -0700	-->Clicking Profit Report 
+2021-02-07 16:03:38 -0700	1.6256489753723145  seconds to load page
+2021-02-07 16:03:41 -0700	-->Clicking Recent Payments Report 
+2021-02-07 16:03:42 -0700	1.3648300170898438  seconds to load page
+2021-02-07 16:03:45 -0700	-->Clicking Taxes Report 
+2021-02-07 16:03:47 -0700	1.5616412162780762  seconds to load page
+2021-02-07 16:03:48 -0700	-->Clicking Product Reporting 
+2021-02-07 16:03:49 -0700	1.0571808815002441  seconds to load page
+2021-02-07 16:03:52 -0700	-->Clicking Bagged Items Report 
+2021-02-07 16:03:53 -0700	1.641068935394287  seconds to load page
+2021-02-07 16:03:56 -0700	-->Clicking Customized Products 
+2021-02-07 16:03:58 -0700	1.422734022140503  seconds to load page
+2021-02-07 16:04:01 -0700	-->Clicking Forecast 
+2021-02-07 16:04:02 -0700	1.5230400562286377  seconds to load page
+2021-02-07 16:04:05 -0700	-->Clicking on Inventory - 0
+
+2021-02-07 16:04:14 -0700	9.046473979949951  seconds to load page
+2021-02-07 16:04:15 -0700	-->Clicking Product Reporting 
+2021-02-07 16:04:17 -0700	1.0948238372802734  seconds to load page
+2021-02-07 16:04:20 -0700	-->Clicking Load Sheet Report 
+2021-02-07 16:04:21 -0700	1.427685260772705  seconds to load page
+2021-02-07 16:04:24 -0700	-->Clicking Out Of Stock Report 
+2021-02-07 16:04:25 -0700	1.4155330657958984  seconds to load page
+2021-02-07 16:04:27 -0700	-->Clicking Customer Reporting 
+2021-02-07 16:04:28 -0700	1.0634479522705078  seconds to load page
+2021-02-07 16:04:33 -0700	-->Clicking on Top Customers - 1
+
+2021-02-07 16:04:33 -0700	0.3692011833190918  seconds to load page
+2021-02-07 16:04:34 -0700	-->Clicking Customer Reporting 
+2021-02-07 16:04:35 -0700	1.064234972000122  seconds to load page
+2021-02-07 16:04:38 -0700	-->Clicking Customer Count Report 
+2021-02-07 16:04:40 -0700	1.3703668117523193  seconds to load page
+2021-02-07 16:04:43 -0700	-->Clicking Deposit Report 
+2021-02-07 16:04:44 -0700	1.388362169265747  seconds to load page
+2021-02-07 16:04:47 -0700	-->Clicking Followup Report 
+2021-02-07 16:04:48 -0700	1.438399076461792  seconds to load page
+2021-02-07 16:04:51 -0700	-->Clicking Friend Referral Report 
+2021-02-07 16:04:53 -0700	1.402886152267456  seconds to load page
+2021-02-07 16:04:56 -0700	-->Clicking Minimum Order Report 
+2021-02-07 16:04:57 -0700	1.3908958435058594  seconds to load page
+2021-02-07 16:05:00 -0700	-->Clicking Negative Balances 
+2021-02-07 16:05:03 -0700	2.7870500087738037  seconds to load page
+2021-02-07 16:05:06 -0700	-->Clicking New Customers 
+2021-02-07 16:05:08 -0700	1.4336986541748047  seconds to load page
+2021-02-07 16:05:11 -0700	-->Clicking No Order Customers Report 
+2021-02-07 16:05:12 -0700	1.4799611568450928  seconds to load page
+2021-02-07 16:05:15 -0700	-->Clicking on No Payment Customers - 1
+
+2021-02-07 16:05:25 -0700	10.178401947021484  seconds to load page
+2021-02-07 16:05:26 -0700	-->Clicking Customer Reporting 
+2021-02-07 16:05:28 -0700	1.069504976272583  seconds to load page
+2021-02-07 16:05:31 -0700	-->Clicking On Hold Report 
+2021-02-07 16:05:32 -0700	1.5005218982696533  seconds to load page
+2021-02-07 16:05:35 -0700	-->Clicking on Past Due Customers - 1
+
+2021-02-07 16:05:36 -0700	0.37855005264282227  seconds to load page
+2021-02-07 16:05:37 -0700	-->Clicking Customer Reporting 
+2021-02-07 16:05:38 -0700	1.0603489875793457  seconds to load page
+2021-02-07 16:05:41 -0700	-->Clicking Recurring Order Report 
+2021-02-07 16:05:42 -0700	1.3944580554962158  seconds to load page
+2021-02-07 16:05:45 -0700	-->Clicking Retention Report 
+2021-02-07 16:05:46 -0700	1.3814568519592285  seconds to load page
+2021-02-07 16:05:50 -0700	-->Clicking Show Inactive Customers 
+2021-02-07 16:05:51 -0700	1.3647592067718506  seconds to load page
+2021-02-07 16:05:54 -0700	-->Clicking Total Customers Report 
+2021-02-07 16:05:55 -0700	1.3695001602172852  seconds to load page
+2021-02-07 16:05:58 -0700	-->Clicking Vacation Report 
+2021-02-07 16:06:00 -0700	1.3623008728027344  seconds to load page
+2021-02-07 16:06:01 -0700	-->Clicking Misc. Reporting 
+2021-02-07 16:06:02 -0700	1.0599570274353027  seconds to load page
+2021-02-07 16:06:05 -0700	-->Clicking Birthday Report 
+2021-02-07 16:06:06 -0700	1.3721768856048584  seconds to load page
+2021-02-07 16:06:09 -0700	-->Clicking Contact Us Report 
+2021-02-07 16:06:11 -0700	1.4190189838409424  seconds to load page
+2021-02-07 16:06:14 -0700	-->Clicking Coupon Usage 
+2021-02-07 16:06:15 -0700	1.4083662033081055  seconds to load page
+2021-02-07 16:06:18 -0700	-->Clicking Missing Orders 
+2021-02-07 16:06:20 -0700	1.4424350261688232  seconds to load page
+2021-02-07 16:06:21 -0700	-->Clicking Coupons 
+2021-02-07 16:06:22 -0700	1.3510541915893555  seconds to load page
+2021-02-07 16:06:23 -0700	-->Clicking Coupon Events 
+2021-02-07 16:06:24 -0700	1.392982006072998  seconds to load page
+2021-02-07 16:06:25 -0700	-->Clicking Countdown Products 
+2021-02-07 16:06:27 -0700	1.3535799980163574  seconds to load page
+2021-02-07 16:06:28 -0700	-->Clicking Global Discounts 
+2021-02-07 16:06:29 -0700	1.4741191864013672  seconds to load page
+2021-02-07 16:06:30 -0700	-->Clicking Featured Products 
+2021-02-07 16:06:32 -0700	1.7863538265228271  seconds to load page
+2021-02-07 16:06:33 -0700	-->Clicking Sale Items 
+2021-02-07 16:06:35 -0700	1.5685651302337646  seconds to load page
+2021-02-07 16:06:36 -0700	-->Clicking Manage Cross-Selling 
+2021-02-07 16:06:37 -0700	1.3559160232543945  seconds to load page
+2021-02-07 16:06:38 -0700	-->Clicking First Time Order Specials 
+2021-02-07 16:06:39 -0700	1.4402439594268799  seconds to load page
+2021-02-07 16:06:40 -0700	-->Clicking Search Orders 
+2021-02-07 16:06:42 -0700	1.5187609195709229  seconds to load page
+2021-02-07 16:06:47 -0700	-->Clicking on Today's Orders 
+
+2021-02-07 16:06:47 -0700	-->Clicking  //p[text()="Today's Orders"] of type xpath
+2021-02-07 16:06:49 -0700	1.5244419574737549  seconds to load page
+2021-02-07 16:06:50 -0700	-->Clicking This Week's Orders 
+2021-02-07 16:06:52 -0700	1.9415390491485596  seconds to load page
+2021-02-07 16:06:53 -0700	-->Clicking Next Week's Orders 
+2021-02-07 16:06:55 -0700	1.9548938274383545  seconds to load page
+2021-02-07 16:06:56 -0700	-->Clicking Create Purchase Order 
+2021-02-07 16:06:58 -0700	2.097053050994873  seconds to load page
+2021-02-07 16:06:59 -0700	-->Clicking View Purchase Orders 
+2021-02-07 16:07:00 -0700	1.0685391426086426  seconds to load page
+2021-02-07 16:07:01 -0700	-->Clicking Autoresponders 
+2021-02-07 16:07:02 -0700	1.6231920719146729  seconds to load page
+2021-02-07 16:07:03 -0700	-->Clicking General News List 
+2021-02-07 16:07:05 -0700	1.5505390167236328  seconds to load page
+2021-02-07 16:07:06 -0700	-->Clicking Unsubscribers 
+2021-02-07 16:07:08 -0700	1.6056060791015625  seconds to load page
+2021-02-07 16:07:09 -0700	-->Clicking Manage Files 
+2021-02-07 16:07:10 -0700	1.7170679569244385  seconds to load page
+2021-02-07 16:07:11 -0700	-->Clicking 301 Redirects 
+2021-02-07 16:07:13 -0700	1.5007719993591309  seconds to load page
+2021-02-07 16:07:14 -0700	-->Clicking Company Settings 
+2021-02-07 16:07:16 -0700	2.3651809692382812  seconds to load page
+2021-02-07 16:07:17 -0700	-->Clicking States/Counties 
+2021-02-07 16:07:19 -0700	1.5423920154571533  seconds to load page
+2021-02-07 16:07:20 -0700	-->Clicking Taxes 
+2021-02-07 16:07:21 -0700	1.0678908824920654  seconds to load page
+2021-02-07 16:07:24 -0700	-->Clicking Taxing Zones 
+2021-02-07 16:07:26 -0700	2.486860990524292  seconds to load page
+2021-02-07 16:07:29 -0700	-->Clicking Taxing System 
+2021-02-07 16:07:31 -0700	1.4057343006134033  seconds to load page
+2021-02-07 16:07:32 -0700	-->Clicking Minimum Orders Settings 
+2021-02-07 16:07:34 -0700	1.8882839679718018  seconds to load page
+2021-02-07 16:07:35 -0700	-->Clicking Zip Codes 
+2021-02-07 16:07:36 -0700	1.3947551250457764  seconds to load page
+2021-02-07 16:07:37 -0700	-->Clicking Fees 
+2021-02-07 16:07:38 -0700	1.0653150081634521  seconds to load page
+2021-02-07 16:07:41 -0700	-->Clicking Delivery Charges 
+2021-02-07 16:07:43 -0700	1.4428329467773438  seconds to load page
+2021-02-07 16:07:46 -0700	-->Clicking Deposit Charges 
+2021-02-07 16:07:47 -0700	1.5478639602661133  seconds to load page
+2021-02-07 16:07:50 -0700	-->Clicking Registration Fees 
+2021-02-07 16:07:52 -0700	1.4101507663726807  seconds to load page
+2021-02-07 16:07:53 -0700	-->Clicking Settings 
+2021-02-07 16:07:54 -0700	1.0698118209838867  seconds to load page
+2021-02-07 16:07:57 -0700	-->Clicking Store Locations 
+2021-02-07 16:07:58 -0700	1.5596199035644531  seconds to load page
+2021-02-07 16:08:02 -0700	-->Clicking DBP Settings 
+2021-02-07 16:08:03 -0700	1.6593551635742188  seconds to load page
+2021-02-07 16:08:06 -0700	-->Clicking DBP Billing 
+2021-02-07 16:08:09 -0700	2.891111135482788  seconds to load page
+2021-02-07 16:08:12 -0700	-->Clicking Countries 
+2021-02-07 16:08:14 -0700	1.4135150909423828  seconds to load page
+2021-02-07 16:08:17 -0700	-->Clicking States 
+2021-02-07 16:08:18 -0700	1.4926362037658691  seconds to load page
+2021-02-07 16:08:19 -0700	-->Clicking Settings 
+2021-02-07 16:08:20 -0700	1.0656790733337402  seconds to load page
+2021-02-07 16:08:23 -0700	-->Clicking Export/Import Cities 
+2021-02-07 16:08:25 -0700	1.4155151844024658  seconds to load page
+2021-02-07 16:08:28 -0700	-->Clicking Summary 
+2021-02-07 16:08:29 -0700	1.424530029296875  seconds to load page
+2021-02-07 16:08:32 -0700	-->Clicking Credit card types 
+2021-02-07 16:08:34 -0700	1.3876783847808838  seconds to load page
+2021-02-07 16:08:37 -0700	-->Clicking Languages 
+2021-02-07 16:08:38 -0700	1.4955780506134033  seconds to load page
+2021-02-07 16:08:41 -0700	-->Clicking Modules 
+2021-02-07 16:08:44 -0700	2.5077738761901855  seconds to load page
+2021-02-07 16:08:47 -0700	-->Clicking Payment Methods 
+2021-02-07 16:08:49 -0700	1.7137658596038818  seconds to load page
+2021-02-07 16:08:52 -0700	-->Clicking Clear templates cache 
+2021-02-07 16:08:53 -0700	1.8901612758636475  seconds to load page
+2021-02-07 16:08:54 -0700	-->Clicking System Logs 
+2021-02-07 16:08:56 -0700	1.06834077835083  seconds to load page
+2021-02-07 16:08:59 -0700	-->Clicking DBP Overview 
+2021-02-07 16:09:00 -0700	1.4328129291534424  seconds to load page
+2021-02-07 16:09:03 -0700	-->Clicking on Inventory - 1
+
+2021-02-07 16:09:03 -0700	0.3865799903869629  seconds to load page
+2021-02-07 16:09:06 -0700	-->Clicking Tasks 
+2021-02-07 16:09:08 -0700	1.5468449592590332  seconds to load page
+2021-02-07 16:09:11 -0700	-->Clicking Periodic tasks 
+2021-02-07 16:09:15 -0700	3.969778299331665  seconds to load page
+2021-02-07 16:09:16 -0700	V______Teardown section_________V
+2021-02-07 16:09:16 -0700	Current URL = https://shop.4pfoods.com/admin/periodicTasks
+2021-02-07 16:09:17 -0700	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/2_7_2021\\Final__FindLinksOnPage_DBPresults2_7_2021_15_38.txt_0.png 
+2021-02-07 16:09:22 -0700	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-02-07 16:09:22 -0700	<font color ="green">FindLinksOnPage_DBP.rb test passed</font>

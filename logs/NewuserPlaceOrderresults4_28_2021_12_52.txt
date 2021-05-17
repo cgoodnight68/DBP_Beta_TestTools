@@ -1,0 +1,52 @@
+2021-04-28 12:52:58 -0600	/Users/cgoodnight/Documents/Automation/logs/NewuserPlaceOrderresults4_28_2021_12_52.txt opened
+2021-04-28 12:52:58 -0600	Using the environment_variables.txt values
+2021-04-28 12:53:00 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-28 12:53:00 -0600	
+
+Started test NewuserPlaceOrder.rb at 4_28_2021_12_52
+2021-04-28 12:53:00 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36
+2021-04-28 12:53:00 -0600	OS = x86_64-darwin18
+2021-04-28 12:53:01 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-04-28 12:53:01 -0600	-->Entering '4_28_2021_Default_Cust@mailinator.com' into Username
+2021-04-28 12:53:04 -0600	-->Entering 'getswift' into Password
+2021-04-28 12:53:06 -0600	-->Clicking Login Button 
+2021-04-28 12:53:09 -0600	-->Clicking on product number 1390  Description: <br><font color ="blue"> Dustin Pre-Order
+$5.00 </font>
+2021-04-28 12:53:14 -0600	-->Clicking Clicking the Frequency of Next Week 
+2021-04-28 12:53:15 -0600	-->Clicking Add to Delivery Button for product no. 1390 
+2021-04-28 12:53:16 -0600	Delivery options <br><font color ="blue">Delivering To: 4373 Lyric Falls Drive Loveland, Other 80538 Change?
+DELIVERY ON:
+Sunday
+May 2
+City of Loveland
+Tuesday
+May 4
+Hanna's Route</font>
+2021-04-28 12:53:21 -0600	-->Clicking OK button for add to cart confirmation 
+2021-04-28 12:53:23 -0600	-->Clicking on product number 1235  Description: <br><font color ="blue"> DBP TEST1
+Apple
+$11.00 per kg </font>
+2021-04-28 12:53:29 -0600	-->Clicking Clicking the Frequency of Weekly 
+2021-04-28 12:53:30 -0600	-->Clicking Add to Delivery Button for product no. 1235 
+2021-04-28 12:53:31 -0600	Delivery options <br><font color ="blue">Delivering To: 4373 Lyric Falls Drive Loveland, Other 80538 Change?
+START DELIVERY ON:
+Sunday
+May 2
+City of Loveland
+Tuesday
+May 4
+Hanna's Route
+Sunday
+May 9
+City of Loveland
+Tuesday
+May 11
+Hanna's Route
+Sunday
+May 16</font>
+2021-04-28 12:53:36 -0600	-->Clicking OK button for add to cart confirmation 
+2021-04-28 12:53:37 -0600	V______Teardown section_________V
+2021-04-28 12:53:37 -0600	Current URL = https://integration.deliverybizpro.com/summary.php?go=products&12
+2021-04-28 12:53:38 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_28_2021\\Final__NewuserPlaceOrderresults4_28_2021_12_52.txt_0.png 
+2021-04-28 12:53:43 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-28 12:53:43 -0600	<font color ="green">NewuserPlaceOrder.rb test passed</font>

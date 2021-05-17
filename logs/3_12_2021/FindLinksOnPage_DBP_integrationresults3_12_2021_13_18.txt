@@ -1,0 +1,18 @@
+2021-03-12 13:18:13 -0700	/Users/cgoodnight/Documents/Automation/logs/FindLinksOnPage_DBP_integrationresults3_12_2021_13_18.txt opened
+2021-03-12 13:18:13 -0700	
+Enter the baseurl of the environment do you want to test? 
+2021-03-12 13:18:17 -0700	What browser do you want to test in (chrome, firefox)
+2021-03-12 13:18:22 -0700	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-03-12 13:18:23 -0700	
+
+Started test FindLinksOnPage_DBP_integration.rb at 3_12_2021_13_18
+2021-03-12 13:18:23 -0700	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36
+2021-03-12 13:18:23 -0700	OS = x86_64-darwin18
+2021-03-12 13:18:23 -0700	Branch = 
+2021-03-12 13:18:23 -0700	Branch InstallDate = 
+2021-03-12 13:18:24 -0700	Current URL = https://integration.deliverybizpro.com/admin/login
+2021-03-12 13:38:47 -0700	V______Teardown section_________V
+2021-03-12 13:38:47 -0700	Current URL = https://integration.deliverybizpro.com/admin/login
+2021-03-12 13:38:49 -0700	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/3_12_2021\\Final__FindLinksOnPage_DBP_integrationresults3_12_2021_13_18.txt_0.png 
+2021-03-12 13:38:54 -0700	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-03-12 13:38:54 -0700	<font color ="green">FindLinksOnPage_DBP_integration.rb test passed</font>

@@ -1,0 +1,49 @@
+2021-04-29 09:29:04 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults4_29_2021_9_29.txt opened
+2021-04-29 09:29:04 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-29 09:29:13 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-29 09:29:19 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-29 09:29:22 -0600	You selected GOODFOOD2U.CLIENT-STAGING.DELIVERYBIZPRO.COM with browser=Google Chrome
+2021-04-29 09:29:22 -0600	
+
+Started test CreateDefaultCustomerForDay.rb at 4_29_2021_9_29
+2021-04-29 09:29:22 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+2021-04-29 09:29:22 -0600	OS = x86_64-darwin18
+2021-04-29 09:29:24 -0600	Current URL = https://goodfood2u.client-staging.deliverybizpro.com/admin/login
+2021-04-29 09:29:24 -0600	-->Entering 'master' into Sign Username
+2021-04-29 09:29:27 -0600	-->Entering '6a4GhvF3k@XwYMLCXFbad@v3' into Password
+2021-04-29 09:29:29 -0600	-->Clicking Agree to terms 
+2021-04-29 09:29:30 -0600	-->Clicking Sign in Button 
+2021-04-29 09:29:33 -0600	-->Clicking Customers 
+2021-04-29 09:29:34 -0600	-->Clicking Create Customer Profile 
+2021-04-29 09:29:42 -0600	-->Entering '4_29_2021_Default' into First Name
+2021-04-29 09:29:44 -0600	-->Entering 'Cust' into Last Name
+2021-04-29 09:29:46 -0600	-->Entering '4_29_2021_Default_Cust@mailinator.com' into Email
+2021-04-29 09:29:49 -0600	-->Entering '4_29_2021_Default_Cust@mailinator.com' into Confirm Email
+2021-04-29 09:29:56 -0600	//label[contains(text(),'Phone Provider')]/../span/span/span/span[@class='select2-selection__arrow'] of type xpath is not displayed - 
+2021-04-29 09:29:56 -0600	-->Entering '1586 Lisbon Street' into Delivery Address
+2021-04-29 09:29:58 -0600	-->Entering 'Ottawa' into Delivery City
+2021-04-29 09:30:01 -0600	-->Entering 'K4A 4C3' into Delivery Zipcode
+2021-04-29 09:30:03 -0600	-->Clicking Billing Address is the same checkbox 
+2021-04-29 09:30:04 -0600	-->Entering '6122326519' into Phone
+2021-04-29 09:30:06 -0600	--> Element Credit Card Detail Modal Button //input[@id='btn-enter-cc-details'] of type xpath exists
+2021-04-29 09:30:06 -0600	-->Clicking Credit Card Detail Modal Button 
+2021-04-29 09:30:07 -0600	switching to frame class: name:
+2021-04-29 09:46:04 -0600	switching to frame class: name: id:monerisFrame
+2021-04-29 09:46:45 -0600	-->Entering '4111111111111111' into Moneris card number
+2021-04-29 09:50:15 -0600	-->Entering '4111111111111111' into Moneris card number
+2021-04-29 09:52:02 -0600	-->Entering '4111111111111111' into Moneris card number
+2021-04-29 09:56:00 -0600	-->Entering '0826' into Moneris card exipration
+2021-04-29 09:56:10 -0600	-->Entering '123' into Monaris card CVC
+2021-04-29 09:56:21 -0600	-->Clicking Monaris Save Card 
+2021-04-29 09:57:38 -0600	-->Clicking Monaris Save Card 
+2021-04-29 09:57:55 -0600	-->Clicking Monaris Save Card 
+2021-04-29 09:58:46 -0600	V______Teardown section_________V
+2021-04-29 09:58:46 -0600	Current URL = https://goodfood2u.client-staging.deliverybizpro.com/admin/user_add.php?usertype=C
+2021-04-29 09:58:46 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_29_2021\\Final__CreateDefaultCustomerForDayresults4_29_2021_9_29.txt_0.png 
+2021-04-29 09:58:51 -0600	___________________________________________________________
+2021-04-29 09:58:51 -0600	<font color ="red">Test case failed with the following errors.</font>
+2021-04-29 09:58:51 -0600	<font color ="red">failure 0 </font> -> --> Element  //label[contains(text(),'Phone Provider')]/../span/span/span/span[@class='select2-selection__arrow'] of type xpath was not displayed -> Failed snapshot at /Users/cgoodnight/Documents/Automation/logs/4_29_2021\\CreateDefaultCustomerForDayresults4_29_2021_9_29.txt_0.png  </font>
+2021-04-29 09:58:51 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-29 09:58:51 -0600	<font color ="red">CreateDefaultCustomerForDay.rb failed </font>

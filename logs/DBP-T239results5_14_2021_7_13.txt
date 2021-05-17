@@ -1,0 +1,28 @@
+2021-05-14 07:13:03 -0600	/Users/cgoodnight/Documents/Automation/logs/DBP-T239results5_14_2021_7_13.txt opened
+2021-05-14 07:13:03 -0600	Using the environment_variables.txt values
+2021-05-14 07:13:04 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-14 07:13:04 -0600	
+
+Started test DBP-T239.rb at 5_14_2021_7_13
+2021-05-14 07:13:04 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+2021-05-14 07:13:04 -0600	OS = x86_64-darwin18
+2021-05-14 07:13:05 -0600	Current URL = https://integration.deliverybizpro.com/admin/login
+2021-05-14 07:13:05 -0600	-->Entering 'master' into Sign Username
+2021-05-14 07:13:08 -0600	-->Clicking Agree to terms 
+2021-05-14 07:13:09 -0600	-->Clicking Sign in Button 
+2021-05-14 07:13:11 -0600	-->Clicking Customers 
+2021-05-14 07:13:12 -0600	-->Clicking Search for Customers 
+2021-05-14 07:13:14 -0600	-->Entering '5_14_2021_Default_Cust@mailinator.com' into Search for Customer: 5_14_2021_Default_Cust@mailinator.com
+2021-05-14 07:13:16 -0600	-->Clicking Search Button 
+2021-05-14 07:13:17 -0600	-->Clicking Clicking on 5_14_2021_Default_Cust@mailinator.com 
+2021-05-14 07:14:17 -0600	2 Failed find element for xpath and //p[contains(text(),'5_14_2021_Default_Cust@mailinator.com')]/a
+2021-05-14 07:15:17 -0600	URL is https://integration.deliverybizpro.com/admin/users.php?mode=search&usertype=C
+2021-05-14 07:15:17 -0600	 <font color="red">______FAILURE!!! Previous line failed-Continuing on__________</font>
+2021-05-14 07:15:17 -0600	V______Teardown section_________V
+2021-05-14 07:15:17 -0600	Current URL = https://integration.deliverybizpro.com/admin/users.php?mode=search&usertype=C
+2021-05-14 07:15:18 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_14_2021\\Final__DBP-T239results5_14_2021_7_13.txt_0.png 
+2021-05-14 07:15:23 -0600	___________________________________________________________
+2021-05-14 07:15:23 -0600	<font color ="red">Test case failed with the following errors.</font>
+2021-05-14 07:15:23 -0600	<font color ="red">failure 0 </font> -> Not on customer 5_14_2021_Default_Cust@mailinator.com customer page </font>
+2021-05-14 07:15:23 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-14 07:15:23 -0600	<font color ="red">DBP-T239.rb failed </font>

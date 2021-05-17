@@ -1,0 +1,3 @@
+2021-02-09 09:52:51 -0700	/Users/cgoodnight/Documents/Automation/logs/FindLinksOnPage_DBPresults2_9_2021_9_52.txt opened
+2021-02-09 09:52:51 -0700	
+What environment do you want to test? (DEV,QA,STAGING,DEVINT,QA2,STAGING2)

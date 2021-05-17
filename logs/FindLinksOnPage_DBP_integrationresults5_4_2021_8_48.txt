@@ -1,0 +1,373 @@
+2021-05-04 08:48:28 -0600	/Users/cgoodnight/Documents/Automation/logs/FindLinksOnPage_DBP_integrationresults5_4_2021_8_48.txt opened
+2021-05-04 08:48:28 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-05-04 08:48:30 -0600	
+Enter the database name for the environment.  Default is integration
+2021-05-04 08:48:31 -0600	V______Teardown section_________V
+2021-05-04 08:48:33 -0600	/Users/cgoodnight/Documents/Automation/logs/FindLinksOnPage_DBP_integrationresults5_4_2021_8_48.txt opened
+2021-05-04 08:48:33 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-05-04 08:48:49 -0600	
+Enter the database name for the environment.  Default is integration
+2021-05-04 08:48:56 -0600	What browser do you want to test in (chrome, firefox)
+2021-05-04 08:48:59 -0600	You selected yellowbird.client-staging.deliverybizpro.com with browser=Google Chrome
+2021-05-04 08:48:59 -0600	
+
+Started test FindLinksOnPage_DBP_integration.rb at 5_4_2021_8_48
+2021-05-04 08:48:59 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+2021-05-04 08:48:59 -0600	OS = x86_64-darwin18
+2021-05-04 08:49:02 -0600	Current URL = https://yellowbird.client-staging.deliverybizpro.com/admin/login
+2021-05-04 08:49:03 -0600	Current URL = https://yellowbird.client-staging.deliverybizpro.com/admin/login
+2021-05-04 08:49:03 -0600	-->Entering 'master' into Sign Username
+2021-05-04 08:49:05 -0600	-->Clicking Agree to terms 
+2021-05-04 08:49:06 -0600	-->Clicking Sign in Button 
+2021-05-04 08:49:09 -0600	-->Clicking Dashboard 
+2021-05-04 08:49:11 -0600	1.8989348411560059  seconds to load page
+2021-05-04 08:49:16 -0600	-->Clicking Full Price Store 
+2021-05-04 08:49:18 -0600	Net Read failure to find xpath and //span[text()="Full Price Store"] count 0
+2021-05-04 08:49:20 -0600	-->Clicking Full Price Store 
+2021-05-04 08:49:22 -0600	Net Read failure to find xpath and //a[text()="Full Price Store"] count 0
+2021-05-04 08:49:24 -0600	-->Clicking Low Cost Store 
+2021-05-04 08:49:26 -0600	Net Read failure to find xpath and //a[text()="Low Cost Store"] count 0
+2021-05-04 08:49:28 -0600	-->Clicking Customers 
+2021-05-04 08:49:29 -0600	1.0624220371246338  seconds to load page
+2021-05-04 08:49:34 -0600	-->Clicking Search for Customers 
+2021-05-04 08:49:36 -0600	2.0967719554901123  seconds to load page
+2021-05-04 08:49:42 -0600	-->Clicking Create Customer Profile 
+2021-05-04 08:49:45 -0600	3.2224771976470947  seconds to load page
+2021-05-04 08:49:50 -0600	-->Clicking Import Customers 
+2021-05-04 08:49:53 -0600	3.1449782848358154  seconds to load page
+2021-05-04 08:49:58 -0600	-->Clicking Export Customers 
+2021-05-04 08:50:01 -0600	2.618671178817749  seconds to load page
+2021-05-04 08:50:06 -0600	-->Clicking Export Customer Emails 
+2021-05-04 08:50:08 -0600	1.3559198379516602  seconds to load page
+2021-05-04 08:50:13 -0600	-->Clicking Edit/Create Membership Levels 
+2021-05-04 08:50:15 -0600	1.7294979095458984  seconds to load page
+2021-05-04 08:50:20 -0600	-->Clicking Customer Notes 
+2021-05-04 08:50:22 -0600	1.561034917831421  seconds to load page
+2021-05-04 08:50:27 -0600	-->Clicking Administrators 
+2021-05-04 08:50:28 -0600	1.0643362998962402  seconds to load page
+2021-05-04 08:50:33 -0600	-->Clicking Search for Admins 
+2021-05-04 08:50:35 -0600	1.5017948150634766  seconds to load page
+2021-05-04 08:50:40 -0600	-->Clicking Create Admin Profile 
+2021-05-04 08:50:41 -0600	1.5123538970947266  seconds to load page
+2021-05-04 08:50:47 -0600	-->Clicking Access Control 
+2021-05-04 08:50:48 -0600	1.370206356048584  seconds to load page
+2021-05-04 08:50:53 -0600	-->Clicking Edit/Create Membership Levels 
+2021-05-04 08:50:55 -0600	1.3560600280761719  seconds to load page
+2021-05-04 08:51:00 -0600	-->Clicking Sales 
+2021-05-04 08:51:02 -0600	Net Read failure to find xpath and //span[text()="Sales"] count 0
+2021-05-04 08:51:04 -0600	-->Clicking Search for Sales 
+2021-05-04 08:51:06 -0600	Net Read failure to find xpath and //a[text()="Search for Sales"] count 0
+2021-05-04 08:51:08 -0600	-->Clicking Create Sales Profile 
+2021-05-04 08:51:10 -0600	Net Read failure to find xpath and //a[text()="Create Sales Profile"] count 0
+2021-05-04 08:51:12 -0600	-->Clicking Overview 
+2021-05-04 08:51:14 -0600	Net Read failure to find xpath and //a[text()="Overview"] count 0
+2021-05-04 08:51:16 -0600	-->Clicking Report 
+2021-05-04 08:51:18 -0600	Net Read failure to find xpath and //a[text()="Report"] count 0
+2021-05-04 08:51:20 -0600	-->Clicking Drivers 
+2021-05-04 08:51:21 -0600	1.0575861930847168  seconds to load page
+2021-05-04 08:51:26 -0600	-->Clicking Search for Drivers 
+2021-05-04 08:51:28 -0600	1.432910680770874  seconds to load page
+2021-05-04 08:51:33 -0600	-->Clicking Create Driver Profile 
+2021-05-04 08:51:34 -0600	1.400824785232544  seconds to load page
+2021-05-04 08:51:40 -0600	-->Clicking Edit/Create Membership Levels 
+2021-05-04 08:51:41 -0600	1.371034860610962  seconds to load page
+2021-05-04 08:51:46 -0600	-->Clicking Suppliers 
+2021-05-04 08:51:47 -0600	1.0493831634521484  seconds to load page
+2021-05-04 08:51:53 -0600	-->Clicking Search for Suppliers 
+2021-05-04 08:51:54 -0600	1.7715868949890137  seconds to load page
+2021-05-04 08:52:00 -0600	-->Clicking Create Supplier Profile 
+2021-05-04 08:52:01 -0600	1.6577868461608887  seconds to load page
+2021-05-04 08:52:07 -0600	-->Clicking Edit/Search Products 
+2021-05-04 08:52:09 -0600	2.797044038772583  seconds to load page
+2021-05-04 08:52:15 -0600	-->Clicking Add New Product 
+2021-05-04 08:52:18 -0600	3.4756271839141846  seconds to load page
+2021-05-04 08:52:23 -0600	-->Clicking Import products 
+2021-05-04 08:52:26 -0600	2.4842801094055176  seconds to load page
+2021-05-04 08:52:31 -0600	-->Clicking Export products 
+2021-05-04 08:52:33 -0600	1.430009126663208  seconds to load page
+2021-05-04 08:52:38 -0600	-->Clicking Product Categories 
+2021-05-04 08:52:40 -0600	1.740591049194336  seconds to load page
+2021-05-04 08:52:45 -0600	-->Clicking Extra fields 
+2021-05-04 08:52:46 -0600	1.488455057144165  seconds to load page
+2021-05-04 08:52:52 -0600	-->Clicking Product Dislikes 
+2021-05-04 08:52:54 -0600	Net Read failure to find xpath and //span[text()="Product Dislikes"] count 0
+2021-05-04 08:52:56 -0600	-->Clicking Warehouse Locations 
+2021-05-04 08:52:57 -0600	1.552854061126709  seconds to load page
+2021-05-04 08:53:02 -0600	-->Clicking Product Flags 
+2021-05-04 08:53:05 -0600	Net Read failure to find xpath and //span[text()="Product Flags"] count 0
+2021-05-04 08:53:07 -0600	-->Clicking Change/Assign Routes 
+2021-05-04 08:53:09 -0600	2.416551113128662  seconds to load page
+2021-05-04 08:53:14 -0600	-->Clicking Create/Edit Routes 
+2021-05-04 08:53:16 -0600	2.023893117904663  seconds to load page
+2021-05-04 08:53:21 -0600	-->Clicking GPS Import/Export 
+2021-05-04 08:53:23 -0600	1.4065098762512207  seconds to load page
+2021-05-04 08:53:28 -0600	-->Clicking Organize Route Stops 
+2021-05-04 08:53:30 -0600	1.4758660793304443  seconds to load page
+2021-05-04 08:53:35 -0600	-->Clicking Pickup Locations 
+2021-05-04 08:53:38 -0600	2.84086012840271  seconds to load page
+2021-05-04 08:53:43 -0600	-->Clicking Organize Pickup Locations 
+2021-05-04 08:53:44 -0600	1.4042770862579346  seconds to load page
+2021-05-04 08:53:50 -0600	-->Clicking Manage KML File 
+2021-05-04 08:53:51 -0600	1.5135648250579834  seconds to load page
+2021-05-04 08:53:56 -0600	-->Clicking Display Route/KML Issues 
+2021-05-04 08:53:58 -0600	1.414665937423706  seconds to load page
+2021-05-04 08:54:03 -0600	-->Clicking Organize Load Sheet 
+2021-05-04 08:54:05 -0600	1.9418880939483643  seconds to load page
+2021-05-04 08:54:07 -0600	-->Clicking Ok in Modal button 
+2021-05-04 08:54:11 -0600	-->Clicking Print Route Sheets 
+2021-05-04 08:54:13 -0600	1.623378038406372  seconds to load page
+2021-05-04 08:54:16 -0600	-->Clicking Print Bag Labels 
+2021-05-04 08:54:18 -0600	1.5097558498382568  seconds to load page
+2021-05-04 08:54:21 -0600	-->Clicking Show Invalid Addresses 
+2021-05-04 08:54:35 -0600	13.805397033691406  seconds to load page
+2021-05-04 08:54:40 -0600	-->Clicking Billing 
+2021-05-04 08:54:41 -0600	1.0580179691314697  seconds to load page
+2021-05-04 08:54:46 -0600	-->Clicking Paper/Email Billing 
+2021-05-04 08:54:48 -0600	1.4740569591522217  seconds to load page
+2021-05-04 08:54:53 -0600	-->Clicking Electronic Billing 
+2021-05-04 08:54:55 -0600	2.2009987831115723  seconds to load page
+2021-05-04 08:55:01 -0600	-->Clicking Mass Update Payments 
+2021-05-04 08:55:02 -0600	1.5869638919830322  seconds to load page
+2021-05-04 08:55:07 -0600	-->Clicking Mass Deposit Returns/Charges 
+2021-05-04 08:55:09 -0600	1.3830251693725586  seconds to load page
+2021-05-04 08:55:14 -0600	-->Clicking Global Invoice Notes 
+2021-05-04 08:55:16 -0600	1.579568862915039  seconds to load page
+2021-05-04 08:55:21 -0600	-->Clicking View GC Purchase Log 
+2021-05-04 08:55:22 -0600	1.4531378746032715  seconds to load page
+2021-05-04 08:55:28 -0600	-->Clicking Sales Reporting 
+2021-05-04 08:55:29 -0600	1.0721447467803955  seconds to load page
+2021-05-04 08:55:34 -0600	-->Clicking Top Customers 
+2021-05-04 08:55:36 -0600	Net Read failure to find xpath and //a[text()="Top Customers"] count 0
+2021-05-04 08:55:38 -0600	-->Clicking Countdown Sales Report 
+2021-05-04 08:55:39 -0600	1.5330250263214111  seconds to load page
+2021-05-04 08:55:43 -0600	-->Clicking Cross-Selling Report 
+2021-05-04 08:55:44 -0600	1.474565029144287  seconds to load page
+2021-05-04 08:55:47 -0600	-->Clicking Discount Coupon Report 
+2021-05-04 08:55:49 -0600	1.4209589958190918  seconds to load page
+2021-05-04 08:55:52 -0600	-->Clicking Manage Cross-Selling 
+2021-05-04 08:55:53 -0600	1.3851792812347412  seconds to load page
+2021-05-04 08:55:57 -0600	-->Clicking Ordered Products Reports 
+2021-05-04 08:55:59 -0600	1.8295087814331055  seconds to load page
+2021-05-04 08:56:02 -0600	-->Clicking Overall Sales 
+2021-05-04 08:56:04 -0600	1.9405088424682617  seconds to load page
+2021-05-04 08:56:07 -0600	-->Clicking Sales By Route 
+2021-05-04 08:56:09 -0600	1.7436978816986084  seconds to load page
+2021-05-04 08:56:12 -0600	-->Clicking Financials Reporting 
+2021-05-04 08:56:13 -0600	1.053124189376831  seconds to load page
+2021-05-04 08:56:16 -0600	-->Clicking Average Order Report 
+2021-05-04 08:56:18 -0600	1.4821300506591797  seconds to load page
+2021-05-04 08:56:21 -0600	-->Clicking Credits Report 
+2021-05-04 08:56:22 -0600	1.4278759956359863  seconds to load page
+2021-05-04 08:56:26 -0600	-->Clicking Effective Margin Report 
+2021-05-04 08:56:27 -0600	1.433516025543213  seconds to load page
+2021-05-04 08:56:30 -0600	-->Clicking Financials Export 
+2021-05-04 08:56:32 -0600	1.3936870098114014  seconds to load page
+2021-05-04 08:56:35 -0600	-->Clicking No Payment Customers 
+2021-05-04 08:56:37 -0600	2.0564091205596924  seconds to load page
+2021-05-04 08:56:40 -0600	-->Clicking Past Due Customers 
+2021-05-04 08:56:42 -0600	1.4031472206115723  seconds to load page
+2021-05-04 08:56:45 -0600	-->Clicking Payments On Review 
+2021-05-04 08:56:46 -0600	1.481996774673462  seconds to load page
+2021-05-04 08:56:50 -0600	-->Clicking Payments Posted Report 
+2021-05-04 08:56:51 -0600	1.422956943511963  seconds to load page
+2021-05-04 08:56:54 -0600	-->Clicking Profit Report 
+2021-05-04 08:56:56 -0600	1.727849006652832  seconds to load page
+2021-05-04 08:56:59 -0600	-->Clicking Recent Payments Report 
+2021-05-04 08:57:01 -0600	1.4428658485412598  seconds to load page
+2021-05-04 08:57:04 -0600	-->Clicking Show Currently Owed 
+2021-05-04 08:57:06 -0600	2.36274790763855  seconds to load page
+2021-05-04 08:57:10 -0600	-->Clicking Taxes Report 
+2021-05-04 08:57:11 -0600	1.4512429237365723  seconds to load page
+2021-05-04 08:57:14 -0600	-->Clicking Product Reporting 
+2021-05-04 08:57:15 -0600	1.0615711212158203  seconds to load page
+2021-05-04 08:57:19 -0600	-->Clicking Bagged Items Report 
+2021-05-04 08:57:20 -0600	1.666543960571289  seconds to load page
+2021-05-04 08:57:23 -0600	-->Clicking Customized Products 
+2021-05-04 08:57:25 -0600	1.5711920261383057  seconds to load page
+2021-05-04 08:57:28 -0600	-->Clicking Dislikes Report 
+2021-05-04 08:58:28 -0600	Net Read failure to find xpath and //a[text()="Dislikes Report"] count 0
+2021-05-04 08:58:29 -0600	-->Clicking Forecast 
+2021-05-04 08:59:30 -0600	60.59037899971008  seconds to load page
+2021-05-04 08:59:35 -0600	-->Clicking Inventory 
+2021-05-04 08:59:45 -0600	9.555613279342651  seconds to load page
+2021-05-04 08:59:48 -0600	-->Clicking Product Reporting 
+2021-05-04 08:59:49 -0600	1.1084890365600586  seconds to load page
+2021-05-04 08:59:52 -0600	-->Clicking Load Sheet Report 
+2021-05-04 08:59:54 -0600	1.7284300327301025  seconds to load page
+2021-05-04 08:59:57 -0600	-->Clicking Out Of Stock Report 
+2021-05-04 08:59:59 -0600	1.5688810348510742  seconds to load page
+2021-05-04 09:00:02 -0600	-->Clicking Substitutions Report 
+2021-05-04 09:01:02 -0600	Net Read failure to find xpath and //a[text()="Substitutions Report"] count 0
+2021-05-04 09:01:03 -0600	-->Clicking Customer Reporting 
+2021-05-04 09:02:03 -0600	60.09780979156494  seconds to load page
+2021-05-04 09:02:06 -0600	-->Clicking Abandoned Signups 
+2021-05-04 09:02:08 -0600	Net Read failure to find xpath and //a[text()="Abandoned Signups"] count 0
+2021-05-04 09:02:10 -0600	-->Clicking Customer Count Report 
+2021-05-04 09:02:12 -0600	1.4598629474639893  seconds to load page
+2021-05-04 09:02:15 -0600	-->Clicking Customer Orders Count 
+2021-05-04 09:02:17 -0600	1.4332127571105957  seconds to load page
+2021-05-04 09:02:20 -0600	-->Clicking Deposit Report 
+2021-05-04 09:02:21 -0600	1.455554723739624  seconds to load page
+2021-05-04 09:02:24 -0600	-->Clicking Followup Report 
+2021-05-04 09:02:26 -0600	1.4551029205322266  seconds to load page
+2021-05-04 09:02:29 -0600	-->Clicking Friend Referral Report 
+2021-05-04 09:02:31 -0600	1.4467918872833252  seconds to load page
+2021-05-04 09:02:34 -0600	-->Clicking Minimum Order Report 
+2021-05-04 09:02:35 -0600	1.419001817703247  seconds to load page
+2021-05-04 09:02:38 -0600	-->Clicking Negative Balances 
+2021-05-04 09:02:40 -0600	2.0307960510253906  seconds to load page
+2021-05-04 09:02:44 -0600	-->Clicking New Customers 
+2021-05-04 09:02:45 -0600	1.4511480331420898  seconds to load page
+2021-05-04 09:02:50 -0600	-->Clicking No Order Customers Report 
+2021-05-04 09:02:52 -0600	1.4623908996582031  seconds to load page
+2021-05-04 09:02:55 -0600	-->Clicking No Payment Customers 
+2021-05-04 09:02:57 -0600	2.0065910816192627  seconds to load page
+2021-05-04 09:03:00 -0600	-->Clicking Customer Reporting 
+2021-05-04 09:03:01 -0600	1.0738351345062256  seconds to load page
+2021-05-04 09:03:05 -0600	-->Clicking On Hold Report 
+2021-05-04 09:03:06 -0600	1.5714280605316162  seconds to load page
+2021-05-04 09:03:09 -0600	-->Clicking Past Due Customers 
+2021-05-04 09:03:11 -0600	1.4263229370117188  seconds to load page
+2021-05-04 09:03:14 -0600	-->Clicking Customer Reporting 
+2021-05-04 09:03:15 -0600	1.0588109493255615  seconds to load page
+2021-05-04 09:03:18 -0600	-->Clicking Recurring Order Report 
+2021-05-04 09:03:20 -0600	1.4073710441589355  seconds to load page
+2021-05-04 09:03:23 -0600	-->Clicking Retention Report 
+2021-05-04 09:03:24 -0600	1.4427640438079834  seconds to load page
+2021-05-04 09:03:30 -0600	-->Clicking Show Inactive Customers 
+2021-05-04 09:03:31 -0600	1.4038729667663574  seconds to load page
+2021-05-04 09:03:34 -0600	-->Clicking Top Customers 
+2021-05-04 09:04:34 -0600	Net Read failure to find xpath and //a[text()="Top Customers"] count 1
+2021-05-04 09:04:35 -0600	-->Clicking Total Customers Report 
+2021-05-04 09:05:36 -0600	60.437472105026245  seconds to load page
+2021-05-04 09:05:39 -0600	-->Clicking Vacation Report 
+2021-05-04 09:05:40 -0600	1.4410581588745117  seconds to load page
+2021-05-04 09:05:44 -0600	-->Clicking Misc. Reporting 
+2021-05-04 09:05:45 -0600	1.0551199913024902  seconds to load page
+2021-05-04 09:05:48 -0600	-->Clicking Birthday Report 
+2021-05-04 09:05:50 -0600	Net Read failure to find xpath and //a[text()="Birthday Report"] count 0
+2021-05-04 09:05:52 -0600	-->Clicking Contact Us Report 
+2021-05-04 09:05:54 -0600	1.5079638957977295  seconds to load page
+2021-05-04 09:05:57 -0600	-->Clicking Coupon Usage 
+2021-05-04 09:05:58 -0600	1.4392988681793213  seconds to load page
+2021-05-04 09:06:01 -0600	-->Clicking Donations Report 
+2021-05-04 09:07:01 -0600	Net Read failure to find xpath and //a[text()="Donations Report"] count 0
+2021-05-04 09:07:02 -0600	-->Clicking Missing Orders 
+2021-05-04 09:08:03 -0600	60.56051683425903  seconds to load page
+2021-05-04 09:08:08 -0600	-->Clicking Tips & Donations Report 
+2021-05-04 09:08:10 -0600	Net Read failure to find xpath and //a[text()="Tips & Donations Report"] count 0
+2021-05-04 09:08:12 -0600	-->Clicking Coupons 
+2021-05-04 09:08:14 -0600	1.4191761016845703  seconds to load page
+2021-05-04 09:08:19 -0600	-->Clicking Coupon Events 
+2021-05-04 09:08:20 -0600	1.399446964263916  seconds to load page
+2021-05-04 09:08:26 -0600	-->Clicking Countdown Products 
+2021-05-04 09:08:27 -0600	1.4164369106292725  seconds to load page
+2021-05-04 09:08:30 -0600	-->Clicking Global Discounts 
+2021-05-04 09:08:32 -0600	1.5506560802459717  seconds to load page
+2021-05-04 09:08:37 -0600	-->Clicking Featured Products 
+2021-05-04 09:08:39 -0600	2.0610599517822266  seconds to load page
+2021-05-04 09:08:44 -0600	-->Clicking Sale Items 
+2021-05-04 09:08:47 -0600	2.439332962036133  seconds to load page
+2021-05-04 09:08:52 -0600	-->Clicking Manage Cross-Selling 
+2021-05-04 09:08:54 -0600	1.441770076751709  seconds to load page
+2021-05-04 09:08:57 -0600	-->Clicking First Time Order Specials 
+2021-05-04 09:08:58 -0600	1.5594186782836914  seconds to load page
+2021-05-04 09:09:04 -0600	-->Clicking Search Orders 
+2021-05-04 09:09:05 -0600	1.6613011360168457  seconds to load page
+2021-05-04 09:09:11 -0600	-->Clicking Today's Orders 
+2021-05-04 09:09:13 -0600	Net Read failure to find xpath and //span[text()="Today's Orders"] count 0
+2021-05-04 09:09:15 -0600	-->Clicking This Week's Orders 
+2021-05-04 09:09:16 -0600	1.9035418033599854  seconds to load page
+2021-05-04 09:09:22 -0600	-->Clicking Next Week's Orders 
+2021-05-04 09:09:24 -0600	1.9623310565948486  seconds to load page
+2021-05-04 09:09:29 -0600	-->Clicking Create Purchase Order 
+2021-05-04 09:09:31 -0600	1.6891303062438965  seconds to load page
+2021-05-04 09:09:36 -0600	-->Clicking View Purchase Orders 
+2021-05-04 09:09:37 -0600	1.0840661525726318  seconds to load page
+2021-05-04 09:09:42 -0600	-->Clicking Autoresponders 
+2021-05-04 09:09:44 -0600	1.5024309158325195  seconds to load page
+2021-05-04 09:09:49 -0600	-->Clicking General News List 
+2021-05-04 09:09:51 -0600	1.5568828582763672  seconds to load page
+2021-05-04 09:09:56 -0600	-->Clicking Marketing 
+2021-05-04 09:09:58 -0600	Net Read failure to find xpath and //span[text()="Marketing"] count 0
+2021-05-04 09:10:00 -0600	-->Clicking Product Sales, Promotions, and Featured Product Events 
+2021-05-04 09:10:02 -0600	Net Read failure to find xpath and //span[text()="Product Sales, Promotions, and Featured Product Events"] count 0
+2021-05-04 09:10:04 -0600	-->Clicking Unsubscribers 
+2021-05-04 09:10:06 -0600	2.453310966491699  seconds to load page
+2021-05-04 09:10:12 -0600	-->Clicking Edit Static Pages 
+2021-05-04 09:10:13 -0600	1.5035309791564941  seconds to load page
+2021-05-04 09:10:18 -0600	-->Clicking Manage Files 
+2021-05-04 09:10:20 -0600	1.7918908596038818  seconds to load page
+2021-05-04 09:10:26 -0600	-->Clicking Recipes 
+2021-05-04 09:10:28 -0600	Net Read failure to find xpath and //span[text()="Recipes"] count 0
+2021-05-04 09:10:30 -0600	-->Clicking 301 Redirects 
+2021-05-04 09:10:31 -0600	1.4540328979492188  seconds to load page
+2021-05-04 09:10:36 -0600	-->Clicking FAQ 
+2021-05-04 09:10:38 -0600	1.4658479690551758  seconds to load page
+2021-05-04 09:10:43 -0600	-->Clicking Company Settings 
+2021-05-04 09:10:45 -0600	2.311121940612793  seconds to load page
+2021-05-04 09:10:51 -0600	-->Clicking States/Counties 
+2021-05-04 09:10:52 -0600	1.5631632804870605  seconds to load page
+2021-05-04 09:10:57 -0600	-->Clicking Taxes 
+2021-05-04 09:10:58 -0600	1.0634150505065918  seconds to load page
+2021-05-04 09:11:04 -0600	-->Clicking Taxing Zones 
+2021-05-04 09:11:05 -0600	1.4316270351409912  seconds to load page
+2021-05-04 09:11:10 -0600	-->Clicking Taxing System 
+2021-05-04 09:11:12 -0600	1.4892230033874512  seconds to load page
+2021-05-04 09:11:17 -0600	-->Clicking Minimum Orders Settings 
+2021-05-04 09:11:19 -0600	1.5053491592407227  seconds to load page
+2021-05-04 09:11:24 -0600	-->Clicking Zip Codes 
+2021-05-04 09:11:25 -0600	1.4398348331451416  seconds to load page
+2021-05-04 09:11:31 -0600	-->Clicking Fees 
+2021-05-04 09:11:32 -0600	1.0831921100616455  seconds to load page
+2021-05-04 09:11:37 -0600	-->Clicking App Settings 
+2021-05-04 09:11:39 -0600	Net Read failure to find xpath and //span[text()="App Settings"] count 0
+2021-05-04 09:11:41 -0600	-->Clicking Driver Log Report 
+2021-05-04 09:11:43 -0600	Net Read failure to find xpath and //span[text()="Driver Log Report"] count 0
+2021-05-04 09:11:45 -0600	-->Clicking Settings 
+2021-05-04 09:11:46 -0600	1.0507493019104004  seconds to load page
+2021-05-04 09:11:51 -0600	-->Clicking Store Locations 
+2021-05-04 09:11:53 -0600	1.7148418426513672  seconds to load page
+2021-05-04 09:11:58 -0600	-->Clicking DBP Settings 
+2021-05-04 09:12:00 -0600	1.8571622371673584  seconds to load page
+2021-05-04 09:12:05 -0600	-->Clicking DBP Billing 
+2021-05-04 09:12:07 -0600	1.8843538761138916  seconds to load page
+2021-05-04 09:12:13 -0600	-->Clicking Countries 
+2021-05-04 09:12:14 -0600	1.4103920459747314  seconds to load page
+2021-05-04 09:12:19 -0600	-->Clicking States 
+2021-05-04 09:12:21 -0600	1.5320699214935303  seconds to load page
+2021-05-04 09:12:26 -0600	-->Clicking Settings 
+2021-05-04 09:12:27 -0600	1.0625889301300049  seconds to load page
+2021-05-04 09:12:32 -0600	-->Clicking Export/Import Cities 
+2021-05-04 09:12:34 -0600	1.4280130863189697  seconds to load page
+2021-05-04 09:12:39 -0600	-->Clicking Summary 
+2021-05-04 09:12:41 -0600	1.4147348403930664  seconds to load page
+2021-05-04 09:12:46 -0600	-->Clicking Credit card types 
+2021-05-04 09:12:47 -0600	1.4380850791931152  seconds to load page
+2021-05-04 09:12:52 -0600	-->Clicking General Settings 
+2021-05-04 09:12:54 -0600	1.7881338596343994  seconds to load page
+2021-05-04 09:13:00 -0600	-->Clicking Languages 
+2021-05-04 09:13:01 -0600	1.5064892768859863  seconds to load page
+2021-05-04 09:13:06 -0600	-->Clicking Modules 
+2021-05-04 09:13:09 -0600	2.2627618312835693  seconds to load page
+2021-05-04 09:13:14 -0600	-->Clicking Payment Methods 
+2021-05-04 09:13:16 -0600	1.7146799564361572  seconds to load page
+2021-05-04 09:13:21 -0600	-->Clicking Clear templates cache 
+2021-05-04 09:13:23 -0600	1.8190271854400635  seconds to load page
+2021-05-04 09:13:28 -0600	-->Clicking System Logs 
+2021-05-04 09:13:29 -0600	1.0502541065216064  seconds to load page
+2021-05-04 09:13:34 -0600	-->Clicking DBP Overview 
+2021-05-04 09:13:36 -0600	1.3881440162658691  seconds to load page
+2021-05-04 09:13:41 -0600	-->Clicking Inventory 
+2021-05-04 09:13:42 -0600	1.4660890102386475  seconds to load page
+2021-05-04 09:13:47 -0600	-->Clicking Tasks 
+2021-05-04 09:13:49 -0600	1.5610108375549316  seconds to load page
+2021-05-04 09:13:54 -0600	-->Clicking Periodic tasks 
+2021-05-04 09:13:58 -0600	3.9386510848999023  seconds to load page
+2021-05-04 09:14:04 -0600	V______Teardown section_________V
+2021-05-04 09:14:04 -0600	Current URL = https://yellowbird.client-staging.deliverybizpro.com/admin/periodicTasks
+2021-05-04 09:14:04 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_4_2021\\Final__FindLinksOnPage_DBP_integrationresults5_4_2021_8_48.txt_0.png 
+2021-05-04 09:14:09 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-04 09:14:09 -0600	<font color ="green">FindLinksOnPage_DBP_integration.rb test passed</font>

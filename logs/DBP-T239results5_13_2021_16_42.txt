@@ -1,0 +1,21 @@
+2021-05-13 16:42:56 -0600	/Users/cgoodnight/Documents/Automation/logs/DBP-T239results5_13_2021_16_42.txt opened
+2021-05-13 16:42:56 -0600	Using the environment_variables.txt values
+2021-05-13 16:42:57 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-13 16:42:57 -0600	
+
+Started test DBP-T239.rb at 5_13_2021_16_42
+2021-05-13 16:42:57 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+2021-05-13 16:42:57 -0600	OS = x86_64-darwin18
+2021-05-13 16:42:58 -0600	Current URL = https://integration.deliverybizpro.com/admin/login
+2021-05-13 16:42:58 -0600	-->Entering 'master' into Sign Username
+2021-05-13 16:43:00 -0600	-->Clicking Agree to terms 
+2021-05-13 16:43:02 -0600	-->Clicking Sign in Button 
+2021-05-13 16:43:04 -0600	-->Clicking Customers 
+2021-05-13 16:43:05 -0600	-->Clicking Search for Customers 
+2021-05-13 16:43:07 -0600	-->Entering '5_13_2021_Default_Cust@mailinator.com' into Search for Customer: 5_13_2021_Default_Cust@mailinator.com
+2021-05-13 16:43:09 -0600	-->Clicking Search Button 
+2021-05-13 16:57:38 -0600	V______Teardown section_________V
+2021-05-13 16:57:38 -0600	Current URL = https://integration.deliverybizpro.com/admin/customer/1000000448?usertype=C
+2021-05-13 16:57:39 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_13_2021\\Final__DBP-T239results5_13_2021_16_42.txt_0.png 
+2021-05-13 16:57:44 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-13 16:57:44 -0600	<font color ="green">DBP-T239.rb test passed</font>

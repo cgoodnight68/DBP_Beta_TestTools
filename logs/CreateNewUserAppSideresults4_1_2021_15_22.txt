@@ -1,0 +1,4 @@
+2021-04-01 15:22:52 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateNewUserAppSideresults4_1_2021_15_22.txt opened
+2021-04-01 15:22:52 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-01 15:23:22 -0600	V______Teardown section_________V

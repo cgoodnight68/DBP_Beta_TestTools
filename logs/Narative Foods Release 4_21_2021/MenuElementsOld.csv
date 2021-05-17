@@ -1,0 +1,176 @@
+Menu Item,Path,ElementType,Base,Counter,ElementName,ElementName
+Sales Reporting,Reports,span,y,0,,
+Overall Sales,Reports>Sales Reporting,a,y,0,,
+Sales By Route,Reports>Sales Reporting,a,y,0,,
+Financials Reporting,Reports,span,y,0,,
+Average Order Report,Reports>Financials Reporting,a,y,0,,
+Credits Report,Reports>Financials Reporting,a,y,0,,
+Effective Margin Report,Reports>Financials Reporting,a,y,0,,
+Financials Export,Reports>Financials Reporting,a,y,0,,
+No Payment Customers,Reports>Financials Reporting,a,y,0,,
+Past Due Customers,Reports>Financials Reporting,a,n,0,,
+Payments On Review,Reports>Financials Reporting,a,y,0,,
+Payments Posted Report,Reports>Financials Reporting,a,y,0,,
+Profit Report,Reports>Financials Reporting,a,y,0,,
+Recent Payments Report,Reports>Financials Reporting,a,y,0,,
+Show Currently Owed,Reports>Financials Reporting,a,n,0,,
+Taxes Report,Reports>Financials Reporting,a,y,0,,
+Product Reporting,Reports,span,y,0,,
+Bagged Items Report,Reports>Product Reporting,a,y,0,,
+Customized Products,Reports>Product Reporting,a,y,0,,
+Dislikes Report,Reports>Product Reporting,a,y,0,,
+Forecast,Reports>Product Reporting,a,y,0,,
+Inventory,Reports>Product Reporting,a,y,0,,
+Product Reporting,Reports,span,y,0,,
+Load Sheet Report,Reports>Product Reporting,a,y,0,,
+Out Of Stock Report,Reports>Product Reporting,a,y,0,,
+Substitutions Report,Reports>Product Reporting,a,y,0,,
+Customer Reporting,Reports,span,y,0,,
+Abandoned Signups,Reports>Customer Reporting,a,y,0,,
+Customer Count Report,Reports>Customer Reporting,a,y,0,,
+Customer Orders Count,Reports>Customer Reporting,a,y,0,,
+Deposit Report,Reports>Customer Reporting,a,y,0,,
+Followup Report,Reports>Customer Reporting,a,y,0,,
+Friend Referral Report,Reports>Customer Reporting,a,y,0,,
+Minimum Order Report,Reports>Customer Reporting,a,y,0,,
+Negative Balances,Reports>Customer Reporting,a,y,0,,
+New Customers,Reports>Customer Reporting,a,y,0,,
+No Order Customers Report,Reports>Customer Reporting,a,y,0,,
+No Payment Customers,Reports>Customer Reporting,a,y,1,,
+Customer Reporting,Reports,span,y,0,,
+On Hold Report,Reports>Customer Reporting,a,y,0,,
+Past Due Customers,Reports>Customer Reporting,a,y,1,,
+Customer Reporting,Reports,span,y,0,,
+Recurring Order Report,Reports>Customer Reporting,a,y,0,,
+Retention Report,Reports>Customer Reporting,a,y,0,,
+Show Inactive Customers,Reports>Customer Reporting,a,y,0,,
+Top Customers,Reports>Customer Reporting,a,y,1,,
+Total Customers Report,Reports>Customer Reporting,a,y,0,,
+Vacation Report,Reports>Customer Reporting,a,y,0,,
+Misc. Reporting,Reports,span,y,0,,
+Birthday Report,Reports> Misc. Reporting,a,y,0,,
+Contact Us Report,Reports> Misc. Reporting,a,y,0,,
+Coupon Usage,Reports> Misc. Reporting,a,y,0,,
+Donations Report,Reports> Misc. Reporting,a,n,0,,
+Missing Orders,Reports> Misc. Reporting,a,y,0,,
+Tips & Donations Report,Reports> Misc. Reporting,a,y,0,,
+Coupons,Marketing Tools,span,y,0,,
+Coupon Events,Marketing Tools,span,y,0,,
+Countdown Products,Marketing Tools,span,y,0,,
+Global Discounts,Marketing Tools,span,y,0,,
+Featured Products,Marketing Tools,span,y,0,,
+Sale Items,Marketing Tools,span,y,0,,
+Manage Cross-Selling,Marketing Tools,span,y,0,,
+First Time Order Specials,Marketing Tools,span,y,0,,
+Search Orders,Order History,span,y,0,,
+Today's Orders,Order History,span,y,0,,
+This Week's Orders,Order History,span,y,0,,
+Next Week's Orders,Order History,span,y,0,,
+Create Purchase Order,Purchase Orders,span,y,0,,
+View Purchase Orders,Purchase Orders,span,y,0,,
+Autoresponders,Customer Communication,span,y,0,,
+General News List,Customer Communication,span,y,0,,
+Marketing,Customer Communication,span,y,0,,
+"Product Sales, Promotions, and Featured Product Events",Customer Communication,span,y,0,,
+Unsubscribers,Customer Communication,span,y,0,,
+Edit Static Pages,Content Management,span,y,0,,
+Manage Files,Content Management,span,y,0,,
+Recipes,Content Management,span,n,0,,
+301 Redirects,Content Management,span,y,0,,
+FAQ,Content Management,span,n,0,,
+Company Settings,Settings,span,y,0,,
+States/Counties,Settings,span,y,0,,
+Taxes,Settings,span,y,0,,
+Taxing Zones,Settings,a,y,0,,
+Taxing System,Settings,a,y,0,,
+Minimum Orders Settings,Settings,span,y,0,,
+Zip Codes,Settings,span,y,0,,
+Fees,Settings,span,y,0,,
+App Settings,Driver App,span,n,0,,
+Driver Log Report,Driver App,span,n,0,,
+Settings,DBP Settings,span,y,0,,
+Store Locations,DBP Settings>Settings,a,y,0,,
+DBP Settings,DBP Settings>Settings,a,y,0,,
+DBP Billing,DBP Settings>Settings,a,y,0,,
+Countries,DBP Settings>Settings,a,y,0,,
+States,DBP Settings>Settings,a,y,0,,
+Settings,DBP Settings,span,y,0,,
+Export/Import Cities,DBP Settings>Settings,a,y,0,,
+Summary,DBP Settings>Settings,a,y,0,,
+Credit card types,DBP Settings>Settings,a,y,0,,
+General Settings,DBP Settings>Settings,a,y,0,,
+Languages,DBP Settings>Settings,a,y,0,,
+Modules,DBP Settings>Settings,a,y,0,,
+Payment Methods,DBP Settings>Settings,a,y,0,,
+Clear templates cache,DBP Settings>Settings,a,y,0,,
+System Logs,DBP Settings,span,y,0,,
+DBP Overview,DBP Settings>System Logs,a,y,0,,
+Inventory,DBP Settings>System Logs,a,y,1,,
+Tasks,DBP Settings>System Logs,a,y,0,,
+Periodic tasks,DBP Settings>System Logs,a,y,0,,
+,User Management>Customers>Create Customer Profile,,,,//input[@id ='firstname'],FirstName
+,User Management>Customers>Create Customer Profile,,,,//input[@id='lastname'],LastName
+,User Management>Customers>Create Customer Profile,,,,//input[@id='Company'],Company
+,User Management>Customers>Create Customer Profile,,,,//input[@id='refer_friend_name'],Who refered you
+,User Management>Customers>Create Customer Profile,,,,//input[@id='birthday'],Birthday
+,User Management>Customers>Create Customer Profile,,,,//input[@id='phone'],Phone
+,User Management>Customers>Create Customer Profile,,,,//input[@id='email'],Email
+,User Management>Customers>Create Customer Profile,,,,//input[@id='email2'],Email2
+,User Management>Customers>Create Customer Profile,,,,//input[@id='s_address'],Delivery Address
+,User Management>Customers>Create Customer Profile,,,,//input[@id='s_city'],Delivery City
+,User Management>Customers>Create Customer Profile,,,,//input[@id='s_zipcode'],Zipcode
+,User Management>Customers>Create Customer Profile,,,,//input[@id='btn-enter-cc-details'],CreditCardDetailModal
+,User Management>Customers>Create Customer Profile,,,,//input[@id='inputCCNumber'],Card Number on Modal
+,User Management>Customers>Create Customer Profile,,,,//input[@id='inputCCExp'],Expiration date on Modal
+,User Management>Customers>Create Customer Profile,,,,//input[@id='inputCVV2'],CVV2 on Modal
+,User Management>Customers>Create Customer Profile,,,,"//button[contains(text(),'Submit')]","Submit on Modal"
+,User Management>Customers>Create Customer Profile,,,,//input[@id='card_number'],Card Number
+,User Management>Customers>Create Customer Profile,,,,//input[@id='card_name'],Name On Card
+,User Management>Customers>Create Customer Profile,,,,//input[@class='expiry form-control'],Card expire month
+,User Management>Customers>Create Customer Profile,,,,//input[@id='card_expire_year'],Card Expire year
+,User Management>Customers>Create Customer Profile,,,,//input[@id='card_cvv2'],Card CCV
+,User Management>Customers>Create Customer Profile,,,,//input[@id='passwd1'],Password
+,User Management>Customers>Create Customer Profile,,,,//input[@id='passwd2'],Confirm Password
+,User Management>Customers>Create Customer Profile,,,,"//label[contains(text(),'Phone Provider')]/../span/span/span/span[@class='select2-selection__arrow']",Phone Provider selector
+,User Management>Customers>Create Customer Profile,,,,//input[@class='select2-search__field'],Phone Provider
+,User Management>Customers>Create Customer Profile,,,,//input[@id=‘additional_values_1000000035’],Accept SMS
+,User Management>Customers>Create Customer Profile,,,,"//td[contains(text(),'Store')]/../",Store
+,User Management>Customers>Create Customer Profile,,,,"//input[@name='is_billing_and_delivery_same']/..",Billing Address is the same checkbox
+,User Management>Customers>Create Customer Profile,,,,//input[@value=' Save '],Save
+,User Management>Customers>Create Customer Profile,,,,"//*[contains(text(),'Profile has been successfully created')]","Profile sucessfully created"
+,UserApp>Register,,,,//input[@id='s_address'],Address
+,UserApp>Register,,,,//input[@id='s_city'],City
+,UserApp>Register,,,,//input[@id='s_zip'],Zip/Postal Code
+,UserApp>Register,,,,//input[@value='Continue'],Continue
+,UserApp>Register,,,,//div[@class='modal-footer']/button[@id='continue-button'],Continue from delivery confirmation
+,UserApp>Register,,,,//input[@name ='firstname'],FirstName
+,UserApp>Register,,,,//input[@name ='lastname'],LastName
+,UserApp>Register,,,,//input[@name ='email'],E-Mail Address
+,UserApp>Register,,,,//input[@id ='email2'],Confirm Email
+,UserApp>Register,,,,//input[@id ='phone'],Phone
+,UserApp>Register,,,,//input[@name ='passwd1'],Password
+,UserApp>Register,,,,"//input[@id='btn-enter-cc-details']","Display Credit Card Entry modal"
+,UserApp>Register,,,,//input[@id='card_number'],Card Number
+,UserApp>Register,,,,//input[@id='card_name'],Name On Card
+,UserApp>Register,,,,//input[@id='card_cvv2'],Card CCV
+,UserApp>Register,,,,//input[@name='billing-cc-number'],Card Number on Modal
+,UserApp>Register,,,,//input[@id='inputCCExp'],Card expire month on Modal
+,UserApp>Register,,,,//input[@id='inputCVV2'],Card CCV on Modal
+,UserApp>Register,,,,"//button[contains(text(),'Submit')]",Submit on Modal
+,UserApp>Register,,,,//input[@class='expiry form-control'],Card expire month
+,UserApp>Register,,,,"//label[contains(text(),'Phone Provider')]/../span",Phone Provider Drop Down
+,UserApp>Register,,,,"//li[contains(text(),'Sprint')]",Phone Provider Sprint
+,UserApp>Register,,,,"//button[contains(text(),'Finish Registration')]",Finish Registration
+,UserApp>Login,,,,"//input[@name='username']",Username
+,UserApp>Login,,,,"//input[@name='password']",Password
+,UserApp>Login,,,,"//button[@class='button login']",Login Button
+,UserApp>ImportantInformationModal,,,,"//*[@id='add_product_to_cart_modal']/div/div/div[3]/button[1]",OK button
+,UserApp>ImportantInformationModal,,,,"//*[@id='add_product_to_cart_modal']/div/div/div[3]/button[0]",Do not show next time button
+,UserApp,,,,"//div[@id='cart-link']",Cart
+,UserApp>Cart,,,,"//*[contains(text(),'Remove recurring product')]","Remove Recurring Product Modal"
+,UserApp>Cart,,,,"//*[@id='remove-recurring-modal']/div/div/div[3]/button[2]","Remove All Future Deliveries button"
+
+
+
+
+

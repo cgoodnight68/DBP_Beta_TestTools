@@ -1,0 +1,33 @@
+2021-04-29 10:56:15 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserPlaceOrderresults4_29_2021_10_56.txt opened
+2021-04-29 10:56:15 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-29 10:56:24 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-29 10:56:30 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-29 10:56:33 -0600	You selected FROMTHEFARMER.CLIENT-STAGING.DELIVERYBIZPRO.COM with browser=Google Chrome
+2021-04-29 10:56:33 -0600	
+
+Started test NewUserPlaceOrder.rb at 4_29_2021_10_56
+2021-04-29 10:56:33 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+2021-04-29 10:56:33 -0600	OS = x86_64-darwin18
+2021-04-29 10:56:37 -0600	Current URL = https://fromthefarmer.client-staging.deliverybizpro.com/login
+2021-04-29 10:56:37 -0600	-->Entering '4_29_2021_Default_Cust@mailinator.com' into Username
+2021-04-29 10:56:39 -0600	-->Entering 'getswift' into Password
+2021-04-29 10:56:41 -0600	-->Clicking Login Button 
+2021-04-29 10:56:43 -0600	-->Clicking on product number 3696  Description: <br><font color ="blue"> FELLS POINTS MEATS
+Meat Box 2- Winter Box
+$52.50 </font>
+2021-04-29 10:56:58 -0600	<font color ="orange">Clicking the Frequency of Next Week 
+2021-04-29 10:56:58 -0600	-->Clicking Add to Delivery Button for product no. 3696 
+2021-04-29 10:57:05 -0600	-->Clicking on product number 3719  Description: <br><font color ="blue"> HOMETOWN HARVEST KITCHEN
+Box 3 - Fresh Salad Box
+$25.00 </font>
+2021-04-29 10:57:21 -0600	<font color ="orange">Clicking the Frequency of Weekly 
+2021-04-29 10:57:21 -0600	-->Clicking Add to Delivery Button for product no. 3719 
+2021-04-29 10:57:27 -0600	V______Teardown section_________V
+2021-04-29 10:57:27 -0600	Current URL = https://fromthefarmer.client-staging.deliverybizpro.com/summary.php?go=products&12
+2021-04-29 10:57:28 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_29_2021\\Final__NewUserPlaceOrderresults4_29_2021_10_56.txt_0.png 
+2021-04-29 10:57:33 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-29 10:57:33 -0600	<font color ="green">NewUserPlaceOrder.rb test passed</font>
+2021-04-29 10:57:33 -0600	<font color ="orange">warning 0 </font> -> Clicking the Frequency of Next Week 
+2021-04-29 10:57:33 -0600	<font color ="orange">warning 1 </font> -> Clicking the Frequency of Weekly 

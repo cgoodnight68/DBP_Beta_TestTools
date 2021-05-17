@@ -1,0 +1,181 @@
+2021-04-13 14:03:30 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateMultipleDriversresults4_13_2021_14_3.txt opened
+2021-04-13 14:03:30 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-13 14:03:41 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-13 14:03:44 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-13 14:03:48 -0600	You selected qa.getswift.co with browser=Google Chrome
+2021-04-13 14:03:48 -0600	
+
+Started test CreateMultipleDrivers.rb at 4_13_2021_14_3
+2021-04-13 14:03:48 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-04-13 14:03:48 -0600	OS = x86_64-darwin18
+2021-04-13 14:03:49 -0600	Current URL = https://qa.getswift.co/Account/Login?ReturnUrl=%2fAdmin%2fIndex%2f
+2021-04-13 14:03:49 -0600	-->Entering 'OnDemand@mailinator.com' into Sign in Email
+2021-04-13 14:03:51 -0600	-->Entering 'getswift' into Sign in Email
+2021-04-13 14:03:53 -0600	-->Clicking Sign in Button 
+2021-04-13 14:03:57 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:03:57 -0600	-->Entering 'od1' into Full Name
+2021-04-13 14:03:59 -0600	-->Entering 'od1@mailinator.com' into Email
+2021-04-13 14:04:01 -0600	-->Entering 'od1' into Username
+2021-04-13 14:04:03 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:04:05 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:04:07 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:04:09 -0600	-->Clicking Submit Button 
+2021-04-13 14:04:13 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:04:13 -0600	-->Entering 'od2' into Full Name
+2021-04-13 14:04:15 -0600	-->Entering 'od2@mailinator.com' into Email
+2021-04-13 14:04:17 -0600	-->Entering 'od2' into Username
+2021-04-13 14:04:19 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:04:21 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:04:23 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:04:26 -0600	-->Clicking Submit Button 
+2021-04-13 14:04:29 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:04:29 -0600	-->Entering 'od3' into Full Name
+2021-04-13 14:04:31 -0600	-->Entering 'od3@mailinator.com' into Email
+2021-04-13 14:04:33 -0600	-->Entering 'od3' into Username
+2021-04-13 14:04:36 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:04:38 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:04:40 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:04:42 -0600	-->Clicking Submit Button 
+2021-04-13 14:04:45 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:04:45 -0600	-->Entering 'od4' into Full Name
+2021-04-13 14:04:47 -0600	-->Entering 'od4@mailinator.com' into Email
+2021-04-13 14:04:49 -0600	-->Entering 'od4' into Username
+2021-04-13 14:04:52 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:04:54 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:04:56 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:04:58 -0600	-->Clicking Submit Button 
+2021-04-13 14:05:01 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:05:01 -0600	-->Entering 'od5' into Full Name
+2021-04-13 14:05:03 -0600	-->Entering 'od5@mailinator.com' into Email
+2021-04-13 14:05:05 -0600	-->Entering 'od5' into Username
+2021-04-13 14:05:07 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:05:09 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:05:12 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:05:14 -0600	-->Clicking Submit Button 
+2021-04-13 14:05:17 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:05:17 -0600	-->Entering 'od6' into Full Name
+2021-04-13 14:05:19 -0600	-->Entering 'od6@mailinator.com' into Email
+2021-04-13 14:05:22 -0600	-->Entering 'od6' into Username
+2021-04-13 14:05:24 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:05:26 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:05:28 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:05:30 -0600	-->Clicking Submit Button 
+2021-04-13 14:05:33 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:05:33 -0600	-->Entering 'od7' into Full Name
+2021-04-13 14:05:35 -0600	-->Entering 'od7@mailinator.com' into Email
+2021-04-13 14:05:38 -0600	-->Entering 'od7' into Username
+2021-04-13 14:05:40 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:05:42 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:05:44 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:05:46 -0600	-->Clicking Submit Button 
+2021-04-13 14:05:49 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:05:49 -0600	-->Entering 'od8' into Full Name
+2021-04-13 14:05:51 -0600	-->Entering 'od8@mailinator.com' into Email
+2021-04-13 14:05:53 -0600	-->Entering 'od8' into Username
+2021-04-13 14:05:56 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:05:58 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:06:00 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:06:02 -0600	-->Clicking Submit Button 
+2021-04-13 14:06:05 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:06:05 -0600	-->Entering 'od9' into Full Name
+2021-04-13 14:06:07 -0600	-->Entering 'od9@mailinator.com' into Email
+2021-04-13 14:06:09 -0600	-->Entering 'od9' into Username
+2021-04-13 14:06:12 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:06:14 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:06:16 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:06:18 -0600	-->Clicking Submit Button 
+2021-04-13 14:06:21 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:06:21 -0600	-->Entering 'od10' into Full Name
+2021-04-13 14:06:23 -0600	-->Entering 'od10@mailinator.com' into Email
+2021-04-13 14:06:26 -0600	-->Entering 'od10' into Username
+2021-04-13 14:06:28 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:06:30 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:06:32 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:06:34 -0600	-->Clicking Submit Button 
+2021-04-13 14:06:37 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:06:37 -0600	-->Entering 'od11' into Full Name
+2021-04-13 14:06:40 -0600	-->Entering 'od11@mailinator.com' into Email
+2021-04-13 14:06:42 -0600	-->Entering 'od11' into Username
+2021-04-13 14:06:44 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:06:46 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:06:48 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:06:50 -0600	-->Clicking Submit Button 
+2021-04-13 14:06:54 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:06:54 -0600	-->Entering 'od12' into Full Name
+2021-04-13 14:06:56 -0600	-->Entering 'od12@mailinator.com' into Email
+2021-04-13 14:06:58 -0600	-->Entering 'od12' into Username
+2021-04-13 14:07:00 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:07:02 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:07:04 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:07:06 -0600	-->Clicking Submit Button 
+2021-04-13 14:07:09 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:07:09 -0600	-->Entering 'od13' into Full Name
+2021-04-13 14:07:12 -0600	-->Entering 'od13@mailinator.com' into Email
+2021-04-13 14:07:14 -0600	-->Entering 'od13' into Username
+2021-04-13 14:07:16 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:07:18 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:07:20 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:07:22 -0600	-->Clicking Submit Button 
+2021-04-13 14:07:26 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:07:26 -0600	-->Entering 'od14' into Full Name
+2021-04-13 14:07:28 -0600	-->Entering 'od14@mailinator.com' into Email
+2021-04-13 14:07:30 -0600	-->Entering 'od14' into Username
+2021-04-13 14:07:32 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:07:34 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:07:36 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:07:38 -0600	-->Clicking Submit Button 
+2021-04-13 14:07:42 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:07:42 -0600	-->Entering 'od15' into Full Name
+2021-04-13 14:07:44 -0600	-->Entering 'od15@mailinator.com' into Email
+2021-04-13 14:07:46 -0600	-->Entering 'od15' into Username
+2021-04-13 14:07:48 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:07:50 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:07:52 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:07:54 -0600	-->Clicking Submit Button 
+2021-04-13 14:07:58 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:07:58 -0600	-->Entering 'od16' into Full Name
+2021-04-13 14:08:00 -0600	-->Entering 'od16@mailinator.com' into Email
+2021-04-13 14:08:02 -0600	-->Entering 'od16' into Username
+2021-04-13 14:08:04 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:08:07 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:08:09 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:08:11 -0600	-->Clicking Submit Button 
+2021-04-13 14:08:14 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:08:14 -0600	-->Entering 'od17' into Full Name
+2021-04-13 14:08:16 -0600	-->Entering 'od17@mailinator.com' into Email
+2021-04-13 14:08:18 -0600	-->Entering 'od17' into Username
+2021-04-13 14:08:21 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:08:23 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:08:25 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:08:27 -0600	-->Clicking Submit Button 
+2021-04-13 14:08:31 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:08:31 -0600	-->Entering 'od18' into Full Name
+2021-04-13 14:08:33 -0600	-->Entering 'od18@mailinator.com' into Email
+2021-04-13 14:08:35 -0600	-->Entering 'od18' into Username
+2021-04-13 14:08:37 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:08:39 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:08:41 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:08:43 -0600	-->Clicking Submit Button 
+2021-04-13 14:08:50 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:08:50 -0600	-->Entering 'od19' into Full Name
+2021-04-13 14:08:52 -0600	-->Entering 'od19@mailinator.com' into Email
+2021-04-13 14:08:54 -0600	-->Entering 'od19' into Username
+2021-04-13 14:08:56 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:08:59 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:09:01 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:09:03 -0600	-->Clicking Submit Button 
+2021-04-13 14:09:06 -0600	Current URL = https://qa.getswift.co/Courier/Register?fleetId=7febbb8e-1a31-4d3c-ac4d-2a0e9a51e2fc
+2021-04-13 14:09:06 -0600	-->Entering 'od20' into Full Name
+2021-04-13 14:09:08 -0600	-->Entering 'od20@mailinator.com' into Email
+2021-04-13 14:09:11 -0600	-->Entering 'od20' into Username
+2021-04-13 14:09:13 -0600	-->Entering '6122326519' into Phone
+2021-04-13 14:09:15 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:09:17 -0600	-->Entering 'getswift' into Password
+2021-04-13 14:09:19 -0600	-->Clicking Submit Button 
+2021-04-13 14:09:21 -0600	V______Teardown section_________V
+2021-04-13 14:09:21 -0600	Current URL = https://qa.getswift.co/Courier/RegisterComplete?hid=710b7508-30a6-4dcc-8f6c-62f34e4e15ef
+2021-04-13 14:09:22 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_13_2021\\Final__CreateMultipleDriversresults4_13_2021_14_3.txt_0.png 
+2021-04-13 14:09:27 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-13 14:09:27 -0600	<font color ="green">CreateMultipleDrivers.rb test passed</font>

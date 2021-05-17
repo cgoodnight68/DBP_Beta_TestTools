@@ -1,0 +1,27 @@
+2021-05-08 15:29:09 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateNewUserAppSideresults5_8_2021_15_29.txt opened
+2021-05-08 15:29:09 -0600	Using the environment_variables.txt values
+2021-05-08 15:29:11 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-08 15:29:11 -0600	
+
+Started test CreateNewUserAppSide.rb at 5_8_2021_15_29
+2021-05-08 15:29:11 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+2021-05-08 15:29:11 -0600	OS = x86_64-darwin18
+2021-05-08 15:29:14 -0600	Current URL = https://integration.deliverybizpro.com/register.php?step=first&viewing_step=first
+2021-05-08 15:29:17 -0600	-->Entering '45 Katies Ridge Asheville 
+
+' into Address
+2021-05-08 15:29:19 -0600	-->Waiting for Continue from Delivery Confirmation 
+2021-05-08 15:29:29 -0600	-->Clicking  //div[@class='modal-footer']/button[@id='continue-button'] of type xpath
+2021-05-08 15:29:41 -0600	-->Entering '5_8_2021_Default_Cust' into First Name
+2021-05-08 15:29:43 -0600	-->Entering '60' into Last Name
+2021-05-08 15:29:45 -0600	-->Entering '5_8_2021_Default_Cust_60@mailinator.com' into Email
+2021-05-08 15:29:53 -0600	//input[@id ='email2'] of type xpath is not displayed - Confirm Email field
+2021-05-08 15:29:53 -0600	 <font color="orange">______Warning!! Previous line failed-Continuing on__________</font>
+2021-05-08 15:29:53 -0600	-->Entering '6122326519' into Phone
+2021-05-08 15:29:55 -0600	-->Entering 'getswift' into Password
+2021-05-08 15:29:57 -0600	-->Clicking Continue 
+2021-05-08 15:30:58 -0600	V______Teardown section_________V
+2021-05-08 15:30:58 -0600	Current URL = https://integration.deliverybizpro.com/register.php?step=second&viewing_step=second
+2021-05-08 15:30:58 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_8_2021\\Final__CreateNewUserAppSideresults5_8_2021_15_29.txt_1.png 
+2021-05-08 15:31:03 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-08 15:31:03 -0600	<font color ="red">CreateNewUserAppSide.rb failed </font>

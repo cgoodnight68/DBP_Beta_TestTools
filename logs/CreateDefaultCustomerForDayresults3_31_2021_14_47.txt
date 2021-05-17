@@ -1,0 +1,47 @@
+2021-03-31 14:47:28 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults3_31_2021_14_47.txt opened
+2021-03-31 14:47:28 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-03-31 14:47:29 -0600	V______Teardown section_________V
+2021-03-31 14:47:31 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults3_31_2021_14_47.txt opened
+2021-03-31 14:47:31 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-03-31 14:47:33 -0600	V______Teardown section_________V
+2021-03-31 14:47:35 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults3_31_2021_14_47.txt opened
+2021-03-31 14:47:35 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-03-31 14:47:42 -0600	
+Enter the database name for the environment.  Default is integration
+2021-03-31 14:47:59 -0600	What browser do you want to test in (chrome, firefox)
+2021-03-31 14:48:03 -0600	You selected cowichanmilk.client-staging.deliverybizpro.com with browser=Google Chrome
+2021-03-31 14:48:03 -0600	
+
+Started test CreateDefaultCustomerForDay.rb at 3_31_2021_14_47
+2021-03-31 14:48:03 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-03-31 14:48:03 -0600	OS = x86_64-darwin18
+2021-03-31 14:48:03 -0600	Branch = 
+2021-03-31 14:48:03 -0600	Branch InstallDate = 
+2021-03-31 14:48:07 -0600	Current URL = https://cowichanmilk.client-staging.deliverybizpro.com/admin/login
+2021-03-31 14:48:07 -0600	-->Entering 'master' into Sign Username
+2021-03-31 14:48:09 -0600	-->Entering 'BNFhdT7YtHMCODRjGYc3' into Password
+2021-03-31 14:48:11 -0600	-->Clicking Agree to terms 
+2021-03-31 14:48:12 -0600	-->Clicking Sign in Button 
+2021-03-31 14:48:15 -0600	-->Clicking Customers 
+2021-03-31 14:48:16 -0600	-->Clicking Create Customer Profile 
+2021-03-31 14:48:31 -0600	-->Entering '3_31_2021_Default_Cust' into First Name
+2021-03-31 14:48:33 -0600	-->Entering '66' into Last Name
+2021-03-31 14:48:35 -0600	-->Entering '3_31_2021_Default_Cust_66@mailinator.com' into Email
+2021-03-31 14:48:37 -0600	-->Entering '3_31_2021_Default_Cust_66@mailinator.com' into Confirm Email
+2021-03-31 14:48:44 -0600	//input[@class='select2-search__field'] of type xpath is not displayed-  
+2021-03-31 14:48:45 -0600	-->Entering '4050 Hillbank Road' into Delivery Address
+2021-03-31 14:48:47 -0600	-->Entering 'Duncan' into Delivery City
+2021-03-31 14:48:49 -0600	-->Entering 'V9L 6M1' into Delivery Zipcode
+2021-03-31 14:48:51 -0600	-->Entering '6122326519' into Phone
+2021-03-31 14:48:53 -0600	-->Entering '4111111111111111' into Credit Card
+2021-03-31 14:49:53 -0600	V______Teardown section_________V
+2021-03-31 14:49:53 -0600	Current URL = https://cowichanmilk.client-staging.deliverybizpro.com/admin/user_add.php?usertype=C
+2021-03-31 14:49:54 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/3_31_2021\\Final__CreateDefaultCustomerForDayresults3_31_2021_14_47.txt_0.png 
+2021-03-31 14:49:59 -0600	___________________________________________________________
+2021-03-31 14:49:59 -0600	<font color ="red">Test case failed with the following errors.</font>
+2021-03-31 14:49:59 -0600	<font color ="red">failure 0 </font> -> --> Element  //input[@class='select2-search__field'] of type xpath was not displayed -> Failed snapshot at /Users/cgoodnight/Documents/Automation/logs/3_31_2021\\CreateDefaultCustomerForDayresults3_31_2021_14_47.txt_0.png  </font>
+2021-03-31 14:49:59 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-03-31 14:49:59 -0600	<font color ="red">CreateDefaultCustomerForDay.rb failed </font>

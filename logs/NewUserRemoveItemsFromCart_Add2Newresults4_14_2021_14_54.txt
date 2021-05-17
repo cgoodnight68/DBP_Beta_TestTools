@@ -1,0 +1,12 @@
+2021-04-14 14:54:03 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserRemoveItemsFromCart_Add2Newresults4_14_2021_14_54.txt opened
+2021-04-14 14:54:03 -0600	Using the environment_variables.txt values
+2021-04-14 14:54:04 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-14 14:54:04 -0600	
+
+Started test NewUserRemoveItemsFromCart_Add2New.rb at 4_14_2021_14_54
+2021-04-14 14:54:04 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36
+2021-04-14 14:54:04 -0600	OS = x86_64-darwin18
+2021-04-14 14:54:06 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-04-14 14:54:06 -0600	-->Entering '4_14_2021_Default_Cust@mailinator.com' into Username
+2021-04-14 14:54:09 -0600	-->Entering 'getswift' into Password
+2021-04-19 09:35:33 -0600	V______Teardown section_________V

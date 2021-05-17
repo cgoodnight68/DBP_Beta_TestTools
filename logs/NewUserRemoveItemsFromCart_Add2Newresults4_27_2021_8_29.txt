@@ -1,0 +1,32 @@
+2021-04-27 08:29:30 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserRemoveItemsFromCart_Add2Newresults4_27_2021_8_29.txt opened
+2021-04-27 08:29:30 -0600	Using the environment_variables.txt values
+2021-04-27 08:29:31 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-27 08:29:31 -0600	
+
+Started test NewUserRemoveItemsFromCart_Add2New.rb at 4_27_2021_8_29
+2021-04-27 08:29:31 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36
+2021-04-27 08:29:31 -0600	OS = x86_64-darwin18
+2021-04-27 08:29:33 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-04-27 08:29:33 -0600	-->Entering '4_27_2021_Default_Cust@mailinator.com' into Username
+2021-04-27 08:29:35 -0600	-->Entering 'getswift' into Password
+2021-04-27 08:29:38 -0600	-->Clicking Login Button 
+2021-04-27 08:29:39 -0600	-->Clicking User Cart 
+2021-04-27 08:29:40 -0600	There are 5 item(s) in the cart before removing Compostable Product1
+2021-04-27 08:29:40 -0600	-->Clicking the X next to Compostable Product1 in the cart
+2021-04-27 08:29:41 -0600	--> Element Check for remove Recurring item modal //*[contains(text(),'Remove recurring product')] of type xpath exists
+2021-04-27 08:29:41 -0600	-->Clicking Remove All Future Recurring Deliveries in item modal 
+2021-04-27 08:29:42 -0600	 <font color="red">______FAILURE!!! Previous line failed-Continuing on__________</font>
+2021-04-27 08:29:42 -0600	There are 5 item(s) in the cart before removing Changed product name from -test product
+2021-04-27 08:29:42 -0600	-->Clicking the X next to Changed product name from -test product in the cart
+2021-04-27 08:29:52 -0600	//*[contains(text(),'Remove recurring product')] of type xpath is not displayed - Check for remove Recurring item modal
+2021-04-27 08:29:53 -0600	 <font color="orange">______Warning!! Previous line failed-Continuing on__________</font>
+2021-04-27 08:30:03 -0600	There are 0 item(s) in the cart after removing Changed product name from -test product -- Pass product removed
+2021-04-27 08:30:03 -0600	-->Clicking on product number 10566  Description: <br><font color ="blue"> Compostable Service Weekly
+$45.00 </font>
+2021-04-27 08:30:18 -0600	<font color ="orange">Clicking the Frequency of Next Week 
+2021-04-27 08:30:18 -0600	-->Clicking Add to Delivery Button for product no. 10566 
+2021-04-27 08:30:19 -0600	V______Teardown section_________V
+2021-04-27 08:30:19 -0600	Current URL = https://integration.deliverybizpro.com/summary.php?go=products&12
+2021-04-27 08:30:20 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_27_2021\\Final__NewUserRemoveItemsFromCart_Add2Newresults4_27_2021_8_29.txt_1.png 
+2021-04-27 08:30:25 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-27 08:30:25 -0600	<font color ="red">NewUserRemoveItemsFromCart_Add2New.rb failed </font>

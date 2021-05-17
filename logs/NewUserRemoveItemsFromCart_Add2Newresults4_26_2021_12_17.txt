@@ -1,0 +1,53 @@
+2021-04-26 12:17:56 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserRemoveItemsFromCart_Add2Newresults4_26_2021_12_17.txt opened
+2021-04-26 12:17:56 -0600	Using the environment_variables.txt values
+2021-04-26 12:17:58 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-26 12:17:58 -0600	
+
+Started test NewUserRemoveItemsFromCart_Add2New.rb at 4_26_2021_12_17
+2021-04-26 12:17:58 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36
+2021-04-26 12:17:58 -0600	OS = x86_64-darwin18
+2021-04-26 12:18:00 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-04-26 12:18:00 -0600	-->Entering '4_26_2021_Default_Cust@mailinator.com' into Username
+2021-04-26 12:18:02 -0600	-->Entering 'getswift' into Password
+2021-04-26 12:18:04 -0600	-->Clicking Login Button 
+2021-04-26 12:18:06 -0600	-->Clicking User Cart 
+2021-04-26 12:18:07 -0600	There are 5 items in the cart before removing ENES
+2021-04-26 12:18:08 -0600	--> Element Check for remove Recurring item modal //*[contains(text(),'Remove recurring product')] of type xpath exists
+2021-04-26 12:18:08 -0600	-->Clicking Remove Recurring item modal 
+2021-04-26 12:21:02 -0600	ENES not removed from the cart
+2021-04-26 12:21:02 -0600	There are 1 items in the cart before removing Dustin Test Product
+2021-04-26 12:21:12 -0600	//*[contains(text(),'Remove recurring product')] of type xpath is not displayed - Check for remove Recurring item modal
+2021-04-26 12:21:13 -0600	 <font color="orange">______Warning!! Previous line failed-Continuing on__________</font>
+2021-04-26 12:21:23 -0600	There are 0 items in the cart after removing Dustin Test Product
+2021-04-26 12:21:23 -0600	Clicking on 1235  Description: <br><font color ="blue"> DBP TEST1
+Apple
+$11.00per kg </font>
+2021-04-26 12:21:28 -0600	-->Clicking Clicking the Frequency of Next Week 
+2021-04-26 12:21:29 -0600	-->Clicking Add to Delivery Button for 1235 
+2021-04-26 12:21:36 -0600	-->Clicking OK button for add to cart confirmation 
+2021-04-26 12:21:38 -0600	Clicking on 1391  Description: <br><font color ="blue"> Full Price Product 1
+$10.00 </font>
+2021-04-26 12:21:43 -0600	-->Clicking Clicking the Frequency of Weekly 
+2021-04-26 12:21:54 -0600	<font color ="orange">Clicking the Frequency of Every Week 
+2021-04-26 12:21:54 -0600	-->Clicking Add to Delivery Button for 1391 
+2021-04-26 12:21:55 -0600	Delivery options <br><font color ="blue">Delivering To: 2001 Colorado Boulevard Denver, Other 80205 Change?
+START DELIVERY ON:
+Sunday
+May 2
+Denver Test
+Sunday
+May 9
+Denver Test
+Sunday
+May 16
+Denver Test
+Sunday
+May 23
+Denver Test</font>
+2021-04-26 12:22:00 -0600	-->Clicking OK button for add to cart confirmation 
+2021-04-26 12:22:02 -0600	V______Teardown section_________V
+2021-04-26 12:22:02 -0600	Current URL = https://integration.deliverybizpro.com/summary.php?go=products&12
+2021-04-26 12:22:03 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_26_2021\\Final__NewUserRemoveItemsFromCart_Add2Newresults4_26_2021_12_17.txt_1.png 
+2021-04-26 12:22:08 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-26 12:22:08 -0600	<font color ="green">NewUserRemoveItemsFromCart_Add2New.rb test passed</font>
+2021-04-26 12:22:08 -0600	<font color ="orange">warning 0 </font> -> Clicking the Frequency of Every Week 

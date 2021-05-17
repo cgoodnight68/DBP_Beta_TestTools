@@ -1,0 +1,140 @@
+01/02/2019 17:48:40   1      0 O Global                                                           ### Owner: Hannover Life Reassurance Company of America
+01/02/2019 17:48:40   1      0 O Global                                                           ### Organization: Hannover Life Reassurance Company of America
+01/02/2019 17:48:40   1      0 O Global                                                           ### Serial Number: D201-2421635
+01/02/2019 17:48:40   1      0 O Global                                                           ### Product Build Version/Date: 10.6.0-33 - 20160722-1608
+01/02/2019 17:48:40   1      0 O Global                                                           ### Production Engine on dexw5151
+01/02/2019 17:48:40   1      0 O Global                                                           *** Process Execution Initialization: [pCDS2_to_CDS]
+01/02/2019 17:48:41   1      0 O Global                                                           Process [pCDS2_to_CDS] validation message: Decision Step 'ValidLogId?' Warning: Expression compiles ok, but may not return proper value for decision step
+01/02/2019 17:48:41   1      0 O Global                                                           Process [pCDS2_to_CDS] validation message: Subprocess 'p_PreviousFileValidation' validating
+01/02/2019 17:48:41   1      0 O Global                                                           Process [pCDS2_to_CDS] validation message: Decision Step 'prevRepPeriodOK?' Warning: Expression compiles ok, but may not return proper value for decision step
+01/02/2019 17:48:41   1      0 O Global                                                           Process [pCDS2_to_CDS] validation message: Subprocess 'p_PreviousFileValidation' finished validating
+01/02/2019 17:48:41   1      0 O Global                                                           Process [pCDS2_to_CDS] validation message: Decision Step 'Check' Warning: Expression compiles ok, but may not return proper value for decision step
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Execution Begin: [pCDS2_to_CDS]
+01/02/2019 17:48:41   1      0 O Global                                                           *** Start Step Begin
+01/02/2019 17:48:41   1      0 O Global                                                           *** Start Step End: Completed.
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Step Begin: [JobID Notification]
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Execution Initialization: [process_JobIDNotification]
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Execution Begin: [process_JobIDNotification]
+01/02/2019 17:48:41   1      0 O Global                                                           *** Start Step Begin
+01/02/2019 17:48:41   1      0 O Global                                                           *** Start Step End: Completed.
+01/02/2019 17:48:41   1      0 O Global                                                           *** Scripting Step Begin: [Prep JobID Email]
+01/02/2019 17:48:41   1      0 O Global                                                           SMTP macroes ------------------------------
+01/02/2019 17:48:41   1      0 O Global                                                           EmailServer macro value  ------------------------------smtp.hannover-re.grp
+01/02/2019 17:48:41   1      0 O Global                                                           EmailFrom macro value ------------------------------do_not_reply@hlramerica.com
+01/02/2019 17:48:41   1      0 O Global                                                           EmailSubject macro value ------------------------------
+01/02/2019 17:48:41   1      0 O Global                                                           EmailtoList macro value ------------------------------\\hr-applprep.de\shares\us6_Actian_UK\Notifications\NotificationsEmailList.txt
+01/02/2019 17:48:41   1      0 O Global                                                           EmailUserName macroes value ------------------------------
+01/02/2019 17:48:41   1      0 O Global                                                           EMAILUSERPASSWORD macroes value ------------------------------
+01/02/2019 17:48:41   1      0 O Global                                                           *** Scripting Step End: [Prep JobID Email] completed.
+01/02/2019 17:48:41   1      0 O Global                                                           *** Invoker Session Started: [EmailInvoker]
+01/02/2019 17:48:41   1      0 O Global                                                           *** Invoker Step Begin: [EmailInvoker]
+01/02/2019 17:48:41   1      0 M SendMail-SMTP                                                    created smtp handler 
+01/02/2019 17:48:41   1      0 M SendMail-SMTP                                                    connected
+01/02/2019 17:48:41   1      0 O Global                                                           *** Invoker Step End: [EmailInvoker] completed with return code '0'.
+01/02/2019 17:48:41   1      0 O Global                                                           *** Stop Step Begin
+01/02/2019 17:48:41   1      0 O Global                                                           *** Stop Step End: Completed.
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Execution End: [process_JobIDNotification] completed successfully.
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Execution Statistics: [process_JobIDNotification] executed in 0.610 seconds
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Step End: [JobID Notification] completed.
+01/02/2019 17:48:41   1      0 O Global                                                           *** Decision Step Begin: [ValidLogId?]
+01/02/2019 17:48:41   1      0 O Global                                                           Log Id from the rest call: 5e13b57d-bf13-44cb-aba6-6a7f4ebe6239  Macro value: 5e13b57d-bf13-44cb-aba6-6a7f4ebe6239
+01/02/2019 17:48:41   1      0 O Global                                                           Report Period Id from the rest call: 2678  Macro value: 2678
+01/02/2019 17:48:41   1      0 O Global                                                           *** Decision Step End: [ValidLogId?] completed with result "True".
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Step Begin: [Previous File validation]
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Execution Initialization: [p_PreviousFileValidation]
+01/02/2019 17:48:41   1      0 O Global                                                           *** Process Execution Begin: [p_PreviousFileValidation]
+01/02/2019 17:48:41   1      0 O Global                                                           *** Start Step Begin
+01/02/2019 17:48:41   1      0 O Global                                                           *** Start Step End: Completed.
+01/02/2019 17:48:41   1      0 O Global                                                           *** Decision Step Begin: [prevRepPeriodOK?]
+01/02/2019 17:48:42   2      0 O Global                                                           EXECUTE: EXEC usp_GetValidPrevReportingPeriodForThisRPL 2678, null, null
+01/02/2019 17:48:42   2      0 O Global                                                           usp_GetValidPrevReportingPeriodForThisRPL --> -1
+01/02/2019 17:48:42   1      0 O Global                                                           *** Decision Step End: [prevRepPeriodOK?] completed with result "True".
+01/02/2019 17:48:42   1      0 O Global                                                           *** Scripting Step Begin: [SetWkfMacroToTrue]
+01/02/2019 17:48:42   1      0 O Global                                                           *** Scripting Step End: [SetWkfMacroToTrue] completed.
+01/02/2019 17:48:42   1      0 O Global                                                           *** Stop Step Begin
+01/02/2019 17:48:42   1      0 O Global                                                           *** Stop Step End: Completed.
+01/02/2019 17:48:42   1      0 O Global                                                           *** Process Execution End: [p_PreviousFileValidation] completed successfully.
+01/02/2019 17:48:42   1      0 O Global                                                           *** Process Execution Statistics: [p_PreviousFileValidation] executed in 0.178 seconds
+01/02/2019 17:48:42   1      0 O Global                                                           *** Process Step End: [Previous File validation] completed.
+01/02/2019 17:48:42   1      0 O Global                                                           *** Decision Step Begin: [ValidPrevLogID?]
+01/02/2019 17:48:42   1      0 O Global                                                           *** Decision Step End: [ValidPrevLogID?] completed with result "True".
+01/02/2019 17:48:42   1      0 O Global                                                           *** Scripting Step Begin: [CDSStart]
+01/02/2019 17:48:42   1      0 O Global                                                           EXEC dbo.usp_GetCDSIds @logId = '5e13b57d-bf13-44cb-aba6-6a7f4ebe6239'
+01/02/2019 17:48:42   1      0 O Global                                                           1
+01/02/2019 17:48:42   1      0 O Global                                                           from cds2 to cds:1
+01/02/2019 17:48:42   1      0 O Global                                                           *** Scripting Step End: [CDSStart] completed.
+01/02/2019 17:48:42   1      0 O Global                                                           *** SQL Session Started: [Zenith]
+01/02/2019 17:48:42   1      0 O Global                                                           *** SQL Step Begin: [UpdateWF]
+01/02/2019 17:48:42   1      0 O Global                                                           *** SQL Step End: [UpdateWF] completed with return code 0.
+01/02/2019 17:48:42   1      0 O Global                                                           *** SQL Session Ended: [Zenith]
+01/02/2019 17:48:42   1      0 O Global                                                           *** SQL Step Skipped: [PurgeCDS2]
+01/02/2019 17:48:42   1      0 O Global                                                           *** Transformation Step Begin: [CDS2toCDS]
+01/02/2019 17:48:42   1      0 O Global                                                           ### Owner: Hannover Life Reassurance Company of America
+01/02/2019 17:48:42   1      0 O Global                                                           ### Organization: Hannover Life Reassurance Company of America
+01/02/2019 17:48:42   1      0 O Global                                                           ### Serial Number: D201-2421635
+01/02/2019 17:48:42   1      0 O Global                                                           ### Product Name: Slvr Maint for DI Ent On-Premise v10 Perpetual Non-Prod
+01/02/2019 17:48:42   1      0 O Global                                                           ### Product Build Version/Date: 10.6.0-33 - 20160722-1608
+01/02/2019 17:48:42   1      0 O Global                                                           ### Production Engine on dexw5151
+01/02/2019 17:48:42   1      0 O Global                                                           *** Execution Initialization: [m_Map3_CDS2_CDS_Correlation] 
+01/02/2019 17:48:50   1      0 O Global                                                           *** Execution Begin: [m_Map3_CDS2_CDS_Correlation]
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution End: [m_Map3_CDS2_CDS_Correlation] completed successfully
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution Statistics: [m_Map3_CDS2_CDS_Correlation]  executed in 5 minutes, 44.265 seconds
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution Statistics: [m_Map3_CDS2_CDS_Correlation]  Total records read: 41497
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution Statistics: [m_Map3_CDS2_CDS_Correlation]  Total records written: 165317
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution Statistics: [m_Map3_CDS2_CDS_Correlation]  Total records inserted: 165317
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution Statistics: [m_Map3_CDS2_CDS_Correlation]  Total records updated: 0
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution Statistics: [m_Map3_CDS2_CDS_Correlation]  Total records deleted: 0
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution Statistics: [m_Map3_CDS2_CDS_Correlation]  Total records discarded: 0
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution Statistics: [m_Map3_CDS2_CDS_Correlation]  Total records rejected: 0
+01/02/2019 17:54:34   1      0 O Global                                                           *** Execution Statistics: [m_Map3_CDS2_CDS_Correlation]  Total error count: 0
+01/02/2019 17:54:34   1      0 O Global                                                           *** Transformation Step End: [CDS2toCDS] completed.
+01/02/2019 17:54:34   1      0 O Global                                                           *** Decision Step Begin: [Check]
+01/02/2019 17:54:34   1      0 O Global                                                           *** Decision Step End: [Check] completed with result "True".
+01/02/2019 17:54:34   1      0 O Global                                                           *** Scripting Step Begin: [CDSPass]
+01/02/2019 17:54:34   1      0 O Global                                                           *** Scripting Step End: [CDSPass] completed.
+01/02/2019 17:54:34   1      0 O Global                                                           *** SQL Session Started: [Zenith]
+01/02/2019 17:54:34   1      0 O Global                                                           *** SQL Step Begin: [UpdateWF2]
+01/02/2019 17:54:34   1      0 O Global                                                           *** SQL Step End: [UpdateWF2] completed with return code 0.
+01/02/2019 17:54:34   1      0 O Global                                                           *** SQL Session Ended: [Zenith]
+01/02/2019 17:54:34   1      0 O Global                                                           *** SQL Session Started: [CDS]
+01/02/2019 17:54:34   1      0 O Global                                                           *** SQL Step Begin: [UpdateCDSLogCountStatus]
+01/02/2019 17:54:34   1      0 O Global                                                           *** SQL Step End: [UpdateCDSLogCountStatus] completed with return code 0.
+01/02/2019 17:54:34   1      0 O Global                                                           *** SQL Session Ended: [CDS]
+01/02/2019 17:54:34   1      0 O Global                                                           *** Process Step Begin: [SendNotification]
+01/02/2019 17:54:34   1      0 O Global                                                           *** Process Execution Initialization: [process_Notifications]
+01/02/2019 17:54:34   1      0 O Global                                                           *** Process Execution Begin: [process_Notifications]
+01/02/2019 17:54:34   1      0 O Global                                                           *** Start Step Begin
+01/02/2019 17:54:34   1      0 O Global                                                           *** Start Step End: Completed.
+01/02/2019 17:54:34   1      0 O Global                                                           *** Scripting Step Begin: [S-MacroPopulation]
+01/02/2019 17:54:34   1      0 O Global                                                           Connection stringserver=dexd5080.hr-applprep.de;database=Zenith;username=svc_cdm;password=password
+01/02/2019 17:54:34   1      0 O Global                                                           ***** Workflow Status macro value: 19
+01/02/2019 17:54:34   1      0 O Global                                                           ***** Exec stored proc: exec usp_GetNotification 19
+01/02/2019 17:54:34   1      0 O Global                                                           *****dimEmailSubject = Email from DC: Completed
+01/02/2019 17:54:34   1      0 O Global                                                           *****dimEmailBody= Load to CDS has completed.  Please review the RPL in ZC for additional information or actions
+01/02/2019 17:54:34   1      0 O Global                                                           *****dimRecipientList= \\hr-applprep.de\shares\us6_Actian_UK\Notifications\NotificationsEmailList.txt
+01/02/2019 17:54:34   1      0 O Global                                                           *** Scripting Step End: [S-MacroPopulation] completed.
+01/02/2019 17:54:34   1      0 O Global                                                           *** Decision Step Begin: [MacrosPopulated?]
+01/02/2019 17:54:34   1      0 O Global                                                           *** Decision Step End: [MacrosPopulated?] completed with result "True".
+01/02/2019 17:54:34   1      0 O Global                                                           *** Scripting Step Begin: [Prep Success Email]
+01/02/2019 17:54:34   1      0 O Global                                                           SMTP macroes ------------------------------
+01/02/2019 17:54:34   1      0 O Global                                                           EmailServer macro value  ------------------------------smtp.hannover-re.grp
+01/02/2019 17:54:34   1      0 O Global                                                           EmailFrom macro value ------------------------------do_not_reply@hlramerica.com
+01/02/2019 17:54:34   1      0 O Global                                                           EmailSubject macro value ------------------------------Email from DC: Completed
+01/02/2019 17:54:34   1      0 O Global                                                           EmailtoList macro value ------------------------------\\hr-applprep.de\shares\us6_Actian_UK\Notifications\NotificationsEmailList.txt
+01/02/2019 17:54:34   1      0 O Global                                                           EmailUserName macroes value ------------------------------
+01/02/2019 17:54:34   1      0 O Global                                                           EMAILUSERPASSWORD macroes value ------------------------------
+01/02/2019 17:54:34   1      0 O Global                                                           *** Scripting Step End: [Prep Success Email] completed.
+01/02/2019 17:54:34   1      0 O Global                                                           *** Invoker Session Started: [EmailInvoker]
+01/02/2019 17:54:34   1      0 O Global                                                           *** Invoker Step Begin: [EmailInvoker]
+01/02/2019 17:54:34   1      0 M SendMail-SMTP                                                    created smtp handler 
+01/02/2019 17:54:34   1      0 M SendMail-SMTP                                                    connected
+01/02/2019 17:54:35   1      0 O Global                                                           *** Invoker Step End: [EmailInvoker] completed with return code '0'.
+01/02/2019 17:54:35   1      0 O Global                                                           *** Stop Step Begin
+01/02/2019 17:54:35   1      0 O Global                                                           *** Stop Step End: Completed.
+01/02/2019 17:54:35   1      0 O Global                                                           *** Process Execution End: [process_Notifications] completed successfully.
+01/02/2019 17:54:35   1      0 O Global                                                           *** Process Execution Statistics: [process_Notifications] executed in 0.894 seconds
+01/02/2019 17:54:35   1      0 O Global                                                           *** Process Step End: [SendNotification] completed.
+01/02/2019 17:54:35   1      0 O Global                                                           *** Stop Step Begin
+01/02/2019 17:54:35   1      0 O Global                                                           *** Stop Step End: Completed.
+01/02/2019 17:54:35   1      0 O Global                                                           *** Process Execution End: [pCDS2_to_CDS] completed successfully.
+01/02/2019 17:54:35   1      0 O Global                                                           *** Process Execution Statistics: [pCDS2_to_CDS] executed in 5 minutes, 54.283 seconds

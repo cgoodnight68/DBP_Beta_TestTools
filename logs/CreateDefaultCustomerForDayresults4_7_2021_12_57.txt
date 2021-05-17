@@ -1,0 +1,41 @@
+2021-04-07 12:57:21 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults4_7_2021_12_57.txt opened
+2021-04-07 12:57:21 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-07 12:57:24 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-07 12:57:28 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-07 12:57:31 -0600	You selected bikeables.client-staging.deliverybizpro.com with browser=Google Chrome
+2021-04-07 12:57:31 -0600	
+
+Started test CreateDefaultCustomerForDay.rb at 4_7_2021_12_57
+2021-04-07 12:57:31 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-04-07 12:57:31 -0600	OS = x86_64-darwin18
+2021-04-07 12:57:31 -0600	Branch = 
+2021-04-07 12:57:31 -0600	Branch InstallDate = 
+2021-04-07 12:57:33 -0600	Current URL = https://bikeables.client-staging.deliverybizpro.com/admin/login
+2021-04-07 12:57:33 -0600	-->Entering 'master' into Sign Username
+2021-04-07 12:57:35 -0600	-->Entering 'BNFhdT7YtHMCODRjGYc3' into Password
+2021-04-07 12:57:37 -0600	-->Clicking Agree to terms 
+2021-04-07 12:57:38 -0600	-->Clicking Sign in Button 
+2021-04-07 12:57:41 -0600	-->Clicking Customers 
+2021-04-07 12:57:42 -0600	-->Clicking Create Customer Profile 
+2021-04-07 12:57:50 -0600	-->Entering '4_7_2021_Default' into First Name
+2021-04-07 12:57:52 -0600	-->Entering 'Cust' into Last Name
+2021-04-07 12:57:54 -0600	-->Entering '4_7_2021_Default_Cust@mailinator.com' into Email
+2021-04-07 12:57:57 -0600	-->Entering '4_7_2021_Default_Cust@mailinator.com' into Confirm Email
+2021-04-07 12:57:59 -0600	--> Element  //span[@class='select2-selection__arrow'] of type xpath exists
+2021-04-07 12:57:59 -0600	-->Clicking Phone Provider selector 
+2021-04-07 12:58:00 -0600	-->Entering 'AT&T
+	 ' into Phone Provider and Accept SMS
+2021-04-07 12:58:02 -0600	-->Entering '346 Dundurn Street South' into Delivery Address
+2021-04-07 12:58:04 -0600	-->Entering 'Hamilton' into Delivery City
+2021-04-07 12:58:06 -0600	-->Entering 'L8P 4L6' into Delivery Zipcode
+2021-04-07 12:58:08 -0600	-->Entering '6122326519' into Phone
+2021-04-07 12:58:10 -0600	-->Entering '4111111111111111' into Credit Card
+2021-04-07 12:58:13 -0600	-->Entering '4_7_2021_Default_Cust' into Name On card
+2021-04-07 12:58:15 -0600	-->Entering '0826' into Expire Month
+2021-04-07 12:58:17 -0600	-->Entering '123' into Card CCV
+2021-04-07 12:58:19 -0600	-->Entering 'getswift' into Password
+2021-04-07 12:58:21 -0600	-->Entering 'getswift' into Confirm Password
+2021-04-07 12:58:23 -0600	-->Clicking  //input[@value=' Save '] of type xpath
+2021-04-07 12:58:29 -0600	V______Teardown section_________V

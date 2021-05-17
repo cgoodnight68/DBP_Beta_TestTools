@@ -1,0 +1,26 @@
+2021-04-08 13:53:18 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults4_8_2021_13_53.txt opened
+2021-04-08 13:53:18 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-08 13:53:19 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-08 13:53:20 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-08 13:53:23 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-08 13:53:23 -0600	
+
+Started test CreateDefaultCustomerForDay.rb at 4_8_2021_13_53
+2021-04-08 13:53:23 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-04-08 13:53:23 -0600	OS = x86_64-darwin18
+2021-04-08 13:53:23 -0600	Branch = 
+2021-04-08 13:53:23 -0600	Branch InstallDate = 
+2021-04-08 13:53:24 -0600	Current URL = https://integration.deliverybizpro.com/admin/login
+2021-04-08 13:53:24 -0600	-->Entering 'master' into Sign Username
+2021-04-08 13:53:26 -0600	-->Entering '6a4GhvF3k@XwYMLCXFbad@v3' into Password
+2021-04-08 13:53:29 -0600	-->Clicking Agree to terms 
+2021-04-08 13:53:30 -0600	-->Clicking Sign in Button 
+2021-04-08 13:53:32 -0600	-->Clicking Customers 
+2021-04-08 13:53:33 -0600	-->Clicking Create Customer Profile 
+2021-04-08 13:54:07 -0600	V______Teardown section_________V
+2021-04-08 13:54:07 -0600	Current URL = https://integration.deliverybizpro.com/admin/user_add.php?usertype=C
+2021-04-08 13:54:08 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_8_2021\\Final__CreateDefaultCustomerForDayresults4_8_2021_13_53.txt_0.png 
+2021-04-08 13:54:13 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-08 13:54:13 -0600	<font color ="green">CreateDefaultCustomerForDay.rb test passed</font>

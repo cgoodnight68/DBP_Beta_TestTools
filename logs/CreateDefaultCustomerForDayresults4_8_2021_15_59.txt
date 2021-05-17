@@ -1,0 +1,49 @@
+2021-04-08 15:59:50 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults4_8_2021_15_59.txt opened
+2021-04-08 15:59:50 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-08 16:00:10 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-08 16:00:16 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-08 16:00:19 -0600	You selected cowichanmilk.client-staging.deliverybizpro.com with browser=Google Chrome
+2021-04-08 16:00:19 -0600	
+
+Started test CreateDefaultCustomerForDay.rb at 4_8_2021_15_59
+2021-04-08 16:00:19 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-04-08 16:00:19 -0600	OS = x86_64-darwin18
+2021-04-08 16:00:19 -0600	Branch = 
+2021-04-08 16:00:19 -0600	Branch InstallDate = 
+2021-04-08 16:00:21 -0600	Current URL = https://cowichanmilk.client-staging.deliverybizpro.com/admin/login
+2021-04-08 16:00:21 -0600	-->Entering 'master' into Sign Username
+2021-04-08 16:00:23 -0600	-->Entering 'BNFhdT7YtHMCODRjGYc3' into Password
+2021-04-08 16:00:25 -0600	-->Clicking Agree to terms 
+2021-04-08 16:00:26 -0600	-->Clicking Sign in Button 
+2021-04-08 16:00:29 -0600	-->Clicking Customers 
+2021-04-08 16:00:30 -0600	-->Clicking Create Customer Profile 
+2021-04-08 16:00:38 -0600	-->Entering '4_8_2021_Default' into First Name
+2021-04-08 16:00:40 -0600	-->Entering 'Cust' into Last Name
+2021-04-08 16:00:42 -0600	-->Entering '4_8_2021_Default_Cust@mailinator.com' into Email
+2021-04-08 16:00:45 -0600	-->Entering '4_8_2021_Default_Cust@mailinator.com' into Confirm Email
+2021-04-08 16:00:52 -0600	//label[contains(text(),'Phone Provider')]/../span/span/span/span[@class='select2-selection__arrow'] of type xpath is not displayed-  
+2021-04-08 16:00:53 -0600	-->Entering '9255 Chemainus Road' into Delivery Address
+2021-04-08 16:00:55 -0600	-->Entering 'Chemainus' into Delivery City
+2021-04-08 16:00:57 -0600	-->Entering 'V0R1K5' into Delivery Zipcode
+2021-04-08 16:00:59 -0600	-->Clicking Billing Address is the same checkbox 
+2021-04-08 16:01:00 -0600	-->Entering '6122326519' into Phone
+2021-04-08 16:01:02 -0600	--> Element Credit Card Detail Modal Button 
+2021-04-08 16:01:02 -0600	-->Clicking Credit Card Detail Modal Button 
+2021-04-08 16:01:04 -0600	-->Entering '4111111111111111' into Credit Card on Modal
+2021-04-08 16:01:06 -0600	-->Entering '0826' into Expiration date on Modal
+2021-04-08 16:01:08 -0600	-->Entering '123' into Card CCV on Modal
+2021-04-08 16:01:10 -0600	-->Clicking Submit on Modal 
+2021-04-08 16:01:12 -0600	-->Entering 'getswift' into Password
+2021-04-08 16:01:14 -0600	-->Entering 'getswift' into Confirm Password
+2021-04-08 16:01:16 -0600	-->Clicking  //input[@value=' Save '] of type xpath
+2021-04-08 16:01:21 -0600	V______Teardown section_________V
+2021-04-08 16:01:21 -0600	Current URL = https://cowichanmilk.client-staging.deliverybizpro.com/admin/customer/4011?usertype=C
+2021-04-08 16:01:21 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_8_2021\\Final__CreateDefaultCustomerForDayresults4_8_2021_15_59.txt_0.png 
+2021-04-08 16:01:26 -0600	___________________________________________________________
+2021-04-08 16:01:26 -0600	<font color ="red">Test case failed with the following errors.</font>
+2021-04-08 16:01:26 -0600	<font color ="red">failure 0 </font> -> --> Element  //label[contains(text(),'Phone Provider')]/../span/span/span/span[@class='select2-selection__arrow'] of type xpath was not displayed -> Failed snapshot at /Users/cgoodnight/Documents/Automation/logs/4_8_2021\\CreateDefaultCustomerForDayresults4_8_2021_15_59.txt_0.png  </font>
+2021-04-08 16:01:26 -0600	<font color ="red">failure 1 </font> -> --> Element Verifying profile sucessfully created 
+2021-04-08 16:01:26 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-08 16:01:26 -0600	<font color ="red">CreateDefaultCustomerForDay.rb failed </font>

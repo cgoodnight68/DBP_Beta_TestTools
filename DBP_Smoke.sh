@@ -1,0 +1,1 @@
+#!/usr/bin/env ruby ruby ./CreateDefaultCustomerForDay.rbruby ./NewuserPlaceOrder.rbruby ./NewUserRemoveItemsFromCart_Add2New.rb

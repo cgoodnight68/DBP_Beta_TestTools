@@ -1,0 +1,821 @@
+2021-02-26 15:58:42 -0700	/Users/cgoodnight/Documents/Automation/logs/CreateMultipleDriversresults2_26_2021_15_58.txt opened
+2021-02-26 15:58:42 -0700	
+What environment do you want to test? (DEV,QA,STAGING,DEVINT,QA2,STAGING2)
+2021-02-26 15:58:45 -0700	What browser do you want to test in (chrome, firefox)
+2021-02-26 15:58:48 -0700	You selected dev with browser=Google Chrome
+2021-02-26 15:58:48 -0700	
+
+Started test CreateMultipleDrivers.rb at 2_26_2021_15_58
+2021-02-26 15:58:48 -0700	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36
+2021-02-26 15:58:48 -0700	OS = x86_64-darwin18
+2021-02-26 15:58:48 -0700	Branch = 
+2021-02-26 15:58:48 -0700	Branch InstallDate = 
+2021-02-26 15:58:50 -0700	Current URL = https://dev.getswift.co/Account/Login?ReturnUrl=%2fAdmin%2fIndex%2f
+2021-02-26 15:58:50 -0700	-->Entering 'DefaultMerchantDev2021-02-24@1secmail.com' into Sign in Email
+2021-02-26 15:58:52 -0700	-->Entering 'getswift' into Sign in Email
+2021-02-26 15:58:54 -0700	-->Clicking Sign in Button 
+2021-02-26 15:58:58 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 15:58:58 -0700	-->Entering 'hhnjR1' into Full Name
+2021-02-26 15:59:01 -0700	-->Entering 'hhnjR1@mailinator.com' into Email
+2021-02-26 15:59:03 -0700	-->Entering 'hhnjR1' into Username
+2021-02-26 15:59:05 -0700	-->Entering '6122326519' into Phone
+2021-02-26 15:59:07 -0700	-->Entering 'getswift' into Password
+2021-02-26 15:59:09 -0700	-->Entering 'getswift' into Password
+2021-02-26 15:59:11 -0700	-->Clicking Submit Button 
+2021-02-26 15:59:15 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 15:59:15 -0700	-->Entering 'hhnjR2' into Full Name
+2021-02-26 15:59:17 -0700	-->Entering 'hhnjR2@mailinator.com' into Email
+2021-02-26 15:59:19 -0700	-->Entering 'hhnjR2' into Username
+2021-02-26 15:59:22 -0700	-->Entering '6122326519' into Phone
+2021-02-26 15:59:24 -0700	-->Entering 'getswift' into Password
+2021-02-26 15:59:26 -0700	-->Entering 'getswift' into Password
+2021-02-26 15:59:28 -0700	-->Clicking Submit Button 
+2021-02-26 15:59:32 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 15:59:32 -0700	-->Entering 'hhnjR3' into Full Name
+2021-02-26 15:59:35 -0700	-->Entering 'hhnjR3@mailinator.com' into Email
+2021-02-26 15:59:37 -0700	-->Entering 'hhnjR3' into Username
+2021-02-26 15:59:39 -0700	-->Entering '6122326519' into Phone
+2021-02-26 15:59:41 -0700	-->Entering 'getswift' into Password
+2021-02-26 15:59:43 -0700	-->Entering 'getswift' into Password
+2021-02-26 15:59:45 -0700	-->Clicking Submit Button 
+2021-02-26 15:59:49 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 15:59:49 -0700	-->Entering 'hhnjR4' into Full Name
+2021-02-26 15:59:51 -0700	-->Entering 'hhnjR4@mailinator.com' into Email
+2021-02-26 15:59:53 -0700	-->Entering 'hhnjR4' into Username
+2021-02-26 15:59:55 -0700	-->Entering '6122326519' into Phone
+2021-02-26 15:59:57 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:00:00 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:00:02 -0700	-->Clicking Submit Button 
+2021-02-26 16:00:06 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:00:06 -0700	-->Entering 'hhnjR5' into Full Name
+2021-02-26 16:00:08 -0700	-->Entering 'hhnjR5@mailinator.com' into Email
+2021-02-26 16:00:10 -0700	-->Entering 'hhnjR5' into Username
+2021-02-26 16:00:12 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:00:15 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:00:17 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:00:19 -0700	-->Clicking Submit Button 
+2021-02-26 16:00:23 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:00:23 -0700	-->Entering 'hhnjR6' into Full Name
+2021-02-26 16:00:25 -0700	-->Entering 'hhnjR6@mailinator.com' into Email
+2021-02-26 16:00:27 -0700	-->Entering 'hhnjR6' into Username
+2021-02-26 16:00:29 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:00:31 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:00:33 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:00:36 -0700	-->Clicking Submit Button 
+2021-02-26 16:00:40 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:00:40 -0700	-->Entering 'hhnjR7' into Full Name
+2021-02-26 16:00:42 -0700	-->Entering 'hhnjR7@mailinator.com' into Email
+2021-02-26 16:00:44 -0700	-->Entering 'hhnjR7' into Username
+2021-02-26 16:00:46 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:00:48 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:00:50 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:00:52 -0700	-->Clicking Submit Button 
+2021-02-26 16:00:56 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:00:56 -0700	-->Entering 'hhnjR8' into Full Name
+2021-02-26 16:00:58 -0700	-->Entering 'hhnjR8@mailinator.com' into Email
+2021-02-26 16:01:00 -0700	-->Entering 'hhnjR8' into Username
+2021-02-26 16:01:02 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:01:04 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:01:07 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:01:09 -0700	-->Clicking Submit Button 
+2021-02-26 16:01:13 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:01:13 -0700	-->Entering 'hhnjR9' into Full Name
+2021-02-26 16:01:15 -0700	-->Entering 'hhnjR9@mailinator.com' into Email
+2021-02-26 16:01:17 -0700	-->Entering 'hhnjR9' into Username
+2021-02-26 16:01:19 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:01:21 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:01:23 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:01:25 -0700	-->Clicking Submit Button 
+2021-02-26 16:01:30 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:01:30 -0700	-->Entering 'hhnjR10' into Full Name
+2021-02-26 16:01:32 -0700	-->Entering 'hhnjR10@mailinator.com' into Email
+2021-02-26 16:01:34 -0700	-->Entering 'hhnjR10' into Username
+2021-02-26 16:01:36 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:01:38 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:01:40 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:01:43 -0700	-->Clicking Submit Button 
+2021-02-26 16:01:46 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:01:46 -0700	-->Entering 'hhnjR11' into Full Name
+2021-02-26 16:01:48 -0700	-->Entering 'hhnjR11@mailinator.com' into Email
+2021-02-26 16:01:51 -0700	-->Entering 'hhnjR11' into Username
+2021-02-26 16:01:53 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:01:55 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:01:57 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:01:59 -0700	-->Clicking Submit Button 
+2021-02-26 16:02:03 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:02:03 -0700	-->Entering 'hhnjR12' into Full Name
+2021-02-26 16:02:05 -0700	-->Entering 'hhnjR12@mailinator.com' into Email
+2021-02-26 16:02:07 -0700	-->Entering 'hhnjR12' into Username
+2021-02-26 16:02:09 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:02:11 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:02:13 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:02:16 -0700	-->Clicking Submit Button 
+2021-02-26 16:02:20 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:02:20 -0700	-->Entering 'hhnjR13' into Full Name
+2021-02-26 16:02:22 -0700	-->Entering 'hhnjR13@mailinator.com' into Email
+2021-02-26 16:02:24 -0700	-->Entering 'hhnjR13' into Username
+2021-02-26 16:02:26 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:02:28 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:02:30 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:02:32 -0700	-->Clicking Submit Button 
+2021-02-26 16:02:36 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:02:36 -0700	-->Entering 'hhnjR14' into Full Name
+2021-02-26 16:02:38 -0700	-->Entering 'hhnjR14@mailinator.com' into Email
+2021-02-26 16:02:41 -0700	-->Entering 'hhnjR14' into Username
+2021-02-26 16:02:43 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:02:45 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:02:47 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:02:49 -0700	-->Clicking Submit Button 
+2021-02-26 16:02:53 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:02:53 -0700	-->Entering 'hhnjR15' into Full Name
+2021-02-26 16:02:55 -0700	-->Entering 'hhnjR15@mailinator.com' into Email
+2021-02-26 16:02:57 -0700	-->Entering 'hhnjR15' into Username
+2021-02-26 16:02:59 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:03:01 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:03:03 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:03:05 -0700	-->Clicking Submit Button 
+2021-02-26 16:03:09 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:03:09 -0700	-->Entering 'hhnjR16' into Full Name
+2021-02-26 16:03:12 -0700	-->Entering 'hhnjR16@mailinator.com' into Email
+2021-02-26 16:03:14 -0700	-->Entering 'hhnjR16' into Username
+2021-02-26 16:03:16 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:03:18 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:03:20 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:03:22 -0700	-->Clicking Submit Button 
+2021-02-26 16:03:26 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:03:26 -0700	-->Entering 'hhnjR17' into Full Name
+2021-02-26 16:03:28 -0700	-->Entering 'hhnjR17@mailinator.com' into Email
+2021-02-26 16:03:30 -0700	-->Entering 'hhnjR17' into Username
+2021-02-26 16:03:33 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:03:35 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:03:37 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:03:39 -0700	-->Clicking Submit Button 
+2021-02-26 16:03:44 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:03:44 -0700	-->Entering 'hhnjR18' into Full Name
+2021-02-26 16:03:46 -0700	-->Entering 'hhnjR18@mailinator.com' into Email
+2021-02-26 16:03:48 -0700	-->Entering 'hhnjR18' into Username
+2021-02-26 16:03:50 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:03:52 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:03:55 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:03:57 -0700	-->Clicking Submit Button 
+2021-02-26 16:04:08 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:04:08 -0700	-->Entering 'hhnjR19' into Full Name
+2021-02-26 16:04:10 -0700	-->Entering 'hhnjR19@mailinator.com' into Email
+2021-02-26 16:04:12 -0700	-->Entering 'hhnjR19' into Username
+2021-02-26 16:04:14 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:04:16 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:04:18 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:04:20 -0700	-->Clicking Submit Button 
+2021-02-26 16:04:30 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:04:30 -0700	-->Entering 'hhnjR20' into Full Name
+2021-02-26 16:04:32 -0700	-->Entering 'hhnjR20@mailinator.com' into Email
+2021-02-26 16:04:34 -0700	-->Entering 'hhnjR20' into Username
+2021-02-26 16:04:36 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:04:38 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:04:40 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:04:42 -0700	-->Clicking Submit Button 
+2021-02-26 16:04:47 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:04:47 -0700	-->Entering 'hhnjR21' into Full Name
+2021-02-26 16:04:49 -0700	-->Entering 'hhnjR21@mailinator.com' into Email
+2021-02-26 16:04:51 -0700	-->Entering 'hhnjR21' into Username
+2021-02-26 16:04:53 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:04:55 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:04:57 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:04:59 -0700	-->Clicking Submit Button 
+2021-02-26 16:05:09 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:05:09 -0700	-->Entering 'hhnjR22' into Full Name
+2021-02-26 16:05:11 -0700	-->Entering 'hhnjR22@mailinator.com' into Email
+2021-02-26 16:05:13 -0700	-->Entering 'hhnjR22' into Username
+2021-02-26 16:05:15 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:05:17 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:05:20 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:05:22 -0700	-->Clicking Submit Button 
+2021-02-26 16:05:25 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:05:25 -0700	-->Entering 'hhnjR23' into Full Name
+2021-02-26 16:05:28 -0700	-->Entering 'hhnjR23@mailinator.com' into Email
+2021-02-26 16:05:30 -0700	-->Entering 'hhnjR23' into Username
+2021-02-26 16:05:32 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:05:34 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:05:36 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:05:38 -0700	-->Clicking Submit Button 
+2021-02-26 16:05:42 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:05:42 -0700	-->Entering 'hhnjR24' into Full Name
+2021-02-26 16:05:44 -0700	-->Entering 'hhnjR24@mailinator.com' into Email
+2021-02-26 16:05:46 -0700	-->Entering 'hhnjR24' into Username
+2021-02-26 16:05:48 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:05:50 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:05:52 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:05:55 -0700	-->Clicking Submit Button 
+2021-02-26 16:06:00 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:06:00 -0700	-->Entering 'hhnjR25' into Full Name
+2021-02-26 16:06:02 -0700	-->Entering 'hhnjR25@mailinator.com' into Email
+2021-02-26 16:06:04 -0700	-->Entering 'hhnjR25' into Username
+2021-02-26 16:06:06 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:06:08 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:06:10 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:06:12 -0700	-->Clicking Submit Button 
+2021-02-26 16:06:16 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:06:16 -0700	-->Entering 'hhnjR26' into Full Name
+2021-02-26 16:06:18 -0700	-->Entering 'hhnjR26@mailinator.com' into Email
+2021-02-26 16:06:20 -0700	-->Entering 'hhnjR26' into Username
+2021-02-26 16:06:22 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:06:24 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:06:26 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:06:29 -0700	-->Clicking Submit Button 
+2021-02-26 16:06:33 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:06:33 -0700	-->Entering 'hhnjR27' into Full Name
+2021-02-26 16:06:35 -0700	-->Entering 'hhnjR27@mailinator.com' into Email
+2021-02-26 16:06:37 -0700	-->Entering 'hhnjR27' into Username
+2021-02-26 16:06:39 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:06:41 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:06:43 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:06:45 -0700	-->Clicking Submit Button 
+2021-02-26 16:06:49 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:06:49 -0700	-->Entering 'hhnjR28' into Full Name
+2021-02-26 16:06:51 -0700	-->Entering 'hhnjR28@mailinator.com' into Email
+2021-02-26 16:06:53 -0700	-->Entering 'hhnjR28' into Username
+2021-02-26 16:06:56 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:06:58 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:07:00 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:07:02 -0700	-->Clicking Submit Button 
+2021-02-26 16:07:06 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:07:06 -0700	-->Entering 'hhnjR29' into Full Name
+2021-02-26 16:07:08 -0700	-->Entering 'hhnjR29@mailinator.com' into Email
+2021-02-26 16:07:10 -0700	-->Entering 'hhnjR29' into Username
+2021-02-26 16:07:12 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:07:15 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:07:17 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:07:19 -0700	-->Clicking Submit Button 
+2021-02-26 16:07:23 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:07:23 -0700	-->Entering 'hhnjR30' into Full Name
+2021-02-26 16:07:25 -0700	-->Entering 'hhnjR30@mailinator.com' into Email
+2021-02-26 16:07:27 -0700	-->Entering 'hhnjR30' into Username
+2021-02-26 16:07:29 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:07:31 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:07:33 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:07:35 -0700	-->Clicking Submit Button 
+2021-02-26 16:07:39 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:07:39 -0700	-->Entering 'hhnjR31' into Full Name
+2021-02-26 16:07:41 -0700	-->Entering 'hhnjR31@mailinator.com' into Email
+2021-02-26 16:07:43 -0700	-->Entering 'hhnjR31' into Username
+2021-02-26 16:07:45 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:07:48 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:07:50 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:07:52 -0700	-->Clicking Submit Button 
+2021-02-26 16:07:56 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:07:56 -0700	-->Entering 'hhnjR32' into Full Name
+2021-02-26 16:07:58 -0700	-->Entering 'hhnjR32@mailinator.com' into Email
+2021-02-26 16:08:00 -0700	-->Entering 'hhnjR32' into Username
+2021-02-26 16:08:02 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:08:04 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:08:06 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:08:08 -0700	-->Clicking Submit Button 
+2021-02-26 16:08:14 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:08:14 -0700	-->Entering 'hhnjR33' into Full Name
+2021-02-26 16:08:16 -0700	-->Entering 'hhnjR33@mailinator.com' into Email
+2021-02-26 16:08:18 -0700	-->Entering 'hhnjR33' into Username
+2021-02-26 16:08:20 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:08:22 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:08:24 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:08:26 -0700	-->Clicking Submit Button 
+2021-02-26 16:08:31 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:08:31 -0700	-->Entering 'hhnjR34' into Full Name
+2021-02-26 16:08:33 -0700	-->Entering 'hhnjR34@mailinator.com' into Email
+2021-02-26 16:08:35 -0700	-->Entering 'hhnjR34' into Username
+2021-02-26 16:08:38 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:08:40 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:08:42 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:08:44 -0700	-->Clicking Submit Button 
+2021-02-26 16:08:48 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:08:48 -0700	-->Entering 'hhnjR35' into Full Name
+2021-02-26 16:08:50 -0700	-->Entering 'hhnjR35@mailinator.com' into Email
+2021-02-26 16:08:52 -0700	-->Entering 'hhnjR35' into Username
+2021-02-26 16:08:54 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:08:56 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:08:58 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:09:01 -0700	-->Clicking Submit Button 
+2021-02-26 16:09:05 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:09:05 -0700	-->Entering 'hhnjR36' into Full Name
+2021-02-26 16:09:07 -0700	-->Entering 'hhnjR36@mailinator.com' into Email
+2021-02-26 16:09:09 -0700	-->Entering 'hhnjR36' into Username
+2021-02-26 16:09:11 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:09:13 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:09:15 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:09:17 -0700	-->Clicking Submit Button 
+2021-02-26 16:09:21 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:09:21 -0700	-->Entering 'hhnjR37' into Full Name
+2021-02-26 16:09:23 -0700	-->Entering 'hhnjR37@mailinator.com' into Email
+2021-02-26 16:09:26 -0700	-->Entering 'hhnjR37' into Username
+2021-02-26 16:09:28 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:09:30 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:09:32 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:09:34 -0700	-->Clicking Submit Button 
+2021-02-26 16:09:38 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:09:38 -0700	-->Entering 'hhnjR38' into Full Name
+2021-02-26 16:09:40 -0700	-->Entering 'hhnjR38@mailinator.com' into Email
+2021-02-26 16:09:42 -0700	-->Entering 'hhnjR38' into Username
+2021-02-26 16:09:44 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:09:46 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:09:49 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:09:51 -0700	-->Clicking Submit Button 
+2021-02-26 16:09:54 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:09:54 -0700	-->Entering 'hhnjR39' into Full Name
+2021-02-26 16:09:56 -0700	-->Entering 'hhnjR39@mailinator.com' into Email
+2021-02-26 16:09:59 -0700	-->Entering 'hhnjR39' into Username
+2021-02-26 16:10:01 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:10:03 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:10:05 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:10:07 -0700	-->Clicking Submit Button 
+2021-02-26 16:10:11 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:10:11 -0700	-->Entering 'hhnjR40' into Full Name
+2021-02-26 16:10:13 -0700	-->Entering 'hhnjR40@mailinator.com' into Email
+2021-02-26 16:10:15 -0700	-->Entering 'hhnjR40' into Username
+2021-02-26 16:10:17 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:10:19 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:10:21 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:10:23 -0700	-->Clicking Submit Button 
+2021-02-26 16:10:27 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:10:27 -0700	-->Entering 'hhnjR41' into Full Name
+2021-02-26 16:10:30 -0700	-->Entering 'hhnjR41@mailinator.com' into Email
+2021-02-26 16:10:32 -0700	-->Entering 'hhnjR41' into Username
+2021-02-26 16:10:34 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:10:36 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:10:38 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:10:40 -0700	-->Clicking Submit Button 
+2021-02-26 16:10:44 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:10:44 -0700	-->Entering 'hhnjR42' into Full Name
+2021-02-26 16:10:46 -0700	-->Entering 'hhnjR42@mailinator.com' into Email
+2021-02-26 16:10:48 -0700	-->Entering 'hhnjR42' into Username
+2021-02-26 16:10:50 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:10:52 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:10:54 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:10:56 -0700	-->Clicking Submit Button 
+2021-02-26 16:11:00 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:11:00 -0700	-->Entering 'hhnjR43' into Full Name
+2021-02-26 16:11:02 -0700	-->Entering 'hhnjR43@mailinator.com' into Email
+2021-02-26 16:11:04 -0700	-->Entering 'hhnjR43' into Username
+2021-02-26 16:11:06 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:11:09 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:11:11 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:11:13 -0700	-->Clicking Submit Button 
+2021-02-26 16:11:17 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:11:17 -0700	-->Entering 'hhnjR44' into Full Name
+2021-02-26 16:11:19 -0700	-->Entering 'hhnjR44@mailinator.com' into Email
+2021-02-26 16:11:21 -0700	-->Entering 'hhnjR44' into Username
+2021-02-26 16:11:23 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:11:26 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:11:28 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:11:30 -0700	-->Clicking Submit Button 
+2021-02-26 16:11:35 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:11:35 -0700	-->Entering 'hhnjR45' into Full Name
+2021-02-26 16:11:38 -0700	-->Entering 'hhnjR45@mailinator.com' into Email
+2021-02-26 16:11:40 -0700	-->Entering 'hhnjR45' into Username
+2021-02-26 16:11:42 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:11:44 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:11:46 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:11:48 -0700	-->Clicking Submit Button 
+2021-02-26 16:11:52 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:11:52 -0700	-->Entering 'hhnjR46' into Full Name
+2021-02-26 16:11:54 -0700	-->Entering 'hhnjR46@mailinator.com' into Email
+2021-02-26 16:11:57 -0700	-->Entering 'hhnjR46' into Username
+2021-02-26 16:11:59 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:12:01 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:12:03 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:12:05 -0700	-->Clicking Submit Button 
+2021-02-26 16:12:09 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:12:09 -0700	-->Entering 'hhnjR47' into Full Name
+2021-02-26 16:12:11 -0700	-->Entering 'hhnjR47@mailinator.com' into Email
+2021-02-26 16:12:13 -0700	-->Entering 'hhnjR47' into Username
+2021-02-26 16:12:15 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:12:17 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:12:20 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:12:22 -0700	-->Clicking Submit Button 
+2021-02-26 16:12:26 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:12:26 -0700	-->Entering 'hhnjR48' into Full Name
+2021-02-26 16:12:28 -0700	-->Entering 'hhnjR48@mailinator.com' into Email
+2021-02-26 16:12:30 -0700	-->Entering 'hhnjR48' into Username
+2021-02-26 16:12:32 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:12:34 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:12:36 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:12:38 -0700	-->Clicking Submit Button 
+2021-02-26 16:12:42 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:12:42 -0700	-->Entering 'hhnjR49' into Full Name
+2021-02-26 16:12:44 -0700	-->Entering 'hhnjR49@mailinator.com' into Email
+2021-02-26 16:12:46 -0700	-->Entering 'hhnjR49' into Username
+2021-02-26 16:12:48 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:12:51 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:12:53 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:12:55 -0700	-->Clicking Submit Button 
+2021-02-26 16:12:59 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:12:59 -0700	-->Entering 'hhnjR50' into Full Name
+2021-02-26 16:13:01 -0700	-->Entering 'hhnjR50@mailinator.com' into Email
+2021-02-26 16:13:04 -0700	-->Entering 'hhnjR50' into Username
+2021-02-26 16:13:06 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:13:08 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:13:10 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:13:12 -0700	-->Clicking Submit Button 
+2021-02-26 16:13:16 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:13:16 -0700	-->Entering 'hhnjR51' into Full Name
+2021-02-26 16:13:18 -0700	-->Entering 'hhnjR51@mailinator.com' into Email
+2021-02-26 16:13:20 -0700	-->Entering 'hhnjR51' into Username
+2021-02-26 16:13:23 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:13:25 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:13:27 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:13:29 -0700	-->Clicking Submit Button 
+2021-02-26 16:13:33 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:13:33 -0700	-->Entering 'hhnjR52' into Full Name
+2021-02-26 16:13:35 -0700	-->Entering 'hhnjR52@mailinator.com' into Email
+2021-02-26 16:13:37 -0700	-->Entering 'hhnjR52' into Username
+2021-02-26 16:13:39 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:13:41 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:13:43 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:13:45 -0700	-->Clicking Submit Button 
+2021-02-26 16:13:49 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:13:49 -0700	-->Entering 'hhnjR53' into Full Name
+2021-02-26 16:13:52 -0700	-->Entering 'hhnjR53@mailinator.com' into Email
+2021-02-26 16:13:54 -0700	-->Entering 'hhnjR53' into Username
+2021-02-26 16:13:56 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:13:58 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:14:00 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:14:02 -0700	-->Clicking Submit Button 
+2021-02-26 16:14:06 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:14:06 -0700	-->Entering 'hhnjR54' into Full Name
+2021-02-26 16:14:08 -0700	-->Entering 'hhnjR54@mailinator.com' into Email
+2021-02-26 16:14:10 -0700	-->Entering 'hhnjR54' into Username
+2021-02-26 16:14:12 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:14:14 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:14:17 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:14:19 -0700	-->Clicking Submit Button 
+2021-02-26 16:14:23 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:14:23 -0700	-->Entering 'hhnjR55' into Full Name
+2021-02-26 16:14:25 -0700	-->Entering 'hhnjR55@mailinator.com' into Email
+2021-02-26 16:14:27 -0700	-->Entering 'hhnjR55' into Username
+2021-02-26 16:14:29 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:14:31 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:14:33 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:14:36 -0700	-->Clicking Submit Button 
+2021-02-26 16:14:47 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:14:47 -0700	-->Entering 'hhnjR56' into Full Name
+2021-02-26 16:14:49 -0700	-->Entering 'hhnjR56@mailinator.com' into Email
+2021-02-26 16:14:51 -0700	-->Entering 'hhnjR56' into Username
+2021-02-26 16:14:53 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:14:55 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:14:57 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:15:00 -0700	-->Clicking Submit Button 
+2021-02-26 16:15:04 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:15:04 -0700	-->Entering 'hhnjR57' into Full Name
+2021-02-26 16:15:06 -0700	-->Entering 'hhnjR57@mailinator.com' into Email
+2021-02-26 16:15:08 -0700	-->Entering 'hhnjR57' into Username
+2021-02-26 16:15:10 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:15:12 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:15:14 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:15:16 -0700	-->Clicking Submit Button 
+2021-02-26 16:15:20 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:15:20 -0700	-->Entering 'hhnjR58' into Full Name
+2021-02-26 16:15:22 -0700	-->Entering 'hhnjR58@mailinator.com' into Email
+2021-02-26 16:15:24 -0700	-->Entering 'hhnjR58' into Username
+2021-02-26 16:15:27 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:15:29 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:15:31 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:15:33 -0700	-->Clicking Submit Button 
+2021-02-26 16:15:37 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:15:37 -0700	-->Entering 'hhnjR59' into Full Name
+2021-02-26 16:15:39 -0700	-->Entering 'hhnjR59@mailinator.com' into Email
+2021-02-26 16:15:41 -0700	-->Entering 'hhnjR59' into Username
+2021-02-26 16:15:43 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:15:45 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:15:47 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:15:49 -0700	-->Clicking Submit Button 
+2021-02-26 16:15:53 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:15:53 -0700	-->Entering 'hhnjR60' into Full Name
+2021-02-26 16:15:56 -0700	-->Entering 'hhnjR60@mailinator.com' into Email
+2021-02-26 16:15:58 -0700	-->Entering 'hhnjR60' into Username
+2021-02-26 16:16:00 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:16:02 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:16:04 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:16:06 -0700	-->Clicking Submit Button 
+2021-02-26 16:16:10 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:16:10 -0700	-->Entering 'hhnjR61' into Full Name
+2021-02-26 16:16:12 -0700	-->Entering 'hhnjR61@mailinator.com' into Email
+2021-02-26 16:16:15 -0700	-->Entering 'hhnjR61' into Username
+2021-02-26 16:16:17 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:16:19 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:16:21 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:16:23 -0700	-->Clicking Submit Button 
+2021-02-26 16:16:27 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:16:27 -0700	-->Entering 'hhnjR62' into Full Name
+2021-02-26 16:16:29 -0700	-->Entering 'hhnjR62@mailinator.com' into Email
+2021-02-26 16:16:31 -0700	-->Entering 'hhnjR62' into Username
+2021-02-26 16:16:34 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:16:36 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:16:38 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:16:40 -0700	-->Clicking Submit Button 
+2021-02-26 16:16:44 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:16:44 -0700	-->Entering 'hhnjR63' into Full Name
+2021-02-26 16:16:47 -0700	-->Entering 'hhnjR63@mailinator.com' into Email
+2021-02-26 16:16:49 -0700	-->Entering 'hhnjR63' into Username
+2021-02-26 16:16:51 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:16:53 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:16:55 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:16:57 -0700	-->Clicking Submit Button 
+2021-02-26 16:17:01 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:17:01 -0700	-->Entering 'hhnjR64' into Full Name
+2021-02-26 16:17:03 -0700	-->Entering 'hhnjR64@mailinator.com' into Email
+2021-02-26 16:17:05 -0700	-->Entering 'hhnjR64' into Username
+2021-02-26 16:17:07 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:17:09 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:17:12 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:17:14 -0700	-->Clicking Submit Button 
+2021-02-26 16:17:18 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:17:18 -0700	-->Entering 'hhnjR65' into Full Name
+2021-02-26 16:17:20 -0700	-->Entering 'hhnjR65@mailinator.com' into Email
+2021-02-26 16:17:22 -0700	-->Entering 'hhnjR65' into Username
+2021-02-26 16:17:24 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:17:26 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:17:28 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:17:31 -0700	-->Clicking Submit Button 
+2021-02-26 16:17:35 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:17:35 -0700	-->Entering 'hhnjR66' into Full Name
+2021-02-26 16:17:37 -0700	-->Entering 'hhnjR66@mailinator.com' into Email
+2021-02-26 16:17:39 -0700	-->Entering 'hhnjR66' into Username
+2021-02-26 16:17:41 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:17:43 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:17:45 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:17:47 -0700	-->Clicking Submit Button 
+2021-02-26 16:17:51 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:17:51 -0700	-->Entering 'hhnjR67' into Full Name
+2021-02-26 16:17:53 -0700	-->Entering 'hhnjR67@mailinator.com' into Email
+2021-02-26 16:17:56 -0700	-->Entering 'hhnjR67' into Username
+2021-02-26 16:17:58 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:18:00 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:18:02 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:18:04 -0700	-->Clicking Submit Button 
+2021-02-26 16:18:08 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:18:08 -0700	-->Entering 'hhnjR68' into Full Name
+2021-02-26 16:18:10 -0700	-->Entering 'hhnjR68@mailinator.com' into Email
+2021-02-26 16:18:12 -0700	-->Entering 'hhnjR68' into Username
+2021-02-26 16:18:14 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:18:16 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:18:18 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:18:20 -0700	-->Clicking Submit Button 
+2021-02-26 16:18:24 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:18:24 -0700	-->Entering 'hhnjR69' into Full Name
+2021-02-26 16:18:26 -0700	-->Entering 'hhnjR69@mailinator.com' into Email
+2021-02-26 16:18:29 -0700	-->Entering 'hhnjR69' into Username
+2021-02-26 16:18:31 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:18:33 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:18:35 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:18:37 -0700	-->Clicking Submit Button 
+2021-02-26 16:18:41 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:18:41 -0700	-->Entering 'hhnjR70' into Full Name
+2021-02-26 16:18:43 -0700	-->Entering 'hhnjR70@mailinator.com' into Email
+2021-02-26 16:18:45 -0700	-->Entering 'hhnjR70' into Username
+2021-02-26 16:18:47 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:18:49 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:18:52 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:18:54 -0700	-->Clicking Submit Button 
+2021-02-26 16:18:58 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:18:58 -0700	-->Entering 'hhnjR71' into Full Name
+2021-02-26 16:19:00 -0700	-->Entering 'hhnjR71@mailinator.com' into Email
+2021-02-26 16:19:02 -0700	-->Entering 'hhnjR71' into Username
+2021-02-26 16:19:04 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:19:06 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:19:08 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:19:10 -0700	-->Clicking Submit Button 
+2021-02-26 16:19:14 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:19:14 -0700	-->Entering 'hhnjR72' into Full Name
+2021-02-26 16:19:17 -0700	-->Entering 'hhnjR72@mailinator.com' into Email
+2021-02-26 16:19:19 -0700	-->Entering 'hhnjR72' into Username
+2021-02-26 16:19:21 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:19:23 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:19:25 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:19:27 -0700	-->Clicking Submit Button 
+2021-02-26 16:19:31 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:19:31 -0700	-->Entering 'hhnjR73' into Full Name
+2021-02-26 16:19:33 -0700	-->Entering 'hhnjR73@mailinator.com' into Email
+2021-02-26 16:19:35 -0700	-->Entering 'hhnjR73' into Username
+2021-02-26 16:19:37 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:19:39 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:19:41 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:19:43 -0700	-->Clicking Submit Button 
+2021-02-26 16:19:47 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:19:47 -0700	-->Entering 'hhnjR74' into Full Name
+2021-02-26 16:19:49 -0700	-->Entering 'hhnjR74@mailinator.com' into Email
+2021-02-26 16:19:52 -0700	-->Entering 'hhnjR74' into Username
+2021-02-26 16:19:54 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:19:56 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:19:58 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:20:00 -0700	-->Clicking Submit Button 
+2021-02-26 16:20:04 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:20:04 -0700	-->Entering 'hhnjR75' into Full Name
+2021-02-26 16:20:06 -0700	-->Entering 'hhnjR75@mailinator.com' into Email
+2021-02-26 16:20:08 -0700	-->Entering 'hhnjR75' into Username
+2021-02-26 16:20:10 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:20:12 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:20:14 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:20:17 -0700	-->Clicking Submit Button 
+2021-02-26 16:20:21 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:20:21 -0700	-->Entering 'hhnjR76' into Full Name
+2021-02-26 16:20:23 -0700	-->Entering 'hhnjR76@mailinator.com' into Email
+2021-02-26 16:20:25 -0700	-->Entering 'hhnjR76' into Username
+2021-02-26 16:20:27 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:20:29 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:20:31 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:20:33 -0700	-->Clicking Submit Button 
+2021-02-26 16:20:37 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:20:37 -0700	-->Entering 'hhnjR77' into Full Name
+2021-02-26 16:20:39 -0700	-->Entering 'hhnjR77@mailinator.com' into Email
+2021-02-26 16:20:42 -0700	-->Entering 'hhnjR77' into Username
+2021-02-26 16:20:44 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:20:46 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:20:48 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:20:50 -0700	-->Clicking Submit Button 
+2021-02-26 16:20:54 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:20:54 -0700	-->Entering 'hhnjR78' into Full Name
+2021-02-26 16:20:56 -0700	-->Entering 'hhnjR78@mailinator.com' into Email
+2021-02-26 16:20:58 -0700	-->Entering 'hhnjR78' into Username
+2021-02-26 16:21:00 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:21:02 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:21:04 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:21:07 -0700	-->Clicking Submit Button 
+2021-02-26 16:21:10 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:21:10 -0700	-->Entering 'hhnjR79' into Full Name
+2021-02-26 16:21:13 -0700	-->Entering 'hhnjR79@mailinator.com' into Email
+2021-02-26 16:21:15 -0700	-->Entering 'hhnjR79' into Username
+2021-02-26 16:21:17 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:21:19 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:21:21 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:21:23 -0700	-->Clicking Submit Button 
+2021-02-26 16:21:27 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:21:27 -0700	-->Entering 'hhnjR80' into Full Name
+2021-02-26 16:21:29 -0700	-->Entering 'hhnjR80@mailinator.com' into Email
+2021-02-26 16:21:31 -0700	-->Entering 'hhnjR80' into Username
+2021-02-26 16:21:33 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:21:35 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:21:38 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:21:40 -0700	-->Clicking Submit Button 
+2021-02-26 16:21:44 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:21:44 -0700	-->Entering 'hhnjR81' into Full Name
+2021-02-26 16:21:46 -0700	-->Entering 'hhnjR81@mailinator.com' into Email
+2021-02-26 16:21:48 -0700	-->Entering 'hhnjR81' into Username
+2021-02-26 16:21:50 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:21:53 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:21:55 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:21:57 -0700	-->Clicking Submit Button 
+2021-02-26 16:22:01 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:22:01 -0700	-->Entering 'hhnjR82' into Full Name
+2021-02-26 16:22:03 -0700	-->Entering 'hhnjR82@mailinator.com' into Email
+2021-02-26 16:22:05 -0700	-->Entering 'hhnjR82' into Username
+2021-02-26 16:22:07 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:22:09 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:22:11 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:22:13 -0700	-->Clicking Submit Button 
+2021-02-26 16:22:18 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:22:18 -0700	-->Entering 'hhnjR83' into Full Name
+2021-02-26 16:22:20 -0700	-->Entering 'hhnjR83@mailinator.com' into Email
+2021-02-26 16:22:22 -0700	-->Entering 'hhnjR83' into Username
+2021-02-26 16:22:24 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:22:26 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:22:28 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:22:30 -0700	-->Clicking Submit Button 
+2021-02-26 16:22:34 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:22:34 -0700	-->Entering 'hhnjR84' into Full Name
+2021-02-26 16:22:36 -0700	-->Entering 'hhnjR84@mailinator.com' into Email
+2021-02-26 16:22:39 -0700	-->Entering 'hhnjR84' into Username
+2021-02-26 16:22:41 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:22:43 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:22:45 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:22:47 -0700	-->Clicking Submit Button 
+2021-02-26 16:22:51 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:22:51 -0700	-->Entering 'hhnjR85' into Full Name
+2021-02-26 16:22:53 -0700	-->Entering 'hhnjR85@mailinator.com' into Email
+2021-02-26 16:22:55 -0700	-->Entering 'hhnjR85' into Username
+2021-02-26 16:22:57 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:22:59 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:23:01 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:23:03 -0700	-->Clicking Submit Button 
+2021-02-26 16:23:07 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:23:07 -0700	-->Entering 'hhnjR86' into Full Name
+2021-02-26 16:23:09 -0700	-->Entering 'hhnjR86@mailinator.com' into Email
+2021-02-26 16:23:12 -0700	-->Entering 'hhnjR86' into Username
+2021-02-26 16:23:14 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:23:16 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:23:18 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:23:20 -0700	-->Clicking Submit Button 
+2021-02-26 16:23:24 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:23:24 -0700	-->Entering 'hhnjR87' into Full Name
+2021-02-26 16:23:26 -0700	-->Entering 'hhnjR87@mailinator.com' into Email
+2021-02-26 16:23:28 -0700	-->Entering 'hhnjR87' into Username
+2021-02-26 16:23:30 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:23:32 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:23:34 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:23:36 -0700	-->Clicking Submit Button 
+2021-02-26 16:23:40 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:23:40 -0700	-->Entering 'hhnjR88' into Full Name
+2021-02-26 16:23:43 -0700	-->Entering 'hhnjR88@mailinator.com' into Email
+2021-02-26 16:23:45 -0700	-->Entering 'hhnjR88' into Username
+2021-02-26 16:23:47 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:23:49 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:23:51 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:23:53 -0700	-->Clicking Submit Button 
+2021-02-26 16:23:57 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:23:57 -0700	-->Entering 'hhnjR89' into Full Name
+2021-02-26 16:23:59 -0700	-->Entering 'hhnjR89@mailinator.com' into Email
+2021-02-26 16:24:01 -0700	-->Entering 'hhnjR89' into Username
+2021-02-26 16:24:03 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:24:05 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:24:07 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:24:10 -0700	-->Clicking Submit Button 
+2021-02-26 16:24:14 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:24:14 -0700	-->Entering 'hhnjR90' into Full Name
+2021-02-26 16:24:16 -0700	-->Entering 'hhnjR90@mailinator.com' into Email
+2021-02-26 16:24:18 -0700	-->Entering 'hhnjR90' into Username
+2021-02-26 16:24:20 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:24:22 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:24:24 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:24:26 -0700	-->Clicking Submit Button 
+2021-02-26 16:24:30 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:24:30 -0700	-->Entering 'hhnjR91' into Full Name
+2021-02-26 16:24:32 -0700	-->Entering 'hhnjR91@mailinator.com' into Email
+2021-02-26 16:24:34 -0700	-->Entering 'hhnjR91' into Username
+2021-02-26 16:24:36 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:24:38 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:24:40 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:24:42 -0700	-->Clicking Submit Button 
+2021-02-26 16:24:46 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:24:46 -0700	-->Entering 'hhnjR92' into Full Name
+2021-02-26 16:24:48 -0700	-->Entering 'hhnjR92@mailinator.com' into Email
+2021-02-26 16:24:50 -0700	-->Entering 'hhnjR92' into Username
+2021-02-26 16:24:52 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:24:55 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:24:57 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:24:59 -0700	-->Clicking Submit Button 
+2021-02-26 16:25:03 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:25:03 -0700	-->Entering 'hhnjR93' into Full Name
+2021-02-26 16:25:05 -0700	-->Entering 'hhnjR93@mailinator.com' into Email
+2021-02-26 16:25:08 -0700	-->Entering 'hhnjR93' into Username
+2021-02-26 16:25:10 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:25:12 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:25:14 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:25:16 -0700	-->Clicking Submit Button 
+2021-02-26 16:25:20 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:25:20 -0700	-->Entering 'hhnjR94' into Full Name
+2021-02-26 16:25:22 -0700	-->Entering 'hhnjR94@mailinator.com' into Email
+2021-02-26 16:25:24 -0700	-->Entering 'hhnjR94' into Username
+2021-02-26 16:25:26 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:25:29 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:25:31 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:25:33 -0700	-->Clicking Submit Button 
+2021-02-26 16:25:37 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:25:37 -0700	-->Entering 'hhnjR95' into Full Name
+2021-02-26 16:25:39 -0700	-->Entering 'hhnjR95@mailinator.com' into Email
+2021-02-26 16:25:41 -0700	-->Entering 'hhnjR95' into Username
+2021-02-26 16:25:43 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:25:45 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:25:48 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:25:50 -0700	-->Clicking Submit Button 
+2021-02-26 16:25:54 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:25:54 -0700	-->Entering 'hhnjR96' into Full Name
+2021-02-26 16:25:56 -0700	-->Entering 'hhnjR96@mailinator.com' into Email
+2021-02-26 16:25:58 -0700	-->Entering 'hhnjR96' into Username
+2021-02-26 16:26:00 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:26:02 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:26:04 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:26:06 -0700	-->Clicking Submit Button 
+2021-02-26 16:26:10 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:26:10 -0700	-->Entering 'hhnjR97' into Full Name
+2021-02-26 16:26:12 -0700	-->Entering 'hhnjR97@mailinator.com' into Email
+2021-02-26 16:26:15 -0700	-->Entering 'hhnjR97' into Username
+2021-02-26 16:26:17 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:26:19 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:26:21 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:26:23 -0700	-->Clicking Submit Button 
+2021-02-26 16:26:28 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:26:28 -0700	-->Entering 'hhnjR98' into Full Name
+2021-02-26 16:26:30 -0700	-->Entering 'hhnjR98@mailinator.com' into Email
+2021-02-26 16:26:32 -0700	-->Entering 'hhnjR98' into Username
+2021-02-26 16:26:35 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:26:37 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:26:39 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:26:41 -0700	-->Clicking Submit Button 
+2021-02-26 16:26:45 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:26:45 -0700	-->Entering 'hhnjR99' into Full Name
+2021-02-26 16:26:47 -0700	-->Entering 'hhnjR99@mailinator.com' into Email
+2021-02-26 16:26:49 -0700	-->Entering 'hhnjR99' into Username
+2021-02-26 16:26:51 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:26:54 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:26:56 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:26:58 -0700	-->Clicking Submit Button 
+2021-02-26 16:27:02 -0700	Current URL = https://dev.getswift.co//Courier/Register?fleetId=dc69b2d0-c244-4f2b-a70f-5f1afc38d977
+2021-02-26 16:27:02 -0700	-->Entering 'hhnjR100' into Full Name
+2021-02-26 16:27:04 -0700	-->Entering 'hhnjR100@mailinator.com' into Email
+2021-02-26 16:27:06 -0700	-->Entering 'hhnjR100' into Username
+2021-02-26 16:27:08 -0700	-->Entering '6122326519' into Phone
+2021-02-26 16:27:10 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:27:13 -0700	-->Entering 'getswift' into Password
+2021-02-26 16:27:15 -0700	-->Clicking Submit Button 
+2021-02-26 16:27:18 -0700	V______Teardown section_________V
+2021-02-26 16:27:18 -0700	Current URL = https://dev.getswift.co/Courier/RegisterComplete?hid=b7543d98-f33a-4222-bd12-365c9e6d732e
+2021-02-26 16:27:18 -0700	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/2_26_2021\\Final__CreateMultipleDriversresults2_26_2021_15_58.txt_0.png 
+2021-02-26 16:27:23 -0700	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-02-26 16:27:23 -0700	<font color ="green">CreateMultipleDrivers.rb test passed</font>

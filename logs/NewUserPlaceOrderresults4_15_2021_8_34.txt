@@ -1,0 +1,45 @@
+2021-04-15 08:34:48 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserPlaceOrderresults4_15_2021_8_34.txt opened
+2021-04-15 08:34:48 -0600	Using the environment_variables.txt values
+2021-04-15 08:34:49 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-04-15 08:34:49 -0600	
+
+Started test NewUserPlaceOrder.rb at 4_15_2021_8_34
+2021-04-15 08:34:49 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36
+2021-04-15 08:34:49 -0600	OS = x86_64-darwin18
+2021-04-15 08:34:51 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-04-15 08:34:51 -0600	-->Entering '4_15_2021_Default_Cust@mailinator.com' into Username
+2021-04-15 08:34:53 -0600	-->Entering 'getswift' into Password
+2021-04-15 08:34:55 -0600	-->Clicking Login Button 
+2021-04-15 08:34:57 -0600	Choosing product DBP TEST1
+Apple
+$11.00per kg
+2021-04-15 08:35:02 -0600	-->Clicking Clicking the Frequency of Next Week 
+2021-04-15 08:35:03 -0600	-->Clicking Add to Delivery Button for 1235 
+2021-04-15 08:35:09 -0600	-->Clicking OK button 
+2021-04-15 08:35:11 -0600	Choosing product DBP TEST1
+Apple
+$11.00 per kg
+2021-04-15 08:35:16 -0600	-->Clicking Clicking the Frequency of Weekly 
+2021-04-15 08:35:28 -0600	<font color ="orange">//li[contains(text(),'Every Week')] of type xpath did not exist to click </font>
+2021-04-15 08:35:28 -0600	-->Clicking Add to Delivery Button for 1235 
+2021-04-15 08:35:29 -0600	Delivery options Delivering To: 68 Clarendon Rd Asheville, Other 28806 Change?
+START DELIVERY ON:
+Monday
+April 19
+Monday Home Delivery Friendly Name
+Monday
+April 26
+Monday Home Delivery Friendly Name
+Monday
+May 3
+Monday Home Delivery Friendly Name
+Monday
+May 10
+Monday Home Delivery Friendly Name
+2021-04-15 08:35:34 -0600	-->Clicking OK button 
+2021-04-15 08:35:35 -0600	V______Teardown section_________V
+2021-04-15 08:35:35 -0600	Current URL = https://integration.deliverybizpro.com/summary.php?go=products&12
+2021-04-15 08:35:36 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_15_2021\\Final__NewUserPlaceOrderresults4_15_2021_8_34.txt_0.png 
+2021-04-15 08:35:41 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-15 08:35:41 -0600	<font color ="green">NewUserPlaceOrder.rb test passed</font>
+2021-04-15 08:35:41 -0600	<font color ="orange">warning 0 </font> -> //li[contains(text(),'Every Week')] of type xpath did not exist to click </font>

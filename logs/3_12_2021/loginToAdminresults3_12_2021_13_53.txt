@@ -1,0 +1,18 @@
+2021-03-12 13:53:09 -0700	/Users/cgoodnight/Documents/Automation/logs/loginToAdminresults3_12_2021_13_53.txt opened
+2021-03-12 13:53:09 -0700	
+Enter the baseurl of the environment do you want to test? 
+2021-03-12 13:53:15 -0700	What browser do you want to test in (chrome, firefox)
+2021-03-12 13:53:26 -0700	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-03-12 13:53:26 -0700	
+
+Started test loginToAdmin.rb at 3_12_2021_13_53
+2021-03-12 13:53:26 -0700	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36
+2021-03-12 13:53:26 -0700	OS = x86_64-darwin18
+2021-03-12 13:53:26 -0700	Branch = 
+2021-03-12 13:53:26 -0700	Branch InstallDate = 
+2021-03-12 13:53:27 -0700	Current URL = https://integration.deliverybizpro.com/admin/login
+2021-03-12 14:04:10 -0700	V______Teardown section_________V
+2021-03-12 14:04:10 -0700	Current URL = https://integration.deliverybizpro.com/admin/login
+2021-03-12 14:04:11 -0700	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/3_12_2021\\Final__loginToAdminresults3_12_2021_13_53.txt_0.png 
+2021-03-12 14:04:16 -0700	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-03-12 14:04:16 -0700	<font color ="green">loginToAdmin.rb test passed</font>

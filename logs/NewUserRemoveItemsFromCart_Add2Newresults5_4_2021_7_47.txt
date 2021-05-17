@@ -1,0 +1,50 @@
+2021-05-04 07:47:25 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserRemoveItemsFromCart_Add2Newresults5_4_2021_7_47.txt opened
+2021-05-04 07:47:25 -0600	Using the environment_variables.txt values
+2021-05-04 07:47:26 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-04 07:47:26 -0600	
+
+Started test NewUserRemoveItemsFromCart_Add2New.rb at 5_4_2021_7_47
+2021-05-04 07:47:26 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+2021-05-04 07:47:26 -0600	OS = x86_64-darwin18
+2021-05-04 07:47:30 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-05-04 07:47:30 -0600	-->Entering '5_4_2021_Default_Cust@mailinator.com' into Username
+2021-05-04 07:47:32 -0600	-->Entering 'getswift' into Password
+2021-05-04 07:47:34 -0600	-->Clicking Login Button 
+2021-05-04 07:47:36 -0600	-->Clicking User Cart 
+2021-05-04 07:47:37 -0600	There are 5 item(s) in the cart before removing Delivery Charge
+2021-05-04 07:47:37 -0600	-->Clicking the X next to Delivery Charge in the cart
+2021-05-04 07:48:07 -0600	-->Clicking Remove All Future Recurring Deliveries in item modal 
+2021-05-04 07:48:08 -0600	There are 1 item(s) in the cart after removing Delivery Charge -- Pass product removed
+2021-05-04 07:48:08 -0600	There are 1 item(s) in the cart before removing Full Price Product 1
+2021-05-04 07:48:08 -0600	-->Clicking the X next to Full Price Product 1 in the cart
+2021-05-04 07:48:58 -0600	There are 0 item(s) in the cart after removing Full Price Product 1 -- Pass product removed
+2021-05-04 07:48:58 -0600	-->Clicking on product number 1235  Description: <br><font color ="blue"> DBP TEST1
+Apple
+$11.00per kg </font>
+2021-05-04 07:49:03 -0600	-->Clicking Clicking the Frequency of Next Week 
+2021-05-04 07:49:04 -0600	-->Clicking Add to Delivery Button for product no. 1235 
+2021-05-04 07:49:11 -0600	-->Clicking OK button for add to cart confirmation 
+2021-05-04 07:49:13 -0600	-->Clicking on product number 1403  Description: <br><font color ="blue"> Delivery Charge
+$10.00 </font>
+2021-05-04 07:49:18 -0600	-->Clicking Clicking the Frequency of Weekly 
+2021-05-04 07:49:19 -0600	-->Clicking Add to Delivery Button for product no. 1403 
+2021-05-04 07:49:20 -0600	Delivery options <br><font color ="blue">Delivering To: 173 South Wildflower Road Asheville, Other 28804 Change?
+START DELIVERY ON:
+Monday
+May 10
+Monday Home Delivery Friendly Name
+Monday
+May 17
+Monday Home Delivery Friendly Name
+Monday
+May 24
+Monday Home Delivery Friendly Name
+Monday
+May 31
+Monday Home Delivery Friendly Name</font>
+2021-05-04 07:49:25 -0600	-->Clicking OK button for add to cart confirmation 
+2021-05-04 07:49:27 -0600	V______Teardown section_________V
+2021-05-04 07:49:27 -0600	Current URL = https://integration.deliverybizpro.com/summary.php?go=products&12
+2021-05-04 07:49:27 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_4_2021\\Final__NewUserRemoveItemsFromCart_Add2Newresults5_4_2021_7_47.txt_0.png 
+2021-05-04 07:49:32 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-04 07:49:32 -0600	<font color ="green">NewUserRemoveItemsFromCart_Add2New.rb test passed</font>

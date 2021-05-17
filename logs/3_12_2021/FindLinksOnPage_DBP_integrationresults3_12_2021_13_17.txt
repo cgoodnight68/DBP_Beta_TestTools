@@ -1,0 +1,5 @@
+2021-03-12 13:17:32 -0700	/Users/cgoodnight/Documents/Automation/logs/FindLinksOnPage_DBP_integrationresults3_12_2021_13_17.txt opened
+2021-03-12 13:17:32 -0700	
+Enter the baseurl of the environment do you want to test? 
+2021-03-12 13:17:59 -0700	What browser do you want to test in (chrome, firefox)
+2021-03-12 13:18:03 -0700	V______Teardown section_________V

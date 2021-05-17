@@ -1,0 +1,13 @@
+2021-05-03 08:44:08 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserPlaceOrderresults5_3_2021_8_44.txt opened
+2021-05-03 08:44:08 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-05-03 08:44:09 -0600	
+Enter the database name for the environment.  Default is integration
+2021-05-03 08:44:12 -0600	What browser do you want to test in (chrome, firefox)
+2021-05-03 08:44:15 -0600	You selected kappers.client-staging.deliverybizpro.com with browser=Google Chrome
+2021-05-03 08:44:15 -0600	
+
+Started test NewUserPlaceOrder.rb at 5_3_2021_8_44
+2021-05-03 08:44:15 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+2021-05-03 08:44:15 -0600	OS = x86_64-darwin18
+2021-05-03 08:44:17 -0600	V______Teardown section_________V

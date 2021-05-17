@@ -1,0 +1,38 @@
+2021-05-17 07:33:09 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateNewUserAppSideresults5_17_2021_7_33.txt opened
+2021-05-17 07:33:09 -0600	Using the environment_variables.txt values
+2021-05-17 07:33:10 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-17 07:33:10 -0600	
+
+Started test CreateNewUserAppSide.rb at 5_17_2021_7_33
+2021-05-17 07:33:10 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+2021-05-17 07:33:10 -0600	OS = x86_64-darwin18
+2021-05-17 07:33:13 -0600	Current URL = https://integration.deliverybizpro.com/register.php?step=first&viewing_step=first
+2021-05-17 07:33:16 -0600	-->Entering '2001 Colorado Boulevard Denver 
+
+' into Address
+2021-05-17 07:33:18 -0600	-->Waiting for Continue from Delivery Confirmation 
+2021-05-17 07:33:23 -0600	-->Clicking  //div[@class='modal-footer']/button[@id='continue-button'] of type xpath
+2021-05-17 07:33:35 -0600	-->Clicking Continue on Register 
+2021-05-17 07:33:36 -0600	-->Entering '5_17_2021_Default_Cust' into First Name
+2021-05-17 07:33:38 -0600	-->Entering '18' into Last Name
+2021-05-17 07:33:40 -0600	-->Entering '5_17_2021_Default_Cust_18@mailinator.com' into Email
+2021-05-17 07:33:48 -0600	//input[@id ='email2'] of type xpath is not displayed - Confirm Email field
+2021-05-17 07:33:48 -0600	 <font color="orange">______Warning!! Previous line failed-Continuing on__________</font>
+2021-05-17 07:33:48 -0600	-->Entering '6122326519' into Phone
+2021-05-17 07:33:50 -0600	-->Entering 'getswift' into Password
+2021-05-17 07:33:53 -0600	-->Clicking Continue 
+2021-05-17 07:34:00 -0600	//input[@id='btn-enter-cc-details'] of type xpath is not displayed - Display Credit Card Modal
+2021-05-17 07:34:00 -0600	 <font color="orange">______Warning!! Previous line failed-Continuing on__________</font>
+2021-05-17 07:34:00 -0600	-->Entering '4111111111111111' into Card Number
+2021-05-17 07:34:03 -0600	-->Entering '5_17_2021_Default_Cust' into Name On Card
+2021-05-17 07:34:05 -0600	-->Entering '0826' into Card expire month
+2021-05-17 07:34:07 -0600	-->Entering '123' into Card CCV
+2021-05-17 07:34:09 -0600	--> Element  //label[contains(text(),'Phone Provider')]/../span of type xpath exists
+2021-05-17 07:34:09 -0600	-->Clicking Phone Provider selector 
+2021-05-17 07:34:10 -0600	-->Clicking Phone Provider Sprint 
+2021-05-17 07:34:11 -0600	-->Clicking Finish Registration 
+2021-05-17 07:34:22 -0600	V______Teardown section_________V
+2021-05-17 07:34:22 -0600	Current URL = https://integration.deliverybizpro.com/thanks_for_registering.php
+2021-05-17 07:34:23 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_17_2021\\Final__CreateNewUserAppSideresults5_17_2021_7_33.txt_2.png 
+2021-05-17 07:34:28 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-17 07:34:28 -0600	<font color ="green">CreateNewUserAppSide.rb test passed</font>

@@ -1,0 +1,43 @@
+2021-05-13 07:22:03 -0600	/Users/cgoodnight/Documents/Automation/logs/NewuserPlaceOrderresults5_13_2021_7_22.txt opened
+2021-05-13 07:22:03 -0600	Using the environment_variables.txt values
+2021-05-13 07:22:05 -0600	You selected integration.deliverybizpro.com with browser=Google Chrome
+2021-05-13 07:22:05 -0600	
+
+Started test NewuserPlaceOrder.rb at 5_13_2021_7_22
+2021-05-13 07:22:05 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+2021-05-13 07:22:05 -0600	OS = x86_64-darwin18
+2021-05-13 07:22:07 -0600	Current URL = https://integration.deliverybizpro.com/login
+2021-05-13 07:22:07 -0600	-->Entering '5_13_2021_Default_Cust@mailinator.com' into Username
+2021-05-13 07:22:09 -0600	-->Entering 'getswift' into Password
+2021-05-13 07:22:11 -0600	-->Clicking Login Button 
+2021-05-13 07:22:13 -0600	-->Clicking on product number 1325  Description: <br><font color ="blue"> DBP TEST2
+Cristina's box
+$0.00 </font>
+2021-05-13 07:22:18 -0600	-->Clicking Clicking the Frequency of Next Week 
+2021-05-13 07:22:19 -0600	-->Clicking Add to Delivery Button for product no. 1325 
+2021-05-13 07:22:25 -0600	-->Clicking OK button for add to cart confirmation 
+2021-05-13 07:22:27 -0600	-->Clicking on product number 1243  Description: <br><font color ="blue"> Changed product name from -test product
+$3.00
+$2.00 </font>
+2021-05-13 07:22:32 -0600	-->Clicking Clicking the Frequency of Weekly 
+2021-05-13 07:22:33 -0600	-->Clicking Add to Delivery Button for product no. 1243 
+2021-05-13 07:22:35 -0600	Delivery options <br><font color ="blue">Delivering To: 4 Alpine Court Asheville, Other 28805 Change?
+START DELIVERY ON:
+Monday
+May 17
+Monday Home Delivery Friendly Name
+Monday
+May 24
+Monday Home Delivery Friendly Name
+Monday
+May 31
+Monday Home Delivery Friendly Name
+Monday
+June 7
+Monday Home Delivery Friendly Name</font>
+2021-05-13 07:22:40 -0600	-->Clicking OK button for add to cart confirmation 
+2021-05-13 07:22:41 -0600	V______Teardown section_________V
+2021-05-13 07:22:41 -0600	Current URL = https://integration.deliverybizpro.com/summary.php?go=products&12
+2021-05-13 07:22:42 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_13_2021\\Final__NewuserPlaceOrderresults5_13_2021_7_22.txt_0.png 
+2021-05-13 07:22:47 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-13 07:22:47 -0600	<font color ="green">NewuserPlaceOrder.rb test passed</font>

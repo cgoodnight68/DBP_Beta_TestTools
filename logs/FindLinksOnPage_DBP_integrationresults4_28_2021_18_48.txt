@@ -1,0 +1,6 @@
+2021-04-28 18:48:04 -0600	/Users/cgoodnight/Documents/Automation/logs/FindLinksOnPage_DBP_integrationresults4_28_2021_18_48.txt opened
+2021-04-28 18:48:04 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-28 18:50:09 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-28 18:50:11 -0600	V______Teardown section_________V

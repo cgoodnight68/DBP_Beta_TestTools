@@ -1,0 +1,53 @@
+2021-04-07 13:42:02 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserPlaceOrderresults4_7_2021_13_42.txt opened
+2021-04-07 13:42:02 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-07 13:42:04 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-07 13:42:06 -0600	V______Teardown section_________V
+2021-04-07 13:42:08 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserPlaceOrderresults4_7_2021_13_42.txt opened
+2021-04-07 13:42:08 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-07 13:42:19 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-07 13:42:22 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-07 13:42:25 -0600	You selected bikeables.client-staging.deliverybizpro.com with browser=Google Chrome
+2021-04-07 13:42:25 -0600	
+
+Started test NewUserPlaceOrder.rb at 4_7_2021_13_42
+2021-04-07 13:42:25 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+2021-04-07 13:42:25 -0600	OS = x86_64-darwin18
+2021-04-07 13:42:25 -0600	Branch = 
+2021-04-07 13:42:25 -0600	Branch InstallDate = 
+2021-04-07 13:42:27 -0600	Current URL = https://bikeables.client-staging.deliverybizpro.com/login
+2021-04-07 13:42:27 -0600	-->Entering '4_7_2021_Default_Cust@mailinator.com' into Username
+2021-04-07 13:42:29 -0600	-->Entering 'getswift' into Password
+2021-04-07 13:42:31 -0600	-->Clicking Login Button 
+2021-04-07 13:42:35 -0600	Choosing product VG MEATS
+VG Meats Coffee Rubbed Bacon
+$9.49
+$8.79
+2021-04-07 13:42:40 -0600	-->Clicking Clicking the Frequency of Next Week 
+2021-04-07 13:42:41 -0600	-->Clicking Add to Delivery Button for 2555 
+2021-04-07 13:42:56 -0600	Delivery options Delivering To: 346 Dundurn Street South Hamilton, ON L8P 4L6 Change?
+START DELIVERY ON:
+Tuesday
+April 13
+Wednesday
+April 14
+Thursday
+April 15
+Friday
+April 16
+Saturday
+April 17
+2021-04-07 13:43:01 -0600	Choosing product MIKE & MIKE'S ORGANICS
+Organic Kiwis (1lb)
+$5.95
+2021-04-07 13:43:07 -0600	V______Teardown section_________V
+2021-04-07 13:43:07 -0600	Current URL = https://bikeables.client-staging.deliverybizpro.com/summary.php?go=products&36
+2021-04-07 13:43:09 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/4_7_2021\\Final__NewUserPlaceOrderresults4_7_2021_13_42.txt_0.png 
+2021-04-07 13:43:14 -0600	___________________________________________________________
+2021-04-07 13:43:14 -0600	<font color ="red">Test case failed with the following errors.</font>
+2021-04-07 13:43:14 -0600	<font color ="red">failure 0 </font> -> --> Element  //h2[contains(text(),'Start Delivery On')] of type xpath was not displayed -> Failed snapshot at /Users/cgoodnight/Documents/Automation/logs/4_7_2021\\NewUserPlaceOrderresults4_7_2021_13_42.txt_0.png  </font>
+2021-04-07 13:43:14 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-04-07 13:43:14 -0600	<font color ="red">NewUserPlaceOrder.rb failed </font>

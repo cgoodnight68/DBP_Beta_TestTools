@@ -1,0 +1,7 @@
+2021-04-28 20:41:47 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults4_28_2021_20_41.txt opened
+2021-04-28 20:41:47 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-04-28 20:41:58 -0600	
+Enter the database name for the environment.  Default is integration
+2021-04-28 20:42:03 -0600	What browser do you want to test in (chrome, firefox)
+2021-04-28 20:42:09 -0600	V______Teardown section_________V

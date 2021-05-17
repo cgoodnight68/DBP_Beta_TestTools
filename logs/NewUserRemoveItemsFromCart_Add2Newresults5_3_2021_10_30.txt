@@ -1,0 +1,41 @@
+2021-05-03 10:30:37 -0600	/Users/cgoodnight/Documents/Automation/logs/NewUserRemoveItemsFromCart_Add2Newresults5_3_2021_10_30.txt opened
+2021-05-03 10:30:37 -0600	
+Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
+2021-05-03 10:30:41 -0600	
+Enter the database name for the environment.  Default is integration
+2021-05-03 10:30:48 -0600	What browser do you want to test in (chrome, firefox)
+2021-05-03 10:30:51 -0600	You selected triangleurbanfarm.client-staging.deliverybizpro.com with browser=Google Chrome
+2021-05-03 10:30:51 -0600	
+
+Started test NewUserRemoveItemsFromCart_Add2New.rb at 5_3_2021_10_30
+2021-05-03 10:30:51 -0600	Browser= chrome Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+2021-05-03 10:30:51 -0600	OS = x86_64-darwin18
+2021-05-03 10:30:53 -0600	Current URL = https://triangleurbanfarm.client-staging.deliverybizpro.com/login
+2021-05-03 10:30:53 -0600	-->Entering '5_3_2021_Default_Cust@mailinator.com' into Username
+2021-05-03 10:30:56 -0600	-->Entering 'getswift' into Password
+2021-05-03 10:30:58 -0600	-->Clicking Login Button 
+2021-05-03 10:31:00 -0600	-->Clicking User Cart 
+2021-05-03 10:31:01 -0600	There are 3 item(s) in the cart before removing 55% Dark Milk Chocolate Bar
+2021-05-03 10:31:01 -0600	-->Clicking the X next to 55% Dark Milk Chocolate Bar in the cart
+2021-05-03 10:31:31 -0600	There are 2 item(s) in the cart after removing 55% Dark Milk Chocolate Bar -- Pass product removed
+2021-05-03 10:31:31 -0600	There are 2 item(s) in the cart before removing Mother's Day Bouquet with Vase
+2021-05-03 10:31:31 -0600	-->Clicking the X next to Mother's Day Bouquet with Vase in the cart
+2021-05-03 10:32:01 -0600	There are 1 item(s) in the cart after removing Mother's Day Bouquet with Vase -- Pass product removed
+2021-05-03 10:32:01 -0600	-->Clicking on product number 616  Description: <br><font color ="blue"> MRS. RUTH'S JAMS
+Strawberry Lemonade
+$7.00 </font>
+2021-05-03 10:32:06 -0600	-->Clicking Clicking the Frequency of Next Week 
+2021-05-03 10:32:07 -0600	-->Clicking Add to Delivery Button for product no. 616 
+2021-05-03 10:32:13 -0600	-->Clicking OK button for add to cart confirmation 
+2021-05-03 10:32:16 -0600	-->Clicking on product number 608  Description: <br><font color ="blue"> FIDDLE TREE FARM
+Mother's Day Gift Basket
+$54.00 </font>
+2021-05-03 10:32:31 -0600	<font color ="orange">Clicking the Frequency of Weekly 
+2021-05-03 10:32:31 -0600	-->Clicking Add to Delivery Button for product no. 608 
+2021-05-03 10:32:37 -0600	-->Clicking OK button for add to cart confirmation 
+2021-05-03 10:32:38 -0600	V______Teardown section_________V
+2021-05-03 10:32:38 -0600	Current URL = https://triangleurbanfarm.client-staging.deliverybizpro.com/summary.php?go=products&24
+2021-05-03 10:32:39 -0600	Final_ Saved a screenshot at /Users/cgoodnight/Documents/Automation/logs/5_3_2021\\Final__NewUserRemoveItemsFromCart_Add2Newresults5_3_2021_10_30.txt_0.png 
+2021-05-03 10:32:44 -0600	View http://dexw5171.hr-applprep.de:8000/specifictest?1
+2021-05-03 10:32:44 -0600	<font color ="green">NewUserRemoveItemsFromCart_Add2New.rb test passed</font>
+2021-05-03 10:32:44 -0600	<font color ="orange">warning 0 </font> -> Clicking the Frequency of Weekly 
