@@ -1,52 +1,38 @@
-#Introduction 
-  The Overall framework for Hannover RE automation.  Written in ruby/selenium with a Ms SQL server back end.  
-  For results  go to http://dexw5171.hr-applprep.de:8000/
-  For test case descriptions go to http://dexw5171.hr-applprep.de:8000/testlisting
+This is a collection of beta automation tools for DBP.  This is a prototype of automation in Ruby that will be moved over to JAVA.  
+
+Installation
+
+Ruby is installed on Mac but you will need to install some gems.  
+
+First Clone the repository.  
+
+Then from the command line enter
+
+gem install pry
+
+gem install httparty
+
+gem install json
+
+gem install net-http
 
 
-
-#Getting Started
-To run all of these commands start in either powershell or command prompt as admin
-To get started I like to install chocolatey a package manager for windows.  https://chocolatey.org/install
-
-At a cmd prompt
-
-@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-
-  #Install ruby
- 
-  
-  download the installer from https://rubyinstaller.org/  then the 2.3.3 ruby or just https://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.3.3.exe
-
-  or 
-  
-   choco install ruby  (for now don't do this.  choco has 2.4 of ruby so we don't want that)
-   
-  
-   #Get GIT
-  Get the windows installer of git https://git-scm.com/download/win and install it
-  
-  #get code
- I like to have the code in my user directory so go to your user directory (ie C:\Users\g0h) 
-and run  
- 
-  git clone  https://hannover-re.visualstudio.com/hlramerica/_git/Zenith_Automation automation
-
-  #install Gems 
-  Because of our restricted network access I have downloaded all the gems necessary
-  Go to the automation\gems folder in the command line.  Type in gem install *.gem
-
-  All gems should be installed (gem list at the command line)
-
-  #final setup
-  Make a folder in the Automation folder called logs
-  
-#Build and Test
-No need to build the code. To run a test, simply get the latest version, from your git repository by typing git pull.
-Then to run a test, then simply at the command line type ruby TestcaseName.rb  (i.e.  ruby .\1_GetDCAndZenithVersions.rb) The test will prompt you for environment
-and browser to test in.   Results are logged locally and in the webserver.
-
-Tests can also be run from the webserver directly.  Start at http://dexw5171.hr-applprep.de:8000/testlisting and select an environment to run then choose the test to run.
+That is it for installation! 
 
 
-#Contribute
+Note that to run these tests you will need to VPN in DBP.  
+
+Once logged in you can run a script by typing in the command line 
+ruby theScriptToRun.rb
+
+ie. ruby DBP-T239.rb
+
+The script will ask for the environment (full base url, ie. integration.deliverybizpro.co)
+Then the script will ask for the database, this is the db name (i.e. integration)
+then will prompt for the browser to use.  At this time it is only chrome.  Enter chrome and hit return.
+
+The test will run and results will show up in http://ec2-54-201-168-175.us-west-2.compute.amazonaws.com/.  Logs will also be dumped along with screen shots in the logs folder in this repository along with snapshots.
+
+The current set of scripts can be run in a batch using sh DBP_Smoke.rb.  Before running a file named environment_variables.txt needs to be created with the environment, the database, and the browser each on a separate line.  The environment_variables2.txt file is a sample.  If this file exists, the scripts will run unprompted using the values in this file. 
+
+
