@@ -1,4 +1,0 @@
-2021-02-07 16:12:52 -0700	/Users/cgoodnight/Documents/Automation/logs/FindLinksOnPage_DBPresults2_7_2021_16_12.txt opened
-2021-02-07 16:12:52 -0700	
-What environment do you want to test? (DEV,QA,STAGING,DEVINT,QA2,STAGING2)
-2021-02-07 16:12:56 -0700	V______Teardown section_________V

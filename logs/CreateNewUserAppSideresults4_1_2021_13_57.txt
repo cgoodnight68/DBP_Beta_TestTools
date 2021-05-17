@@ -1,6 +1,0 @@
-2021-04-01 13:57:09 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateNewUserAppSideresults4_1_2021_13_57.txt opened
-2021-04-01 13:57:09 -0600	
-Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
-2021-04-01 13:57:11 -0600	
-Enter the database name for the environment.  Default is integration
-2021-04-01 13:57:16 -0600	V______Teardown section_________V

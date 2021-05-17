@@ -1,3 +1,0 @@
-2021-04-09 14:45:35 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults4_9_2021_14_45.txt opened
-2021-04-09 14:45:35 -0600	Using the environment_variables.txt values
-2021-04-09 14:47:15 -0600	V______Teardown section_________V

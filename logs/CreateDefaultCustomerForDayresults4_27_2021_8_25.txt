@@ -1,4 +1,0 @@
-2021-04-27 08:25:58 -0600	/Users/cgoodnight/Documents/Automation/logs/CreateDefaultCustomerForDayresults4_27_2021_8_25.txt opened
-2021-04-27 08:25:58 -0600	
-Enter the baseurl of the environment do you want to test? Enter for default integration.deliverybizpro.com
-2021-04-27 08:26:03 -0600	V______Teardown section_________V
