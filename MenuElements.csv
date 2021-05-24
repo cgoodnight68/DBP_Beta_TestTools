@@ -200,7 +200,10 @@ Periodic tasks,DBP Settings>System Logs,a,y,0,,,
 ,User Management>Customers>Create Customer Profile,,,,:xpath,"//td[contains(text(),'Store')]/../",Store
 ,User Management>Customers>Create Customer Profile,,,,:xpath,//input[@name='is_billing_and_delivery_same']/..,Billing Address is the same checkbox
 ,User Management>Customers>Create Customer Profile,,,,:xpath,//input[@value=' Save '],Save
-,User Management>Customers>Create Customer Profile,,,,:xpath,"//*[contains(text(),'Profile has been successfully created')]",Profile sucessfully created
+,User Management>Customers>Create Customer Profile,,,,:xpath,"//select[@id='s_county']/..",County Selector
+,User Management>Customers>Create Customer Profile,,,,:xpath,"//select[@id='birthday']/..",Birthday
+,User Management>Customers>Create Customer Profile,,,,:xpath,"//button[contains(text(),'Ok')]",Ok On Credit Card Saved Modal
+,User Management>Customers>Create Customer Profile,,,,:xpath,"//div[@role='alert']",Profile sucessfully created
 ,UserApp>Register,,,,:xpath,//input[@id='s_address'],Address
 ,UserApp>Register,,,,:xpath,//input[@id='s_city'],City
 ,UserApp>Register,,,,:xpath,//input[@id='s_zip'],Zip/Postal Code

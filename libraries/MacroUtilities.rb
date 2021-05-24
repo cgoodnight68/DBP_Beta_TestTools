@@ -57,6 +57,11 @@ class Utilities;
     end
     enter_text("FirstName","User Management>Customers>Create Customer Profile", "#{date}_Default", "First Name")
     enter_text("LastName","User Management>Customers>Create Customer Profile", "Cust","Last Name")
+birthdayCheck = check_if_element_exists("Birthday","User Management>Customers>Create Customer Profile",10,"Birthday","warn")
+if birthdayCheck != "warn"
+enter_text("Birthday","User Management>Customers>Create Customer Profile","#{date}")
+	end
+
     enter_text("Email","User Management>Customers>Create Customer Profile", "#{date}_Default_Cust@mailinator.com","Email")
     enter_text("Email2","User Management>Customers>Create Customer Profile", "#{date}_Default_Cust@mailinator.com","Confirm Email")
     phoneProviderCheck = check_if_element_exists("Phone Provider selector","User Management>Customers>Create Customer Profile",5)
@@ -71,6 +76,11 @@ class Utilities;
 
     enter_text("Delivery City","User Management>Customers>Create Customer Profile", "#{city}","Delivery City")
     enter_text("Zipcode","User Management>Customers>Create Customer Profile", "#{zipcode}","Delivery Zipcode")
+ countryCheck = check_if_element_exists("County Selector","User Management>Customers>Create Customer Profile",10,"County Selector","warn")
+    if countryCheck != "warn"
+      click_element("County Selector","User Management>Customers>Create Customer Profile","County Selector")
+      @driver.action.send_keys("\ue015\ue015\ue007").perform #big hack. just sending down down and enter
+    end
     click_element_if_exists("Billing Address is the same checkbox","User Management>Customers>Create Customer Profile",10,"Billing Address is the same checkbox")
 
     enter_text("Phone","User Management>Customers>Create Customer Profile", "6122326519","Phone")
@@ -88,13 +98,20 @@ class Utilities;
     end
     enter_text("Password","User Management>Customers>Create Customer Profile", "getswift","Password")
     enter_text("Confirm Password","User Management>Customers>Create Customer Profile", "getswift","Confirm Password")
+   
+  #binding.pry
+
     click_element("Save","User Management>Customers>Create Customer Profile","Save button")
+    
+  #binding.pry
    
     wait_for_element("Profile sucessfully created","User Management>Customers>Create Customer Profile","Verifying profile sucessfully created",180)
-    check_if_element_exists("Profile sucessfully created","User Management>Customers>Create Customer Profile",60,"Verifying profile sucessfully created")
+    check_if_element_exists_get_element_text("Profile sucessfully created","User Management>Customers>Create Customer Profile",60,"Verifying profile sucessfully created")
   end
 
   def credit_card_modal_entry()
+      time = Time.new
+      date = "#{time.month}_#{time.day}_#{time.year}"
       frame = @driver.find_element(:xpath,"//iframe")
 
       @util.logging("switching to frame class:#{frame['class']} name:#{frame['name']} id:#{frame['id']}")
@@ -108,7 +125,7 @@ class Utilities;
      #throw a warning and exit
     end 
 
-      binding.pry
+   
       @driver.switch_to.frame( @driver.find_element(:xpath,"//iframe"))
          
       case frameLocator
@@ -118,24 +135,31 @@ class Utilities;
              enter_text(:xpath,"//label[contains(text(),'Expiry')]/../input","0826","Stripe card exipration")
              enter_text(:xpath,"//label[contains(text(),'CVC')]/../input","123","Stripe card CVC") 
              click_element(:xpath,"//button[@type='submit']","Submit on Modal")
+             sleep(5)
+             click_element("Ok On Credit Card Saved Modal","User Management>Customers>Create Customer Profile","Submit on Modal")
+            
         when 'nmiFrame'
          	 enter_text("Card Number on Modal","User Management>Customers>Create Customer Profile", "4111111111111111","Credit Card on Modal")
              enter_text("Expiration date on Modal","User Management>Customers>Create Customer Profile", "0826","Expiration date on Modal")
              enter_text("CVV2 on Modal","User Management>Customers>Create Customer Profile", "123","Card CCV on Modal")
              click_element("Submit on Modal","User Management>Customers>Create Customer Profile","Submit on Modal")
+              @driver.switch_to.default_content
+             @driver.action.send_keys("\t\t\n").perform
+
         when 'monerisFrame'
         	 enter_text(:xpath,"//input[@name='cardnumber']","4111111111111111","Moneris card number")
              enter_text(:xpath,"//input[@name='exp-date']","0826","Moneris card exipration")
              enter_text(:xpath,"//input[@name='cvc']","123","Monaris card CVC") 
              @driver.switch_to.default_content
              click_element(:xpath,"//button[@id='monerisSubmitButton']","Monaris Save Card")
+             
         else	
+        	   binding.pry
+        	   #unknown frame
       end	
 
 
-      @driver.switch_to.default_content
-      @driver.action.send_keys("\t\t\n").perform
-
+     
        
       end
 
@@ -313,11 +337,11 @@ class Utilities;
        #if (check_if_element_exists(:xpath,get_element_from_navigation("Remove Recurring Product Modal","UserApp>Cart"),10,"Check for remove Recurring item modal","warn") ==1)
       #	binding.pry
      # highlight(:xpath,get_element_from_navigation("Remove All Future Deliveries button","UserApp>Cart"),10)
-      	sleep(30)
+      	sleep(10)
 
-      	click_element_if_exists("Remove All Future Deliveries button","UserApp>Cart",10,"Remove All Future Recurring Deliveries in item modal")
+      	click_element_if_exists("Remove All Future Deliveries button","UserApp>Cart",10,"Remove All Future Recurring Deliveries in item modal","warn")
       #	binding.pry
-      	click_element_if_exists(:"OK button","UserApp>ImportantInformationModal",20,"OK button")
+      	click_element_if_exists("OK button","UserApp>ImportantInformationModal",20,"OK button","warn")
       #end
       #binding.pry
       elementsAfter = @driver.find_elements(:xpath ,"//div[@class='table-cell product_name']")

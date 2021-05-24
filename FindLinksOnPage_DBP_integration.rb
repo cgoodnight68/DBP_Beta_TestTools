@@ -26,7 +26,7 @@ class FindLinksOnPageDBP < Test::Unit::TestCase
     @test.goto_url("#{@base_url}/admin/login")
     timingFile=File.open("./logs/#{@base_url.gsub("https://","").gsub("/admin/login","")}.csv","a")
 
-    menuFile = File.read("./logs/MenuElements.csv")
+    menuFile = File.read("./MenuElements.csv")
 
     keys = ['menuItem','path','elementType','base','count','identifier','elementName']
     menuElements = CSV.parse(menuFile).map {|a| Hash[ keys.zip(a) ] }
@@ -61,9 +61,9 @@ class FindLinksOnPageDBP < Test::Unit::TestCase
           ## do nothing
         else
           if (@test.check_if_exist(:xpath,"//input[@value ='Export to Excel']",2))
-            # startTime = Time.new
-            # @test.click_element_if_exists(:xpath,"//input[@value ='Export to Excel']",20)
-            # error_logging("#{menuElement['menuItem']} - Export to Excel",startTime,timingFile)
+             startTime = Time.new
+             @test.click_element_if_exists(:xpath,"//input[@value ='Export to Excel']",20)
+             error_logging("#{menuElement['menuItem']} - Export to Excel",startTime,timingFile)
           end
         end
         sleep(1)

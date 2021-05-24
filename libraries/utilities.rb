@@ -558,6 +558,11 @@ class Utilities
       how = args[0]
       what =args[1]
       timeout = args[2]
+      if (how.is_a? String)
+        nLookup = get_element_from_navigation2(how,what)
+        how = nLookup[0]
+        what = nLookup[1]
+      end
       msg=""
       override= false
       if args.size >=4
