@@ -15,7 +15,7 @@ require "pry"
 require "./libraries/MacroUtilities.rb"
 #require "google_drive"
 #require "certified"
-require 'mysql2'
+#require 'mysql2'
 require 'net/ssh/gateway'
 require "csv.rb"
 require "logging"
