@@ -6,6 +6,11 @@ Ruby is installed on Mac but you will need to install some gems.
 
 First Clone the repository.  
 
+
+
+Note:  if you have the default ruby installed on your mac you may need to run the following command
+export GEM_HOME="$HOME/.gem"
+
 Then from the command line enter
 
 gem install pry
@@ -15,6 +20,16 @@ gem install httparty
 gem install json
 
 gem install net-http
+
+gem install selenium-webdriver
+
+gem install net-ssh
+
+gem install net-sftp
+
+for the next gem Posgres needs to be installed, install with brew install postgresql.  If Brew not installed install it with /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+gem install pg   
 
 
 That is it for installation! 
