@@ -21,10 +21,24 @@ class CreateDefaultCustomerForDay < Test::Unit::TestCase
   end
 
   def test_create_default_user_for_day
-    @test.load_admin_navigation_elements
-    @test.login_to_admin
-    @test.admin_navigate_to("Create Customer Profile")
-    @test.create_default_customer_for_the_day()
+    begin
+      @test.load_admin_navigation_elements
+      @test.login_to_admin
+      @test.admin_navigate_to("Create Customer Profile")
+      @test.create_default_customer_for_the_day()
+
+      
+    rescue => e
+      @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
+      @util.logging(e.inspect)
+      errortrace = e.backtrace
+      size = errortrace.size
+      for i in 0..size
+        errortraceString = "#{errortraceString}\n #{errortrace[i]}"
+      end
+      @util.logging(errortraceString)
+      throw e
+    end
   end
 
 

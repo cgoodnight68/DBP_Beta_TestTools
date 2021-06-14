@@ -21,12 +21,24 @@ class NewUserPlaceOrder < Test::Unit::TestCase
   end
 
   def test_new_user_place_order
-
-    @test.load_admin_navigation_elements
-    username,password = @test.get_default_user_for_day
-    @test.login_as_customer(username,password)
-    @test.select_random_item_from_shop_page(1,"Next Week")
-    @test.select_random_item_from_shop_page(1,"Weekly")
+    begin
+      @test.load_admin_navigation_elements
+      username,password = @test.get_default_user_for_day
+      @test.login_as_customer(username,password)
+      @test.select_random_item_from_shop_page(1,"Next Week")
+      @test.select_random_item_from_shop_page(1,"Weekly")
+      
+    rescue => e
+      @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
+      @util.logging(e.inspect)
+      errortrace = e.backtrace
+      size = errortrace.size
+      for i in 0..size
+        errortraceString = "#{errortraceString}\n #{errortrace[i]}"
+      end
+      @util.logging(errortraceString)
+      throw e
+    end
   end
 
 

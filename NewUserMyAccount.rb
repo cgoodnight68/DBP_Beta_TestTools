@@ -36,7 +36,7 @@ class NewUserPlaceOrder < Test::Unit::TestCase
     @test.check_if_element_exists(:xpath,@test.get_element_from_navigation("Delivery History","UserApp>MyAccount"),10,"Delivery History")
     @test.check_if_element_exists(:xpath,@test.get_element_from_navigation("Preferences","UserApp>MyAccount"),10,"Preferences")
     @test.check_if_element_exists(:xpath,@test.get_element_from_navigation("Referrals","UserApp>MyAccount"),10,"Referalls")
-    
+
 
     @test.click_element(:xpath,@test.get_element_from_navigation("Account Info","UserApp>MyAccount"),"Account Info")
     @test.check_if_element_exists(:xpath,@test.get_element_from_navigation("First Name","UserApp>MyAccount>AccountInfo"),10,"First Name")
@@ -84,7 +84,7 @@ class NewUserPlaceOrder < Test::Unit::TestCase
     @test.check_if_element_exists(:xpath,@test.get_element_from_navigation("Change Delivery Address","UserApp>MyAccount>DeliveryHistory"),10,"Change Delivery Address")
     @test.check_if_element_exists_get_element_text(:xpath,@test.get_element_from_navigation("Delivery Address","UserApp>MyAccount>DeliveryHistory"),10,"Delivery Address")
     @test.check_if_element_exists_get_element_text(:xpath,@test.get_element_from_navigation("Current Balance","UserApp>MyAccount>DeliveryHistory"),10,"Current Balance")
-   
+
 
     @test.click_element(:xpath,@test.get_element_from_navigation("Preferences","UserApp>MyAccount"),"Preferences")
     @test.check_if_element_exists(:xpath,@test.get_element_from_navigation("Change Delivery Address","UserApp>MyAccount>Preferences"),10,"Change Delivery Address")
@@ -103,9 +103,18 @@ class NewUserPlaceOrder < Test::Unit::TestCase
     @test.check_if_element_exists(:xpath,@test.get_element_from_navigation("Referral URL","UserApp>MyAccount>Referrals"),10,"Referral URL")
 
 
-
-
+    r rescue => e
+    @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
+    @util.logging(e.inspect)
+    errortrace = e.backtrace
+    size = errortrace.size
+    for i in 0..size
+      errortraceString = "#{errortraceString}\n #{errortrace[i]}"
+    end
+    @util.logging(errortraceString)
+    throw e
   end
 
-
 end
+
+

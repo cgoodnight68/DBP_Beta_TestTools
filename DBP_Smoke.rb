@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
+ruby FindLinksOnPage_DBP_integration.rb
 ruby CreateDefaultCustomerForDay.rb
 ruby NewuserPlaceOrder.rb
 ruby NewUserRemoveItemsFromCart_Add2New.rb
 ruby NewUserMyAccount.rb
 ruby CreateNewUserAppSide.rb
 ruby "DBP-T239.rb" 
+ruby "DBP-T250.rb" 
+ruby "DBP-T356.rb" 

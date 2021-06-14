@@ -76,6 +76,37 @@ class Util
     file.write ("#{time1}\t#{message}\n")
     file.close
   end
+   def errorlogging(message)
+   #turned off but is code for debugging to make the logs less verbose
+   if message.include?("---->")
+
+      debugging = message.index("---->") -1
+       if message.include?("xpath")
+        # file2 = File.open(".\\siteobjects.txt","a")
+       
+        # parsedMessage = message.gsub("---->","\t").gsub("-->","\t").gsub("of type xpath","")
+        # parsedMessage = "#{parsedMessage}\t#{@@loggingDriver.current_url}\n"
+        # file2.write("#{parsedMessage}")
+        # file2.close
+ 
+      end
+    message = message[0..debugging]
+
+    #binding.pry
+    end
+    if @@usingEnviro==0 then
+      #log to the console
+      puts(message)
+    end
+
+
+    file = File.open(filename,"a")
+    time1 = Time.now
+    file.write ("#{time1}\t <font color=\"red\">#{message}</font>\n")
+    file.close
+  end
+
+
   def share_driver(driver)
       @@loggingDriver = driver
   end

@@ -27,7 +27,10 @@ gem install net-ssh
 
 gem install net-sftp
 
-for the next gem Posgres needs to be installed, install with brew install postgresql.  If Brew not installed install it with /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+gem install tiny-tds
+
+for the next gem Posgres needs to be installed, install with brew install postgresql.  
+If Brew not installed install it with /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 gem install pg   
 
