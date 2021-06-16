@@ -8,3 +8,5 @@ ruby CreateNewUserAppSide.rb
 ruby "DBP-T239.rb" 
 ruby "DBP-T250.rb" 
 ruby "DBP-T356.rb" 
+ruby "DBP-T255.rb" 
+ruby "DBP-T262.rb" 

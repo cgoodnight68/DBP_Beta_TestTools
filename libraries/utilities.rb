@@ -864,7 +864,8 @@ class Utilities
   # Inserts a test case warning that shows up in the test case and at the end of the test case either in a pass or fail
   #    warn string with the warning to insert
   def insert_warning(warning)
-    @util.logging("<font color =\"orange\">#{warning} </font>")
+    @util.logging("<font color =\"orange\">WARN --> Failed (to) -#{warning}</font>")
+    @util.logging("</font>")
     nextWarning = @@test_case_warn_details.count
     @@test_case_warn_details[nextWarning] = warning
     # @@test_case_warn_details.push(warning)
@@ -1275,6 +1276,12 @@ class Utilities
       what =args[1]
       message =args[2]
       msg=""
+      if  (how.is_a? String)
+        nLookup = get_element_from_navigation2(how,what)
+        how = nLookup[0]
+        what = nLookup[1]
+      end
+
       if args.size ==4
         msg= args[3] + "---->"
       end
@@ -1290,12 +1297,11 @@ class Utilities
         element = @driver.find_element(how , what)
         element if element.displayed?
       }
-      binding.pry
       option = Selenium::WebDriver::Support::Select.new( @driver.find_element(how, what))
       if value=='value'
-        testingBreak()
+       binding.pry
 
-        option.select_by(:value, message.to_i)
+        option.select_by(:value, message)
       else
         option.select_by(:text, message)
       end

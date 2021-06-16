@@ -126,9 +126,9 @@ class Utilities;
       click_element("CreditCardDetailModal","User Management>Customers>Create Customer Profile","Credit Card Detail Modal Button")
       credit_card_modal_entry()
       ## sends enter to the modal ok confirmation
-    elsif (check_if_element_exists("Payment Method selector","User Management>Customers>Create Customer Profile",10,"Payment method selector","warn") != "warn")
+    elsif (check_if_element_exists(:xpath,"//iframe",10,"Payment method selector","warn") != "warn")
         credit_card_modal_entry()
-    
+  
     else
       
       enter_text("Card Number","User Management>Customers>Create Customer Profile", "4111111111111111","Credit Card")
@@ -163,10 +163,10 @@ end
 
   def credit_card_modal_entry()
     begin
+
     time = Time.new
     date = "#{time.month}_#{time.day}_#{time.year}"
     frame = @driver.find_element(:xpath,"//iframe")
-
     @util.logging("switching to frame class:#{frame['class']} name:#{frame['name']} id:#{frame['id']}")
     if frame['name'] != ''
       frameLocator= frame['name']
@@ -183,7 +183,7 @@ end
   end
 
     @driver.switch_to.frame( @driver.find_element(:xpath,"//iframe"))
-
+binding.pry
     case frameLocator
     when "stripe_checkout_app"
       enter_text(:xpath,"//label[contains(text(),'Email')]/../input","#{date}_Default_Cust@mailinator.com","Stripe email input")
@@ -364,7 +364,7 @@ rescue
 
   def select_random_item_from_shop_page(quantity,frequency)
     begin
-     click_element_if_exists(:xpath,"//*[@id='alert-message-modal']/div/div/div[3]/button",10,"Catch any modal windows open from login")
+     click_element_if_exists(:xpath,"//*[@id='alert-message-modal']/div/div/div[3]/button",10,"Check if any modal is open and click on it at login")
     elements = @driver.find_elements(:xpath ,"//div[@class='product-wrapper']/..")
     if (elements.count>0)
       productWrapperToClick = rand(elements.count.to_i) - 1
@@ -545,6 +545,75 @@ rescue
       throw("Not on supplier #{supplierlogin} page")
     end
 
+  end
+   def search_for_driver()
+    driverLogin =""
+       results = run_automation_db_query("select email from dbp_customers where usertype = 'D'  order by rand() limit 1")
+      results.each do |row|
+       driverLogin = row["email"]
+      end
+     enter_text("Search Text Field","User Management>Drivers>Search for Drivers",driverLogin,"Search text field")
+
+     click_element("Search Button","User Management>Drivers>Search for Drivers","Search Button")
+    click_element(:xpath,"//p[contains(text(),'#{driverLogin}')]/a", "Clicking on #{driverLogin}")
+    url = get_url()
+    @util.logging("URL is #{url}")
+   if (url.include?("admin/user_modify.php") && url.include?("usertype=D"))
+      check_if_element_exists(:xpath,"//input[@value='#{driverLogin}']",10,"Driver Email on driver modify page")
+    else
+     @util.errorlogging("Not on driver #{driverLogin} page")
+      throw("Not on driver #{driverLogin} page")
+    end
+
+  end
+  def search_for_product()
+    productCode =""
+    productName=""
+       results = run_automation_db_query("select * from dbp_products order by rand() limit 1")
+      results.each do |row|
+       productCode = row["productcode"]
+       productName = row["product"]
+      end
+     enter_text("Search by keyword","Products>Edit/Search Products",productCode,"Search by Keyword")
+
+     click_element("Search Button","Products>Edit/Search Products","Search Button")
+    click_element(:xpath,"//a[contains(text(),'#{productCode}')]", "Clicking on SKU #{productCode}")
+    url = get_url()
+    @util.logging("URL is #{url}")
+   if (url.include?("admin/products"))
+      check_if_element_exists(:xpath,"//input[@value='#{productCode}']",10,"SKU on product edit page")
+      check_if_element_exists(:xpath,"//input[@value='#{productName}']",10,"Product Name on product edit page")
+    else
+     @util.errorlogging("Not on product #{productCode} page")
+      throw("Not on product #{productCode} page")
+    end
+
+
+    @driver.navigate.back 
+    @util.logging("Navigating back to the search page and clicking on the Product name")
+     click_element(:xpath,"//a[contains(text(),'#{productName}')]", "Clicking on Product #{productName}")
+    url = get_url()
+    @util.logging("URL is #{url}")
+   if (url.include?("admin/products"))
+      check_if_element_exists(:xpath,"//input[@value='#{productCode}']",10,"SKU on product edit page")
+      check_if_element_exists(:xpath,"//input[@value='#{productName}']",10,"Product Name on product edit page")
+    else
+     @util.errorlogging("Not on product #{productCode} page")
+      throw("Not on product #{productCode} page")
+    end
+
+  end
+
+  def add_new_product_for_day()
+     time = Time.new
+      date = "#{time.month}_#{time.day}_#{time.year}"
+      sku = "sku#{time.month}#{time.day}#{time.year}"
+      
+    enter_text("Product Name","Products>Add New Product","Product for #{date}", "Product Name")
+    enter_text("SKU","Products>Add New Product",sku, "sku")
+    randSupplier = rand(5)
+    send_dropdown_list_text("Supplier select","Products>Add New Product",randSupplier,"Supplier Select option #{randSupplier}" ,"value")
+    binding.pry
   end
 
 ;end
