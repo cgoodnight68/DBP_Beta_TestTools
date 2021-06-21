@@ -43,6 +43,7 @@ class FindLinksOnPageDBP < Test::Unit::TestCase
       else
         startTime = Time.new
         tester= "//#{menuElement['elementType']}[text()=\"#{menuElement['menuItem']}\"]"
+        
         found = @test.click_element_from_elements(:xpath,"//#{menuElement['elementType']}[text()=\"#{menuElement['menuItem']}\"]", menuElement['count'], menuElement['menuItem'])
         if (found == true)
         	error_logging(menuElement['menuItem'], startTime,timingFile)

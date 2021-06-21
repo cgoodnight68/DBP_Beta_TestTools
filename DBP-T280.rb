@@ -5,7 +5,7 @@ require "test/unit"
 require "./libraries/utilities.rb"
 require "./libraries/testlogging.rb"
 
-class DBP_T250 < Test::Unit::TestCase
+class DBP_T262 < Test::Unit::TestCase
   def setup
     @test=Utilities.new
     filedir = File.expand_path File.dirname(__FILE__)
@@ -20,15 +20,15 @@ class DBP_T250 < Test::Unit::TestCase
     assert_equal nil, @verification_errors
   end
 
-  def test_dbp_t250
+  def test_dbp_t262
     begin
        date = @test.get_date()
       @test.load_admin_navigation_elements
       @test.login_to_admin
-      @test.admin_navigate_to("Search for Admins")
-      @test.search_for_administrator
+      @test.admin_navigate_to("Edit/Search Products")
+      @test.search_for_product()
       
-     rescue => e
+    rescue => e
       @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
       @util.logging(e.inspect)
       errortrace = e.backtrace

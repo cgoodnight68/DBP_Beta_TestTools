@@ -369,6 +369,7 @@ class Utilities
     rescue Net::ReadTimeout
       # binding.pry
       check_override(true,"<font color=\"orange\"> --> Net read failureElement #{msg} #{what} of type #{how} </font>")
+      @util.logging("</font>")
       false
     else
 
@@ -653,13 +654,13 @@ class Utilities
       if cb.displayed?
         if @@debug==1
           @util.logging("--> Element #{msg} #{what} of type #{how} exists  with text \n #{cb.text}")
-
+          return cb.text
           # @util.logging("--> Element #{msg} exists")
         end
       else
         return check_override(override,"--> Element #{msg} #{what} of type #{how} was not displayed")
       end
-      return 1
+    
     rescue Selenium::WebDriver::Error::NoSuchElementError
       @util.logging "#{what} of type #{how} is not displayed-  #{msg}"
       return check_override(override,"--> Element #{msg} #{what} of type #{how} was not displayed")
@@ -1263,14 +1264,46 @@ class Utilities
       false
     end
   end
+ def set_iframe(how,what)
+  begin
+      how = args[0]
+      what =args[1]
+      if  (how.is_a? String)
+        nLookup = get_element_from_navigation2(how,what)
+        how = nLookup[0]
+        what = nLookup[1]
+      end
+      frame = @driver.find_element(how,what)
+    @driver.switch_to.frame(frame)
+    if frame['name'] != ''
+      frameLocator= frame['name']
+    elsif frame['class'] != ''
+      frameLocator = frame['class']
+    elsif frame['id'] != ''
+      frameLocator = frame['id']
+    else
+      @util.errorlogging ("Unknown frame name: #{frame['name']} class: #{frame['class']} id: #{frame['id']}")
+       throw ("Unknown frame name: #{frame['name']} class: #{frame['class']} id: #{frame['id']}")
+    end
+
+      @util.logging("Switched to #{frameLocator}")
+        rescue
+      check_override(true,"Unable to switch to iFrame  #{how} and #{what} ",false)
+    end
+end
+
+def return_to_default_frame()
+    @driver.switch_to.default_content
+    @util.logging("Returning to default content")
+end
   # Selects a value from a dropdown list element
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
-  #   message  The option to select from the dropdown list.  If value = 'value' convert message to integer and select the option by value
+  #   message  The option to select from the dropdown list.  If value = 'index' convert message to integer and select the option by index
   #   msg -optional-  the logging message
-  #   value -optional- If value = 'value' convert message to integer and select the option by value
+  #   value -optional- If value = 'index' convert message to integer and select the option by index otherwise selects the option by text
 
-  def send_dropdown_list_text(*args)
+  def select_dropdown_list_text(*args)
     begin
       how = args[0]
       what =args[1]
@@ -1282,14 +1315,18 @@ class Utilities
         what = nLookup[1]
       end
 
-      if args.size ==4
+      if args.size >=4
         msg= args[3] + "---->"
       end
       if args.size ==5
         value=args[4]
       end
       if @@debug==1
-        @util.logging("-->Selecting #{message} from #{what} of type #{how}")
+       if value !="index"
+          @util.logging("-->Selecting  #{msg} '#{message}' from  #{what} of type #{how}")
+        else
+          @util.logging("-->Selecting  #{msg} #{message} from  #{what} of type #{how}")
+        end
       end
       wait = Selenium::WebDriver::Wait.new(:timeout => 180)
 
@@ -1298,10 +1335,8 @@ class Utilities
         element if element.displayed?
       }
       option = Selenium::WebDriver::Support::Select.new( @driver.find_element(how, what))
-      if value=='value'
-       binding.pry
-
-        option.select_by(:value, message)
+      if value=='index'
+        option.select_by(:index, message.to_i)
       else
         option.select_by(:text, message)
       end

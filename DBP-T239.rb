@@ -22,8 +22,7 @@ class DBP_T239 < Test::Unit::TestCase
 
   def test_dbp_t239
     begin
-      time = Time.new
-      date = "#{time.month}_#{time.day}_#{time.year}"
+       date = @test.get_date()
       @test.load_admin_navigation_elements
       @test.login_to_admin
       @test.admin_navigate_to("Search for Customers")

@@ -103,7 +103,7 @@ class NewUserPlaceOrder < Test::Unit::TestCase
     @test.check_if_element_exists(:xpath,@test.get_element_from_navigation("Referral URL","UserApp>MyAccount>Referrals"),10,"Referral URL")
 
 
-    r rescue => e
+    rescue => e
     @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
     @util.logging(e.inspect)
     errortrace = e.backtrace

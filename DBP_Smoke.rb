@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 ruby FindLinksOnPage_DBP_integration.rb
-ruby CreateDefaultCustomerForDay.rb
+ruby "DBP-T242.rb"
 ruby NewuserPlaceOrder.rb
 ruby NewUserRemoveItemsFromCart_Add2New.rb
 ruby NewUserMyAccount.rb
@@ -10,3 +10,6 @@ ruby "DBP-T250.rb"
 ruby "DBP-T356.rb" 
 ruby "DBP-T255.rb" 
 ruby "DBP-T262.rb" 
+ruby "DBP-T263.rb" 
+ruby "DBP-T252.rb"
+ruby "DBP-T257.rb"  
