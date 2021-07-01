@@ -26,6 +26,7 @@ require "logging"
 require "HTTParty"
 #require 'viewpoint'
 #include Viewpoint::EWS
+require "roo"
 
 class Utilities
   @@g_base_dir=""
@@ -307,11 +308,10 @@ class Utilities
       # binding.pry
       @util.logging "2 Failed find element for #{how} and #{what}"
       true
-    rescue
-      check_override(true,"Unknown error clicking on  #{how} and #{what} ",false)
-    else
-
-    end
+     rescue StandardError => e
+        @util.errorlogging("Unable to click #{msg} #{e}")
+        check_override("warn","Unable to click #{msg} #{e} --->identifier #{what} of type #{how}",false)
+      end
   end
   # Clicks an element
   #   how  element type (i.e. xpath, id etc)
@@ -343,6 +343,7 @@ class Utilities
         found = true
       else
         @util.logging "<font color=\"orange\"> --> Net read failureElement #{msg} #{what} of type #{how} </font>"
+        @util.logging("</font>")
         found = false
       end
       sleep(@@actionsleep)
@@ -371,11 +372,13 @@ class Utilities
       check_override(true,"<font color=\"orange\"> --> Net read failureElement #{msg} #{what} of type #{how} </font>")
       @util.logging("</font>")
       false
-    else
-
+    rescue StandardError => e
+      @util.errorlogging("Unable to click on element  #{e}")
+      throw ("Unable to click on element  #{e} ")
     end
     return found
   end
+
   # Right clicks an element to get the context click menu-  Use a separate click to select the specific menu item
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
@@ -601,12 +604,67 @@ class Utilities
       #cb.click
       if cb.enabled?
         if @@debug==1
-          @util.logging("--> Element #{msg} #{what} of type #{how} exists")
+          @util.logging("--> #{msg}  exists ---->#{what} of type #{how}")
 
           # @util.logging("--> Element #{msg} exists")
         end
       else
-        return check_override(override,"--> Element #{msg} #{what} of type #{how} was not displayed")
+        return check_override(override,"--> #{msg}  was not displayed---->#{what} of type #{how} ")
+      end
+      return 1
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      @util.logging "--> #{msg}  was not displayed---->#{what} of type #{how} "
+      return check_override(override,"--> #{msg}  was not displayed---->#{what} of type #{how} ")
+    rescue Selenium::WebDriver::Error::UnknownError
+      @util.logging "--> #{msg}  was not displayed---->#{what} of type #{how} "
+      return check_override(override,"--> #{msg}  was not displayed---->#{what} of type #{how} ")
+    rescue Selenium::WebDriver::Error::TimeoutError
+      @util.logging "--> #{msg}  was not displayed---->#{what} of type #{how} "
+      return check_override(override,"---> #{msg}  was not displayed---->#{what} of type #{how} ")
+    else
+
+    end
+  end
+  def check_if_element_exists_and_has_value(*args)
+    begin
+      how = args[0]
+      what =args[1]
+      value = args[2]
+      timeout = args[3]
+      msg=""
+      override= false
+      if (how.is_a? String)
+        nLookup = get_element_from_navigation2(how,what)
+        how = nLookup[0]
+        what = nLookup[1]
+      end
+      if args.size >=5
+        msg=  args[4]
+      end
+      if args.size >=6
+        override =args[5]
+      end
+
+      @driver.manage.timeouts.implicit_wait = timeout
+      wait = Selenium::WebDriver::Wait.new(:timeout => timeout)
+      cb = wait.until {
+        element = @driver.find_element(how , what)
+        element if element.enabled?
+      }
+
+
+
+      #cb.click
+      if cb.enabled?
+        if @@debug==1
+          if (cb.attribute("value") == value)
+          @util.logging("--> #{msg} exists and has value of #{value}  ----> #{what} of type #{how}")
+          else
+            check_override(override,"--> #{msg} exists but does not have the expected value of #{value}. It has #{cb.attribute("value")} ---->    #{what} of type #{how} was not displayed")
+          end
+        end
+      else
+        return check_override(override,"--> #{msg}  ----> #{what} of type #{how} was not displayed")
       end
       return 1
     rescue Selenium::WebDriver::Error::NoSuchElementError
@@ -634,8 +692,9 @@ class Utilities
       end
       msg=""
       override= false
+
       if args.size >=4
-        msg=  args[3]
+        msg= args[3]
       end
       if args.size >=5
         override =args[4]
@@ -653,23 +712,23 @@ class Utilities
       #cb.click
       if cb.displayed?
         if @@debug==1
-          @util.logging("--> Element #{msg} #{what} of type #{how} exists  with text \n #{cb.text}")
+          @util.logging("--> Verified #{msg} exists  with text \n #{cb.text}  ---->#{what} of type #{how} ")
           return cb.text
           # @util.logging("--> Element #{msg} exists")
         end
       else
-        return check_override(override,"--> Element #{msg} #{what} of type #{how} was not displayed")
+        return check_override(override,"--> Not Displayed #{msg} #{what} of type #{how}")
       end
     
     rescue Selenium::WebDriver::Error::NoSuchElementError
       @util.logging "#{what} of type #{how} is not displayed-  #{msg}"
-      return check_override(override,"--> Element #{msg} #{what} of type #{how} was not displayed")
+      return check_override(override,"--> Not Displayed #{msg} #{what} of type #{how} ")
     rescue Selenium::WebDriver::Error::UnknownError
       @util.logging "#{what} of type #{how} is not displayed - #{msg}"
-      return check_override(override,"--> Element #{msg} #{what} of type #{how} was not displayed")
+      return check_override(override,"--> Not Displayed #{msg} #{what} of type #{how} ")
     rescue Selenium::WebDriver::Error::TimeoutError
       @util.logging "#{what} of type #{how} is not displayed - #{msg}"
-      return check_override(override,"--> Element #{msg} #{what} of type #{how} was not displayed")
+      return check_override(override,"--> Not Displayed #{msg} #{what} of type #{how} ")
     else
 
     end
@@ -797,10 +856,10 @@ class Utilities
       #binding.pry
       if takeSnapshot==true
         justFile =@@g_base_dir[(@@g_base_dir.rindex('/')+1)..@@g_base_dir.length]
-        @@test_case_fail_details[newArrayStart] ="#{failError} -> Failed snapshot at #{@@artifact_dir}\\\\#{justFile}_#{artifactLength}.png "
-        @driver.save_screenshot("#{@@artifact_dir}\\\\FAIL#{justFile}_#{artifactLength}.png")
+        @@test_case_fail_details[newArrayStart] ="#{failError} -> Failed snapshot at #{@@artifact_dir}/#{justFile}_#{artifactLength}.png "
+        @driver.save_screenshot("#{@@artifact_dir}/FAIL#{justFile}_#{artifactLength}.png")
         # shortArtifactDir = @@artifact_dir.gsub("\\\\hannover-re.grp\\shares\\hlrus_ex\\CDMI_Project\\Testing\\AutomationLogs\\","")
-
+       # binding.pry
         shortArtifactDir = @@artifact_dir.downcase.gsub("c:/automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
         #  shortArtifactDir = @@artifact_dir.gsub("c:/Automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
 
@@ -823,19 +882,20 @@ class Utilities
       if takeSnapshot==true
         justFile =@@g_base_dir[(@@g_base_dir.rindex('/')+1)..@@g_base_dir.length]
         @@test_case_fail_details[newArrayStart] ="#{failError} -> Failed snapshot at #{@@artifact_dir}\\\\#{justFile}_#{artifactLength}.png "
-        @driver.save_screenshot("#{@@artifact_dir}\\\\FAIL#{justFile}_#{artifactLength}.png")
+        @driver.save_screenshot("#{@@artifact_dir}/FAIL#{justFile}_#{artifactLength}.png")
         # shortArtifactDir = @@artifact_dir.gsub("\\\\hannover-re.grp\\shares\\hlrus_ex\\CDMI_Project\\Testing\\AutomationLogs\\","")
-
+      # binding.pry
         shortArtifactDir = @@artifact_dir.downcase.gsub("c:/automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
 
         #  shortArtifactDir = @@artifact_dir.gsub("c:/Automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
 
-        @@test_case_fail_artifacts.push("#{shortArtifactDir}\\\\FAIL#{justFile}_#{artifactLength}.png")
+        @@test_case_fail_artifacts.push("#{shortArtifactDir}/FAIL#{justFile}_#{artifactLength}.png")
       else
 
         insert_warning(failError)
       end
       @util.logging(" <font color=\"orange\">______Warning!! Previous line failed-Continuing on__________</font>")
+      @util.logging("</font>")
       # if takeSnapshot==true
       #  @util.logging("Failed snapshot at #{@@artifact_dir}\\\\#{justFile}_#{newArrayStart}.png ")
       # end
@@ -848,9 +908,9 @@ class Utilities
       if takeSnapshot==true
         justFile =@@g_base_dir[(@@g_base_dir.rindex('/')+1)..@@g_base_dir.length]
         @@test_case_fail_details[newArrayStart] ="#{failError} -> Failed snapshot at #{@@artifact_dir}\\\\#{justFile}_#{artifactLength}.png "
-        @driver.save_screenshot("#{@@artifact_dir}\\\\FAIL#{justFile}_#{artifactLength}.png")
+        @driver.save_screenshot("#{@@artifact_dir}/FAIL#{justFile}_#{artifactLength}.png")
         #shortArtifactDir = @@artifact_dir.gsub("\\\\hannover-re.grp\\shares\\hlrus_ex\\CDMI_Project\\Testing\\AutomationLogs\\","")
-        #  binding.pry
+      #    binding.pry
         shortArtifactDir = @@artifact_dir.downcase.gsub("c:/automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
         # shortArtifactDir = @@artifact_dir.gsub("c:/Automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
 
@@ -1329,10 +1389,79 @@ end
         end
       end
       wait = Selenium::WebDriver::Wait.new(:timeout => 180)
+    element =""
+      cb = wait.until {
+        element = @driver.find_element(how , what)
+        
+      }
+        if (element.attribute("style")== "display: none;")
+           @driver.execute_script("arguments[0].style='display: block;'", element) #hack to bypass the DBP implementation of multiselect
+        end
+      option = Selenium::WebDriver::Support::Select.new( @driver.find_element(how, what))
+      if value=='index'
+        option.select_by(:index, message.to_i)
+      else
+        option.select_by(:text, message)
+      end
+      # cb = @driver.find_element(how,what)
+      # @driver.action.send_keys(cb,message).perform  #select
+      # cb.click
+      #@driver.action.send_keys(cb,:tab)#move off of the selected element
+
+      sleep(2)
+      true
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      @util.logging "1 Failed find element for #{how} and #{what} to select #{message} from"
+      false
+    rescue Selenium::WebDriver::Error::UnknownError
+      @util.logging "1 Failed find element for #{how} and #{what} to select #{message} from"
+      false
+    else
+
+    end
+
+  end
+    # Selects a value from a dropdown list element
+  #   how  element type (i.e. xpath, id etc)
+  #   what element identifier
+  #   message  The option to select from the dropdown list.  If value = 'index' convert message to integer and select the option by index
+  #   msg -optional-  the logging message
+  #   value -optional- If value = 'index' convert message to integer and select the option by index otherwise selects the option by text
+
+  def select_dropdown_list_text_multi(*args)
+    begin
+      how = args[0]
+      what =args[1]
+      message =args[2]
+      msg=""
+      if  (how.is_a? String)
+        nLookup = get_element_from_navigation2(how,what)
+        how = nLookup[0]
+        what = nLookup[1]
+      end
+
+      if args.size >=4
+        msg= args[3] + "---->"
+      end
+      if args.size ==5
+        value=args[4]
+      end
+      if @@debug==1
+       if value !="index"
+          @util.logging("-->Selecting  #{msg} '#{message}' from  #{what} of type #{how}")
+        else
+          @util.logging("-->Selecting  #{msg} #{message} from  #{what} of type #{how}")
+        end
+      end
+      binding.pry
+      wait = Selenium::WebDriver::Wait.new(:timeout => 180)
 
       cb = wait.until {
         element = @driver.find_element(how , what)
-        element if element.displayed?
+        binding.pry
+          if (element.attribute("style")== "display: none;")
+           @driver.execute_script("arguments[0].style='display: block;'", element)
+        end
       }
       option = Selenium::WebDriver::Support::Select.new( @driver.find_element(how, what))
       if value=='index'
@@ -2079,18 +2208,20 @@ end
       count =0
       @@test_case_warn_details.each do |row|
         @util.logging("<font color =\"orange\">warning #{count} </font> -> #{row} </font>")
+        @util.logging("</font>")
         count = count +1
       end
     end
-    @util.logging("View http://dexw5171.hr-applprep.de:8000/specifictest?#{@@db_id}")
-    if @@rplId != ""
-      @util.logging("RplId for this run is #{@@rplId}")
-    end
+    #@util.logging("View http://dexw5171.hr-applprep.de:8000/specifictest?#{@@db_id}")
+    #if @@rplId != ""
+    #  @util.logging("RplId for this run is #{@@rplId}")
+   # end
     if passed then
       @util.logging("<font color =\"green\">#{@@filebase} test passed</font>")
       count =0
       @@test_case_warn_details.each do |row|
         @util.logging("<font color =\"orange\">warning #{count} </font> -> #{row} </font>")
+        @util.logging("</font>")
         count = count +1
       end
 
@@ -2589,14 +2720,14 @@ end
     def take_snapshot(identifier)
       newArrayStart= @@test_case_fail_artifacts.length
       justFile =@@g_base_dir[(@@g_base_dir.rindex('/')+1)..@@g_base_dir.length]
-      @driver.save_screenshot("#{@@artifact_dir}\\\\#{identifier}_#{justFile}_#{newArrayStart}.png")
+      @driver.save_screenshot("#{@@artifact_dir}/#{identifier}_#{justFile}_#{newArrayStart}.png")
       #shortArtifactDir = @@artifact_dir.gsub("\\\\hannover-re.grp\\shares\\hlrus_ex\\CDMI_Project\\Testing\\AutomationLogs\\","")
 
       shortArtifactDir = @@artifact_dir.downcase.gsub("c:/automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
       #shortArtifactDir = @@artifact_dir.gsub("c:/Automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
 
-      @@test_case_fail_artifacts.push("#{shortArtifactDir}\\#{identifier}_#{justFile}_#{newArrayStart}.png")
-      @util.logging("#{identifier} Saved a screenshot at #{@@artifact_dir}\\\\#{identifier}_#{justFile}_#{newArrayStart}.png ")
+      @@test_case_fail_artifacts.push("#{shortArtifactDir}/#{identifier}_#{justFile}_#{newArrayStart}.png")
+      @util.logging("#{identifier} Saved a screenshot at #{@@artifact_dir}/#{identifier}_#{justFile}_#{newArrayStart}.png ")
     end
     # Gets the db_id database id for the specific run of the test from the global value set by the startup tasks.
     def get_db_id

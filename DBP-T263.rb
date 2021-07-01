@@ -29,7 +29,7 @@ class DBP_T263 < Test::Unit::TestCase
       newProduct = @test.add_new_product_for_day()
 
       @test.admin_navigate_to("Search for Customers")
-      @test.login_as_random_customer_from_backend()
+      @test.login_as_random_customer_from_backend_with_upcoming_orders()
       @test.click_element("Search button","UserApp","Search button on user app")
       @test.enter_text("Search Text field","UserApp","#{newProduct}\n","Search Text")
 

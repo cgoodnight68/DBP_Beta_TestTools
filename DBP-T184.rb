@@ -5,7 +5,7 @@ require "test/unit"
 require "./libraries/utilities.rb"
 require "./libraries/testlogging.rb"
 
-class NewUserPlaceOrder < Test::Unit::TestCase
+class DBP_T184< Test::Unit::TestCase
   def setup
     @test=Utilities.new
     filedir = File.expand_path File.dirname(__FILE__)
@@ -20,13 +20,12 @@ class NewUserPlaceOrder < Test::Unit::TestCase
     assert_equal nil, @verification_errors
   end
 
-  def test_new_user_my_account
+  def test_dbp_t184
 
     @test.load_admin_navigation_elements
     @test.login_to_admin
     @test.admin_navigate_to("Search for Customers")
-    @test.login_as_random_customer_from_backend()
-
+    userRow = @test.login_as_random_customer_from_backend_with_upcoming_orders()
     #username,password = @test.get_default_user_for_day
     #@test.login_as_customer(username,password)
    

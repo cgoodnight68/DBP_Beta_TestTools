@@ -1,7 +1,5 @@
 class Utilities;
   @navigationHash = Hash.new
-
-
   def load_admin_navigation_elements
     begin
       client = PG::Connection.open(:dbname => 'WebElements_pg_development', :host => '54.201.168.175', :user => 'postgres', :password =>'getswift' )
@@ -32,7 +30,6 @@ class Utilities;
   def admin_navigate_to(menu_item)
     begin
       navigationItem = @navigationHash.select {|navigate| navigate["menu_item"] == "#{menu_item}"}
-
       precursors = navigationItem[0]["element_path"].split(">")
       if (precursors.count >1)
         precursors.count.downto(2){ |i|  admin_navigate_to(precursors[i-1]) }
@@ -40,8 +37,8 @@ class Utilities;
       ## add check here to see if the element is already expanded....
       click_element_from_elements(:xpath,"//#{navigationItem[0]['element_type']}[text()=\"#{navigationItem[0]['menu_item']}\"]", navigationItem[0]['count'], navigationItem[0]['menu_item'])
     rescue =>e
-      @util.errorlogging("Unable to navigate to #{menu_item} #{e} ")
-      throw ("Unable to navigate to #{menu_item} #{e}")
+      @util.errorlogging("Unable to navigate to #{menu_item} Error:#{e} ")
+      throw ("Unable to navigate to #{menu_item} Error:#{e}")
     end
 
   end
@@ -77,6 +74,25 @@ class Utilities;
     return date
   end
 
+  def get_date_full()
+    date =  Time.now.strftime("%m_%d_%Y")
+    return date
+  end
+  def get_date_full_mmddyyyy()
+    date =  Time.now.strftime("%m%d%Y")
+    return date
+  end
+
+  def get_date_reversed()
+    date =  Time.now.strftime("%Y_%m_%d")
+    return date
+  end
+
+  def get_date_x_days_ago(days)
+    date = (Time.now - days*24*60*60)
+    date = date.strftime("%m/%d/%Y")
+  end
+
   def create_default_customer_for_the_day
     begin
       date = get_date()
@@ -89,7 +105,7 @@ class Utilities;
       city =""
       zipcode= ""
       while street ==""
-        results = run_automation_db_query("select s_address,s_city,s_zipcode from dbp_customers  where s_address is not null  and s_city is not null and s_zipcode is not null order by rand() limit 1")
+        results = run_automation_db_query("select cust.s_address,cust.s_city,cust.s_zipcode from dbp_customers as cust, dbp_orders as orders  where cust.s_address is not null  and cust.s_city is not null and cust.s_zipcode is not null and cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status='P' order by rand() limit 1")
         results.each do |row|
           street= row["s_address"]
           city =row["s_city"]
@@ -157,13 +173,13 @@ class Utilities;
 
       click_element("Save","User Management>Customers>Create Customer Profile","Save button")
 
-      #binding.pry
+      sleep(20)
 
       wait_for_element("Profile sucessfully created","User Management>Customers>Create Customer Profile","Verifying profile sucessfully created",180)
       check_if_element_exists_get_element_text("Profile sucessfully created","User Management>Customers>Create Customer Profile",60,"Verifying profile sucessfully created")
     rescue =>e
-      @util.errorlogging("Unable to create user for the day: #{e} ")
-      throw ("Unable to create user for the day: #{e}")
+      @util.errorlogging("Unable to create user for the day: Error:#{e} ")
+      throw ("Unable to create user for the day: Error:#{e}")
     end
   end
 
@@ -230,8 +246,8 @@ class Utilities;
         #unknown frame
       end
     rescue =>e
-      @util.errorlogging("Unable to do enter credit card detail: #{e} ")
-      throw ("Unable to do enter credit card detail: #{e}")
+      @util.errorlogging("Unable to do enter credit card detail: Error:#{e} ")
+      throw ("Unable to do enter credit card detail: Error:#{e}")
     end
 
   end
@@ -330,8 +346,8 @@ class Utilities;
       end
       click_element("Finish Registration","UserApp>Register","Finish Registration")
     rescue =>e
-      @util.errorlogging("Unable to create user from the app side: #{e} ")
-      throw ("Unable to create user from the app side: #{e}")
+      @util.errorlogging("Unable to create user from the app side: Error:#{e} ")
+      throw ("Unable to create user from the app side: Error:#{e}")
     end
   end
 
@@ -422,8 +438,8 @@ class Utilities;
       @util.errorlogging "--> Element  was displayed but click would be intercepted #{error.message}"
       throw("--> Element  was displayed but click would be intercepted #{error.message}")
     rescue =>e
-      @util.errorlogging("Unknown error in select random item #{e} ")
-      throw ("Unknown error in select random item #{e}")
+      @util.errorlogging("Unknown error in select random item Error:#{e} ")
+      throw ("Unknown error in select random item Error:#{e}")
     end
 
   end
@@ -494,8 +510,8 @@ class Utilities;
       @util.errorlogging "--> Element  was displayed but click would be intercepted #{error.message}"
       throw("--> Element  was displayed but click would be intercepted #{error.message}")
     rescue =>e
-      @util.errorlogging("Unable to select product #{e} ")
-      throw ("Unable to select product #{e}")
+      @util.errorlogging("Unable to select product Error:#{e} ")
+      throw ("Unable to select product Error:#{e}")
     end
   end
 
@@ -539,22 +555,28 @@ class Utilities;
     end
   end
 
-  def search_for_customer()
+  def search_for_customer(orderStatus)
 
     searchCriteria =""
-    results = run_automation_db_query("select email from dbp_customers where usertype = 'C'  order by rand() limit 1")
+    login = ""
+    lastName =""
+    userRow = ""
+    results = run_automation_db_query("select cust.* from dbp_customers as cust ,dbp_orders as orders where cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status='#{orderStatus}' order by rand() limit 1")
     results.each do |row|
       searchCriteria = row["email"]
+      login = row["login"]
+      lastName = row["lastname"]
+      userRow = row
     end
 
-    enter_text("Search for Input Field","User Management>Customers>Search for Customers",searchCriteria,"Search for Customer: #{searchCriteria}")
+    enter_text("Search for Input Field","User Management>Customers>Search for Customers","#{login}","Search for Customer: #{login}")
     click_element("Search Button","User Management>Customers>Search for Customers","Search Button")
     click_element(:xpath,"//p[contains(text(),'#{searchCriteria}')]/a", "Clicking on results table full name and email column  on row with #{searchCriteria}")
-
     url = get_url()
     @util.logging("URL is #{url}")
     if (url.include?("admin/customer/") && url.include?("usertype=C"))
       check_if_element_exists(:xpath,"//input[@value='#{searchCriteria}']",10,"Customer email on customer card")
+      return userRow
     else
       @util.errorlogging("Not on customer #{searchCriteria} customer page")
       throw("Not on customer #{searchCriteria} customer page")
@@ -587,34 +609,40 @@ class Utilities;
   def search_for_supplier()
     begin
       supplierlogin =""
-      results = run_automation_db_query("select supplier_name from dbp_suppliers order by rand() limit 1")
+      searchCriteria = ""
+      results = run_automation_db_query("select * from dbp_suppliers order by rand() limit 1")
       results.each do |row|
-        supplierlogin = row["supplier_name"]
+        supplierlogin = row["login"]
+        searchCriteria = row['email']
+
       end
-      enter_text("Search Text Field","User Management>Suppliers>Search for Suppliers",supplierlogin,"Search text field")
+      enter_text("Search Text Field","User Management>Suppliers>Search for Suppliers",supplierlogin,"Search text field text #{supplierlogin}")
 
       click_element("Search Button","User Management>Suppliers>Search for Suppliers","Search Button")
-      elements  = @driver.find_elements(:xpath,"//td[@data-id ='full_name']/p/a")
-      found = false
-      suppliersArray = Array.new
-      elements.each do |element|
-        suppliersArray.push(element.text)
-        # puts element.text
-        #   if (element.text.include?(supplierlogin))
-        #    element.click
-        #     @util.logging("Clicking on results table full name and email column on row with  #{supplierlogin}")
-        #     found = true
-        #   end
-      end
+      sleep(20)
+      click_element(:xpath,"//p[contains(text(),'#{searchCriteria}')]/a", "Clicking on results table full name and email column  on row with #{searchCriteria}")
 
-      elementCounter= 0
-      suppliersArray.each do |supplierText|
-        if supplierText.include?(supplierlogin)
-          elements[elementCounter].click
-        else
-          elementCounter = elementCounter +1
-        end
-      end
+      # elements  = @driver.find_elements(:xpath,"//td[@data-id ='full_name']/p/a")
+      # found = false
+      # suppliersArray = Array.new
+      # elements.each do |element|
+      #   suppliersArray.push(element.text)
+      #   # puts element.text
+      #   #   if (element.text.include?(supplierlogin))
+      #   #    element.click
+      #   #     @util.logging("Clicking on results table full name and email column on row with  #{supplierlogin}")
+      #   #     found = true
+      #   #   end
+      # end
+
+      # elementCounter= 0
+      # suppliersArray.each do |supplierText|
+      #   if supplierText.include?(supplierlogin)
+      #     elements[elementCounter].click
+      #   else
+      #     elementCounter = elementCounter +1
+      #   end
+      # end
       url = get_url()
       @util.logging("URL is #{url}")
       if (url.include?("admin/user_modify.php?user") && url.include?("usertype=U"))
@@ -624,8 +652,8 @@ class Utilities;
         throw("Not on supplier #{supplierlogin} page")
       end
     rescue StandardError => e
-      @util.errorlogging("Unable to search for supplier.  #{e}")
-      throw ("Unable to search for supplier.  #{e}")
+      @util.errorlogging("Unable to search for supplier.  Error:#{e}")
+      throw ("Unable to search for supplier.  Error:#{e}")
     end
   end
   def search_for_driver()
@@ -721,23 +749,38 @@ class Utilities;
       return "Product for #{date}"
 
     rescue StandardError => e
-      @util.errorlogging("Unable to create new product for the day.  #{e}")
-      throw ("Unable to create new product for the day.  #{e}")
+      @util.errorlogging("Unable to create new product for the day.  Error:#{e}")
+      throw ("Unable to create new product for the day.  Error:#{e}")
     end
   end
-  def login_as_random_customer_from_backend()
+  def login_as_random_customer_from_backend_with_upcoming_orders()
     begin
-      search_for_customer()
+
+      userRow = search_for_customer("P")
       get_url()
 
       click_element("Login as this Customer","User Management>Customers>Search for Customers>Customer Card","Login as customer")
       click_element("Login as customer link","User Management>Customers>Search for Customers>Customer Card","Login as customer link")
+      return userRow
     rescue StandardError => e
-      @util.errorlogging("Unable to login as random customer from the backend  #{e}")
-      throw ("Unable to login as random customer from the backend  #{e}")
+      @util.errorlogging("Unable to login as random customer from the backend with upcoming orders  Error:#{e}")
+      throw ("Unable to login as random customer from the backend  with upcoming orders#{e}")
     end
   end
+  def login_as_random_customer_from_backend_with_order_history()
+    begin
 
+      userRow = search_for_customer("C")
+      get_url()
+
+      click_element("Login as this Customer","User Management>Customers>Search for Customers>Customer Card","Login as customer")
+      click_element("Login as customer link","User Management>Customers>Search for Customers>Customer Card","Login as customer link")
+      return userRow
+    rescue StandardError => e
+      @util.errorlogging("Unable to login as random customer from the backend with order history Error:#{e}")
+      throw ("Unable to login as random customer from the backend with order history Error:#{e}")
+    end
+  end
   def create_default_admin_for_the_day()
     begin
       date =get_date()
@@ -755,8 +798,8 @@ class Utilities;
       check_if_element_exists_get_element_text("Profile sucessfully created","User Management>Customers>Create Customer Profile",60,"Verifying profile sucessfully created")
 
     rescue StandardError => e
-      @util.errorlogging("Unable to create default admin for the day.  #{e}")
-      throw ("Unable to create default admin for the day.  #{e}")
+      @util.errorlogging("Unable to create default admin for the day.  Error:#{e}")
+      throw ("Unable to create default admin for the day.  Error:#{e}")
     end
   end
 
@@ -776,9 +819,187 @@ class Utilities;
       check_if_element_exists_get_element_text("Profile sucessfully created","User Management>Customers>Create Customer Profile",60,"Verifying profile sucessfully created")
 
     rescue StandardError => e
-      @util.errorlogging("Unable to create default driver for the day.  #{e}")
-      throw ("Unable to create default driver for the day.  #{e}")
+      @util.errorlogging("Unable to create default driver for the day.  Error:#{e}")
+      throw ("Unable to create default driver for the day.  Error:#{e}")
     end
   end
+  def check_for_file_download(filename,timeInSeconds)
+    begin
+      startTime = Time.now
+      endTime = startTime + timeInSeconds
+      found = false
+      fileDirArray = @@filedir.split('/')
+      date = get_date()
 
-;end
+      while ((found ==  false) && (Time.now < endTime)) do
+          sleep(5)
+          found =File.file?("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
+        end
+        if found == false
+          throw ("Unable to find the file #{filename} after #{timeInSeconds} seconds")
+        else
+          @util.logging("#{filename} found. Moving to #{@@filedir}/logs/#{date}/#{filename}")
+
+          File.rename "/Users/#{fileDirArray[2]}/Downloads/#{filename}","#{@@filedir}/logs/#{date}/#{filename}"
+        end
+
+      rescue StandardError => e
+        @util.errorlogging("Error trying to find the file.  Error:#{e}")
+        throw ("Error trying to find the file.  Error:#{e}")
+      end
+    end
+    def verify_print_route_sheets_show_return_route_name()
+      begin
+        headerText =   check_if_element_exists_get_element_text("Show Results Header","Route Management>Print Route Sheets",60,"Verifying Show Results Header exists")
+        count =0
+        while ((headerText =="") && count <5)
+          headerText =   check_if_element_exists_get_element_text("Show Results Header","Route Management>Print Route Sheets",60,"Verifying Show Results Header exists")
+
+          count = count +1
+        end
+        route = headerText[(headerText.index('Route')+6)..(headerText.index('Total Deliveries')-2)]
+        @util.logging("Route selected is #{route}")
+
+        return route
+      rescue StandardError => e
+        @util.errorlogging("Unable to verify the results of clicking the show button Error:#{e}")
+        throw ("Unable to verify the results of clicking the show button.  Error:#{e}")
+      end
+    end
+    def choose_a_route_multiselect()
+      #this is a hack since the option select does not work on this element
+      element = @driver.find_element(:xpath,"//select[@id='mult-route-id']/../label")
+      element.click
+      @util.logging ("-->Clicking on the choose a route label to get the dropdown")
+
+      elements = @driver.find_elements(:xpath,"//*[@id='driving-dir-mult']/div[1]/div/div/ul/li/label")
+      elements[1].click
+      elements[2].click
+      @util.logging("Choosing the first two options from the dropdown")
+
+      element = @driver.find_element(:xpath,"//select[@id='mult-route-id']/../label")
+      element.click
+
+    end
+    def check_columns_count(filename,numberToVerify)
+      if (filename[(filename.index('.'))..(filename.length)] == ".csv")
+        check_columns_count_csv(filename,numberToVerify)
+      elsif (filename[(filename.index('.'))..(filename.length)] == ".xls") ||(filename[(filename.index('.'))..(filename.length)] == ".xlsx")
+        check_columns_count_xls(filename,numberToVerify)
+      else
+        throw("unknown file format of #{filename[(filename.index('.'))..(filename.length)]}")
+      end
+
+    end
+
+    def check_columns_count_xls(filename,numberToVerify)
+      begin
+
+        fileDirArray = @@filedir.split('/')
+        wait_for_file(filename,180)
+        xlsx = Roo::Spreadsheet.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
+        @util.logging("Basic info about the file\n  #{xlsx.info}")
+        @util.logging("The default sheet is #{xlsx.default_sheet}")
+        @util.logging("The first 3 lines of the first sheet #{xlsx.sheets[0]} of the file are:\n <font color=\"blue\"> #{xlsx.sheet(0).row(1)}\n#{xlsx.sheet(0).row(2)}\n#{xlsx.sheet(0).row(3)}</font> ")
+        if (numberToVerify == 0)
+          @util.logging("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} is #{xlsx.sheet(0).last_column}")
+          return
+        end
+        if xlsx.sheet(0).last_column != numberToVerify
+          @util.errorlogging("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{xlsx.sheet(0).last_column} does not equal the expected #{numberToVerify}")
+          throw("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{xlsx.sheet(0).last_column} does not equal the expected #{numberToVerify}")
+        else
+          @util.logging("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{xlsx.sheet(0).last_column} equals the expected column count #{numberToVerify}")
+        end
+
+      rescue StandardError => e
+        @util.errorlogging("Error trying verify the column count in xls Error:#{e}")
+        throw ("Error trying verify the column count in xls Error:#{e}")
+      end
+    end
+    def check_columns_count_csv(filename,numberToVerify)
+      begin
+        fileDirArray = @@filedir.split('/')
+        wait_for_file(filename,180)
+
+        file = File.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}").read
+        fileArray = file.split("\n")
+        @util.logging("The first line   of the file is:\n <font color=\"blue\">#{fileArray[0]}\n</font> ")
+        columns = fileArray[0].split(',')
+        if (numberToVerify == 0)
+          @util.logging("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} is #{columns.count}")
+          return
+        end
+        if (columns.count != numberToVerify)
+          @util.errorlogging("The column count in the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{columns.count} does not equal the expected #{numberToVerify}")
+          throw("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{columns.count} does not equal the expected #{numberToVerify}")
+        else
+          @util.logging("The column count in the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{columns.count} equals the expected column count #{numberToVerify}")
+        end
+
+      rescue StandardError => e
+        @util.errorlogging("Error trying verify the column count in csv. Error:#{e}")
+        throw ("Error trying verify the column count in csv Error:#{e}")
+      end
+    end
+
+    def wait_for_file(filename,timeToWait)
+      startTime = Time.now
+      endTime = startTime + timeToWait
+      found = false
+      fileDirArray = @@filedir.split('/')
+      date = get_date()
+
+      while ((found ==  false) && (Time.now < endTime)) do
+          sleep(5)
+          found =File.file?("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
+        end
+        if (found == false)
+          throw("The file was not found in #{timeToWait} seconds")
+        end
+      end
+
+      def verify_order_numbers_show_in_grid(userlogin,status)
+        begin
+          results = run_automation_db_query("select * from dbp_orders where login ='#{userlogin}'  and status ='#{status}' order by orderid desc limit 5")
+          results.each do |row|
+            check_if_element_exists(:xpath,"//a[contains(text(),'#{row["orderid"]}')]",10,"Verifying order #{row["orderid"]} shows on the page")
+          end
+        rescue StandardError => e
+          @util.errorlogging("Error trying  verify the orders show in the grid Error:#{e}")
+          throw ("Error trying  verify the orders show in the grid. Error:#{e}")
+        end
+      end
+      def select_five_random_users_on_customer_search()
+        begin
+          for i in 1..5
+            randUser = rand(100)
+            click_element_ignore_failure(:xpath,"//*[@id='users-table']/tbody/tr[#{randUser}]/td[1]/div/label/div","Random user number #{randUser}")
+          end
+
+        rescue StandardError => e
+          @util.errorlogging("Unable to select random users on select page Error:#{e}")
+          throw ("Unable to select random users on select page Error:#{e}")
+        end
+      end
+      def verify_number_of_customers_using_credit_card_on_electronic_billing(webresult)
+        begin
+          results = run_automation_db_query("select count(*) from (SELECT c.login AS login, SUM(p.payment_value) AS balance, c.firstname, c.lastname FROM dbp_customers c LEFT JOIN dbp_payments p ON c.login=p.payment_login WHERE (p.payment_date<UNIX_TIMESTAMP('2021-06-30') OR (p.payment_type IN ('', 'I','C','T','A','Y') AND p.payment_value>'0' AND p.payment_orderid='0')) AND c.usertype='C' AND ( (c.payment_type='A') ) AND c.store_id='1' GROUP BY c.login HAVING balance<'-0' ORDER BY c.lastname, c.firstname) as r;")
+          count= ""
+          results.each do |row|
+            count = row["count(*)"]
+          end
+
+          if (count !=webresult.to_i)
+            @util.errorlogging("Error: The number of users on credit card from the database has #{count} but the web shows #{webresult} ")
+            throw ("Error: The number of users on credit card from the database has #{count} but the web shows #{webresult}")
+          else
+            @util.logging("The number of users on credit card from the database has #{count} and the web shows #{webresult}.  Matching ")
+          end
+        rescue StandardError => e
+          @util.errorlogging("Unable to verify Error:#{e}")
+          throw ("Unable to verify Error:#{e}")
+        end
+      end
+
+    ;end
