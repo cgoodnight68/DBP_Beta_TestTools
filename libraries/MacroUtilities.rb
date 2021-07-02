@@ -561,7 +561,11 @@ class Utilities;
     login = ""
     lastName =""
     userRow = ""
+    if orderStatus == "Recurring"
+      results = run_automation_db_query("select c.* from dbp_customers as c left join dbp_recurring_orders as r on r.login=c.login where c.usertype = 'C' and c.login not like 'dbp_an0nym0us_%' and c.user_active ='Y' and r.recurring_order not like '\%s:8:\"products\";a:0\%' order by rand() limit 1;")
+    else
     results = run_automation_db_query("select cust.* from dbp_customers as cust ,dbp_orders as orders where cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status='#{orderStatus}' order by rand() limit 1")
+    end
     results.each do |row|
       searchCriteria = row["email"]
       login = row["login"]
@@ -767,6 +771,21 @@ class Utilities;
       throw ("Unable to login as random customer from the backend  with upcoming orders#{e}")
     end
   end
+  def login_as_random_customer_from_backend_with_recurring_orders()
+    begin
+
+      userRow = search_for_customer("Recurring")
+      get_url()
+
+      click_element("Login as this Customer","User Management>Customers>Search for Customers>Customer Card","Login as customer")
+      click_element("Login as customer link","User Management>Customers>Search for Customers>Customer Card","Login as customer link")
+      return userRow
+    rescue StandardError => e
+      @util.errorlogging("Unable to login as random customer from the backend with upcoming orders  Error:#{e}")
+      throw ("Unable to login as random customer from the backend  with upcoming orders#{e}")
+    end
+  end
+
   def login_as_random_customer_from_backend_with_order_history()
     begin
 
@@ -923,7 +942,7 @@ class Utilities;
         wait_for_file(filename,180)
 
         file = File.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}").read
-        fileArray = file.split("\n")
+        fileArray = file.split("\r\n")
         @util.logging("The first line   of the file is:\n <font color=\"blue\">#{fileArray[0]}\n</font> ")
         columns = fileArray[0].split(',')
         if (numberToVerify == 0)
@@ -942,7 +961,66 @@ class Utilities;
         throw ("Error trying verify the column count in csv Error:#{e}")
       end
     end
+    def check_rows_count(filename,numberToVerify)
+      if (filename[(filename.index('.'))..(filename.length)] == ".csv")
+        check_rows_count_csv(filename,numberToVerify)
+      elsif (filename[(filename.index('.'))..(filename.length)] == ".xls") ||(filename[(filename.index('.'))..(filename.length)] == ".xlsx")
+        check_rows_count_xls(filename,numberToVerify)
+      else
+        throw("unknown file format of #{filename[(filename.index('.'))..(filename.length)]}")
+      end
 
+    end
+    def check_rows_count_xls(filename,numberToVerify)
+      begin
+
+        fileDirArray = @@filedir.split('/')
+        wait_for_file(filename,180)
+        xlsx = Roo::Spreadsheet.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
+        @util.logging("Basic info about the file\n  #{xlsx.info}")
+        @util.logging("The default sheet is #{xlsx.default_sheet}")
+        @util.logging("The first 3 lines of the first sheet #{xlsx.sheets[0]} of the file are:\n <font color=\"blue\"> #{xlsx.sheet(0).row(1)}\n#{xlsx.sheet(0).row(2)}\n#{xlsx.sheet(0).row(3)}</font> ")
+        if (numberToVerify == 0)
+          @util.logging("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} is #{xlsx.sheet(0).last_column}")
+          return
+        end
+        if xlsx.sheet(0).last_row != numberToVerify
+          @util.errorlogging("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{xlsx.sheet(0).last_row} does not equal the expected #{numberToVerify}")
+          throw("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{xlsx.sheet(0).last_row} does not equal the expected #{numberToVerify}")
+        else
+          @util.logging("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{xlsx.sheet(0).last_row} equals the expected column count #{numberToVerify}")
+        end
+
+      rescue StandardError => e
+        @util.errorlogging("Error trying verify the row count in xls Error:#{e}")
+        throw ("Error trying verify the row count in xls Error:#{e}")
+      end
+    end
+    def check_rows_count_csv(filename,numberToVerify)
+      begin
+        fileDirArray = @@filedir.split('/')
+        wait_for_file(filename,180)
+
+        file = File.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}").read
+        fileArray = file.split("\r\n")
+        @util.logging("The first line of the file is:\n <font color=\"blue\">#{fileArray[0]}\n</font> ")
+
+        if (numberToVerify == 0)
+          @util.logging("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} is #{fileArray.count}")
+          return
+        end
+        if (fileArray.count != numberToVerify)
+          @util.errorlogging("The row count in the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{fileArray.count} does not equal the expected #{numberToVerify}")
+          throw("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{fileArray.count} does not equal the expected #{numberToVerify}")
+        else
+          @util.logging("The row count in the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{fileArray.count} equals the expected row count #{numberToVerify}")
+        end
+
+      rescue StandardError => e
+        @util.errorlogging("Error trying verify the row count in csv. Error:#{e}")
+        throw ("Error trying verify the row count in csv Error:#{e}")
+      end
+    end
     def wait_for_file(filename,timeToWait)
       startTime = Time.now
       endTime = startTime + timeToWait
@@ -980,6 +1058,20 @@ class Utilities;
         rescue StandardError => e
           @util.errorlogging("Unable to select random users on select page Error:#{e}")
           throw ("Unable to select random users on select page Error:#{e}")
+        end
+      end
+      def select_first_five_products_on_product_search()
+        begin
+          for i in 1..5
+            #randUser = rand(100)
+            # //*[@id="products"]/tbody/tr[98]/td[1]/div/ins
+            click_element_from_elements(:xpath,"//*[@id='products']/tbody/tr/td[1]/div",i,"Product number #{i}")
+            # click_element_ignore_failure(:xpath,"//*[@id='products']/tbody/tr[#{i}]/td[1]/div","Random product number #{i}")
+          end
+
+        rescue StandardError => e
+          @util.errorlogging("Unable to select products on select page Error:#{e}")
+          throw ("Unable to select products on select page Error:#{e}")
         end
       end
       def verify_number_of_customers_using_credit_card_on_electronic_billing(webresult)
