@@ -27,11 +27,13 @@ class DBP_T287 < Test::Unit::TestCase
       @test.login_to_admin
       @test.admin_navigate_to("Electronic Billing")
 
-      @test.select_dropdown_list_text("Payment method selector","Billing>Billing>Electronic Billing","Credit Card","Selecting CreditCard for the Payment Method")
-
+      paymentMethod =  @test.check_if_element_exists("Payment method selector","Billing>Billing>Electronic Billing",10,"Payment Method Selector","warn")
+      if (paymentMethod != "warn")
+        @test.select_dropdown_list_text("Payment method selector","Billing>Billing>Electronic Billing","Credit Card","Selecting CreditCard for the Payment Method")
+      end
 
       @test.click_element("Search","Billing>Billing>Electronic Billing","Search")
-
+      sleep(5)
       usersFound = @test.check_if_element_exists_get_element_text("Users found number","Billing>Billing>Electronic Billing",60,"Users found number")
 
       @test.verify_number_of_customers_using_credit_card_on_electronic_billing(usersFound)

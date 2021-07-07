@@ -33,8 +33,8 @@ class DBP_T189< Test::Unit::TestCase
     
   
     @test.click_element("Delivery History","UserApp>MyAccount","Delivery History")
-    @test.check_if_element_exists("Change Delivery Address","UserApp>MyAccount>DeliveryHistory",10,"Change Delivery Address")
-    @test.check_if_element_exists_get_element_text("Delivery Address","UserApp>MyAccount>DeliveryHistory",10,"Delivery Address")
+    @test.check_if_element_exists("Change Delivery Address","UserApp>MyAccount>DeliveryHistory",10,"Change Delivery Address","warn")
+    @test.check_if_element_exists_get_element_text("Delivery Address","UserApp>MyAccount>DeliveryHistory",10,"Delivery Address","warn")
     @test.check_if_element_exists_get_element_text("Current Balance","UserApp>MyAccount>DeliveryHistory",10,"Current Balance")
 
     @test.verify_order_numbers_show_in_grid(userRow["login"],"C")

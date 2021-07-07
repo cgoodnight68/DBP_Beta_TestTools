@@ -36,8 +36,8 @@ class DBP_T187< Test::Unit::TestCase
     @test.check_if_element_exists("Leaving","UserApp>MyAccount>DeliveryHolds",10,"Leaving")
     @test.check_if_element_exists("Returning","UserApp>MyAccount>DeliveryHolds",10,"Returning")
     @test.check_if_element_exists("Change Delivery Address","UserApp>MyAccount>DeliveryHolds",10,"Change Delivery Address")
-    @test.check_if_element_exists_get_element_text("Delivery Address","UserApp>MyAccount>DeliveryHolds",10,"Delivery Address")
-    @test.check_if_element_exists_get_element_text("Add Vacation","UserApp>MyAccount>DeliveryHolds",10,"Add Vacation")
+    @test.check_if_element_exists_get_element_text("Delivery Address","UserApp>MyAccount>DeliveryHolds",10,"Delivery Address","warn")
+    @test.check_if_element_exists_get_element_text("Add Vacation","UserApp>MyAccount>DeliveryHolds",10,"Add Vacation","warn")
 
 
 

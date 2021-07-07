@@ -31,12 +31,13 @@ class DBP_T241 < Test::Unit::TestCase
       @test.click_element("Export","User Management>Customers>Search for Customers","Export")
 
       @test.check_columns_count("customers_#{date}.csv",0)
+      @test.check_rows_count("customers_#{date}.csv",6)
       @test.check_for_file_download("customers_#{date}.csv",60)
 
       @test.select_dropdown_list_text("Export type select","User Management>Customers>Search for Customers","Export to (.xls)","Selecting export type of 'Export to (.xls)'")
       @test.click_element("Export","User Management>Customers>Search for Customers","Export")
-
-      @test.check_for_file_download("customers_#{date}",60)
+  #    @test.check_rows_count("customers_#{date}.xls",6)
+      @test.check_for_file_download("customers_#{date}.xls",60)
     rescue => e
       @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
       @util.logging(e.inspect)

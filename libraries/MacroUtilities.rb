@@ -1117,6 +1117,7 @@ class Utilities;
       def verify_order_numbers_show_in_grid(userlogin,status)
         begin
           results = run_automation_db_query("select * from dbp_orders where login ='#{userlogin}'  and status ='#{status}' order by orderid desc limit 5")
+  
           results.each do |row|
             check_if_element_exists(:xpath,"//a[contains(text(),'#{row["orderid"]}')]",10,"Verifying order #{row["orderid"]} shows on the page")
           end
@@ -1128,8 +1129,8 @@ class Utilities;
       def select_five_random_users_on_customer_search()
         begin
           for i in 1..5
-            randUser = rand(100)
-            click_element_ignore_failure(:xpath,"//*[@id='users-table']/tbody/tr[#{randUser}]/td[1]/div/label/div","Random user number #{randUser}")
+            #randUser = rand(100)
+            click_element_ignore_failure(:xpath,"//*[@id='users-table']/tbody/tr[#{i}]/td[1]/div/label/div","User number #{i}")
           end
 
         rescue StandardError => e

@@ -44,8 +44,8 @@ class DBP_T188< Test::Unit::TestCase
 
 
     @test.click_element("Recurring Items","UserApp>MyAccount","Recurring Items")
-    @test.check_if_element_exists("Change Delivery Address","UserApp>MyAccount>RecurringItems",10,"Change Delivery Address")
-    @test.check_if_element_exists_get_element_text("Delivery Address","UserApp>MyAccount>RecurringItems",10,"Delivery Address")
+    @test.check_if_element_exists("Change Delivery Address","UserApp>MyAccount>RecurringItems",10,"Change Delivery Address","warn")
+    @test.check_if_element_exists_get_element_text("Delivery Address","UserApp>MyAccount>RecurringItems",10,"Delivery Address","warn")
     recurringItems = @test.check_if_element_exists_get_element_text("Recurring Items Table","UserApp>MyAccount>RecurringItems",10,"Recurring Items Table")
     assert(recurringItems.include?("No Recurring Items")== false,"There are no recurring items in the users cart")
     @test.check_if_element_exists("Remove All","UserApp>MyAccount>RecurringItems",10,"Remove All")

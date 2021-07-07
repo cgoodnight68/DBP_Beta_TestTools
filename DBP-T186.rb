@@ -34,8 +34,8 @@ class DBP_T186< Test::Unit::TestCase
   
     @test.click_element("Upcoming Deliveries","UserApp>MyAccount","Upcoming Deliveries")
     @test.check_if_element_exists_get_element_text("Upcoming Deliveries Table","UserApp>MyAccount>UpcomingDeliveries",10,"Upcoming Deliveries Table")
-    @test.check_if_element_exists("Change Delivery Address","UserApp>MyAccount>UpcomingDeliveries",10,"Change Delivery Address")
-    @test.check_if_element_exists_get_element_text("Delivery Address","UserApp>MyAccount>UpcomingDeliveries",10,"Delivery Address")
+    @test.check_if_element_exists("Change Delivery Address","UserApp>MyAccount>UpcomingDeliveries",10,"Change Delivery Address","warn")
+    @test.check_if_element_exists_get_element_text("Delivery Address","UserApp>MyAccount>UpcomingDeliveries",10,"Delivery Address","warn")
     @test.verify_order_numbers_show_in_grid(userRow["login"],"P")
     
 
