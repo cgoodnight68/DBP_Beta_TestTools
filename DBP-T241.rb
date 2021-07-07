@@ -30,7 +30,7 @@ class DBP_T241 < Test::Unit::TestCase
       @test.select_dropdown_list_text("Export type select","User Management>Customers>Search for Customers","Export to (.csv)","Selecting export type of 'Export to (.csv)'")
       @test.click_element("Export","User Management>Customers>Search for Customers","Export")
 
-      @test.check_columns_count("customers_#{date}.csv",39)
+      @test.check_columns_count("customers_#{date}.csv",0)
       @test.check_for_file_download("customers_#{date}.csv",60)
 
       @test.select_dropdown_list_text("Export type select","User Management>Customers>Search for Customers","Export to (.xls)","Selecting export type of 'Export to (.xls)'")

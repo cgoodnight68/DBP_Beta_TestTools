@@ -313,9 +313,10 @@ class Utilities
         check_override("warn","Unable to click #{msg} #{e} --->identifier #{what} of type #{how}",false)
       end
   end
-  # Clicks an element
+  # Clicks an element from a found set of elements from the number
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
+  #   elementCount - is the number element to count. i.e. with x number of elements click the 2nd element  
   #   msg -  Optional logging message
   def click_element_from_elements(*args)
     found = false
@@ -324,6 +325,11 @@ class Utilities
       how = args[0]
       what =args[1]
       elementCount = args[2]
+       if (how.is_a? String)
+        nLookup = get_element_from_navigation2(how,what)
+        how = nLookup[0]
+        what = nLookup[1]
+      end
       msg=""
       if args.size >=4
         msg= args[3] + " ---->"
@@ -377,6 +383,78 @@ class Utilities
       throw ("Unable to click on element  #{e} ")
     end
     return found
+  end
+  
+  #   Verify an element from a found set of elements exists with specific text
+  #   how  element type (i.e. xpath, id etc)
+  #   what element identifier
+  #   textToSearchFor the text that needs to be found in 1 of the elements  
+  #   msg -  Optional logging message
+  def verify_element_from_elements_with_text_or_value(*args)
+    found = false
+    begin
+      offset= false
+      how = args[0]
+      what =args[1]
+      textToSearchFor = args[2]
+       if (how.is_a? String)
+        nLookup = get_element_from_navigation2(how,what)
+        how = nLookup[0]
+        what = nLookup[1]
+      end
+      msg=""
+      if args.size >=4
+        msg= args[3] + " ---->"
+      end
+      if args.size >=5
+        offset= args[4]
+      end
+      if @@debug==1
+        @util.logging("-->Clicking #{msg} #{what} of type #{how}")
+      end
+      wait = Selenium::WebDriver::Wait.new(:timeout => 60)
+      element =""
+      found = false
+      elements = @driver.find_elements(how , what)
+      elements.each do |element|
+         if element.attribute("value").include?(textToSearchFor)
+          found = true
+         end
+         if element.text.include?(textToSearchFor)
+          found = true
+         end
+      end
+
+
+      if (found == true)
+       @util.logging("The expected text #{textToSearchFor} was found in #{msg}")
+      else
+        @util.errorlogging("The expected text #{textToSearchFor} was not found #{msg}")
+        check_override(true,"The expected text #{textToSearchFor} was not found #{msg}",true)
+      end
+  
+    rescue  Selenium::WebDriver::Error::ElementClickInterceptedError
+      check_override(true,"--> Element #{msg} #{what} of type #{how} was displayed but click would be intercepted")
+      
+      false
+    rescue Selenium::WebDriver::Error::ElementNotInteractableError
+     check_override(true,"--> Element #{msg} #{what} of type #{how} was displayed but is not interactable")
+      false
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+     check_override(true,"--> Element #{msg} #{what} of type #{how} No such element")
+      false
+    rescue Selenium::WebDriver::Error::UnknownError
+      @util.logging "2 Failed find element for #{how} and #{what} count #{elementCount} to click "
+      false
+
+    rescue Net::ReadTimeout
+      # binding.pry
+      check_override(true,"<font color=\"orange\"> --> Net read failureElement #{msg} #{what} of type #{how} </font>")
+      @util.logging("</font>")
+      false
+    rescue StandardError => e
+      check_override(true,"Unable to search for the expected text  #{e} ",true)
+    end
   end
 
   # Right clicks an element to get the context click menu-  Use a separate click to select the specific menu item

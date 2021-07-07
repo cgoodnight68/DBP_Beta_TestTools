@@ -46,15 +46,18 @@ class Utilities;
   def login_to_admin
     goto_url("#{@base_url}/admin/login")
     enter_text(:xpath,"//input[@name='username']","master", "Sign Username")
-    # if @base_url.include?"integration"
-    #   enter_text(:xpath,"//input[@name='password']","6a4GhvF3k@XwYMLCXFbad@v3", "Password")
-    # else
-    #   enter_text(:xpath,"//input[@name='password']","6a4GhvF3k@XwYMLCXFbad@v3", "Password")
     element = @driver.find_element(:xpath,"//input[@name='password']")
-    element.send_keys("9OA33ULvSJDC12Kg7crJ")
+   # if @base_url.include?"integration"
+   #    element.send_keys("WpxarUxg1X27nm290V6h")
+   #  else
+   #   element.send_keys("9OA33ULvSJDC12Kg7crJ")
+   #  end
+    
+    element.send_keys("WpxarUxg1X27nm290V6h")
+    
     #element.send_keys("FycAq8Sg5V2ov956mXD4")
     #element.send_keys("6a4GhvF3k@XwYMLCXFbad@v3")
-    click_element(:xpath,"//div[@class='icheckbox_flat-green']", "Agree to terms")
+    click_element_ignore_failure(:xpath,"//div[@class='icheckbox_flat-green']", "Agree to terms")
     click_element(:xpath,"//button[@class='btn secure-login']","Sign in Button")
 
     sleep(1)
@@ -68,8 +71,8 @@ class Utilities;
       false
     end
   end
-  def get_date()
-    time = Time.new
+  def get_date(dateOffset)
+    time = (Time.now - dateOffset*24*60*60)
     date = "#{time.month}_#{time.day}_#{time.year}"
     return date
   end
@@ -91,11 +94,35 @@ class Utilities;
   def get_date_x_days_ago(days)
     date = (Time.now - days*24*60*60)
     date = date.strftime("%m/%d/%Y")
+    return date
   end
+
+  def get_date_dayname_dd_abr_mo_yyyy(dateOffset)
+    time = (Time.now - dateOffset*24*60*60)
+    date=time.strftime("%a, %d %b %Y")
+    return date
+  end
+  def get_valid_customer_address
+     street= ""
+      city =""
+      zipcode= ""
+      state = ""
+      while street ==""
+        results = run_automation_db_query("select cust.s_address,cust.s_city,cust.s_zipcode from dbp_customers as cust, dbp_orders as orders  where cust.s_address is not null  and cust.s_city is not null and cust.s_zipcode is not null and cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status='P' order by rand() limit 1")
+        results.each do |row|
+          street= row["s_address"]
+          city =row["s_city"]
+          zipcode = row["s_zipcode"]
+          state = row["s_state"]
+        end
+      end
+      return "#{street} #{city},#{state} #{zipcode}"
+  end
+
 
   def create_default_customer_for_the_day
     begin
-      date = get_date()
+      date = get_date(0)
       count = ""
       results = run_automation_db_query("select count(*) from dbp_customers")
       results.each do |row|
@@ -163,7 +190,7 @@ class Utilities;
 
       ### extra customer specific elements below
       if (check_if_element_exists("NDIS participant","User Management>Customers>Create Customer Profile",10,"Are you an NDIS participant","warn") != "warn")
-        click_element("NDIS participant","User Management>Customers>Create Customer Profile","Are you an NDIS participant")
+        click_element_ignore_failure("NDIS participant","User Management>Customers>Create Customer Profile","Are you an NDIS participant")
         @driver.action.send_keys("\ue015\ue015\ue007").perform #big hack. just sending down down and enter
       end
 
@@ -186,7 +213,7 @@ class Utilities;
   def credit_card_modal_entry()
     begin
 
-      date = get_date()
+      date = get_date(0)
       frame = @driver.find_element(:xpath,"//iframe")
       @util.logging("switching to frame class:#{frame['class']} name:#{frame['name']} id:#{frame['id']}")
       if frame['name'] != ''
@@ -280,7 +307,7 @@ class Utilities;
     begin
       goto_url("#{@base_url}/register.php?step=first&viewing_step=first")
 
-      date = get_date()
+      date = get_date(0)
 
       street= ""
       city =""
@@ -420,6 +447,45 @@ class Utilities;
         click_element_if_exists("OK button","UserApp>ImportantInformationModal",20,"OK button for add to cart confirmation")
         #binding.pry
         @driver.navigate().refresh();
+
+      end
+
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      @util.errorlogging "No such element to click. #{error.message}"
+      throw ("No such element to click. #{error.message}")
+    rescue Selenium::WebDriver::Error::UnknownError
+      @util.errorlogging "Unknown error. #{error.message}"
+      throw ("Unknown error. #{error.message}")
+
+    rescue Net::ReadTimeout
+      # binding.pry
+      @util.errorlogging "Net Read timeout failure #{error.message} "
+      throw ("Net Read timeout failure #{error.message} ")
+    rescue Selenium::WebDriver::Error::ElementClickInterceptedError
+      @util.errorlogging "--> Element  was displayed but click would be intercepted #{error.message}"
+      throw("--> Element  was displayed but click would be intercepted #{error.message}")
+    rescue =>e
+      @util.errorlogging("Unknown error in select random item Error:#{e} ")
+      throw ("Unknown error in select random item Error:#{e}")
+    end
+
+  end
+  def select_random_item_from_shop_page_select_delivery_enter_address(address)
+    begin
+      click_element_if_exists(:xpath,"//*[@id='alert-message-modal']/div/div/div[3]/button",10,"Find any open modal close it when loging to User App")
+      elements = @driver.find_elements(:xpath ,"//div[@class='product-wrapper']/..")
+      if (elements.count>0)
+        productWrapperToClick = rand(elements.count.to_i) - 1
+
+        productId = elements[productWrapperToClick].attribute("data-productid")
+
+
+        productDescription = elements[productWrapperToClick].find_elements(:xpath,"//div[@class ='product-labeling ']")
+        @util.logging("-->Clicking on product number #{productId}  Description: <br><font color =\"blue\"> #{productDescription[productWrapperToClick].text} </font>")
+        sleep(5)
+        click_element(:xpath,"//a[@id='button-add-to-cart-#{productId}']", "Add to Delivery Button for product no. #{productId}")
+        click_element(:xpath,"//div[@data-productid = '#{productId}']/div/div/div/div[1]/div[1]/div/div[1]/b/span[1]","Delivery")
+        enter_text(:xpath,"//div[@data-productid = '#{productId}']/div/div/div/div[1]/div[1]/div/div[2]/input",address,"Entering #{address} into the 'Please enter your delivery address input")
 
       end
 
@@ -587,6 +653,15 @@ class Utilities;
     end
   end
 
+ def click_on_row_in_table(searchCriteria,tableName)
+    begin
+      click_element(:xpath,"//p[contains(text(),'#{searchCriteria}')]/a", "Clicking on results table #{tableName} and email column  on row with #{searchCriteria}")
+    rescue StandardError => e
+          @util.errorlogging("Unable to click on row in table#{e}")
+          throw ("Unable to click on row in table#{e}")
+    end
+ end
+
   def search_for_administrator()
     adminlogin =""
     results = run_automation_db_query("select email from dbp_customers where usertype = 'P' and login != 'master' order by rand() limit 1")
@@ -720,7 +795,7 @@ class Utilities;
 
   def add_new_product_for_day()
     begin
-      date = get_date()
+      date = get_date(0)
       sku = "sku#{date}"
 
       enter_text("Product Name","Products>Add New Product","Product for #{date}", "Product Name")
@@ -802,7 +877,7 @@ class Utilities;
   end
   def create_default_admin_for_the_day()
     begin
-      date =get_date()
+      date =get_date(0)
 
       enter_text("First Name","User Management>Administrators>Create Admin Profile","Default Admin","First Name")
       enter_text("Last Name","User Management>Administrators>Create Admin Profile","for #{date}","Last Name")
@@ -824,7 +899,7 @@ class Utilities;
 
   def create_default_driver_for_the_day()
     begin
-      date =get_date()
+      date =get_date(0)
 
       enter_text("First Name","User Management>Drivers>Create Driver Profile","Default Driver","First Name")
       enter_text("Last Name","User Management>Drivers>Create Driver Profile","for #{date}","Last Name")
@@ -848,7 +923,7 @@ class Utilities;
       endTime = startTime + timeInSeconds
       found = false
       fileDirArray = @@filedir.split('/')
-      date = get_date()
+      date = get_date(0)
 
       while ((found ==  false) && (Time.now < endTime)) do
           sleep(5)
@@ -926,39 +1001,40 @@ class Utilities;
         end
         if xlsx.sheet(0).last_column != numberToVerify
           @util.errorlogging("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{xlsx.sheet(0).last_column} does not equal the expected #{numberToVerify}")
-          throw("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{xlsx.sheet(0).last_column} does not equal the expected #{numberToVerify}")
+          check_override(true,"The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{xlsx.sheet(0).last_column} does not equal the expected #{numberToVerify}",true)
         else
           @util.logging("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{xlsx.sheet(0).last_column} equals the expected column count #{numberToVerify}")
         end
 
       rescue StandardError => e
         @util.errorlogging("Error trying verify the column count in xls Error:#{e}")
-        throw ("Error trying verify the column count in xls Error:#{e}")
+        check_override(true,"Error trying verify the column count in xls Error:#{e}",true)
       end
     end
+  
     def check_columns_count_csv(filename,numberToVerify)
       begin
         fileDirArray = @@filedir.split('/')
         wait_for_file(filename,180)
 
-        file = File.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}").read
-        fileArray = file.split("\r\n")
+        fileArray = CSV.read("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
+  
         @util.logging("The first line   of the file is:\n <font color=\"blue\">#{fileArray[0]}\n</font> ")
-        columns = fileArray[0].split(',')
+        columns = fileArray[0]
         if (numberToVerify == 0)
           @util.logging("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} is #{columns.count}")
           return
         end
         if (columns.count != numberToVerify)
           @util.errorlogging("The column count in the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{columns.count} does not equal the expected #{numberToVerify}")
-          throw("The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{columns.count} does not equal the expected #{numberToVerify}")
+          check_override(true,"The column count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{columns.count} does not equal the expected #{numberToVerify}",true)
         else
           @util.logging("The column count in the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{columns.count} equals the expected column count #{numberToVerify}")
         end
 
       rescue StandardError => e
         @util.errorlogging("Error trying verify the column count in csv. Error:#{e}")
-        throw ("Error trying verify the column count in csv Error:#{e}")
+        check_override(true,"Error trying verify the column count in csv Error:#{e}",true)
       end
     end
     def check_rows_count(filename,numberToVerify)
@@ -986,23 +1062,23 @@ class Utilities;
         end
         if xlsx.sheet(0).last_row != numberToVerify
           @util.errorlogging("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{xlsx.sheet(0).last_row} does not equal the expected #{numberToVerify}")
-          throw("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{xlsx.sheet(0).last_row} does not equal the expected #{numberToVerify}")
+          check_override(true,"The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{xlsx.sheet(0).last_row} does not equal the expected #{numberToVerify}",true)
         else
           @util.logging("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{xlsx.sheet(0).last_row} equals the expected column count #{numberToVerify}")
         end
 
       rescue StandardError => e
         @util.errorlogging("Error trying verify the row count in xls Error:#{e}")
-        throw ("Error trying verify the row count in xls Error:#{e}")
+        check_override(true,"Error trying verify the row count in xls Error:#{e}",true)
       end
     end
-    def check_rows_count_csv(filename,numberToVerify)
+    
+     def check_rows_count_csv(filename,numberToVerify)
       begin
         fileDirArray = @@filedir.split('/')
         wait_for_file(filename,180)
-
-        file = File.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}").read
-        fileArray = file.split("\r\n")
+       
+        fileArray= CSV.read("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
         @util.logging("The first line of the file is:\n <font color=\"blue\">#{fileArray[0]}\n</font> ")
 
         if (numberToVerify == 0)
@@ -1011,22 +1087,23 @@ class Utilities;
         end
         if (fileArray.count != numberToVerify)
           @util.errorlogging("The row count in the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{fileArray.count} does not equal the expected #{numberToVerify}")
-          throw("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{fileArray.count} does not equal the expected #{numberToVerify}")
+          check_override(true,"The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename}of #{fileArray.count} does not equal the expected #{numberToVerify}",true)
         else
           @util.logging("The row count in the file /Users/#{fileDirArray[2]}/Downloads/#{filename} of #{fileArray.count} equals the expected row count #{numberToVerify}")
         end
 
       rescue StandardError => e
         @util.errorlogging("Error trying verify the row count in csv. Error:#{e}")
-        throw ("Error trying verify the row count in csv Error:#{e}")
+        check_override(true,"Error trying verify the row count in csv Error:#{e}",true)
       end
     end
+
     def wait_for_file(filename,timeToWait)
       startTime = Time.now
       endTime = startTime + timeToWait
       found = false
       fileDirArray = @@filedir.split('/')
-      date = get_date()
+      date = get_date(0)
 
       while ((found ==  false) && (Time.now < endTime)) do
           sleep(5)

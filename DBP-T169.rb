@@ -5,7 +5,7 @@ require "test/unit"
 require "./libraries/utilities.rb"
 require "./libraries/testlogging.rb"
 
-class DBP_T286 < Test::Unit::TestCase
+class DBP_T169 < Test::Unit::TestCase
   def setup
     @test=Utilities.new
     filedir = File.expand_path File.dirname(__FILE__)
@@ -20,25 +20,13 @@ class DBP_T286 < Test::Unit::TestCase
     assert_equal nil, @verification_errors
   end
 
-  def test_dbp_t286
+  def test_dbp_t169
     begin
-      date = @test.get_date(0)
       @test.load_admin_navigation_elements
-      @test.login_to_admin
-      @test.admin_navigate_to("Load Sheet Report")
-
-      @test.select_dropdown_list_text("Route selector","Reports>Product Reporting>Load Sheet Report","All","Selecting '[Select all] for the route")
-      sixtyDaysAgo = @test.get_date_x_days_ago(60) 
-
-      @test.enter_text("Date Range start","Reports>Product Reporting>Load Sheet Report",sixtyDaysAgo,"Entering #{sixtyDaysAgo} in Date Range start")
-      @test.enter_text("Date Range end","Reports>Product Reporting>Load Sheet Report",date,"Entering #{date} in Date Range end")
-
-      @test.click_element("Export to Excel","Reports>Product Reporting>Load Sheet Report","Export to Excel")
-
-      @test.check_columns_count("load_sheet.xlsx",5)
-      @test.check_for_file_download("load_sheet.xlsx",60)
-
-
+      @test.goto_url("#{@base_url}/summary.php?go=products&12")
+      @test.select_random_item_from_shop_page_select_delivery_enter_address("Fake Address\n")
+      @test.check_if_element_exists_get_element_text("We don't deliver","UserApp>Store",10,"We don't deliver modal window")
+      
     rescue => e
       @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
       @util.logging(e.inspect)

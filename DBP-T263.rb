@@ -22,7 +22,7 @@ class DBP_T263 < Test::Unit::TestCase
 
   def test_dbp_t263
     begin
-       date = @test.get_date()
+       date = @test.get_date(0)
       @test.load_admin_navigation_elements
       @test.login_to_admin
       @test.admin_navigate_to("Add New Product")

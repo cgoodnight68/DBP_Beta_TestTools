@@ -61,11 +61,11 @@ class FindLinksOnPageDBP < Test::Unit::TestCase
         if ( menuElement['menuItem']=="Financials Reporting") ||(menuElement['menuItem'] =="Product Reporting") ||(menuElement['menuItem'] =="Customer Reporting") ||(menuElement['menuItem'] =="Misc. Reporting") || (menuElement['menuItem']=="Negative Balances") || (menuElement['menuItem']=="Abandoned Signups") || (found != true) 
           ## do nothing
         else
-          if (@test.check_if_exist(:xpath,"//input[@value ='Export to Excel']",2))
-             startTime = Time.new
-             @test.click_element_if_exists(:xpath,"//input[@value ='Export to Excel']",20)
-             error_logging("#{menuElement['menuItem']} - Export to Excel",startTime,timingFile)
-          end
+        #  if (@test.check_if_exist(:xpath,"//input[@value ='Export to Excel']",2))
+        #     startTime = Time.new
+        #     @test.click_element_if_exists(:xpath,"//input[@value ='Export to Excel']",20)
+        #     error_logging("#{menuElement['menuItem']} - Export to Excel",startTime,timingFile)
+        #  end
         end
         sleep(1)
       end

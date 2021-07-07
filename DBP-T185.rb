@@ -45,7 +45,7 @@ class DBP_T185< Test::Unit::TestCase
     @test.check_if_element_exists_and_has_value("Last Name","UserApp>MyAccount>AccountInfo",userRow["lastname"],10,"Last Name")
     @test.check_if_element_exists_and_has_value("Email","UserApp>MyAccount>AccountInfo",userRow["email"],10,"Email")
     @test.check_if_element_exists("Additional Email","UserApp>MyAccount>AccountInfo",10,"Additional Email","warn")
-    @test.check_if_element_exists_and_has_value("Phone","UserApp>MyAccount>AccountInfo",userRow["phone"],10,"Phone")
+    @test.check_if_element_exists_and_has_value("Phone","UserApp>MyAccount>AccountInfo",userRow["phone"],10,"Phone","warn")
     @test.check_if_element_exists("Birthday","UserApp>MyAccount>AccountInfo",10,"Birthday","warn")
     @test.check_if_element_exists_and_has_value("Address","UserApp>MyAccount>AccountInfo",userRow["s_address"],10,"Address")
     @test.check_if_element_exists("Address Line 2","UserApp>MyAccount>AccountInfo",10,"Address Line 2")
