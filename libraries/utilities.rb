@@ -27,6 +27,7 @@ require "HTTParty"
 #require 'viewpoint'
 #include Viewpoint::EWS
 require "roo"
+require "roo-xls"
 
 class Utilities
   @@g_base_dir=""
@@ -58,6 +59,7 @@ class Utilities
   @@test_case_fail_details = Array.new
   @@test_case_warn_details = Array.new
   @@test_case_fail_artifacts = Array.new
+  @@test_case_warn_artifacts = Array.new
   @@azureuser=""
   @@azureHostShort=""
   @@azureHost=""
@@ -188,20 +190,24 @@ class Utilities
       how = args[0]
       what =args[1]
       msg=""
+      override = false
       if (how.is_a? String)
         nLookup = get_element_from_navigation2(how,what)
         how = nLookup[0]
         what = nLookup[1]
       end
       if args.size >=3
-        msg= args[2] + " ---->"
+        msg= args[2] 
       end
 
       if args.size >=4
         offset= args[3]
       end
+      if args.size >=5
+        override = args[4]
+      end
       if @@debug==1
-        @util.logging("-->Clicking #{msg} #{what} of type #{how}")
+        @util.logging("-->Clicking #{msg}  ---->#{what} of type #{how}")
       end
       wait = Selenium::WebDriver::Wait.new(:timeout => 60)
       element =""
@@ -215,7 +221,7 @@ class Utilities
       elsif @@brws=='firefox'
         @driver.find_element(how, what).click
       else
-        #binding.pryt
+        #binding.pry
         # startTime = Time.new
         @driver.find_element(how, what).click
         # endTime = Time.new
@@ -229,22 +235,13 @@ class Utilities
         @util.logging("Current URL =#{newUrl}")
       end
       true
-    rescue Selenium::WebDriver::Error::NoSuchElementError
-      @util.logging "1 Failed find element for #{how} and #{what} to click"
-      false
-    rescue Selenium::WebDriver::Error::UnknownError
-      @util.logging "2 Failed find element for #{how} and #{what}"
-      false
-
-    rescue Net::ReadTimeout
-      # binding.pry
-      @util.logging "2 Failed find element for #{how} and #{what}"
-      false
     rescue Selenium::WebDriver::Error::ElementClickInterceptedError
-      check_override(true,"--> Element #{msg} #{what} of type #{how} was displayed but click would be intercepted")
+      @util.logging("--> Element #{msg}  was displayed but click would be intercepted ")
+      check_override(override,"--> Element #{msg}  was displayed but click would be intercepted ---->#{what} of type #{how}")
       false
-    rescue
-      check_override(true,"Unknown error clicking on  #{how} and #{what} ",false)
+    rescue StandardError => e
+      @util.logging("Unknown error clicking on #{msg}   Error #{e} ")
+      check_override(override,"Unknown error clicking on #{msg}   Error #{e} ---->#{how} and #{what} ",false)
     else
 
     end
@@ -384,7 +381,7 @@ class Utilities
     end
     return found
   end
-  
+
   #   Verify an element from a found set of elements exists with specific text
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
@@ -699,8 +696,6 @@ class Utilities
     rescue Selenium::WebDriver::Error::TimeoutError
       @util.logging "--> #{msg}  was not displayed---->#{what} of type #{how} "
       return check_override(override,"---> #{msg}  was not displayed---->#{what} of type #{how} ")
-    else
-
     end
   end
   def check_if_element_exists_and_has_value(*args)
@@ -945,7 +940,7 @@ class Utilities
       else
         @@test_case_fail_details[newArrayStart] ="#{failError}"
       end
-      @util.logging(" <font color=\"red\">______FAILURE!!! Previous line failed-Continuing on__________</font>")
+      @util.logging(" <font color=\"red\">______FAILURE!!! Previous line failed with #{failError}-Continuing on__________</font>")
       # if takeSnapshot==true
       #  @util.logging("Failed snapshot at #{@@artifact_dir}\\\\#{justFile}_#{newArrayStart}.png ")
       # end
@@ -953,14 +948,14 @@ class Utilities
       return  true
     elsif (override=="warn")
      # binding.pry
-      @@test_case_fail=false
-      artifactLength = @@test_case_fail_artifacts.length
-      newArrayStart = @@test_case_fail_details.length
+    
+      artifactLength = @@test_case_warn_artifacts.length
+      newArrayStart = @@test_case_warn_details.length
 
       if takeSnapshot==true
         justFile =@@g_base_dir[(@@g_base_dir.rindex('/')+1)..@@g_base_dir.length]
-        @@test_case_fail_details[newArrayStart] ="#{failError} -> Failed snapshot at #{@@artifact_dir}\\\\#{justFile}_#{artifactLength}.png "
-        @driver.save_screenshot("#{@@artifact_dir}/FAIL#{justFile}_#{artifactLength}.png")
+        @@test_case_warn_details[newArrayStart] ="#{failError} -> Warning snapshot at #{@@artifact_dir}\\\\#{justFile}_#{artifactLength}.png "
+        @driver.save_screenshot("#{@@artifact_dir}/WARN#{justFile}_#{artifactLength}.png")
         # shortArtifactDir = @@artifact_dir.gsub("\\\\hannover-re.grp\\shares\\hlrus_ex\\CDMI_Project\\Testing\\AutomationLogs\\","")
       # binding.pry
         shortArtifactDir = @@artifact_dir.downcase.gsub("c:/automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
@@ -970,7 +965,7 @@ class Utilities
         @@test_case_fail_artifacts.push("#{shortArtifactDir}/FAIL#{justFile}_#{artifactLength}.png")
       else
 
-        insert_warning(failError)
+        insert_warning("warn #{failError}")
       end
       @util.logging(" <font color=\"orange\">______Warning!! Previous line failed-Continuing on__________</font>")
       @util.logging("</font>")
@@ -997,7 +992,10 @@ class Utilities
       else
         @@test_case_fail_details[newArrayStart] ="#{failError}"
       end
-      return false
+   @util.logging(" <font color=\"red\">______FAILURE!!! Previous line failed with #{failError}-Continuing on__________</font>")
+   @util.logging("</font>")
+     throw("#{failError}")
+      return 
     end
   end
   # Inserts a test case warning that shows up in the test case and at the end of the test case either in a pass or fail
@@ -1622,6 +1620,7 @@ end
     @@test_case_fail_details.clear
     @@test_case_fail_artifacts.clear
     @@test_case_warn_details.clear
+    @@test_case_warn_artifacts.clear
     filedir= args[0]
     filebase = args[1]
     headless = false

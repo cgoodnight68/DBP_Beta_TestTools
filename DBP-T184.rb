@@ -98,8 +98,8 @@ class DBP_T184< Test::Unit::TestCase
     @test.check_if_element_exists("Cooler Location","UserApp>MyAccount>Preferences",10,"Cooler Location","warn")
     @test.check_if_element_exists("Liked Products","UserApp>MyAccount>Preferences",10,"Liked Products","warn")
     @test.check_if_element_exists("Add Liked Products","UserApp>MyAccount>Preferences",10,"Add Liked Products","warn")
-    @test.check_if_element_exists("Disliked Products","UserApp>MyAccount>Preferences",10,"Disliked Products")
-    @test.check_if_element_exists("Add Disliked Products","UserApp>MyAccount>Preferences",10,"Add Disliked Products")
+    @test.check_if_element_exists("Disliked Products","UserApp>MyAccount>Preferences",10,"Disliked Products","warn")
+    @test.check_if_element_exists("Add Disliked Products","UserApp>MyAccount>Preferences",10,"Add Disliked Products","warn")
     @test.check_if_element_exists("Phone Provider","UserApp>MyAccount>Preferences",10,"Phone Provider","warn")
 
     @test.click_element("Referrals","UserApp>MyAccount","Referals")

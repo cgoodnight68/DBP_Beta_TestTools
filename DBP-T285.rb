@@ -31,6 +31,7 @@ class DBP_T285 < Test::Unit::TestCase
       sleep(10)
       @test.check_if_element_exists_get_element_text("Search Result","Reports>Product Reporting>Bagged Items Report",120,"Verifying Seach Result")
       @test.click_element("Export to Excel","Reports>Product Reporting>Bagged Items Report","Export to Excel")
+      @test.check_columns_count("Bagged items report.xlsx",0)
       @test.check_for_file_download("Bagged items report.xlsx",60)
       @test.click_element("Export to PDF","Reports>Product Reporting>Bagged Items Report","Export to PDF")
       dateReversed = @test.get_date_reversed()

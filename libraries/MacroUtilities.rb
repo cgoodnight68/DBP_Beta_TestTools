@@ -1119,7 +1119,7 @@ class Utilities;
       def verify_order_numbers_show_in_grid(userlogin,status)
         begin
           epochTime = Time.now.to_i
-          results = run_automation_db_query("select * from dbp_orders where login ='#{userlogin}'  and status ='#{status}' and date < #{epochTime}order by orderid desc limit 5")
+          results = run_automation_db_query("select * from dbp_orders where login ='#{userlogin}'  and status ='#{status}' and date < #{epochTime} order by orderid desc limit 5")
   
           results.each do |row|
             check_if_element_exists(:xpath,"//a[contains(text(),'#{row["orderid"]}')]",10,"Verifying order #{row["orderid"]} shows on the page")

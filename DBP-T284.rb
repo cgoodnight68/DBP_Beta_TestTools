@@ -34,6 +34,7 @@ class DBP_T284 < Test::Unit::TestCase
       sleep(10)
       @test.check_if_element_exists_get_element_text("Report Results","Reports>Financials Reporting>Taxes Report",120,"Report Results")
       @test.click_element("Export to Excel","Reports>Financials Reporting>Taxes Report","Export to Excel")
+      @test.check_columns_count("taxes.xls",5)
       @test.check_for_file_download("taxes.xls",60)
       @test.click_element("Export to PDF","Reports>Financials Reporting>Taxes Report","Export to PDF")
       dateReversed = @test.get_date_reversed()
