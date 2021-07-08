@@ -529,7 +529,7 @@ class Utilities;
 
         productDescription = elements[productWrapperToClick].find_elements(:xpath,"//div[@class ='product-labeling ']")
         @util.logging("-->Clicking on product number #{productId}  Description: <br><font color =\"blue\"> #{productDescription[productWrapperToClick].text} </font>")
-        sleep(5)
+
         click_element_from_elements(:xpath,"//label[contains(text(),'Frequency')]/span",productWrapperToClick)
 
         # productFrequency = elements[productWrapperToClick].find_elements(:xpath,"//label[contains(text(),'Frequency')]/span")
@@ -547,6 +547,8 @@ class Utilities;
         # end
         #addToCart =elements[productWrapperToClick].find_elements(:xpath,"//a[@class='button-add-to-cart add']")
         # addToCart[productWrapperToClick].click
+        sleep(5)
+      
         click_element(:xpath,"//a[@id='button-add-to-cart-#{productId}']", "Add to Delivery Button for product no. #{productId}")
         productStartDelivery = elements[0].find_elements(:xpath,"//div[@class ='product-overlay']")
         if (productStartDelivery[productWrapperToClick].text != "")
@@ -1116,7 +1118,8 @@ class Utilities;
 
       def verify_order_numbers_show_in_grid(userlogin,status)
         begin
-          results = run_automation_db_query("select * from dbp_orders where login ='#{userlogin}'  and status ='#{status}' order by orderid desc limit 5")
+          epochTime = Time.now.to_i
+          results = run_automation_db_query("select * from dbp_orders where login ='#{userlogin}'  and status ='#{status}' and date < #{epochTime}order by orderid desc limit 5")
   
           results.each do |row|
             check_if_element_exists(:xpath,"//a[contains(text(),'#{row["orderid"]}')]",10,"Verifying order #{row["orderid"]} shows on the page")
