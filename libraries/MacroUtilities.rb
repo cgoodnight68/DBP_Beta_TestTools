@@ -3,16 +3,24 @@ class Utilities;
   def load_admin_navigation_elements
     begin
       client = PG::Connection.open(:dbname => 'WebElements_pg_development', :host => '54.201.168.175', :user => 'postgres', :password =>'getswift' )
-      environment = @base_url[8..(@base_url.index('.')-1)]
+      environment = @base_url[8..(@base_url.index('.')-1)].downcase
 
-      newQuery = "select * from dbpelements"
-      # newQuery = "select * from dbpelements where environment = '#{environment}'"
-      #binding.pry
+      newQuery = "select * from dbpelements where environment ='integration' "
       results = client.exec(newQuery)
+
 
       @navigationHash = Array.new
       results.each do |lines|
         @navigationHash.push(lines)
+      end
+      if environment != "integration"
+        replacementsQuery = "select * from dbpelements where environment = '#{environment}'"
+        results2 = client.exec(replacementsQuery)
+
+        results2.each do |lines|
+          navigationItem = @navigationHash.select {|navigate| (navigate["element_name"] == lines["element_name"]) && navigate["element_path"] == lines["element_path"] }
+          navigationItem[0].replace(lines)
+        end
       end
       client.close
       # Uncomment this and comment above to run from a .csv file
@@ -47,14 +55,14 @@ class Utilities;
     goto_url("#{@base_url}/admin/login")
     enter_text(:xpath,"//input[@name='username']","master", "Sign Username")
     element = @driver.find_element(:xpath,"//input[@name='password']")
-   # if @base_url.include?"integration"
-   #    element.send_keys("WpxarUxg1X27nm290V6h")
-   #  else
-   #   element.send_keys("9OA33ULvSJDC12Kg7crJ")
-   #  end
-    
+    # if @base_url.include?"integration"
+    #    element.send_keys("WpxarUxg1X27nm290V6h")
+    #  else
+    #   element.send_keys("9OA33ULvSJDC12Kg7crJ")
+    #  end
+
     element.send_keys("WpxarUxg1X27nm290V6h")
-    
+
     #element.send_keys("FycAq8Sg5V2ov956mXD4")
     #element.send_keys("6a4GhvF3k@XwYMLCXFbad@v3")
     click_element_ignore_failure(:xpath,"//div[@class='icheckbox_flat-green']", "Agree to terms")
@@ -103,20 +111,20 @@ class Utilities;
     return date
   end
   def get_valid_customer_address
-     street= ""
-      city =""
-      zipcode= ""
-      state = ""
-      while street ==""
-        results = run_automation_db_query("select cust.s_address,cust.s_city,cust.s_zipcode from dbp_customers as cust, dbp_orders as orders  where cust.s_address is not null  and cust.s_city is not null and cust.s_zipcode is not null and cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status='P' order by rand() limit 1")
-        results.each do |row|
-          street= row["s_address"]
-          city =row["s_city"]
-          zipcode = row["s_zipcode"]
-          state = row["s_state"]
-        end
+    street= ""
+    city =""
+    zipcode= ""
+    state = ""
+    while street ==""
+      results = run_automation_db_query("select cust.s_address,cust.s_city,cust.s_zipcode from dbp_customers as cust, dbp_orders as orders  where cust.s_address is not null  and cust.s_city is not null and cust.s_zipcode is not null and cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status='P' order by rand() limit 1")
+      results.each do |row|
+        street= row["s_address"]
+        city =row["s_city"]
+        zipcode = row["s_zipcode"]
+        state = row["s_state"]
       end
-      return "#{street} #{city},#{state} #{zipcode}"
+    end
+    return "#{street} #{city},#{state} #{zipcode}"
   end
 
 
@@ -436,6 +444,9 @@ class Utilities;
         # end
         #addToCart =elements[productWrapperToClick].find_elements(:xpath,"//a[@class='button-add-to-cart add']")
         # addToCart[productWrapperToClick].click
+
+        @driver.action.send_keys("\n").perform
+        sleep(10)
         click_element(:xpath,"//a[@id='button-add-to-cart-#{productId}']", "Add to Delivery Button for product no. #{productId}")
         productStartDelivery = elements[0].find_elements(:xpath,"//div[@class ='product-overlay']")
         if (productStartDelivery[productWrapperToClick].text != "")
@@ -548,7 +559,7 @@ class Utilities;
         #addToCart =elements[productWrapperToClick].find_elements(:xpath,"//a[@class='button-add-to-cart add']")
         # addToCart[productWrapperToClick].click
         sleep(5)
-      
+
         click_element(:xpath,"//a[@id='button-add-to-cart-#{productId}']", "Add to Delivery Button for product no. #{productId}")
         productStartDelivery = elements[0].find_elements(:xpath,"//div[@class ='product-overlay']")
         if (productStartDelivery[productWrapperToClick].text != "")
@@ -581,6 +592,41 @@ class Utilities;
       @util.errorlogging("Unable to select product Error:#{e} ")
       throw ("Unable to select product Error:#{e}")
     end
+  end
+
+  def verify_items_are_on_shop_page()
+    begin
+      click_element_if_exists(:xpath,"//*[@id='alert-message-modal']/div/div/div[3]/button",10,"Find any open modal close it when loging to User App")
+      elements = @driver.find_elements(:xpath ,"//div[@class='product-wrapper']/..")
+      if (elements.count>0)
+        @util.logging("There are #{elements.count} products on the page")
+        for productWrapperToClick in 0..(elements.count-1)
+          productId = elements[productWrapperToClick].attribute("data-productid")
+          productDescription = elements[productWrapperToClick].find_elements(:xpath,"//div[@class ='product-labeling ']")
+          @util.logging("-->Found product number #{productId}  Description: <br><font color =\"blue\"> #{productDescription[productWrapperToClick].text} </font>")
+        end
+
+      end
+
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      @util.errorlogging "No such element to click. #{error.message}"
+      throw ("No such element to click. #{error.message}")
+    rescue Selenium::WebDriver::Error::UnknownError
+      @util.errorlogging "Unknown error. #{error.message}"
+      throw ("Unknown error. #{error.message}")
+
+    rescue Net::ReadTimeout
+      # binding.pry
+      @util.errorlogging "Net Read timeout failure #{error.message} "
+      throw ("Net Read timeout failure #{error.message} ")
+    rescue Selenium::WebDriver::Error::ElementClickInterceptedError
+      @util.errorlogging "--> Element  was displayed but click would be intercepted #{error.message}"
+      throw("--> Element  was displayed but click would be intercepted #{error.message}")
+    rescue =>e
+      @util.errorlogging("Unable to verify items are on the shop page Error:#{e} ")
+      throw ("Unable to verify items are on the shop page Error:#{e}")
+    end
+
   end
 
   def go_to_cart
@@ -632,7 +678,7 @@ class Utilities;
     if orderStatus == "Recurring"
       results = run_automation_db_query("select c.* from dbp_customers as c left join dbp_recurring_orders as r on r.login=c.login where c.usertype = 'C' and c.login not like 'dbp_an0nym0us_%' and c.user_active ='Y' and r.recurring_order not like '\%s:8:\"products\";a:0\%' order by rand() limit 1;")
     else
-    results = run_automation_db_query("select cust.* from dbp_customers as cust ,dbp_orders as orders where cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status='#{orderStatus}' order by rand() limit 1")
+      results = run_automation_db_query("select cust.* from dbp_customers as cust ,dbp_orders as orders where cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status='#{orderStatus}' order by rand() limit 1")
     end
     results.each do |row|
       searchCriteria = row["email"]
@@ -655,14 +701,14 @@ class Utilities;
     end
   end
 
- def click_on_row_in_table(searchCriteria,tableName)
+  def click_on_row_in_table(searchCriteria,tableName)
     begin
       click_element(:xpath,"//p[contains(text(),'#{searchCriteria}')]/a", "Clicking on results table #{tableName} and email column  on row with #{searchCriteria}")
     rescue StandardError => e
-          @util.errorlogging("Unable to click on row in table#{e}")
-          throw ("Unable to click on row in table#{e}")
+      @util.errorlogging("Unable to click on row in table#{e}")
+      throw ("Unable to click on row in table#{e}")
     end
- end
+  end
 
   def search_for_administrator()
     adminlogin =""
@@ -841,6 +887,7 @@ class Utilities;
       get_url()
 
       click_element("Login as this Customer","User Management>Customers>Search for Customers>Customer Card","Login as customer")
+      sleep(2)
       click_element("Login as customer link","User Management>Customers>Search for Customers>Customer Card","Login as customer link")
       return userRow
     rescue StandardError => e
@@ -855,6 +902,7 @@ class Utilities;
       get_url()
 
       click_element("Login as this Customer","User Management>Customers>Search for Customers>Customer Card","Login as customer")
+      sleep(2)
       click_element("Login as customer link","User Management>Customers>Search for Customers>Customer Card","Login as customer link")
       return userRow
     rescue StandardError => e
@@ -870,6 +918,7 @@ class Utilities;
       get_url()
 
       click_element("Login as this Customer","User Management>Customers>Search for Customers>Customer Card","Login as customer")
+      sleep(2)
       click_element("Login as customer link","User Management>Customers>Search for Customers>Customer Card","Login as customer link")
       return userRow
     rescue StandardError => e
@@ -1013,14 +1062,14 @@ class Utilities;
         check_override(true,"Error trying verify the column count in xls Error:#{e}",true)
       end
     end
-  
+
     def check_columns_count_csv(filename,numberToVerify)
       begin
         fileDirArray = @@filedir.split('/')
         wait_for_file(filename,180)
 
         fileArray = CSV.read("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
-  
+
         @util.logging("The first line   of the file is:\n <font color=\"blue\">#{fileArray[0]}\n</font> ")
         columns = fileArray[0]
         if (numberToVerify == 0)
@@ -1074,12 +1123,12 @@ class Utilities;
         check_override(true,"Error trying verify the row count in xls Error:#{e}",true)
       end
     end
-    
-     def check_rows_count_csv(filename,numberToVerify)
+
+    def check_rows_count_csv(filename,numberToVerify)
       begin
         fileDirArray = @@filedir.split('/')
         wait_for_file(filename,180)
-       
+
         fileArray= CSV.read("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
         @util.logging("The first line of the file is:\n <font color=\"blue\">#{fileArray[0]}\n</font> ")
 
@@ -1120,7 +1169,7 @@ class Utilities;
         begin
           epochTime = Time.now.to_i
           results = run_automation_db_query("select * from dbp_orders where login ='#{userlogin}'  and status ='#{status}' and date < #{epochTime} order by orderid desc limit 5")
-  
+
           results.each do |row|
             check_if_element_exists(:xpath,"//a[contains(text(),'#{row["orderid"]}')]",10,"Verifying order #{row["orderid"]} shows on the page")
           end
@@ -1172,6 +1221,28 @@ class Utilities;
         rescue StandardError => e
           @util.errorlogging("Unable to verify Error:#{e}")
           throw ("Unable to verify Error:#{e}")
+        end
+      end
+
+      def kml_map_verification
+        begin
+          element = @driver.find_element(:xpath,"//*[@id='navmap']/div/div/div[2]/div[3]/div/div[1]")
+          location = element.location
+          @driver.action.move_by(location.x,location.y).perform
+          sleep(2)
+          @driver.action.click.perform
+          sleep(2)
+          element2 = @driver.find_element(:xpath,"//*[@id='navmap']/div/div/div[2]/div[3]/div/div[4]/div/div/div/div/div/div/div")
+          element2.text
+          if element2.text.length >0
+            @util.logging("Clicked a boundary named #{element2.text}")
+          else
+            throw ("Tried to click on a boundary, but no boundary selected came up. ")
+          end
+
+        rescue StandardError => e
+          @util.errorlogging("Unable to verify KML file page Error:#{e}")
+          throw ("Unable to verify KML file page Error:#{e}")
         end
       end
 

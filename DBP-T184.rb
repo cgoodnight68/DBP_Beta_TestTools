@@ -38,7 +38,7 @@ class DBP_T184< Test::Unit::TestCase
     @test.check_if_element_exists("Recurring Items","UserApp>MyAccount",10,"Recurring Items")
     @test.check_if_element_exists("Delivery History","UserApp>MyAccount",10,"Delivery History")
     @test.check_if_element_exists("Preferences","UserApp>MyAccount",10,"Preferences")
-    @test.check_if_element_exists("Referrals","UserApp>MyAccount",10,"Referalls")
+    @test.check_if_element_exists("Referrals","UserApp>MyAccount",10,"Referals",true)
 
 
     @test.click_element("Account Info","UserApp>MyAccount","Account Info")
@@ -102,8 +102,8 @@ class DBP_T184< Test::Unit::TestCase
     @test.check_if_element_exists("Add Disliked Products","UserApp>MyAccount>Preferences",10,"Add Disliked Products","warn")
     @test.check_if_element_exists("Phone Provider","UserApp>MyAccount>Preferences",10,"Phone Provider","warn")
 
-    @test.click_element("Referrals","UserApp>MyAccount","Referals")
-    @test.check_if_element_exists("Referral URL","UserApp>MyAccount>Referrals",10,"Referral URL")
+    @test.click_element("Referrals","UserApp>MyAccount","Referals",true)
+    @test.check_if_element_exists("Referral URL","UserApp>MyAccount>Referrals",10,"Referral URL",true)
 
 
     rescue => e

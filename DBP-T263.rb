@@ -25,9 +25,9 @@ class DBP_T263 < Test::Unit::TestCase
        date = @test.get_date(0)
       @test.load_admin_navigation_elements
       @test.login_to_admin
-      @test.admin_navigate_to("Add New Product")
-      newProduct = @test.add_new_product_for_day()
-    
+    #  @test.admin_navigate_to("Add New Product")
+    #  newProduct = @test.add_new_product_for_day()
+    newProduct = "Product for 7_8_2021"
       @test.admin_navigate_to("Search for Customers")
       @test.login_as_random_customer_from_backend_with_upcoming_orders()
       @test.click_element("Search button","UserApp","Search button on user app")

@@ -372,7 +372,7 @@ class Utilities
 
     rescue Net::ReadTimeout
       # binding.pry
-      check_override(true,"<font color=\"orange\"> --> Net read failureElement #{msg} #{what} of type #{how} </font>")
+      check_override("warn","<font color=\"orange\"> --> Net read failureElement #{msg} #{what} of type #{how} </font>")
       @util.logging("</font>")
       false
     rescue StandardError => e
@@ -2854,6 +2854,39 @@ end
         @util.logging("No alert present.")
         return false
       end
+    end
+
+    def verify_radio_button_is_selected(*args)
+   begin
+      how = args[0]
+      what =args[1]
+      msg=""
+     
+
+      if  (how.is_a? String)
+        nLookup = get_element_from_navigation2(how,what)
+        how = nLookup[0]
+        what = nLookup[1]
+      end
+     checked =false
+      if args.size >=3
+        msg= args[2] 
+      end
+      element = @driver.find_element(how,what)
+     checked = element.attribute("checked")
+
+     if (checked == "true")
+      @util.logging("#{msg} is checked")
+    else
+      @util.errorlogging("#{msg} is not checked----> #{what} of type #{how}")
+      throw("#{msg} is not checked ----> #{what} of type #{how} ")
+    end
+
+
+    rescue =>e
+      @util.errorlogging("Unable to verify the radio button is checked: Error:#{e} ")
+      throw ("Unable to verify the radio button is checked: Error:#{e}")
+    end
     end
 
   end

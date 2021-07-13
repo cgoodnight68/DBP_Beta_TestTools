@@ -37,7 +37,7 @@ class DBP_T185< Test::Unit::TestCase
     @test.check_if_element_exists("Recurring Items","UserApp>MyAccount",10,"Recurring Items")
     @test.check_if_element_exists("Delivery History","UserApp>MyAccount",10,"Delivery History")
     @test.check_if_element_exists("Preferences","UserApp>MyAccount",10,"Preferences")
-    @test.check_if_element_exists("Referrals","UserApp>MyAccount",10,"Referalls")
+    @test.check_if_element_exists("Referrals","UserApp>MyAccount",10,"Referalls",true)
 
 
     @test.click_element("Account Info","UserApp>MyAccount","Account Info")
