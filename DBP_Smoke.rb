@@ -39,4 +39,7 @@ ruby "DBP-T277.rb"
 ruby "DBP-T180.rb"
 ruby "DBP-T181.rb"
 ruby "DBP-T192.rb"
+ruby "DBP-T269.rb"
+ruby "DBP-T177.rb"
+ruby "DBP-T295.rb"
 

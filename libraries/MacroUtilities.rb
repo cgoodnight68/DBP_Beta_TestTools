@@ -13,6 +13,7 @@ class Utilities;
       results.each do |lines|
         @navigationHash.push(lines)
       end
+
       if environment != "integration"
         replacementsQuery = "select * from dbpelements where environment = '#{environment}'"
         results2 = client.exec(replacementsQuery)
@@ -306,6 +307,7 @@ class Utilities;
     if navigationItem.count ==0
       @util.errorlogging("element_name: #{element_name} at element_path : #{element_path} not found")
       throw ("Unable to locate #{element_name} #{element_path} in the loaded navigation hash")
+
     end
     return navigationItem[0]["element_selector"].gsub(':',"").to_sym,navigationItem[0]["element_identifier"]
 
@@ -417,6 +419,11 @@ class Utilities;
   def select_random_item_from_shop_page(quantity,frequency)
     begin
       click_element_if_exists(:xpath,"//*[@id='alert-message-modal']/div/div/div[3]/button",10,"Find any open modal close it when loging to User App")
+      returnValue = false
+      cartElementsBefore = @driver.find_elements(:xpath ,"//div[@class='table-cell product_name']/div/a/span")
+
+      @util.logging("There are #{cartElementsBefore.count} item(s) in the cart before adding a new item")
+
       elements = @driver.find_elements(:xpath ,"//div[@class='product-wrapper']/..")
       if (elements.count>0)
         productWrapperToClick = rand(elements.count.to_i) - 1
@@ -424,17 +431,25 @@ class Utilities;
         productId = elements[productWrapperToClick].attribute("data-productid")
 
 
-        productDescription = elements[productWrapperToClick].find_elements(:xpath,"//div[@class ='product-labeling ']")
+        productDescription = elements[productWrapperToClick].find_elements(:xpath,"//div[@class ='product-labeling ']/div/h2")
+
         @util.logging("-->Clicking on product number #{productId}  Description: <br><font color =\"blue\"> #{productDescription[productWrapperToClick].text} </font>")
+        returnValue = productDescription[productWrapperToClick].text
+        #binding.pry
+
         sleep(5)
         click_element_from_elements(:xpath,"//label[contains(text(),'Frequency')]/span",productWrapperToClick)
 
         # productFrequency = elements[productWrapperToClick].find_elements(:xpath,"//label[contains(text(),'Frequency')]/span")
         # productFrequency[productWrapperToClick].click
         found = click_element_if_exists(:xpath,"//li[contains(text(),'#{frequency}')]",10,"Clicking the Frequency of #{frequency}")
+        if found == true
+          found = click_element_if_exists(:xpath,"//li[contains(text(),'#{frequency}')]",10,"Clicking the Frequency of #{frequency}")
+        end
 
         if (frequency == "Weekly") && (found == false)
           altFrequency = "Every Week"
+          click_element_if_exists(:xpath,"//li[contains(text(),'#{altFrequency}')]",10,"Clicking the Frequency of #{altFrequency}")
           click_element_if_exists(:xpath,"//li[contains(text(),'#{altFrequency}')]",10,"Clicking the Frequency of #{altFrequency}")
         end
         # newElements = @driver.find_elements(:xpath,"//li[contains(text(),'#{frequency}')]")
@@ -445,8 +460,8 @@ class Utilities;
         #addToCart =elements[productWrapperToClick].find_elements(:xpath,"//a[@class='button-add-to-cart add']")
         # addToCart[productWrapperToClick].click
 
-        @driver.action.send_keys("\n").perform
-        sleep(10)
+
+
         click_element(:xpath,"//a[@id='button-add-to-cart-#{productId}']", "Add to Delivery Button for product no. #{productId}")
         productStartDelivery = elements[0].find_elements(:xpath,"//div[@class ='product-overlay']")
         if (productStartDelivery[productWrapperToClick].text != "")
@@ -455,10 +470,16 @@ class Utilities;
           productStartDeliveryOK[productWrapperToClick].click
         end
         sleep(5)
-        click_element_if_exists("OK button","UserApp>ImportantInformationModal",20,"OK button for add to cart confirmation")
-        #binding.pry
-        @driver.navigate().refresh();
 
+        cartElementsAfter = @driver.find_elements(:xpath ,"//div[@class='table-cell product_name']/div/a/span")
+        if cartElementsAfter.count > cartElementsBefore.count
+          @util.logging("There are #{cartElementsAfter.count} item(s) in the cart after adding #{returnValue}")
+        else
+          @util.errorLogging("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsBefore.count}")
+         throw("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsCount.count}")
+       end
+        click_element_if_exists("OK button","UserApp>ImportantInformationModal",20,"OK button for add to cart confirmation")
+        return returnValue
       end
 
     rescue Selenium::WebDriver::Error::NoSuchElementError
@@ -1245,5 +1266,18 @@ class Utilities;
           throw ("Unable to verify KML file page Error:#{e}")
         end
       end
+
+      def select_checkbox_in_row_with_value(text)
+        begin
+          @util.logging("Clicking on the check box for #{text}")
+          element = @driver.find_element(:xpath,"//input[@value = '#{text}']/../../../td[1]/div/ins")
+          element.click
+
+        rescue StandardError => e
+          @util.errorlogging("Unable click on the check box for #{text} Error:#{e}")
+          throw ("Unable click on the check box for #{text} Error:#{e}")
+        end
+      end
+
 
     ;end
