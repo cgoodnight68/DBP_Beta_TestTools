@@ -2355,7 +2355,7 @@ end
     begin
     gateway = Net::SSH::Gateway.new(
       'outofbox.client-staging.deliverybizpro.com',
-      'ubuntu',:keys=>"/Users/cgoodnight/Documents/DBP/Judd.pem"
+      'ubuntu',:keys=>"~/bin/Judd.pem"
     )
     port = gateway.open('127.0.0.1', 3306, 3307)
 

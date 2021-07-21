@@ -134,6 +134,7 @@ class Utilities;
       date = get_date(0)
       count = ""
       results = run_automation_db_query("select count(*) from dbp_customers")
+  
       results.each do |row|
         count = row["count"]
       end
@@ -141,7 +142,7 @@ class Utilities;
       city =""
       zipcode= ""
       while street ==""
-        results = run_automation_db_query("select cust.s_address,cust.s_city,cust.s_zipcode from dbp_customers as cust, dbp_orders as orders  where cust.s_address is not null  and cust.s_city is not null and cust.s_zipcode is not null and cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status='P' order by rand() limit 1")
+        results = run_automation_db_query("select cust.s_address,cust.s_city,cust.s_zipcode from dbp_customers as cust, dbp_orders as orders  where cust.s_address is not null  and cust.s_city is not null and cust.s_zipcode is not null and cust.usertype = 'C' and cust.login != 'master'  and cust.user_active ='Y' and orders.login = cust.login and orders.status in ('P','C') order by rand() limit 1")
         results.each do |row|
           street= row["s_address"]
           city =row["s_city"]
@@ -158,9 +159,8 @@ class Utilities;
 
       enter_text("Email","User Management>Customers>Create Customer Profile", "#{date}_Default_Cust@mailinator.com","Email")
       enter_text("Email2","User Management>Customers>Create Customer Profile", "#{date}_Default_Cust@mailinator.com","Confirm Email")
-      phoneProviderCheck = check_if_element_exists("Phone Provider selector","User Management>Customers>Create Customer Profile",5)
-
-      if phoneProviderCheck != false
+      phoneProviderCheck = check_if_element_exists("Phone Provider selector","User Management>Customers>Create Customer Profile",5,"Phone provider","warn")
+      if phoneProviderCheck != "warn"
 
         click_element("Phone Provider selector","User Management>Customers>Create Customer Profile","Phone Provider selector")
         enter_text("Phone Provider","User Management>Customers>Create Customer Profile", "AT&T\n\t ","Phone Provider and Accept SMS")
