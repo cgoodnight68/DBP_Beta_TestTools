@@ -21,8 +21,9 @@ class DBP_T185< Test::Unit::TestCase
   end
 
   def test_dbp_t185
-
+     
     @test.load_admin_navigation_elements
+    
     @test.login_to_admin
     @test.admin_navigate_to("Search for Customers")
     userRow = @test.login_as_random_customer_from_backend_with_upcoming_orders()
@@ -37,7 +38,7 @@ class DBP_T185< Test::Unit::TestCase
     @test.check_if_element_exists("Recurring Items","UserApp>MyAccount",10,"Recurring Items")
     @test.check_if_element_exists("Delivery History","UserApp>MyAccount",10,"Delivery History")
     @test.check_if_element_exists("Preferences","UserApp>MyAccount",10,"Preferences")
-    @test.check_if_element_exists("Referrals","UserApp>MyAccount",10,"Referalls",true)
+    @test.check_if_element_exists("Referrals","UserApp>MyAccount",10,"Referalls","warn")
 
 
     @test.click_element("Account Info","UserApp>MyAccount","Account Info")

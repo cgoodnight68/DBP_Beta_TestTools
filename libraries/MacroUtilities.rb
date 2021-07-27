@@ -56,18 +56,10 @@ class Utilities;
     goto_url("#{@base_url}/admin/login")
     enter_text(:xpath,"//input[@name='username']","master", "Sign Username")
     element = @driver.find_element(:xpath,"//input[@name='password']")
-    # if @base_url.include?"integration"
-    #    element.send_keys("WpxarUxg1X27nm290V6h")
-    #  else
-    #   element.send_keys("9OA33ULvSJDC12Kg7crJ")
-    #  end
-    #kkGjPdFauTByrFaEs8pZooTx
-    #
 
-    element.send_keys("ApiFzwbvDzR9n2RUPtbDvJhX")
+    element.send_keys("\x85N\x82\xB7T\xB5m\xD5\xAC1S\xB7J\x93C\x9F\x9Ei\xFE\xFA\x05\x0F/\x8C\xE5\xF5C-\x8F\x1E\x1C\x7F".decrypt(ENV["DBPKEY"]))
 
-    #element.send_keys("FycAq8Sg5V2ov956mXD4")
-    #element.send_keys("6a4GhvF3k@XwYMLCXFbad@v3")
+
     click_element_ignore_failure(:xpath,"//div[@class='icheckbox_flat-green']", "Agree to terms")
     click_element(:xpath,"//button[@class='btn secure-login']","Sign in Button")
 

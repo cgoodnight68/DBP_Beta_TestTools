@@ -28,6 +28,8 @@ require "HTTParty"
 #include Viewpoint::EWS
 require "roo"
 require "roo-xls"
+require "./libraries/encrypt_decrypt.rb"
+
 
 class Utilities
   @@g_base_dir=""
@@ -81,6 +83,8 @@ class Utilities
   @@lrmVersion =""
   @@zenithVersion =""
   @@deleteFiles = Array.new
+  browserstack_username = ENV["BROWSERSTACK_USERNAME"]
+  browserstack_access_key = ENV["BROWSERSTACK_ACCESS_KEY"]
   # Overrides the current browser that was chosen on startup of the test case
   #   newbrws string of the new browser type (ie firefox, chrome, ie)
   def override_brws(newbrws)
@@ -200,18 +204,18 @@ class Utilities
         what = nLookup[1]
       end
       if args.size >=3
-        msg= args[2] 
+        msg= args[2]
       end
 
       if args.size >=4
         whatReplacement= args[3]
-       what = what.gsub("~placeholder~",whatReplacement)
-    
+        what = what.gsub("~placeholder~",whatReplacement)
+
       end
       if args.size >=5
         override = args[4]
       end
-       if args.size >=6
+      if args.size >=6
         override = args[5]
       end
       if @@debug==1
@@ -313,15 +317,15 @@ class Utilities
       # binding.pry
       @util.logging "2 Failed find element for #{how} and #{what}"
       true
-     rescue StandardError => e
-        @util.errorlogging("Unable to click #{msg} #{e}")
-        check_override("warn","Unable to click #{msg} #{e} --->identifier #{what} of type #{how}",false)
-      end
+    rescue StandardError => e
+      @util.errorlogging("Unable to click #{msg} #{e}")
+      check_override("warn","Unable to click #{msg} #{e} --->identifier #{what} of type #{how}",false)
+    end
   end
   # Clicks an element from a found set of elements from the number
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
-  #   elementCount - is the number element to count. i.e. with x number of elements click the 2nd element  
+  #   elementCount - is the number element to count. i.e. with x number of elements click the 2nd element
   #   msg -  Optional logging message
   def click_element_from_elements(*args)
     found = false
@@ -330,7 +334,7 @@ class Utilities
       how = args[0]
       what =args[1]
       elementCount = args[2]
-       if (how.is_a? String)
+      if (how.is_a? String)
         nLookup = get_element_from_navigation2(how,what)
         how = nLookup[0]
         what = nLookup[1]
@@ -366,13 +370,13 @@ class Utilities
       return found
     rescue  Selenium::WebDriver::Error::ElementClickInterceptedError
       check_override(true,"--> Element #{msg} #{what} of type #{how} was displayed but click would be intercepted")
-      
+
       false
     rescue Selenium::WebDriver::Error::ElementNotInteractableError
-     check_override(true,"--> Element #{msg} #{what} of type #{how} was displayed but is not interactable")
+      check_override(true,"--> Element #{msg} #{what} of type #{how} was displayed but is not interactable")
       false
     rescue Selenium::WebDriver::Error::NoSuchElementError
-     check_override(true,"--> Element #{msg} #{what} of type #{how} No such element")
+      check_override(true,"--> Element #{msg} #{what} of type #{how} No such element")
       false
     rescue Selenium::WebDriver::Error::UnknownError
       @util.logging "2 Failed find element for #{how} and #{what} count #{elementCount} to click "
@@ -393,7 +397,7 @@ class Utilities
   #   Verify an element from a found set of elements exists with specific text
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
-  #   textToSearchFor the text that needs to be found in 1 of the elements  
+  #   textToSearchFor the text that needs to be found in 1 of the elements
   #   msg -  Optional logging message
   def verify_element_from_elements_with_text_or_value(*args)
     found = false
@@ -402,7 +406,7 @@ class Utilities
       how = args[0]
       what =args[1]
       textToSearchFor = args[2]
-       if (how.is_a? String)
+      if (how.is_a? String)
         nLookup = get_element_from_navigation2(how,what)
         how = nLookup[0]
         what = nLookup[1]
@@ -422,31 +426,31 @@ class Utilities
       found = false
       elements = @driver.find_elements(how , what)
       elements.each do |element|
-         if element.attribute("value").include?(textToSearchFor)
+        if element.attribute("value").include?(textToSearchFor)
           found = true
-         end
-         if element.text.include?(textToSearchFor)
+        end
+        if element.text.include?(textToSearchFor)
           found = true
-         end
+        end
       end
 
 
       if (found == true)
-       @util.logging("The expected text #{textToSearchFor} was found in #{msg}")
+        @util.logging("The expected text #{textToSearchFor} was found in #{msg}")
       else
         @util.errorlogging("The expected text #{textToSearchFor} was not found #{msg}")
         check_override(true,"The expected text #{textToSearchFor} was not found #{msg}",true)
       end
-  
+
     rescue  Selenium::WebDriver::Error::ElementClickInterceptedError
       check_override(true,"--> Element #{msg} #{what} of type #{how} was displayed but click would be intercepted")
-      
+
       false
     rescue Selenium::WebDriver::Error::ElementNotInteractableError
-     check_override(true,"--> Element #{msg} #{what} of type #{how} was displayed but is not interactable")
+      check_override(true,"--> Element #{msg} #{what} of type #{how} was displayed but is not interactable")
       false
     rescue Selenium::WebDriver::Error::NoSuchElementError
-     check_override(true,"--> Element #{msg} #{what} of type #{how} No such element")
+      check_override(true,"--> Element #{msg} #{what} of type #{how} No such element")
       false
     rescue Selenium::WebDriver::Error::UnknownError
       @util.logging "2 Failed find element for #{how} and #{what} count #{elementCount} to click "
@@ -739,7 +743,7 @@ class Utilities
       if cb.enabled?
         if @@debug==1
           if (cb.attribute("value") == value)
-          @util.logging("--> #{msg} exists and has value of #{value}  ----> #{what} of type #{how}")
+            @util.logging("--> #{msg} exists and has value of #{value}  ----> #{what} of type #{how}")
           else
             check_override(override,"--> #{msg} exists but does not have the expected value of #{value}. It has #{cb.attribute("value")} ---->    #{what} of type #{how} was not displayed")
           end
@@ -800,7 +804,7 @@ class Utilities
       else
         return check_override(override,"--> Not Displayed #{msg} #{what} of type #{how}")
       end
-    
+
     rescue Selenium::WebDriver::Error::NoSuchElementError
       @util.logging "#{what} of type #{how} is not displayed-  #{msg}"
       return check_override(override,"--> Not Displayed #{msg} #{what} of type #{how} ")
@@ -940,7 +944,7 @@ class Utilities
         @@test_case_fail_details[newArrayStart] ="#{failError} -> Failed snapshot at #{@@artifact_dir}/#{justFile}_#{artifactLength}.png "
         @driver.save_screenshot("#{@@artifact_dir}/FAIL#{justFile}_#{artifactLength}.png")
         # shortArtifactDir = @@artifact_dir.gsub("\\\\hannover-re.grp\\shares\\hlrus_ex\\CDMI_Project\\Testing\\AutomationLogs\\","")
-       # binding.pry
+        # binding.pry
         shortArtifactDir = @@artifact_dir.downcase.gsub("c:/automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
         #  shortArtifactDir = @@artifact_dir.gsub("c:/Automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
 
@@ -955,8 +959,8 @@ class Utilities
 
       return  true
     elsif (override=="warn")
-     # binding.pry
-    
+      # binding.pry
+
       artifactLength = @@test_case_warn_artifacts.length
       newArrayStart = @@test_case_warn_details.length
 
@@ -965,7 +969,7 @@ class Utilities
         @@test_case_warn_details[newArrayStart] ="#{failError} -> Warning snapshot at #{@@artifact_dir}\\\\#{justFile}_#{artifactLength}.png "
         @driver.save_screenshot("#{@@artifact_dir}/WARN#{justFile}_#{artifactLength}.png")
         # shortArtifactDir = @@artifact_dir.gsub("\\\\hannover-re.grp\\shares\\hlrus_ex\\CDMI_Project\\Testing\\AutomationLogs\\","")
-      # binding.pry
+        # binding.pry
         shortArtifactDir = @@artifact_dir.downcase.gsub("c:/automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
 
         #  shortArtifactDir = @@artifact_dir.gsub("c:/Automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
@@ -991,7 +995,7 @@ class Utilities
         @@test_case_fail_details[newArrayStart] ="#{failError} -> Failed snapshot at #{@@artifact_dir}\\\\#{justFile}_#{artifactLength}.png "
         @driver.save_screenshot("#{@@artifact_dir}/FAIL#{justFile}_#{artifactLength}.png")
         #shortArtifactDir = @@artifact_dir.gsub("\\\\hannover-re.grp\\shares\\hlrus_ex\\CDMI_Project\\Testing\\AutomationLogs\\","")
-      #    binding.pry
+        #    binding.pry
         shortArtifactDir = @@artifact_dir.downcase.gsub("c:/automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
         # shortArtifactDir = @@artifact_dir.gsub("c:/Automation/logs/","#{@@base_url[0..(@@base_url.length-2)]}:8001\\")
 
@@ -1000,10 +1004,10 @@ class Utilities
       else
         @@test_case_fail_details[newArrayStart] ="#{failError}"
       end
-   @util.logging(" <font color=\"red\">______FAILURE!!! Previous line failed with #{failError}-Continuing on__________</font>")
-   @util.logging("</font>")
-     throw("#{failError}")
-      return 
+      @util.logging(" <font color=\"red\">______FAILURE!!! Previous line failed with #{failError}-Continuing on__________</font>")
+      @util.logging("</font>")
+      throw("#{failError}")
+      return
     end
   end
   # Inserts a test case warning that shows up in the test case and at the end of the test case either in a pass or fail
@@ -1245,7 +1249,7 @@ class Utilities
       if args.size >=5
         whatReplacement= args[4]
         what = what.gsub("~placeholder~",whatReplacement)
-      end 
+      end
       if args.size >=6
         sendTextDirect= args[5]
       end
@@ -1412,8 +1416,8 @@ class Utilities
       false
     end
   end
- def set_iframe(how,what)
-  begin
+  def set_iframe(how,what)
+    begin
       how = args[0]
       what =args[1]
       if  (how.is_a? String)
@@ -1422,35 +1426,35 @@ class Utilities
         what = nLookup[1]
       end
       frame = @driver.find_element(how,what)
-    @driver.switch_to.frame(frame)
-    if frame['name'] != ''
-      frameLocator= frame['name']
-    elsif frame['class'] != ''
-      frameLocator = frame['class']
-    elsif frame['id'] != ''
-      frameLocator = frame['id']
-    else
-      @util.errorlogging ("Unknown frame name: #{frame['name']} class: #{frame['class']} id: #{frame['id']}")
-       throw ("Unknown frame name: #{frame['name']} class: #{frame['class']} id: #{frame['id']}")
-    end
+      @driver.switch_to.frame(frame)
+      if frame['name'] != ''
+        frameLocator= frame['name']
+      elsif frame['class'] != ''
+        frameLocator = frame['class']
+      elsif frame['id'] != ''
+        frameLocator = frame['id']
+      else
+        @util.errorlogging ("Unknown frame name: #{frame['name']} class: #{frame['class']} id: #{frame['id']}")
+        throw ("Unknown frame name: #{frame['name']} class: #{frame['class']} id: #{frame['id']}")
+      end
 
       @util.logging("Switched to #{frameLocator}")
-        rescue
+    rescue
       check_override(true,"Unable to switch to iFrame  #{how} and #{what} ",false)
     end
-end
+  end
 
-def return_to_default_frame()
+  def return_to_default_frame()
     @driver.switch_to.default_content
     @util.logging("Returning to default content")
-end
+  end
   # Selects a value from a dropdown list element
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
   #   message  The option to select from the dropdown list.  If value = 'index' convert message to integer and select the option by index
   #   msg -optional-  the logging message
   #   value -optional- If value = 'index' convert message to integer and select the option by index otherwise selects the option by text
-  #   whatReplacement replacement of the ~placeholder~ value in the "what" - optional  
+  #   whatReplacement replacement of the ~placeholder~ value in the "what" - optional
 
   def select_dropdown_list_text(*args)
     begin
@@ -1474,24 +1478,24 @@ end
         whatReplacement= args[5]
         what =what.gsub("~placeholder~",whatReplacement)
 
-      end 
+      end
 
       if @@debug==1
-       if value !="index"
+        if value !="index"
           @util.logging("-->Selecting  #{msg} '#{message}' from  #{what} of type #{how}")
         else
           @util.logging("-->Selecting  #{msg} #{message} from  #{what} of type #{how}")
         end
       end
       wait = Selenium::WebDriver::Wait.new(:timeout => 180)
-    element =""
+      element =""
       cb = wait.until {
         element = @driver.find_element(how , what)
-        
+
       }
-        if (element.attribute("style")== "display: none;")
-           @driver.execute_script("arguments[0].style='display: block;'", element) #hack to bypass the DBP implementation of multiselect
-        end
+      if (element.attribute("style")== "display: none;")
+        @driver.execute_script("arguments[0].style='display: block;'", element) #hack to bypass the DBP implementation of multiselect
+      end
       option = Selenium::WebDriver::Support::Select.new( @driver.find_element(how, what))
       if value=='index'
         option.select_by(:index, message.to_i)
@@ -1516,7 +1520,7 @@ end
     end
 
   end
-    # Selects a value from a dropdown list element
+  # Selects a value from a dropdown list element
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
   #   message  The option to select from the dropdown list.  If value = 'index' convert message to integer and select the option by index
@@ -1542,7 +1546,7 @@ end
         value=args[4]
       end
       if @@debug==1
-       if value !="index"
+        if value !="index"
           @util.logging("-->Selecting  #{msg} '#{message}' from  #{what} of type #{how}")
         else
           @util.logging("-->Selecting  #{msg} #{message} from  #{what} of type #{how}")
@@ -1554,8 +1558,8 @@ end
       cb = wait.until {
         element = @driver.find_element(how , what)
         binding.pry
-          if (element.attribute("style")== "display: none;")
-           @driver.execute_script("arguments[0].style='display: block;'", element)
+        if (element.attribute("style")== "display: none;")
+          @driver.execute_script("arguments[0].style='display: block;'", element)
         end
       }
       option = Selenium::WebDriver::Support::Select.new( @driver.find_element(how, what))
@@ -1703,14 +1707,15 @@ end
       caps['name'] = "#{filebase} #{@@db_id}"
 
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='true'
       caps['cssSelectorsEnabled']='true'
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
+
       @@os="x64-mingw32"
       brws="ie"
       @bs="BS-IE11"
@@ -1726,7 +1731,7 @@ end
       caps['resolution'] = '1024x768'
       caps['name'] = "#{filebase} #{@@db_id}"
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='true'
@@ -1734,7 +1739,7 @@ end
 
 
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
       @@os="x64-mingw32"
       brws="ie"
@@ -1751,7 +1756,7 @@ end
       caps['resolution'] = '1024x768'
       caps['name'] = "#{filebase} #{@@db_id}"
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='true'
@@ -1759,7 +1764,7 @@ end
 
 
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
       @@os="x64-mingw32"
       brws="firefox"
@@ -1773,7 +1778,7 @@ end
       caps['device'] = 'iPad Pro'
       caps['name'] = "#{filebase} #{@@db_id}"
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='true'
@@ -1781,7 +1786,7 @@ end
 
 
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
       @@os="darwin"
       brws="iPad"
@@ -1798,7 +1803,7 @@ end
       caps['resolution'] = '1024x768'
       caps['name'] = "#{filebase} #{@@db_id}"
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='true'
@@ -1806,7 +1811,7 @@ end
 
 
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
       @@os="x64-mingw32"
       brws="ie"
@@ -1825,7 +1830,7 @@ end
       caps['resolution'] = '1024x768'
       caps['name'] = "#{filebase} #{@@db_id}"
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='true'
@@ -1833,7 +1838,7 @@ end
 
 
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
       @@os="x64-mingw32"
       brws="Google Chrome"
@@ -1850,7 +1855,7 @@ end
       caps['resolution'] = '1024x768'
       caps['name'] = "#{filebase} #{@@db_id}"
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='true'
@@ -1858,7 +1863,7 @@ end
 
 
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
       @@os="x64-mingw32"
       brws="Google Chrome"
@@ -1875,13 +1880,13 @@ end
       caps['resolution'] = '1024x768'
       caps['name'] = "#{filebase} #{@@db_id}"
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='true'
       caps['cssSelectorsEnabled']='true'
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
       @@os="darwin"
       brws="safari"
@@ -1898,13 +1903,13 @@ end
       caps['resolution'] = '1024x768'
       caps['name'] = "#{filebase} #{@@db_id}"
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='false'
       caps['cssSelectorsEnabled']='true'
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
       @@os="darwin"
       brws="firefox"
@@ -1921,13 +1926,13 @@ end
       caps['resolution'] = '1024x768'
       caps['name'] = "#{filebase} #{@@db_id}"
       caps["browserstack.debug"] = "true"
-      caps['browserstack.local'] = 'true'
+      caps['browserstack.local'] = 'false'
       caps['javascriptEnabled'] = 'true'
       caps['takesScreenshot'] = 'true'
       caps['nativeEvents']='true'
       caps['cssSelectorsEnabled']='true'
       @driver = Selenium::WebDriver.for(:remote,
-                                        :url => "http://chrisgoodnight3:Afzgzx7vxbAGd5zjvcp2@hub-cloud.browserstack.com/wd/hub",
+                                        :url => "http://#{ENV["BROWSERSTACK_USERNAME"]}:#{ENV["BROWSERSTACK_ACCESS_KEY"]}@hub-cloud.browserstack.com/wd/hub",
                                         :desired_capabilities => caps)
       @@os="darwin"
       brws="chrome"
@@ -2311,7 +2316,7 @@ end
     #@util.logging("View http://dexw5171.hr-applprep.de:8000/specifictest?#{@@db_id}")
     #if @@rplId != ""
     #  @util.logging("RplId for this run is #{@@rplId}")
-   # end
+    # end
     if passed then
       @util.logging("<font color =\"green\">#{@@filebase} test passed</font>")
       count =0
@@ -2373,32 +2378,32 @@ end
   def run_automation_db_query(query)
     begin
       found =File.file?(File.expand_path("~/bin/Judd.pem"))
-        if found == false
-          throw ("The security file is not in the ~/bin/ folder")
-        end
-    gateway = Net::SSH::Gateway.new(
-      'outofbox.client-staging.deliverybizpro.com',
-      'ubuntu',:keys=>"~/bin/Judd.pem"
-    )
-    port = gateway.open('127.0.0.1', 3306, 3307)
+      if found == false
+        throw ("The security file is not in the ~/bin/ folder")
+      end
+      gateway = Net::SSH::Gateway.new(
+        'outofbox.client-staging.deliverybizpro.com',
+        'ubuntu',:keys=>"~/bin/Judd.pem"
+      )
+      port = gateway.open('127.0.0.1', 3306, 3307)
 
-    client = Mysql2::Client.new(
-      host: "127.0.0.1",
-      username: 'root',
-      password: 'delivery4u',
-      database: "#{@@enviroDB}",
-      port: port
-    )
+      client = Mysql2::Client.new(
+        host: "127.0.0.1",
+        username: 'root',
+        password: 'delivery4u',
+        database: "#{@@enviroDB}",
+        port: port
+      )
 
-    results = client.query(query)
-    client.close
+      results = client.query(query)
+      client.close
 
-    gateway.close(port)
-    return results
-  rescue => e
-    @util.errorlogging("Unable to connect to the customer db.  Are you VPN'd in? \n #{e.message}")
-    throw (e)
-  end
+      gateway.close(port)
+      return results
+    rescue => e
+      @util.errorlogging("Unable to connect to the customer db.  Are you VPN'd in? \n #{e.message}")
+      throw (e)
+    end
   end
 
 
@@ -2880,36 +2885,36 @@ end
     end
 
     def verify_radio_button_is_selected(*args)
-   begin
-      how = args[0]
-      what =args[1]
-      msg=""
-     
+      begin
+        how = args[0]
+        what =args[1]
+        msg=""
 
-      if  (how.is_a? String)
-        nLookup = get_element_from_navigation2(how,what)
-        how = nLookup[0]
-        what = nLookup[1]
+
+        if  (how.is_a? String)
+          nLookup = get_element_from_navigation2(how,what)
+          how = nLookup[0]
+          what = nLookup[1]
+        end
+        checked =false
+        if args.size >=3
+          msg= args[2]
+        end
+        element = @driver.find_element(how,what)
+        checked = element.attribute("checked")
+
+        if (checked == "true")
+          @util.logging("#{msg} is checked")
+        else
+          @util.errorlogging("#{msg} is not checked----> #{what} of type #{how}")
+          throw("#{msg} is not checked ----> #{what} of type #{how} ")
+        end
+
+
+      rescue =>e
+        @util.errorlogging("Unable to verify the radio button is checked: Error:#{e} ")
+        throw ("Unable to verify the radio button is checked: Error:#{e}")
       end
-     checked =false
-      if args.size >=3
-        msg= args[2] 
-      end
-      element = @driver.find_element(how,what)
-     checked = element.attribute("checked")
-
-     if (checked == "true")
-      @util.logging("#{msg} is checked")
-    else
-      @util.errorlogging("#{msg} is not checked----> #{what} of type #{how}")
-      throw("#{msg} is not checked ----> #{what} of type #{how} ")
     end
-
-
-    rescue =>e
-      @util.errorlogging("Unable to verify the radio button is checked: Error:#{e} ")
-      throw ("Unable to verify the radio button is checked: Error:#{e}")
-    end
-    end
-
+  
   end
