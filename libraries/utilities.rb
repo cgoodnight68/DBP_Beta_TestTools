@@ -184,6 +184,9 @@ class Utilities
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
   #   msg -  Optional logging message
+  #   whatReplacement replacement of the  ~placeholder~ value in the "what" - optional
+  #   override true, false or warn to either override a failure, fail at an override, warn if there is a failure and continue
+
   def click_element(*args)
     begin
       offset= false
@@ -201,10 +204,15 @@ class Utilities
       end
 
       if args.size >=4
-        offset= args[3]
+        whatReplacement= args[3]
+       what = what.gsub("~placeholder~",whatReplacement)
+    
       end
       if args.size >=5
         override = args[4]
+      end
+       if args.size >=6
+        override = args[5]
       end
       if @@debug==1
         @util.logging("-->Clicking #{msg}  ---->#{what} of type #{how}")
@@ -1235,7 +1243,11 @@ class Utilities
         msg= args[3] + "---->"
       end
       if args.size >=5
-        sendTextDirect= args[4]
+        whatReplacement= args[4]
+        what = what.gsub("~placeholder~",whatReplacement)
+      end 
+      if args.size >=6
+        sendTextDirect= args[5]
       end
       if @@debug==1
         @util.logging("-->Entering '#{message}' into #{msg} #{what} of type #{how}")
@@ -1438,6 +1450,7 @@ end
   #   message  The option to select from the dropdown list.  If value = 'index' convert message to integer and select the option by index
   #   msg -optional-  the logging message
   #   value -optional- If value = 'index' convert message to integer and select the option by index otherwise selects the option by text
+  #   whatReplacement replacement of the ~placeholder~ value in the "what" - optional  
 
   def select_dropdown_list_text(*args)
     begin
@@ -1457,6 +1470,12 @@ end
       if args.size ==5
         value=args[4]
       end
+      if args.size >=6
+        whatReplacement= args[5]
+        what =what.gsub("~placeholder~",whatReplacement)
+
+      end 
+
       if @@debug==1
        if value !="index"
           @util.logging("-->Selecting  #{msg} '#{message}' from  #{what} of type #{how}")
@@ -2353,6 +2372,10 @@ end
   end
   def run_automation_db_query(query)
     begin
+      found =File.file?(File.expand_path("~/bin/Judd.pem"))
+        if found == false
+          throw ("The security file is not in the ~/bin/ folder")
+        end
     gateway = Net::SSH::Gateway.new(
       'outofbox.client-staging.deliverybizpro.com',
       'ubuntu',:keys=>"~/bin/Judd.pem"

@@ -61,8 +61,10 @@ class Utilities;
     #  else
     #   element.send_keys("9OA33ULvSJDC12Kg7crJ")
     #  end
+    #kkGjPdFauTByrFaEs8pZooTx
+    #
 
-    element.send_keys("WpxarUxg1X27nm290V6h")
+    element.send_keys("ApiFzwbvDzR9n2RUPtbDvJhX")
 
     #element.send_keys("FycAq8Sg5V2ov956mXD4")
     #element.send_keys("6a4GhvF3k@XwYMLCXFbad@v3")
@@ -134,7 +136,7 @@ class Utilities;
       date = get_date(0)
       count = ""
       results = run_automation_db_query("select count(*) from dbp_customers")
-  
+
       results.each do |row|
         count = row["count"]
       end
@@ -476,8 +478,8 @@ class Utilities;
           @util.logging("There are #{cartElementsAfter.count} item(s) in the cart after adding #{returnValue}")
         else
           @util.errorLogging("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsBefore.count}")
-         throw("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsCount.count}")
-       end
+          throw("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsCount.count}")
+        end
         click_element_if_exists("OK button","UserApp>ImportantInformationModal",20,"OK button for add to cart confirmation")
         return returnValue
       end
@@ -1278,6 +1280,49 @@ class Utilities;
           throw ("Unable click on the check box for #{text} Error:#{e}")
         end
       end
+      def get_container_id(how,what,msg,text)
+       begin
+        if  (how.is_a? String)
+          nLookup = get_element_from_navigation2(how,what)
+          how = nLookup[0]
+          what = nLookup[1]
+        end
+        routeId = ""
+        found = false
+        elements = @driver.find_elements(how,what)
+        elements.each do |element|
+          if (element.text.include?(text.upcase) && found == false)
+            found = true
+            parent = element.find_element(:xpath,"./..")
+            routeId = parent.attribute("id")
+          end
+        end
+        @util.logging("Container id for #{text} is #{routeId}")
+        return routeId
+         rescue StandardError => e
+          @util.errorlogging("Unable to find the container id for #{text} Error:#{e}")
+          throw ("Unable to find the container id for #{text}  Error:#{e}")
+        end
+      end
+
+      def delete_route_named(text)
+        begin
+          @util.logging("Deleting the route #{text}")
+          routeId = get_container_id("Route Container label","Route Management>Create/Edit Routes","DeleteThisRoute container header","DeleteThisRoute")
+          if routeId == ""
+            @util.errorlogging("Unable to find the route named #{text} ")
+            throw ("Unable to find the route named #{text}")
+          end
+          click_element(:xpath,"//*[@id=\"#{routeId}\"]/div[4]/button[2]","Delete button on #{routeId}")
+          click_element("Delete Route Without Moving","Route Management>Create/Edit Routes","Delete Route Without Moving")
+          click_element("Ok on Are you Sure","Route Management>Create/Edit Routes","Ok on Are you Sure")
+          click_element("Ok on success","Route Management>Create/Edit Routes","Ok on success")
+        rescue StandardError => e
+          @util.errorlogging("Unable to delete the route #{text} Error:#{e}")
+          throw ("Unable to delete the route #{text} Error:#{e}")
+        end
+      end
+
 
 
     ;end

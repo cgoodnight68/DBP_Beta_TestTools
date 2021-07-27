@@ -103,8 +103,8 @@ class DBP_T184< Test::Unit::TestCase
     @test.check_if_element_exists("Phone Provider","UserApp>MyAccount>Preferences",10,"Phone Provider","warn")
    
    if  referalsCheck != "warn"
-    @test.click_element("Referrals","UserApp>MyAccount","Referals",true)
-    @test.check_if_element_exists("Referral URL","UserApp>MyAccount>Referrals",10,"Referral URL",true)
+    @test.click_element("Referrals","UserApp>MyAccount","Referrals","",true)
+    @test.check_if_element_exists("Referral URL","UserApp>MyAccount>Referrals",10,"Referral URL","",true)
   end
 
 
