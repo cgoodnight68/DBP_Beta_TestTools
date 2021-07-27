@@ -14,20 +14,21 @@ export GEM_HOME="$HOME/.gem"
 Then from the command line enter
 
 gem install pry
-
 gem install httparty
-
 gem install json
-
 gem install net-http
-
 gem install selenium-webdriver
-
 gem install net-ssh
-
 gem install net-sftp
-
-gem install tiny-tds
+gem instll roo
+gem install roo-xls
+gem install socket
+gem install open-uri
+gem install test-unit
+gem install mysql2
+gem install net-sh-gateway
+gem install logging
+gem install openssl
 
 for the next gem Posgres needs to be installed, install with brew install postgresql.  
 If Brew not installed install it with /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -35,11 +36,24 @@ If Brew not installed install it with /bin/bash -c "$(curl -fsSL https://raw.git
 gem install pg   
 
 
+download the chromedriver from https://chromedriver.chromium.org/downloads
+Unpack the zip and put the  chromedriver into an accessible path.
+
+If you already have it install, you need to replace your current chromedriver with the one in this zip file.  You can find the path to the current chromedriver by typing 
+
+which chromedriver
+
+in terminal. It will give you the path to the current chromedriver
+Copy the new version of the chromedriver to that path (overwriting the original).  
+
+Then, in the terminal, go to that path and execute the following command
+ xattr -d com.apple.quarantine chromedriver
+
+
 That is it for installation! 
 
 
 Note that to run these tests you will need to VPN in DBP.  
-
 Once logged in you can run a script by typing in the command line 
 ruby theScriptToRun.rb
 
@@ -51,6 +65,6 @@ then will prompt for the browser to use.  At this time it is only chrome.  Enter
 
 The test will run and results will show up in http://ec2-54-201-168-175.us-west-2.compute.amazonaws.com/.  Logs will also be dumped along with screen shots in the logs folder in this repository along with snapshots.
 
-The current set of scripts can be run in a batch using sh DBP_Smoke.rb.  Before running a file named environment_variables.txt needs to be created with the environment, the database, and the browser each on a separate line.  The environment_variables2.txt file is a sample.  If this file exists, the scripts will run unprompted using the values in this file. 
+The current set of scripts can be run in a batch using sh DBP_Smoke.rb (runs the full link check) or DBP_Smoke_daily.rb .  Before running a file named environment_variables.txt needs to be created with the environment, the database, and the browser each on a separate line.  The environment_variables2.txt file is a sample.  If this file exists, the scripts will run unprompted using the values in this file. 
 
 
