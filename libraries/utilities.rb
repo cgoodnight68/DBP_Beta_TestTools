@@ -2598,10 +2598,7 @@ class Utilities
   def tds_query_azure2(database,query)
     client=TinyTds::Client.new(:username=>"#{@@azureuser}@#{@@azureHostShort}", :password=> "#{@@azurePassword}", :dataserver=> "#{@@azureHost}", :port=>1433, :azure=> true, :database=>"#{database}", timeout: 6000, login_timeout: 600)
     client.execute('SET TEXTSIZE 2147483647;')
-    #         @@sqlDB_master="qa-symphony-master"
-    #         @@sqlDB_tenant="qa-symphony-tenant"
-    #         @@sqlUser ="qaadmin"
-    #         @@sqlPassword ="Secret2121$"
+  
     client.execute('SET TEXTSIZE 2147483647;')
     #client.execute ("SET DEADLOCK_PRIORITY NORMAL;")
     #binding.pry
