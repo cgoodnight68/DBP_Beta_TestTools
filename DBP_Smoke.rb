@@ -2,9 +2,9 @@
 ruby "DBP-T355.rb"
 ruby "DBP-T242.rb"
 ruby NewuserPlaceOrder.rb
-ruby NewUserRemoveItemsFromCart_Add2New.rb
+ruby "DBP-T296.rb"
 ruby "DBP-T184.rb"
-ruby CreateNewUserAppSide.rb
+ruby "DBP-T171.rb"
 ruby "DBP-T239.rb" 
 ruby "DBP-T250.rb" 
 ruby "DBP-T356.rb" 
@@ -44,3 +44,5 @@ ruby "DBP-T177.rb"
 ruby "DBP-T295.rb"
 ruby "DBP-T273.rb"
 ruby "DBP-T12.rb"
+ruby "DBP-T203.rb"
+ruby "DBP-T278.rb"
