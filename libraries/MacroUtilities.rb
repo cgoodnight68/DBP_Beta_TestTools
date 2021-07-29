@@ -469,7 +469,7 @@ class Utilities;
         if cartElementsAfter.count > cartElementsBefore.count
           @util.logging("There are #{cartElementsAfter.count} item(s) in the cart after adding #{returnValue}")
         else
-          @util.errorLogging("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsBefore.count}")
+          @util.errorlogging("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsBefore.count}")
           throw("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsCount.count}")
         end
         click_element_if_exists("OK button","UserApp>ImportantInformationModal",20,"OK button for add to cart confirmation")
@@ -489,7 +489,10 @@ class Utilities;
       throw ("Net Read timeout failure #{error.message} ")
     rescue Selenium::WebDriver::Error::ElementClickInterceptedError
       @util.errorlogging "--> Element  was displayed but click would be intercepted #{error.message}"
-      throw("--> Element  was displayed but click would be intercepted #{error.message}")
+      binding.pry
+      @driver.navigate().refresh()
+      retry
+      #throw("--> Element  was displayed but click would be intercepted #{error.message}")
     rescue =>e
       @util.errorlogging("Unknown error in select random item Error:#{e} ")
       throw ("Unknown error in select random item Error:#{e}")
