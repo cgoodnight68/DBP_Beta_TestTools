@@ -1275,6 +1275,17 @@ class Utilities;
           throw ("Unable click on the check box for #{text} Error:#{e}")
         end
       end
+       def select_checkbox_in_row_with_value2(text)
+        begin
+          @util.logging("Clicking on the check box for #{text}")
+          element = @driver.find_element(:xpath,"//a[contains(text(),'#{text}')]/../../td[1]/div/ins")
+          element.click
+
+        rescue StandardError => e
+          @util.errorlogging("Unable click on the check box for #{text} Error:#{e}")
+          throw ("Unable click on the check box for #{text} Error:#{e}")
+        end
+      end
       def get_container_id(how,what,msg,text)
        begin
         if  (how.is_a? String)
