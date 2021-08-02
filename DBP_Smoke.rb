@@ -47,3 +47,5 @@ ruby "DBP-T12.rb"
 ruby "DBP-T203.rb"
 ruby "DBP-T278.rb"
 ruby "DBP-T272.rb"
+ruby "DBP-T247.rb"
+

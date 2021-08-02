@@ -496,6 +496,9 @@ class Utilities;
     rescue =>e
       @util.errorlogging("Unknown error in select random item Error:#{e} ")
       throw ("Unknown error in select random item Error:#{e}")
+      #binding.pry
+      #@driver.navigate().refresh()
+      #retry
     end
 
   end
@@ -1279,6 +1282,17 @@ class Utilities;
         begin
           @util.logging("Clicking on the check box for #{text}")
           element = @driver.find_element(:xpath,"//a[contains(text(),'#{text}')]/../../td[1]/div/ins")
+          element.click
+
+        rescue StandardError => e
+          @util.errorlogging("Unable click on the check box for #{text} Error:#{e}")
+          throw ("Unable click on the check box for #{text} Error:#{e}")
+        end
+      end
+       def select_checkbox_in_row_with_value3(text)
+        begin
+          @util.logging("Clicking on the check box for #{text}")
+          element = @driver.find_element(:xpath,"//input[@value = '#{text}']/../../td[1]/div/label/div/ins")
           element.click
 
         rescue StandardError => e
