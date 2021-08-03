@@ -1278,7 +1278,7 @@ class Utilities;
           throw ("Unable click on the check box for #{text} Error:#{e}")
         end
       end
-       def select_checkbox_in_row_with_value2(text)
+      def select_checkbox_in_row_with_value2(text)
         begin
           @util.logging("Clicking on the check box for #{text}")
           element = @driver.find_element(:xpath,"//a[contains(text(),'#{text}')]/../../td[1]/div/ins")
@@ -1289,7 +1289,7 @@ class Utilities;
           throw ("Unable click on the check box for #{text} Error:#{e}")
         end
       end
-       def select_checkbox_in_row_with_value3(text)
+      def select_checkbox_in_row_with_value3(text)
         begin
           @util.logging("Clicking on the check box for #{text}")
           element = @driver.find_element(:xpath,"//input[@value = '#{text}']/../../td[1]/div/label/div/ins")
@@ -1300,26 +1300,38 @@ class Utilities;
           throw ("Unable click on the check box for #{text} Error:#{e}")
         end
       end
+
+      def select_checkbox_in_row_with_value4(text)
+        begin
+          @util.logging("Clicking on the check box for #{text}")
+          element = @driver.find_element(:xpath,"//input[@value= '#{text}']/../../td[1]/div/ins")
+          element.click
+
+        rescue StandardError => e
+          @util.errorlogging("Unable click on the check box for #{text} Error:#{e}")
+          throw ("Unable click on the check box for #{text} Error:#{e}")
+        end
+      end
       def get_container_id(how,what,msg,text)
-       begin
-        if  (how.is_a? String)
-          nLookup = get_element_from_navigation2(how,what)
-          how = nLookup[0]
-          what = nLookup[1]
-        end
-        routeId = ""
-        found = false
-        elements = @driver.find_elements(how,what)
-        elements.each do |element|
-          if (element.text.include?(text.upcase) && found == false)
-            found = true
-            parent = element.find_element(:xpath,"./..")
-            routeId = parent.attribute("id")
+        begin
+          if  (how.is_a? String)
+            nLookup = get_element_from_navigation2(how,what)
+            how = nLookup[0]
+            what = nLookup[1]
           end
-        end
-        @util.logging("Container id for #{text} is #{routeId}")
-        return routeId
-         rescue StandardError => e
+          routeId = ""
+          found = false
+          elements = @driver.find_elements(how,what)
+          elements.each do |element|
+            if (element.text.include?(text.upcase) && found == false)
+              found = true
+              parent = element.find_element(:xpath,"./..")
+              routeId = parent.attribute("id")
+            end
+          end
+          @util.logging("Container id for #{text} is #{routeId}")
+          return routeId
+        rescue StandardError => e
           @util.errorlogging("Unable to find the container id for #{text} Error:#{e}")
           throw ("Unable to find the container id for #{text}  Error:#{e}")
         end
@@ -1344,5 +1356,20 @@ class Utilities;
       end
 
 
+      def set_route_for_pickup_location(locationText)
+        begin
+          click_element(:xpath,"//input[@value='#{locationText}']/../../following-sibling::tr/td","Route accordion for #{locationText}")
+          select_dropdown_list_text(:xpath,"//input[@value='#{locationText}']/../../following-sibling::tr/td/div/div/div/select",1,"Assign to select route 1","index")
+          click_element(:xpath,"//input[@value='#{locationText}']/../../following-sibling::tr/td/div/div/div/input", "Assign")
+        rescue StandardError => e
+          @util.errorlogging("Unable to set the route for the pickup location #{text} Error:#{e}")
+          throw ("Unable to set the route for the pickup location  #{text} Error:#{e}")
+        end
+      end
+      def hack_for_resetting_the_navigation
+        @driver.navigate().refresh()
+        click_element_ignore_failure(:css,"#dashboard_link")
+        @driver.navigate().refresh()
+      end
 
     ;end

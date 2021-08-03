@@ -128,8 +128,8 @@ def build_request(testName,cycleId,status,id)
     "testCaseKey": "#{testName}",
     "testCycleKey": "#{cycleId}",
     "statusName": "#{status}",
-    "executedById": "5d920d21d8794c0d882708fc",
-    "assignedToId": "5d920d21d8794c0d882708fc",
+    "executedById": "5d35c7550f478b0c1b8e2147",
+    "assignedToId": "5d35c7550f478b0c1b8e2147",
     "comment": "<a href='http://ec2-54-201-168-175.us-west-2.compute.amazonaws.com/specifictest?#{id}'>Test case report for  #{testName} </a>"
   }          
   EMAIL

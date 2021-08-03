@@ -38,9 +38,7 @@ class DBP_T273 < Test::Unit::TestCase
       @test.click_element("Route Container Save","Route Management>Create/Edit Routes","Route Container Save",routeId)
       @test.click_element("You have successfully updated the route","Route Management>Create/Edit Routes","You have successfully updated the route OK")
      #this is a massive hack, as after saving a new route, all the other links do not work.  We have to select one, let it fail, refresh the screen and then we can click
-      @driver.navigate().refresh()
-      @test.click_element_ignore_failure(:css,"#dashboard_link")
-      @driver.navigate().refresh()
+       @test.hack_for_resetting_the_navigation()
       
       @test.admin_navigate_to("Search for Customers")
       @test.search_for_customer("C")
@@ -49,9 +47,7 @@ class DBP_T273 < Test::Unit::TestCase
 
       @test.click_element("Save on Add new route","User Management>Customers>Search for Customers>Customer Card","Save on Add new route")
       #this is a massive hack, as after saving a new route, all the other links do not work.  We have to select one, let it fail, refresh the screen and then we can click
-      @driver.navigate().refresh()
-      @test.click_element_ignore_failure(:css,"#dashboard_link")
-      @driver.navigate().refresh()
+       @test.hack_for_resetting_the_navigation()
       @test.admin_navigate_to("Create/Edit Routes")
 
       @test.delete_route_named("DeleteThisRoute")

@@ -2872,14 +2872,27 @@ class Utilities
       begin
         alert =  @driver.switch_to.alert
         errorMsg = "Unexpected Alert present! Alert text is \n#{alert.text}"
+        @util.logging(errorMsg)
         alert.accept
         check_override(true,errorMsg,false)
-        true
       rescue
         @util.logging("No alert present.")
         return false
       end
     end
+   def accept_alert
+      begin
+        alert =  @driver.switch_to.alert
+        errorMsg = "Alert text is \n#{alert.text}"
+        @util.logging(errorMsg)
+        alert.accept
+      rescue
+        @util.logging("No alert present.")
+         check_override(true,errorMsg,false)
+        return false
+      end
+    end
+
 
     def verify_radio_button_is_selected(*args)
       begin
