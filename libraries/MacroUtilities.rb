@@ -59,8 +59,10 @@ class Utilities;
 
     element.send_keys("\x85N\x82\xB7T\xB5m\xD5\xAC1S\xB7J\x93C\x9F\x9Ei\xFE\xFA\x05\x0F/\x8C\xE5\xF5C-\x8F\x1E\x1C\x7F".decrypt(ENV["DBPKEY"]))
 
-
-    click_element_ignore_failure(:xpath,"//div[@class='icheckbox_flat-green']", "Agree to terms")
+    element = @driver.find_element(:xpath,"//*[@id='admin_login_form']/div/div[1]/div[3]/div[2]/div/form/div[3]/div")
+    if element.attribute("class") !="icheckbox_flat-green checked"
+      click_element(:xpath,"//div[@class='icheckbox_flat-green']", "Agree to terms")
+    end
     click_element(:xpath,"//button[@class='btn secure-login']","Sign in Button")
 
     sleep(1)
@@ -196,8 +198,9 @@ class Utilities;
         click_element_ignore_failure("NDIS participant","User Management>Customers>Create Customer Profile","Are you an NDIS participant")
         @driver.action.send_keys("\ue015\ue015\ue007").perform #big hack. just sending down down and enter
       end
-
-
+      if(check_if_element_exists("How did you hear about us","User Management>Customers>Create Customer Profile",10,"How did you hear about us","warn") != "warn")
+        enter_text("How did you hear about us","User Management>Customers>Create Customer Profile","Some meaningless text for how I heard about you")
+      end
 
       ######
 
@@ -429,34 +432,42 @@ class Utilities;
 
         @util.logging("-->Clicking on product number #{productId}  Description: <br><font color =\"blue\"> #{productDescription[productWrapperToClick].text} </font>")
         returnValue = productDescription[productWrapperToClick].text
-        #binding.pry
 
         sleep(5)
+
         click_element_from_elements(:xpath,"//label[contains(text(),'Frequency')]/span",productWrapperToClick)
 
         # productFrequency = elements[productWrapperToClick].find_elements(:xpath,"//label[contains(text(),'Frequency')]/span")
         # productFrequency[productWrapperToClick].click
-        found = click_element_if_exists(:xpath,"//li[contains(text(),'#{frequency}')]",10,"Clicking the Frequency of #{frequency}")
-        if found == true
-          found = click_element_if_exists(:xpath,"//li[contains(text(),'#{frequency}')]",10,"Clicking the Frequency of #{frequency}")
+        frequencyFound = false
+        element = @driver.find_element(:xpath,"//span[@class ='select2-results']")
+
+        if element.text.include?(frequency)
+          frequencyFound = true
+        elsif element.text.include?("Every Week")
+          frequencyFound = true
+          frequency = "Every Week"
+        else
         end
 
-        if (frequency == "Weekly") && (found == false)
-          altFrequency = "Every Week"
-          click_element_if_exists(:xpath,"//li[contains(text(),'#{altFrequency}')]",10,"Clicking the Frequency of #{altFrequency}")
-          click_element_if_exists(:xpath,"//li[contains(text(),'#{altFrequency}')]",10,"Clicking the Frequency of #{altFrequency}")
+        if frequencyFound == false
+          @util.logging("---->#{returnValue} does not have a frequency of #{frequency}.  Taking the default value from #{element.text}")
+          click_element_from_elements(:xpath,"//label[contains(text(),'Frequency')]/span",productWrapperToClick)
+        else
+          sleep(1)
+          found = click_element_if_exists(:xpath,"//li[contains(text(),'#{frequency}')]",10,"Clicking the FrGequency of #{frequency}")
+          if found == true
+            sleep(1)
+            found = click_element_if_exists(:xpath,"//li[contains(text(),'#{frequency}')]",10,"2nd time Clicking the Frequency of #{frequency}")
+          end
+
+          # if (frequency == "Weekly") && (found == false)
+          #   altFrequency = "Every Week"
+          #   click_element_if_exists(:xpath,"//li[contains(text(),'#{altFrequency}')]",10,"Clicking the Frequency of #{altFrequency}")
+          #   #click_element_if_exists(:xpath,"//li[contains(text(),'#{altFrequency}')]",10,"Clicking the Frequency of #{altFrequency}")
+          # end
         end
-        # newElements = @driver.find_elements(:xpath,"//li[contains(text(),'#{frequency}')]")
-        # if newElements.count >0
-        #   newElements[0].click
-        #   @util.logging("Setting Frequency #{productDescription[productWrapperToClick].text} to #{frequency}")
-        # end
-        #addToCart =elements[productWrapperToClick].find_elements(:xpath,"//a[@class='button-add-to-cart add']")
-        # addToCart[productWrapperToClick].click
-
-
-
-        click_element(:xpath,"//a[@id='button-add-to-cart-#{productId}']", "Add to Delivery Button for product no. #{productId}")
+        wrapper_for_add_button(productId)
         productStartDelivery = elements[0].find_elements(:xpath,"//div[@class ='product-overlay']")
         if (productStartDelivery[productWrapperToClick].text != "")
           @util.logging("Delivery options <br><font color =\"blue\">#{productStartDelivery[productWrapperToClick].text}</font>")
@@ -469,8 +480,9 @@ class Utilities;
         if cartElementsAfter.count > cartElementsBefore.count
           @util.logging("There are #{cartElementsAfter.count} item(s) in the cart after adding #{returnValue}")
         else
+         # binding.pry
           @util.errorlogging("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsBefore.count}")
-          throw("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsCount.count}")
+          throw("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsBefore.count}")
         end
         click_element_if_exists("OK button","UserApp>ImportantInformationModal",20,"OK button for add to cart confirmation")
         return returnValue
@@ -489,18 +501,31 @@ class Utilities;
       throw ("Net Read timeout failure #{error.message} ")
     rescue Selenium::WebDriver::Error::ElementClickInterceptedError
       @util.errorlogging "--> Element  was displayed but click would be intercepted #{error.message}"
-      binding.pry
-      @driver.navigate().refresh()
-      retry
-      #throw("--> Element  was displayed but click would be intercepted #{error.message}")
+      #@driver.navigate().refresh()
+      #retry
+      throw("--> Element  was displayed but click would be intercepted #{error.message}")
     rescue =>e
       @util.errorlogging("Unknown error in select random item Error:#{e} ")
+
       throw ("Unknown error in select random item Error:#{e}")
-      #binding.pry
+
       #@driver.navigate().refresh()
       #retry
     end
 
+  end
+  def wrapper_for_add_button(productId)
+    begin
+      click_element(:xpath,"//a[@id='button-add-to-cart-#{productId}']", "Add to Delivery Button for product no. #{productId}")
+    rescue =>e
+      @util.errorlogging("Add button would click would have been intercepted.  Trying javascript#{e} ")
+      element = @driver.find_element(:xpath,"//a[@id='button-add-to-cart-#{productId}']")
+      @driver.execute_script("arguments[0].click();", element)
+    rescue =>e
+      @util.errorlogging("Unknown error in wrapper for add button Error:#{e} ")
+
+      throw ("Unknown error in wrapper for add button Error:#{e}")
+    end
   end
   def select_random_item_from_shop_page_select_delivery_enter_address(address)
     begin
@@ -1368,8 +1393,58 @@ class Utilities;
       end
       def hack_for_resetting_the_navigation
         @driver.navigate().refresh()
+        #element = @driver.find_element(:css,"#dashboard_link")
+        #element.click
         click_element_ignore_failure(:css,"#dashboard_link")
         @driver.navigate().refresh()
+      end
+
+      def get_all_special_tags
+        begin
+          element = @driver.find_element(:xpath,"//span[contains(text(),'Special Tags')]")
+          element.click
+
+          element = @driver.find_element(:xpath,"//*[contains(text(),'-- Account --')]/../..")
+          specialTags = element.text
+          return specialTags
+        rescue StandardError => e
+          @util.errorlogging("Unable to get the special tags Error:#{e}")
+          throw ("Unable to get the special tags Error:#{e}")
+        end
+      end
+      def send_text_to_autoresponder_body(bodyText)
+        click_element("Body frame","Customer Communication>Autoresponders>Add New","Body of the message")
+        @util.logging("Entering the following into the Body -  #{bodyText}  ")
+        @driver.action.send_keys("#{bodyText}").perform
+      end
+
+      def get_all_upcoming_orders_on_all_routes()
+        begin
+        result = check_if_element_exists("Assigned Routes selector","User Management>Customers>Search for Customers>Customer Card",10,"Assigned Routes Selector","warn")
+        if (result != "warn")
+
+          selector = @driver.find_element(:id,"select-user-route")
+          numRoutes = selector.find_elements(:tag_name, "option").count
+          allOrdersText = ""
+          click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
+          for i in 1..numRoutes
+
+            ordersText = check_if_element_exists_get_element_text("Upcoming Orders table","User Management>Customers>Search for Customers>Customer Card",10,"Upcoming Orders table")
+            allOrdersText = allOrdersText + ordersText
+            if i != numRoutes
+              select_dropdown_list_text("Assigned Routes selector","User Management>Customers>Search for Customers>Customer Card",i,"Assigned Routes selector option #{i+1}","index") #remember that the
+            end
+          end
+        else
+          @test.click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
+          allOrdersText = @test.check_if_element_exists_get_element_text("Upcoming Orders table","User Management>Customers>Search for Customers>Customer Card",10,"Upcoming Orders table")
+        end
+        return allOrdersTex
+
+        rescue StandardError => e
+          @util.errorlogging("Unable to get the special tags Error:#{e}")
+          throw ("Unable to get the special tags Error:#{e}")
+        end
       end
 
     ;end

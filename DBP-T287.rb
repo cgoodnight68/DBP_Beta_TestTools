@@ -19,7 +19,7 @@ class DBP_T287 < Test::Unit::TestCase
     @test.teardown_tasks(passed?)
     assert_equal nil, @verification_errors
   end
-
+DBP-R4
   def test_dbp_t287
     begin
       date = @test.get_date(0)

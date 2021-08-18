@@ -41,6 +41,7 @@ class FindLinksOnPageDBP < Test::Unit::TestCase
       if (counter ==0) || (menuElement['menuItem'] =="") || (menuElement['menuItem'] == nil)
         counter = 1
       else
+       
         startTime = Time.new
         tester= "//#{menuElement['elementType']}[text()=\"#{menuElement['menuItem']}\"]"
         

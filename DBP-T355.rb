@@ -41,6 +41,7 @@ class DBP_T355 < Test::Unit::TestCase
       if (counter ==0) || (menuElement['menuItem'] =="") || (menuElement['menuItem'] == nil)
         counter = 1
       else
+    
         startTime = Time.new
         tester= "//#{menuElement['elementType']}[text()=\"#{menuElement['menuItem']}\"]"
         
@@ -58,7 +59,7 @@ class DBP_T355 < Test::Unit::TestCase
           @test.click_element(:xpath,"//*[@id=\"alert-message-modal\"]/div/div/div[3]/button", "Ok in Modal button")
 
         end
-        if ( menuElement['menuItem']=="Financials Reporting") ||(menuElement['menuItem'] =="Product Reporting") ||(menuElement['menuItem'] =="Customer Reporting") ||(menuElement['menuItem'] =="Misc. Reporting") || (menuElement['menuItem']=="Negative Balances") || (menuElement['menuItem']=="Abandoned Signups") || (found != true) 
+        if ( menuElement['menuItem']=="Financials Reporting") ||(menuElement['menuItem'] =="Product Reporting") ||(menuElement['menuItem'] =="Customer Reporting") ||(menuElement['menuItem'] =="Misc. Reporting") || (menuElement['menuItem']=="Negative Balances") || (menuElement['menuItem']=="Abandoned Signups") || (found != true) || (menuElement['menuItem'] =="Billing")
           ## do nothing
         else
          if (@test.check_if_exist(:xpath,"//input[@value ='Export to Excel']",2))

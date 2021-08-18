@@ -28,17 +28,14 @@ class DBP_T177 < Test::Unit::TestCase
       userRow = @test.login_as_random_customer_from_backend_with_upcoming_orders()
       @test.goto_url("#{@base_url}/summary.php?go=products&12")
       productDescription = @test.select_random_item_from_shop_page(1,"Next Week")
-
       @test.login_to_admin
       @test.admin_navigate_to("Search for Customers")
       @test.enter_text("Search for Input Field","User Management>Customers>Search for Customers",userRow["login"],"Search for Input Field #{userRow["login"]}")
       @test.click_element("Search Button","User Management>Customers>Search for Customers","Search button")
       @test.click_on_row_in_table(userRow["email"],"Search for customer results table")
-      @test.click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
+      allOrdersText = @test.get_all_upcoming_orders_on_all_routes()
+      assert(allOrdersText.include?(productDescription),"The expected product #{productDescription} does not exist in #{ordersText}")
    
-      ordersText = @test.check_if_element_exists_get_element_text("Upcoming Orders table","User Management>Customers>Search for Customers>Customer Card",10,"Upcoming Orders table")
-      
-   assert(ordersText.include?(productDescription),"The expected product #{productDescription} does not exist in #{ordersText}")
     rescue => e
       @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
       @util.logging(e.inspect)

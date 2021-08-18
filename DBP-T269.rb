@@ -36,9 +36,7 @@ class DBP_T269< Test::Unit::TestCase
 
     sleep(2)
     #this is a massive hack, as after saving a disliked product, all the other links do not work.  We have to select one, let it fail, refresh the screen and then we can click
-    @driver.navigate().refresh()
-    @test.click_element_ignore_failure(:css,"#dashboard_link")
-    @driver.navigate().refresh()
+    @test.hack_for_resetting_the_navigation()
 
     @test.admin_navigate_to("Product Dislikes")
     @test.select_checkbox_in_row_with_value("DislikedProduct")

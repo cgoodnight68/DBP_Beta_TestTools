@@ -26,7 +26,7 @@ class DBP_T170 < Test::Unit::TestCase
       @test.goto_url("#{@base_url}/summary.php?go=products&12")
       address = @test.get_valid_customer_address()
       
-      @test.goto_url("#{@base_url}/summary.php?go=products&12")
+
       @test.select_random_item_from_shop_page_select_delivery_enter_address("#{address}\n")
       @test.check_if_element_exists_get_element_text("We deliver to your area","UserApp>Store",10,"We deliver modal window")
       

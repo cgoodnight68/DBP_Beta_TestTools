@@ -658,8 +658,8 @@ class Utilities
   #   how  element type (i.e. xpath, id etc)
   #   what element identifier
   #   msg -  Optional logging message
-  #   override= Optional true or false, Overrides a failure and allows processing to continue,
-  #   but sets the test case to fail
+  #   override= Optional true or false or warn, true Overrides a failure and allows processing to continue,
+  #   but sets the test case to fail, false fails the test case (default), warn puts warning in, but does not fail the test case processing continues
   def check_if_element_exists(*args)
     begin
       how = args[0]
@@ -1257,7 +1257,6 @@ class Utilities
         @util.logging("-->Entering '#{message}' into #{msg} #{what} of type #{how}")
       end
       wait = Selenium::WebDriver::Wait.new(:timeout => 60)
-
       cb = wait.until {
         element = @driver.find_element(how , what)
         element if element.displayed?
@@ -1265,6 +1264,61 @@ class Utilities
       #cb.click
 
       @driver.find_element(how, what).clear
+
+      sleep(1)
+      if !(@bs.nil?)
+        bsFirefoxOverride = @bs.include?("Firefox")
+      else
+        bsFirefoxOverride = false
+      end
+      if (sendTextDirect == false) || (bsFirefoxOverride)
+        @driver.find_element(how, what).send_keys message
+      else
+        @driver.action.send_keys(message).perform
+      end
+      sleep(1)
+      true
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      @util.logging "1 Failed find element for #{how} and #{what} to enter text into"
+      false
+    rescue Selenium::WebDriver::Error::UnknownError
+      @util.logging "2 Failed find element for #{how} and #{what} to enter text into"
+      false
+    else
+
+    end
+  end
+  def upload_file(*args)
+    begin
+      how = args[0]
+      what =args[1]
+      message =args[2]
+      msg=""
+      sendTextDirect = false
+
+      if  (how.is_a? String)
+        nLookup = get_element_from_navigation2(how,what)
+        how = nLookup[0]
+        what = nLookup[1]
+      end
+
+      if args.size >=4
+        msg= args[3] + "---->"
+      end
+      if args.size >=5
+        whatReplacement= args[4]
+        what = what.gsub("~placeholder~",whatReplacement)
+      end
+      if args.size >=6
+        sendTextDirect= args[5]
+      end
+      if @@debug==1
+        @util.logging("-->Sending the file upload path to '#{message}' into #{msg} #{what} of type #{how}")
+      end
+      wait = Selenium::WebDriver::Wait.new(:timeout => 60)
+      cb = wait.until {
+        element = @driver.find_element(how , what)
+      }
 
       sleep(1)
       if !(@bs.nil?)

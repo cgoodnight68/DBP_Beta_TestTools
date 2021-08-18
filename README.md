@@ -14,20 +14,35 @@ export GEM_HOME="$HOME/.gem"
 Then from the command line enter
 
 gem install pry
+
 gem install httparty
+
 gem install json
+
 gem install net-http
+
 gem install selenium-webdriver
+
 gem install net-ssh
+
 gem install net-sftp
+
 gem instll roo
+
 gem install roo-xls
+
 gem install socket
+
 gem install open-uri
+
 gem install test-unit
+
 gem install mysql2
+
 gem install net-sh-gateway
+
 gem install logging
+
 gem install openssl
 
 for the next gem Posgres needs to be installed, install with brew install postgresql.  
