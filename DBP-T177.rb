@@ -34,7 +34,7 @@ class DBP_T177 < Test::Unit::TestCase
       @test.click_element("Search Button","User Management>Customers>Search for Customers","Search button")
       @test.click_on_row_in_table(userRow["email"],"Search for customer results table")
       allOrdersText = @test.get_all_upcoming_orders_on_all_routes()
-      assert(allOrdersText.include?(productDescription),"The expected product #{productDescription} does not exist in #{ordersText}")
+      assert(allOrdersText.include?(productDescription),"The expected product #{productDescription} does not exist in #{allOrdersText}")
    
     rescue => e
       @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")

@@ -1421,11 +1421,13 @@ class Utilities;
       def get_all_upcoming_orders_on_all_routes()
         begin
         result = check_if_element_exists("Assigned Routes selector","User Management>Customers>Search for Customers>Customer Card",10,"Assigned Routes Selector","warn")
+      
         if (result != "warn")
 
           selector = @driver.find_element(:id,"select-user-route")
           numRoutes = selector.find_elements(:tag_name, "option").count
           allOrdersText = ""
+
           click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
           for i in 1..numRoutes
 
@@ -1435,15 +1437,15 @@ class Utilities;
               select_dropdown_list_text("Assigned Routes selector","User Management>Customers>Search for Customers>Customer Card",i,"Assigned Routes selector option #{i+1}","index") #remember that the
             end
           end
-        else
-          @test.click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
-          allOrdersText = @test.check_if_element_exists_get_element_text("Upcoming Orders table","User Management>Customers>Search for Customers>Customer Card",10,"Upcoming Orders table")
+        else    
+          click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
+          allOrdersText = check_if_element_exists_get_element_text("Upcoming Orders table","User Management>Customers>Search for Customers>Customer Card",10,"Upcoming Orders table")
         end
-        return allOrdersTex
+        return allOrdersText
 
         rescue StandardError => e
-          @util.errorlogging("Unable to get the special tags Error:#{e}")
-          throw ("Unable to get the special tags Error:#{e}")
+          @util.errorlogging("Unable all upcoming orders on all routes Error:#{e}")
+          throw ("Unable all upcoming orders on all routes Error:#{e}")
         end
       end
 

@@ -5,7 +5,7 @@ require "test/unit"
 require "./libraries/utilities.rb"
 require "./libraries/testlogging.rb"
 
-class DBP_T287 < Test::Unit::TestCase
+class DBP_T287< Test::Unit::TestCase
   def setup
     @test=Utilities.new
     filedir = File.expand_path File.dirname(__FILE__)
@@ -19,7 +19,6 @@ class DBP_T287 < Test::Unit::TestCase
     @test.teardown_tasks(passed?)
     assert_equal nil, @verification_errors
   end
-DBP-R4
   def test_dbp_t287
     begin
       date = @test.get_date(0)
