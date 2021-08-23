@@ -480,7 +480,7 @@ class Utilities;
         if cartElementsAfter.count > cartElementsBefore.count
           @util.logging("There are #{cartElementsAfter.count} item(s) in the cart after adding #{returnValue}")
         else
-         # binding.pry
+          # binding.pry
           @util.errorlogging("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsBefore.count}")
           throw("There are #{cartElementsAfter.count} item(s) in the cart after attempting to add #{returnValue}. Which is the same as before #{cartElementsBefore.count}")
         end
@@ -1420,33 +1420,46 @@ class Utilities;
 
       def get_all_upcoming_orders_on_all_routes()
         begin
-        result = check_if_element_exists("Assigned Routes selector","User Management>Customers>Search for Customers>Customer Card",10,"Assigned Routes Selector","warn")
-      
-        if (result != "warn")
+          result = check_if_element_exists("Assigned Routes selector","User Management>Customers>Search for Customers>Customer Card",10,"Assigned Routes Selector","warn")
 
-          selector = @driver.find_element(:id,"select-user-route")
-          numRoutes = selector.find_elements(:tag_name, "option").count
-          allOrdersText = ""
+          if (result != "warn")
 
-          click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
-          for i in 1..numRoutes
+            selector = @driver.find_element(:id,"select-user-route")
+            numRoutes = selector.find_elements(:tag_name, "option").count
+            allOrdersText = ""
 
-            ordersText = check_if_element_exists_get_element_text("Upcoming Orders table","User Management>Customers>Search for Customers>Customer Card",10,"Upcoming Orders table")
-            allOrdersText = allOrdersText + ordersText
-            if i != numRoutes
-              select_dropdown_list_text("Assigned Routes selector","User Management>Customers>Search for Customers>Customer Card",i,"Assigned Routes selector option #{i+1}","index") #remember that the
+            click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
+            for i in 1..numRoutes
+
+              ordersText = check_if_element_exists_get_element_text("Upcoming Orders table","User Management>Customers>Search for Customers>Customer Card",10,"Upcoming Orders table")
+              allOrdersText = allOrdersText + ordersText
+              if i != numRoutes
+                select_dropdown_list_text("Assigned Routes selector","User Management>Customers>Search for Customers>Customer Card",i,"Assigned Routes selector option #{i+1}","index") #remember that the
+              end
             end
+          else
+            click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
+            allOrdersText = check_if_element_exists_get_element_text("Upcoming Orders table","User Management>Customers>Search for Customers>Customer Card",10,"Upcoming Orders table")
           end
-        else    
-          click_element("Upcoming Orders Tab","User Management>Customers>Search for Customers>Customer Card","Upcoming Orders Tab")
-          allOrdersText = check_if_element_exists_get_element_text("Upcoming Orders table","User Management>Customers>Search for Customers>Customer Card",10,"Upcoming Orders table")
-        end
-        return allOrdersText
+          return allOrdersText
 
         rescue StandardError => e
           @util.errorlogging("Unable all upcoming orders on all routes Error:#{e}")
           throw ("Unable all upcoming orders on all routes Error:#{e}")
         end
+      end
+
+      def get_number_of_rows_in_table(how,what)
+        if (how.is_a? String)
+          nLookup = get_element_from_navigation2(how,what)
+          how = nLookup[0]
+          what = nLookup[1]
+        end
+
+        elements = @driver.find_elements(how,what)
+        returnValue = (elements.count - 1)
+        @util.logging("There are #{returnValue} rows in the table minus the header")
+        return returnValue
       end
 
     ;end

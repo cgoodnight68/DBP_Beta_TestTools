@@ -765,6 +765,14 @@ class Utilities
 
     end
   end
+   # Clicks an element
+  #   how  element type (i.e. xpath, id etc)
+  #   what element identifier
+  #  timeout howlong to wait
+  #   msg -  Optional logging message
+   #   override true, false or warn to either override a failure, fail at an override, warn if there is a failure and continue
+  #   whatReplacement replacement of the  ~placeholder~ value in the "what" - optional
+ 
   def check_if_element_exists_get_element_text(*args)
     begin
       how = args[0]
@@ -783,6 +791,11 @@ class Utilities
       end
       if args.size >=5
         override =args[4]
+      end
+
+      if args.size >=6
+        whatReplacement= args[5]
+        what = what.gsub("~placeholder~",whatReplacement)
       end
 
       @driver.manage.timeouts.implicit_wait = timeout

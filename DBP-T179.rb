@@ -27,6 +27,7 @@ class DBP_T179 < Test::Unit::TestCase
       
       address = @test.get_valid_customer_address()
       @test.enter_text("Address","UserApp>Register", "#{address}\n")
+
       @test.check_if_element_exists_get_element_text("We deliver to your area","UserApp>Store",10,"We deliver modal window")
       
     rescue => e
