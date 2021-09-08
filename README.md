@@ -7,6 +7,14 @@ Ruby is installed on Mac but you will need to install some gems.
 First Clone the repository.  
 
 
+A gem file has been added to the repository, to use it make sure to install bundler beforehand (in your console/cmd/ssh) with
+
+$ gem install bundler
+and then write in the console
+
+bundle install
+
+if this fails you can install the gems manually with the following
 
 Note:  if you have the default ruby installed on your mac you may need to run the following command
 export GEM_HOME="$HOME/.gem"
@@ -45,10 +53,14 @@ gem install logging
 
 gem install openssl
 
+gem install webdriver
+
 for the next gem Posgres needs to be installed, install with brew install postgresql.  
 If Brew not installed install it with /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 gem install pg   
+
+
 
 
 download the chromedriver from https://chromedriver.chromium.org/downloads

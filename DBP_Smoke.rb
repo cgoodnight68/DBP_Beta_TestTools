@@ -2,6 +2,7 @@
 ruby "DBP-T355.rb"
 ruby "DBP-T242.rb"
 ruby NewuserPlaceOrder.rb
+ruby "DBP-T181.rb"
 ruby "DBP-T296.rb"
 ruby "DBP-T184.rb"
 ruby "DBP-T171.rb"

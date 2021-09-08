@@ -190,6 +190,8 @@ class Utilities;
         enter_text("Card expire month","User Management>Customers>Create Customer Profile", "0826","Expire Month")
         enter_text("Card CCV","User Management>Customers>Create Customer Profile", "123","Card CCV")
       end
+
+      click_element_if_exists(:xpath,"//*[@id='alert-message-modal']/div/div/div[3]/button",10, "Ok on your credit card details have been saved window")
       enter_text("Password","User Management>Customers>Create Customer Profile", "getswift","Password")
       enter_text("Confirm Password","User Management>Customers>Create Customer Profile", "getswift","Confirm Password")
 
@@ -1154,7 +1156,7 @@ class Utilities;
         @util.logging("The default sheet is #{xlsx.default_sheet}")
         @util.logging("The first 3 lines of the first sheet #{xlsx.sheets[0]} of the file are:\n <font color=\"blue\"> #{xlsx.sheet(0).row(1)}\n#{xlsx.sheet(0).row(2)}\n#{xlsx.sheet(0).row(3)}</font> ")
         if (numberToVerify == 0)
-          @util.logging("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} is #{xlsx.sheet(0).last_column}")
+          @util.logging("The row count in the first sheet of the file /Users/#{fileDirArray[2]}/Downloads/#{filename} is #{xlsx.sheet(0).last_row}")
           return
         end
         if xlsx.sheet(0).last_row != numberToVerify
@@ -1192,6 +1194,331 @@ class Utilities;
       rescue StandardError => e
         @util.errorlogging("Error trying verify the row count in csv. Error:#{e}")
         check_override(true,"Error trying verify the row count in csv Error:#{e}",true)
+      end
+    end
+
+    def get_pdf_file_data(filename)
+      fileDirArray = @@filedir.split('/')
+      wait_for_file(filename,180)
+      reader = PDF::Reader.new("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
+      allText = ""
+      reader.pages.each do |page|
+        allText= allText + page.text
+      end
+      return allText
+    end
+
+    def get_one_customer_with_product_data_from_route_sheet(filename)
+      begin
+        customerName= ""
+        products = Array.new
+        fileDirArray = @@filedir.split('/')
+        wait_for_file(filename,180)
+        xlsx = Roo::Spreadsheet.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
+        rows = xlsx.sheet(0).last_row
+        row = 2
+        customerNumber =""
+        #find a customer with at least 1 product being delivered
+        while ((row < rows) && (customerName == ""))
+          if (xlsx.sheet(0).cell(row,1).to_i > 0 )
+
+            if (xlsx.sheet(0).cell((row + 1),1).to_i < xlsx.sheet(0).cell(row,1).to_i)
+              customerName = xlsx.sheet(0).cell(row,2)
+              customerNumber =xlsx.sheet(0).cell(row,1).to_i
+            end
+
+          end
+          row = row +1
+        end
+
+        #now search for all products for that customer
+        while (row < rows) && (xlsx.sheet(0).cell(row,1).to_i < customerNumber)
+          products.push(xlsx.sheet(0).cell(row,2))
+          row = row + 1
+        end
+        nextCustomer = xlsx.sheet(0).cell(row,2)
+        @util.logging("Found user #{customerName} with the following products\n")
+        products.each do |product|
+          @util.logging("#{product}")
+        end
+        return customerName,products, nextCustomer
+
+      rescue StandardError => e
+        @util.errorlogging("Unable to get one customers route sheet data#{e}")
+        check_override(true,"Unable to get one customers route sheet data Error:#{e}",true)
+      end
+    end
+    def get_all_customers_with_product_data_from_route_sheet(filename)
+      begin
+        customersAndProducts = Array.new
+        customerAndProducts = Hash.new
+        customerName= ""
+        products = Array.new
+        fileDirArray = @@filedir.split('/')
+        wait_for_file(filename,180)
+        xlsx = Roo::Spreadsheet.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
+        rows = xlsx.sheet(0).last_row
+        row = 2
+        customerNumber =""
+        #find a customer with at least 1 product being delivered
+        while (row <= rows)
+          while ((row <= rows) && (customerName == ""))
+            if (xlsx.sheet(0).cell(row,1).to_i > 0 )
+              customerName = xlsx.sheet(0).cell(row,2)
+              customerNumber =xlsx.sheet(0).cell(row,1).to_i
+              if (xlsx.sheet(0).cell((row + 1),1).to_i < xlsx.sheet(0).cell(row,1).to_i)
+                customerName = xlsx.sheet(0).cell(row,2)
+                customerNumber =xlsx.sheet(0).cell(row,1).to_i
+              end
+
+            end
+            row = row +1
+          end
+
+          #now search for all products for that customer
+          while (row <= rows) && (xlsx.sheet(0).cell(row,1).to_i < customerNumber)
+            products.push(xlsx.sheet(0).cell(row,2))
+            row = row + 1
+          end
+          nextCustomer = xlsx.sheet(0).cell(row,2)
+
+          customerAndProducts["customerName"] = customerName
+          customerAndProducts["nextCustomer"] = nextCustomer
+
+          customerAndProducts["products"] = products
+          customersAndProducts.push(customerAndProducts.to_a.to_h)
+          customerName= ""
+          nextCustomer =""
+          products = Array.new
+        end
+
+        return  customersAndProducts
+
+      rescue StandardError => e
+        @util.errorlogging("Unable to get one customers route sheet data#{e}")
+        check_override(true,"Unable to get one customers route sheet data Error:#{e}",true)
+      end
+    end
+    def get_all_customers_from_route_sheet(filename)
+      begin
+        customersAndProducts = Array.new
+        customerAndProducts = Hash.new
+        customerName= ""
+        products = Array.new
+        fileDirArray = @@filedir.split('/')
+        wait_for_file(filename,180)
+        xlsx = Roo::Spreadsheet.open("/Users/#{fileDirArray[2]}/Downloads/#{filename}")
+        rows = xlsx.sheet(0).last_row
+        row = 2
+        customerNumber =""
+        #find a customer with at least 1 product being delivered
+        while (row <= rows)
+          while ((row <= rows) && (customerName == ""))
+            if (xlsx.sheet(0).cell(row,1).to_i > 0 )
+              customerName = xlsx.sheet(0).cell(row,2)
+              customerNumber =xlsx.sheet(0).cell(row,1).to_i
+              # if (xlsx.sheet(0).cell((row + 1),1).to_i < xlsx.sheet(0).cell(row,1).to_i)
+              #   customerName = xlsx.sheet(0).cell(row,2)
+              #   customerNumber =xlsx.sheet(0).cell(row,1).to_i
+              # end
+
+            end
+            row = row +1
+          end
+
+          #now search for all products for that customer
+          while (row <= rows) && (xlsx.sheet(0).cell(row,1).to_i < customerNumber)
+            products.push(xlsx.sheet(0).cell(row,2))
+            row = row + 1
+          end
+          nextCustomer = xlsx.sheet(0).cell(row,2)
+
+          customerAndProducts["customerName"] = customerName
+          customerAndProducts["nextCustomer"] = nextCustomer
+
+          customerAndProducts["products"] = products
+          customersAndProducts.push(customerAndProducts.to_a.to_h)
+          customerName= ""
+          nextCustomer =""
+          products = Array.new
+          binding.pry
+        end
+
+        return  customersAndProducts
+
+      rescue StandardError => e
+        @util.errorlogging("Unable to get one customers route sheet data#{e}")
+        check_override(true,"Unable to get one customers route sheet data Error:#{e}",true)
+      end
+    end
+
+    def get_customers_and_products_from_bag_labels_show
+      begin
+        customersAndProducts = Array.new
+        customerAndProducts = Hash.new
+
+        customerName = ""
+        nextCustomer =""
+        products = Array.new
+
+        elements = @driver.find_elements(:xpath,"//*[@id='print_list']/div/table")
+        custCardNumber = elements.count  - 1
+        for a in 1..custCardNumber
+          customerName  = @driver.find_element(:xpath,"//*[@id='#{a}_customerName']/a").text
+          if a < custCardNumber
+          nextCustomer  = @driver.find_element(:xpath,"//*[@id='#{a+1}_customerName']/a").text
+          else
+            nextCustomer  = ""
+          end
+
+          rowsInCard = @driver.find_elements(:xpath,"//*[@id='print_list']/div[#{a}]/table/tbody/tr")
+          rowsInCardCount = rowsInCard.count
+          for custProducts in 1..rowsInCardCount
+            if custProducts == 1
+              product = @driver.find_element(:xpath,"//*[@id='print_list']/div[#{a}]/table/tbody/tr[#{custProducts}]/td[4]").text
+            else
+              product = @driver.find_element(:xpath,"//*[@id='print_list']/div[#{a}]/table/tbody/tr[#{custProducts}]/td[1]").text
+            end
+            if (product.include?("Driver notes:") || product.include?("Cooler location:") ||product.include?("Likes:") ||product.include?("Dislikes:"))
+            else
+            product = product[0..product.index("\n")]
+            if product.length >20
+              product = product[0..20]
+            end
+            products.push(product)
+          end
+          end
+          if products[0] != "(inactive this week)"
+          customerAndProducts["customerName"] = customerName
+          customerAndProducts["nextCustomer"] = nextCustomer
+          customerAndProducts["products"] = products
+          
+          customersAndProducts.push(customerAndProducts.to_a.to_h)
+          end
+          products = Array.new
+        end
+
+        return customersAndProducts
+      rescue StandardError => e
+        @util.errorlogging("Error on get_customers_and_products_from_bag_labels_show Error:#{e}")
+        throw ("Error on get_customers_and_products_from_bag_labels_show Error:#{e}")
+      end
+    end
+   def cross_reference_verify_customer_products_in_bag_labels(allCustomerData,allPDF)
+      nLookup = get_element_from_navigation2("Bag Label Layout","Route Management>Print Bag Labels")
+        how = nLookup[0]
+        what = nLookup[1]
+        if nLookup[1] == "4_per_page"
+      cross_reference_verify_customer_products_in_bag_labels_4( allCustomerData,allPDF)
+    elsif nLookup[1] = "1_per_page"
+      cross_reference_verify_customer_products_in_bag_labels_single_label_per_page(allCustomerData,allPDF)
+    end
+  end
+    def cross_reference_verify_customer_products_in_bag_labels_4(allCustomerData,allPDF)
+      begin
+        failure = false
+
+        numOfPairs = (allCustomerData.count/2).ceil() - 1
+        startIdent = 0
+        endIdent = 1
+        for c in 0..numOfPairs
+          endOfSearchArea =""
+          startSearch =""
+
+          startSearch =decreasing_search(allPDF,allCustomerData[startIdent]["customerName"])
+
+
+
+          if allCustomerData[endIdent]["nextCustomer"].nil?
+            endOfSearchArea = allPDF.length - 1
+          else
+            endOfSearchArea=decreasing_search(allPDF,allCustomerData[endIdent]["nextCustomer"])
+          end
+          puts("#{allCustomerData[startIdent]["customerName"]} : #{startSearch}  to #{allCustomerData[endIdent]["customerName"]} : #{endOfSearchArea}")
+
+          custCard = allPDF[startSearch..endOfSearchArea]
+
+          allCustomerData[startIdent]["products"].each do |product|
+            if (custCard.include?(product.strip))
+              @util.logging("#{product} found on bag label for #{allCustomerData[startIdent]["customerName"]}")
+            else
+              check_override(true,"#{product} not found on bag label for #{allCustomerData[startIdent]["customerName"]}",false)
+              failure = true
+            end
+          end
+          allCustomerData[endIdent]["products"].each do |product|
+            if (custCard.include?(product.strip))
+              @util.logging("#{product} found on bag label for #{allCustomerData[endIdent]["customerName"]}")
+            else
+              check_override(true,"#{product} not found on bag label for #{allCustomerData[endIdent]["customerName"]}",false)
+              failure = true
+            end
+
+          end
+          startIdent = startIdent + 2
+          endIdent = endIdent+2
+        end
+        if failure == false
+          @util.logging("All products were found for all customers on the bag labels")
+        end
+      rescue StandardError => e
+        @util.errorlogging("Error in cross reference verify #{e}")
+        check_override(true,"error in cross reference #{e}",false)
+      end
+
+    end
+    def cross_reference_verify_customer_products_in_bag_labels_single_label_per_page(allCustomerData,allPDF)
+      begin
+        failure = false
+        allCustomerData.each do |custData|
+          endOfSearchArea =""
+          startSearch =""
+          if custData["nextCustomer"] == ""
+            endOfSearchArea = allPDF.length - 1
+          else
+            endOfSearchArea =decreasing_search(allPDF,custData["nextCustomer"])
+          end
+          startSearch =decreasing_search(allPDF,custData["customerName"])
+          if ((startSearch != false) && (endOfSearchArea != false))
+            custCard = allPDF[startSearch..endOfSearchArea]
+            custData["products"].each do |product|
+              if (custCard.include?(product.strip))
+                @util.logging("#{product} found on bag label for #{custData["customerName"]}")
+              else
+                check_override(true,"#{product} not found on bag label for #{custData["customerName"]}",false)
+                failure = true
+              end
+            end
+          end
+        end
+        if failure == false
+          @util.logging("All products were found for all customers on the bag labels")
+        end
+      rescue StandardError => e
+        @util.errorlogging("Error in cross reference verify #{e}")
+        check_override(true,"error in cross reference #{e}",false)
+      end
+
+    end
+    def decreasing_search(allPDF,searchValue)
+
+      found = false
+      reverseCount = 16
+      while  ((found ==false) && (reverseCount >8) )
+        found =allPDF.index(searchValue[0..reverseCount].strip)
+        if found== nil
+          found = false
+        end
+        reverseCount = reverseCount - 1
+       #puts ("#{found}  #{reverseCount}")
+
+      end
+      if found == false
+        #binding.pry
+        check_override(true,"Unable to find #{searchValue[0..8]} to #{searchValue[0..16]}.  Customer does not exist in the PDF",false)
+        return false
+      else
+        return found
       end
     end
 
@@ -1461,5 +1788,32 @@ class Utilities;
         @util.logging("There are #{returnValue} rows in the table minus the header")
         return returnValue
       end
+
+      def find_route_with_deliveries_on_bag_labels()
+        begin
+          element = @driver.find_element(:id,"choose_route_id")
+          routes = element.text.split("\n")
+          routeCount = routes.count
+          routeCheck = 1 # this is a silly one, the index works off of the currently selected , not absolute.  so you choose the first one, then with 1 you choose the first one after that in the second loop.
+          deliveriesOnRoute = 0
+          routeNameCount = 1
+          while ((routeCheck <= routeCount) && (deliveriesOnRoute.to_i < 1))
+            select_dropdown_list_text("Choose a route selector","Route Management>Print Bag Labels",routeCheck,"Choosing the #{routes[routeNameCount]} route","index" )
+            click_element("Show","Route Management>Print Bag Labels","Show button")
+            sleep(10)
+            deliveriesOnRoute = check_if_element_exists_get_element_text("Total Deliveries for route","Route Management>Print Bag Labels",10,"Total deliveries for route")
+            routeNameCount = routeNameCount + 1
+            binding.pry
+          end
+          if deliveriesOnRoute == 0
+            throw ("unable to find a route with any deliveries on it")
+          end
+        rescue StandardError => e
+          @util.errorlogging("Error on find route with deliveries Error:#{e}")
+          throw ("Error on find route with deliveries Error:#{e}")
+        end
+      end
+
+
 
     ;end

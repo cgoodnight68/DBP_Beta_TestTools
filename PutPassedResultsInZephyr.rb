@@ -28,6 +28,7 @@ class DBP_T170 < Test::Unit::TestCase
     begin
       print("Enter the base url (i.e. integration.deliverybizpro.com)\n>")
       base_url =  gets.chomp
+      base_url = base_url.upcase
 
       print("Enter the Zephyr Scale Cycle ID (ie. DBP-R59)\n>")
       cycleId=  gets.chomp

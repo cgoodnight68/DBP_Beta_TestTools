@@ -36,7 +36,7 @@ class DBP_T188< Test::Unit::TestCase
     @test.check_if_element_exists("Upcoming Deliveries","UserApp>MyAccount",10,"Upcoming Deliveries")
     @test.check_if_element_exists("Delivery Hold","UserApp>MyAccount",10,"Delivery Hold")
     @test.check_if_element_exists("Recurring Items","UserApp>MyAccount",10,"Recurring Items")
-    @test.check_if_element_exists("Delivery History","UserApp>MyAccount",10,"Delivery History")
+    @test.check_if_element_exists("Delivery History","UserApp>MyAccount",10,"Delivery History","warn")
     @test.check_if_element_exists("Preferences","UserApp>MyAccount",10,"Preferences")
     @test.check_if_element_exists("Referrals","UserApp>MyAccount",10,"Referalls","warn")
 

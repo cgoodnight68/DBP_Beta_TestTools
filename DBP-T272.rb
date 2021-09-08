@@ -24,7 +24,7 @@ class DBP_T272 < Test::Unit::TestCase
     begin
       @test.load_admin_navigation_elements
       @test.login_to_admin
-  
+
       @test.admin_navigate_to("Search for Customers")
       userRow = @test.search_for_customer("C")
       routesBefore = @test.check_if_element_exists_get_element_text("Assigned Routes Table","User Management>Customers>Search for Customers>Customer Card",10,"Assigned Routes Table")
@@ -42,10 +42,9 @@ class DBP_T272 < Test::Unit::TestCase
       @test.enter_text("Search for Input Field","User Management>Customers>Search for Customers","#{userRow["login"]}","Search for Customer: #{userRow["login"]}")
       @test.click_element("Search Button","User Management>Customers>Search for Customers","Search Button")
       @test.click_element(:xpath,"//p[contains(text(),'#{userRow["email"]}')]/a", "Clicking on results table full name and email column  on row with #{userRow["email"]}")
-     routesAfter = @test.check_if_element_exists_get_element_text("Assigned Routes Table","User Management>Customers>Search for Customers>Customer Card",10,"Assigned Routes Table")
+      routesAfter = @test.check_if_element_exists_get_element_text("Assigned Routes Table","User Management>Customers>Search for Customers>Customer Card",10,"Assigned Routes Table")
 
-
-assert(routesAfter != routesBefore,"The route was not added to the user")
+      assert(routesAfter != routesBefore,"The route was not added to the user")
     rescue => e
       @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
       @util.logging(e.inspect)
