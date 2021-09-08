@@ -2449,14 +2449,14 @@ class Utilities
       if found == false
         throw ("The security file is not in the ~/bin/ folder")
       end
-      # gateway = Net::SSH::Gateway.new(
-      #   'outofbox.client-staging.deliverybizpro.com',
-      #   'ubuntu',:keys=>"~/bin/Judd.pem"
-      # )
-        gateway = Net::SSH::Gateway.new(
-         '100.24.34.204',
+      gateway = Net::SSH::Gateway.new(
+         'outofbox.client-staging.deliverybizpro.com',
          'ubuntu',:keys=>"~/bin/Judd.pem"
        )
+      #  gateway = Net::SSH::Gateway.new(
+      #   '100.24.34.204',
+      #   'ubuntu',:keys=>"~/bin/Judd.pem"
+      # )
       port = gateway.open('127.0.0.1', 3306, 3307)
 
       client = Mysql2::Client.new(
