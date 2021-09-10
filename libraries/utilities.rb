@@ -58,6 +58,7 @@ class Utilities
   @@enviroDB =""
   @bs=""
   @@db_id=""
+  @@dbIp = 'outofbox.client-staging.deliverybizpro.com'
   @@test_case_fail=false
   @@test_case_fail_details = Array.new
   @@test_case_warn_details = Array.new
@@ -1676,15 +1677,15 @@ class Utilities
         end
         if counter ==3
           dbName="#{line}"
-          @@enviroDB=dbName
+          @@enviroDB=dbName.delete("\r\n")
         end
         if counter ==4
-          installDate="#{line}"
-          #installDate=installDate.delete!("")
+          dbIp="#{line}"
+         dbIp=dbIp.gsub("\r\n","")
         end
         counter = counter + 1
       end
-      return enviro,brws,dbName,installDate
+      return enviro,brws,dbName,dbIp
     end
   end
   # Helper function for modifying the path variable for Windows
@@ -1737,13 +1738,15 @@ class Utilities
     set_artifact_dir()
 
     @@util=@util
-
+   dbIp = ""
     if File.exists?("#{filedir}/environment_variables.txt")
       @util.logging("Using the environment_variables.txt values")
-      environment,brws,dbName,installDate = read_enviro_variables(filedir)
+      environment,brws,dbName,dbIp = read_enviro_variables(filedir)
       @util.setUsingEnviro()
     end
-
+    if dbIp !=""
+      @@dbIp = dbIp
+    end
     if headless==true
     end
     if environment  == ""
@@ -2449,8 +2452,9 @@ class Utilities
       if found == false
         throw ("The security file is not in the ~/bin/ folder")
       end
+
       gateway = Net::SSH::Gateway.new(
-         'outofbox.client-staging.deliverybizpro.com',
+         @@dbIp,
          'ubuntu',:keys=>"~/bin/Judd.pem"
        )
       #  gateway = Net::SSH::Gateway.new(

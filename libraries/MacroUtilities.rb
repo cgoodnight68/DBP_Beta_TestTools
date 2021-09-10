@@ -190,7 +190,7 @@ class Utilities;
         enter_text("Card expire month","User Management>Customers>Create Customer Profile", "0826","Expire Month")
         enter_text("Card CCV","User Management>Customers>Create Customer Profile", "123","Card CCV")
       end
-
+      binding.pry
       click_element_if_exists(:xpath,"//*[@id='alert-message-modal']/div/div/div[3]/button",10, "Ok on your credit card details have been saved window")
       enter_text("Password","User Management>Customers>Create Customer Profile", "getswift","Password")
       enter_text("Confirm Password","User Management>Customers>Create Customer Profile", "getswift","Confirm Password")
@@ -203,7 +203,9 @@ class Utilities;
       if(check_if_element_exists("How did you hear about us","User Management>Customers>Create Customer Profile",10,"How did you hear about us","warn") != "warn")
         enter_text("How did you hear about us","User Management>Customers>Create Customer Profile","Some meaningless text for how I heard about you")
       end
-
+      if (check_if_element_exists("Cooler Box Options select","User Management>Customers>Create Customer Profile",10,"Cooler Box Options select","warn") != "warn")
+        select_dropdown_list_text("Cooler Box Options select","User Management>Customers>Create Customer Profile",1,"Cooler Box Options","index")
+      end
       ######
 
       click_element("Save","User Management>Customers>Create Customer Profile","Save button")
@@ -919,9 +921,9 @@ class Utilities;
       productCreated = check_if_element_exists_get_element_text("Product Succesfully Created","Products>Add New Product",60,"Verifying new product sucessfully created")
       if !(productCreated.include?("The product has been successfully created"))
         @util.errorlogging("Unable to create new product for the day. Because of the error: #{productCreated}")
-        throw ("Unable to create new product for the day. Because of the error:#{productCreated}")
+        check_override(true,"Unable to create new product for the day. Because of the error:#{productCreated}",true)
       end
-      return "Product for #{date}"
+      return "sku#{date}"
 
     rescue StandardError => e
       @util.errorlogging("Unable to create new product for the day.  Error:#{e}")
@@ -1366,7 +1368,7 @@ class Utilities;
         for a in 1..custCardNumber
           customerName  = @driver.find_element(:xpath,"//*[@id='#{a}_customerName']/a").text
           if a < custCardNumber
-          nextCustomer  = @driver.find_element(:xpath,"//*[@id='#{a+1}_customerName']/a").text
+            nextCustomer  = @driver.find_element(:xpath,"//*[@id='#{a+1}_customerName']/a").text
           else
             nextCustomer  = ""
           end
@@ -1381,19 +1383,19 @@ class Utilities;
             end
             if (product.include?("Driver notes:") || product.include?("Cooler location:") ||product.include?("Likes:") ||product.include?("Dislikes:"))
             else
-            product = product[0..product.index("\n")]
-            if product.length >20
-              product = product[0..20]
+              product = product[0..product.index("\n")]
+              if product.length >20
+                product = product[0..20]
+              end
+              products.push(product)
             end
-            products.push(product)
-          end
           end
           if products[0] != "(inactive this week)"
-          customerAndProducts["customerName"] = customerName
-          customerAndProducts["nextCustomer"] = nextCustomer
-          customerAndProducts["products"] = products
-          
-          customersAndProducts.push(customerAndProducts.to_a.to_h)
+            customerAndProducts["customerName"] = customerName
+            customerAndProducts["nextCustomer"] = nextCustomer
+            customerAndProducts["products"] = products
+
+            customersAndProducts.push(customerAndProducts.to_a.to_h)
           end
           products = Array.new
         end
@@ -1404,16 +1406,16 @@ class Utilities;
         throw ("Error on get_customers_and_products_from_bag_labels_show Error:#{e}")
       end
     end
-   def cross_reference_verify_customer_products_in_bag_labels(allCustomerData,allPDF)
+    def cross_reference_verify_customer_products_in_bag_labels(allCustomerData,allPDF)
       nLookup = get_element_from_navigation2("Bag Label Layout","Route Management>Print Bag Labels")
-        how = nLookup[0]
-        what = nLookup[1]
-        if nLookup[1] == "4_per_page"
-      cross_reference_verify_customer_products_in_bag_labels_4( allCustomerData,allPDF)
-    elsif nLookup[1] = "1_per_page"
-      cross_reference_verify_customer_products_in_bag_labels_single_label_per_page(allCustomerData,allPDF)
+      how = nLookup[0]
+      what = nLookup[1]
+      if nLookup[1] == "4_per_page"
+        cross_reference_verify_customer_products_in_bag_labels_4( allCustomerData,allPDF)
+      elsif nLookup[1] = "1_per_page"
+        cross_reference_verify_customer_products_in_bag_labels_single_label_per_page(allCustomerData,allPDF)
+      end
     end
-  end
     def cross_reference_verify_customer_products_in_bag_labels_4(allCustomerData,allPDF)
       begin
         failure = false
@@ -1510,7 +1512,7 @@ class Utilities;
           found = false
         end
         reverseCount = reverseCount - 1
-       #puts ("#{found}  #{reverseCount}")
+        #puts ("#{found}  #{reverseCount}")
 
       end
       if found == false
