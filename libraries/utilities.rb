@@ -1744,7 +1744,7 @@ class Utilities
       environment,brws,dbName,dbIp = read_enviro_variables(filedir)
       @util.setUsingEnviro()
     end
-    if dbIp !=""
+    if ((dbIp !="") && dbIp != nil) 
       @@dbIp = dbIp
     end
     if headless==true
