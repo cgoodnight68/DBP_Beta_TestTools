@@ -30,7 +30,7 @@ class DBP_T263 < Test::Unit::TestCase
     #newProduct = "sku9_9_2021"
       @test.admin_navigate_to("Search for Customers")
       @test.login_as_random_customer_from_backend_with_upcoming_orders()
-      binding.pry
+     # binding.pry
       @test.click_element("Search button","UserApp","Search button on user app")
       @test.enter_text("Search Text field","UserApp","#{newProduct}\n","Search Text")
 

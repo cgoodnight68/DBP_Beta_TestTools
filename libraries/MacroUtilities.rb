@@ -190,7 +190,7 @@ class Utilities;
         enter_text("Card expire month","User Management>Customers>Create Customer Profile", "0826","Expire Month")
         enter_text("Card CCV","User Management>Customers>Create Customer Profile", "123","Card CCV")
       end
-      binding.pry
+
       click_element_if_exists(:xpath,"//*[@id='alert-message-modal']/div/div/div[3]/button",10, "Ok on your credit card details have been saved window")
       enter_text("Password","User Management>Customers>Create Customer Profile", "getswift","Password")
       enter_text("Confirm Password","User Management>Customers>Create Customer Profile", "getswift","Confirm Password")
@@ -1805,7 +1805,7 @@ class Utilities;
             sleep(10)
             deliveriesOnRoute = check_if_element_exists_get_element_text("Total Deliveries for route","Route Management>Print Bag Labels",10,"Total deliveries for route")
             routeNameCount = routeNameCount + 1
-            binding.pry
+           # binding.pry
           end
           if deliveriesOnRoute == 0
             throw ("unable to find a route with any deliveries on it")
