@@ -26,7 +26,6 @@ class CreateDefaultCustomerForDay < Test::Unit::TestCase
       @test.login_to_admin
       @test.admin_navigate_to("Create Customer Profile")
       @test.create_default_customer_for_the_day()
-
       
     rescue => e
       @util.logging("V______FAILURE!!! Previous line failed. Trace below. __________V")
